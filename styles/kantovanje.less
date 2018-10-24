@@ -1,0 +1,85 @@
+@import 'variables';
+
+
+.kantovanje {
+  height: calc(~"100vh - 70px");
+  width: 100%;
+  position: relative;
+  display: flex;
+  top: 70px;
+  &--left {
+    width: 10%;
+    height: 100%;
+  }
+  &--right {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &-top {
+      height: 85%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 5%;
+      &--info {
+        width: 40%;
+        min-height: 80%;
+        background-color: @lighter-grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title {
+          width: 85%;
+          font-size: @font-medium-bigger;
+          color: @dark-grey;
+          line-height: 33px;
+          font-weight: 500;
+          margin-top: 50px;
+          padding-bottom: 20px;
+        }
+        .text {
+          width: 85%;
+          margin-top: 20px;
+          // responise 1440 margin top 0px
+          font-size: @font-small;
+          color: @dark-grey;
+          line-height: 22px;
+          padding-bottom: 20px;
+        }
+      }
+      &--image {
+        width: 60%;
+        height: 90%;
+        // background-image: url('/images/Kantovanje_landing.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+    &-bottom {
+      height: 10%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .line {
+        width: 40px;
+        border-bottom: 1px solid #840505;
+      }
+      .link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        a {
+          font-size: @font-medium-bigger;
+          color: @dark-grey;
+          line-height: 33px;
+        }
+      }
+    }
+  }
+}

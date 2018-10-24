@@ -1,0 +1,80 @@
+.kantovanje {
+  height: calc(100vh - 70px);
+  width: 100%;
+  position: relative;
+  display: flex;
+  top: 70px;
+}
+.kantovanje--left {
+  width: 10%;
+  height: 100%;
+}
+.kantovanje--right {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.kantovanje--right-top {
+  height: 85%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5%;
+}
+.kantovanje--right-top--info {
+  width: 40%;
+  min-height: 80%;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kantovanje--right-top--info .title {
+  width: 85%;
+  font-size: 24px;
+  color: #666B70;
+  line-height: 33px;
+  font-weight: 500;
+  margin-top: 50px;
+  padding-bottom: 20px;
+}
+.kantovanje--right-top--info .text {
+  width: 85%;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #666B70;
+  line-height: 22px;
+  padding-bottom: 20px;
+}
+.kantovanje--right-top--image {
+  width: 60%;
+  height: 90%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.kantovanje--right-bottom {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.kantovanje--right-bottom .line {
+  width: 40px;
+  border-bottom: 1px solid #840505;
+}
+.kantovanje--right-bottom .link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+.kantovanje--right-bottom .link a {
+  font-size: 24px;
+  color: #666B70;
+  line-height: 33px;
+}

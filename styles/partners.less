@@ -1,0 +1,55 @@
+@import 'variables';
+
+.partners {
+  height: calc(~"100vh - 70px");
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 70px;
+  background-color: @black;
+  &--inner {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    &-left {
+      width: 10%;
+      height: 100%;
+      &-badge {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        top: 30%;
+        .rotate {
+          transform: rotate(-90deg);
+          color: @white;
+          font-size: 16px;
+          position: absolute;
+          .title {
+            margin-left: 5px;
+            color: @dark-grey;
+          }
+        }
+      }
+    }
+    &-right {
+      width: 90%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      &--top {
+        height: 50%;
+        display: flex;
+        align-items: center;
+        // justify-content: flex-start;
+        .partner {
+          width: 25%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

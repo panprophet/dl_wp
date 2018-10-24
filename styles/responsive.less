@@ -1,0 +1,385 @@
+@import 'variables';
+
+@media only screen and (max-width: 1440px) {
+  .usluge {
+    &--right {
+      &-bottom {
+        .arrow {
+          height: 100px;
+        }
+      }
+    }
+  }
+  .kantovanje {
+    &--right {
+      &-top {
+        &--info {
+          .title {
+          }
+          .text {
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .usluge {
+    &--right {
+      &-bottom {
+        .arrow {
+          height: 80px;
+        }
+      }
+    }
+  }
+  .kantovanje {
+    &--right {
+      &-top {
+        &--info {
+          .title {
+            width: 91%;
+            margin-top: 20px;
+            padding-bottom: 10px;
+          }
+          .text {
+            width: 91%;
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .usluge {
+    &--right {
+      &-bottom {
+        .arrow {
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .landing {
+    &--left {
+      display: none;
+    }
+    &--right {
+      width: 100%;
+      &-top {
+        padding: 0 30px;
+        justify-content: space-between;
+        &-left {
+          width: auto;
+        }
+        &-midd {
+          width: auto;
+          margin: 0px 10px;
+          &--info {
+            span {
+              width: auto;
+            }
+          }
+        }
+        &-right {
+          width: auto;
+          margin: 0px 10px;
+          &--info {
+            span {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  .usluge {
+    // justify-content: center;
+    &--left {
+      display: none;
+    }
+    &--right {
+      width: 100%;
+      &-bottom {
+        width: 95%;
+        margin-left: 5%;
+        .arrow {
+          height: 100px;
+        }
+        .gallery {
+          .wrap {
+            &--number {
+              height: 20%;
+            }
+            &--picture {
+              height: 45%;;
+            }
+            &--text {
+              height: 35%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .kantovanje {
+    &--left {
+      display: none;
+    }
+    &--right {
+      width: 100%;
+      &-top {
+        width: 95%;
+        margin-left: 5%;
+      }
+      &-bottom {
+        width: 95%;
+        margin-left: 5%;
+      }
+    }
+  }
+  .partners {
+    &--inner {
+      &-left {
+        display: none;
+      }
+      &-right {
+        width: 100%;
+        margin: 0px 5%;
+        &--top {
+          .partner {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+  .kontakt {
+    &--inner {
+      width: 90%;
+      &-title {
+        width: 100%;
+      }
+      &-form {
+        width: 100%;
+        &--left {
+          div {
+            width: 90%;
+          }
+        }
+        &--right {
+          align-items: flex-end;
+          div {
+            width: 90%;
+          }
+        }
+      }
+      &-button {
+        width: 90%;
+      }
+    }
+  }
+  .info {
+    &--top {
+      justify-content: center;
+      &-left {
+        display: none;
+      }
+      &-right {
+        width: 94%;
+        justify-content: space-between;
+        &--contact {
+          width: 39%;
+          &-md {
+            width: 55%;
+            justify-content: space-between;
+          }
+          .section {
+            width: auto;
+            padding-right: 3%;
+            &--info {
+              span {
+                margin: 0;
+              }
+            }
+            &-link {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 960px) {
+  .landing {
+    &--right {
+      display: flex;
+      &-top {
+        flex-direction: column;
+        height: auto;
+        justify-content: space-around;
+        &-left {
+          min-width: 70%;
+        }
+        &-midd {
+          min-width: 70%;
+          &--title {
+            font-size: @font-lilliput;
+            line-height: 17px;
+            margin-bottom: 0px;
+          }
+          &--info {
+            flex-direction: column;
+            span {
+              font-size: @font-lilliput;
+              line-height: 17px;
+              margin: 20px 0px;
+            }
+          }
+        }
+        &-right {
+          min-width: 70%;
+          &--title {
+            font-size: @font-lilliput;
+            line-height: 17px;
+            margin-bottom: 0px;
+          }
+          &--info {
+            flex-direction: column;
+            span {
+              font-size: @font-lilliput;
+              line-height: 17px;
+              margin: 20px 0px;
+            }
+          }
+        }
+      }
+      &-bottom {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .image {
+          height: 70%;
+          background-position-x: center;
+          }
+      }
+    }
+  }
+  .usluge {
+    &--right {
+      &-top {
+        .tab-red {
+          color: @dark-grey;
+        }
+      }
+      &-bottom {
+        width: 100%;
+        margin-left: 0px;
+        .arrow {
+          display: none;
+        }
+        .gallery {
+          .wrap {
+            &--text {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .kantovanje {
+    &--right {
+      &-top {
+        width: 99%;
+        margin-left: 1%;
+        &--info {
+          width: 50%;
+        }
+        &--image {
+          width: 50%;
+          background-position-x: center;
+        }
+      }
+    }
+  }
+  .partners {
+    &--inner {
+      &-right {
+        flex-direction: row;
+        &--top {
+          height: auto;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+  .kontakt {
+    &--inner {
+      width: 80%;
+    }
+  }
+  .info {
+    &--top {
+      height: 45%;
+      &-right {
+        &--contact {
+            justify-content: flex-end;
+          &-md {
+            width: 70%;
+            justify-content: space-between;
+          }
+          .section {
+            margin-top: 40px;
+            &--info {
+              flex-direction: column;
+              span {
+                margin: 15px 0px;
+              }
+              &-mobile {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                .section{
+                  &--info {
+                    span {
+                      margin: 0px;
+                    }
+                  }
+                }
+              }
+              &-md {
+                flex-direction: row;
+                span {
+                  margin: 15px 15px 15px 0px;
+                }
+              }
+            }
+            &--okovi {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    &--midd {
+      &-map1 {
+        height: 45%;
+      }
+      &-map2 {
+        height: 45%;
+      }
+    }
+  }
+}

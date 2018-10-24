@@ -1,0 +1,182 @@
+.kuhinja {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 70px;
+}
+.kuhinja--top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.kuhinja--top-menu {
+  height: 60px;
+  width: auto;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 500;
+  color: #B3B8BD;
+  letter-spacing: -0.5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.kuhinja--midd {
+  top: 50px;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.kuhinja--midd-link {
+  width: auto;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 500;
+  color: #B3B8BD;
+  letter-spacing: -0.5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.kuhinja--midd-link--active {
+  border-bottom: 2px solid #840505;
+}
+.kuhinja--bottom {
+  min-height: calc(100vh - 140px);
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.kuhinja--bottom-single {
+  width: 90%;
+  display: flex;
+}
+.kuhinja--bottom-single--left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.kuhinja--bottom-single--left .opis-title {
+  font-size: 46px;
+  font-weight: 500;
+  color: #666B70;
+  line-height: 45px;
+  letter-spacing: -1px;
+}
+.kuhinja--bottom-single--left .opis-text {
+  width: 90%;
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #666B70;
+  line-height: 22px;
+  letter-spacing: -1px;
+}
+.kuhinja--bottom-single--left .elements {
+  width: 90%;
+}
+.kuhinja--bottom-single--left .elements-label {
+  margin-top: 55px;
+  margin-bottom: 32px;
+  font-size: 28px;
+  color: #666B70;
+  line-height: 38px;
+  border-bottom: 1px solid #EAEAEA;
+}
+.kuhinja--bottom-single--left .elements-description {
+  margin-bottom: 32px;
+}
+.kuhinja--bottom-single--left .elements-description--element {
+  display: flex;
+  flex-direction: column;
+}
+.kuhinja--bottom-single--left .elements-description--element-info {
+  width: 90%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.kuhinja--bottom-single--left .elements-description--element-info--title {
+  width: 70%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 22px;
+}
+.kuhinja--bottom-single--left .elements-description--element-info--price {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.kuhinja--bottom-single--left .elements-description--element-info--harmonix {
+  width: 10%;
+  height: 100%;
+}
+.kuhinja--bottom-single--left .elements-description--material {
+  display: flex;
+  flex-direction: column;
+}
+.kuhinja--bottom-single--left .elements-description--material--expanded {
+  max-height: 200px;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+.kuhinja--bottom-single--left .elements-description--material--collapsed {
+  max-height: 0px;
+  -webkit-transition: 0.5s ease-out;
+  -moz-transition: 0.5s ease-out;
+  -o-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  overflow: hidden;
+}
+.kuhinja--bottom-single--left .elements-description--material .title {
+  width: 70%;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.kuhinja--bottom-single--left .elements-description--material-description {
+  width: 100%;
+  display: flex;
+}
+.kuhinja--bottom-single--left .elements-description--material-description .text {
+  width: 70%;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 32px;
+}
+.kuhinja--bottom-single--left .elements-description--material-description .thumb {
+  width: 93px;
+  height: 79px;
+}
+.kuhinja--bottom-single--left .elements-description--material-link {
+  width: 70%;
+  margin-top: 32px;
+  font-size: 16px;
+  line-height: 19px;
+}
+.kuhinja--bottom-single--right {
+  width: 60%;
+  height: 100%;
+  background-size: 100%;
+  overflow: hidden;
+}
+.kuhinja--more {
+  min-height: 300px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.kuhinja--more-posts {
+  height: 100px;
+  width: 100px;
+}

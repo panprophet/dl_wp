@@ -1,0 +1,13 @@
+.single_picture {
+  height: auto;
+  width: 100%;
+  position: relative;
+  top: 70px;
+  padding-top: 40px;
+}
+.single_picture--frame {
+  width: 100%;
+}
+.single_picture--frame img {
+  width: 100%;
+}
