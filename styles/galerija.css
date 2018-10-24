@@ -154,6 +154,12 @@
   grid-column: 3;
   grid-row: 2;
 }
+.gallery--body-less {
+  max-height: calc(3*(100vh - 70px - 200px));
+}
+.gallery--body-more {
+  max-height: auto;
+}
 .gallery--loadmore {
   height: 200px;
   width: 100%;

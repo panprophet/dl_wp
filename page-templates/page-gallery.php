@@ -14,7 +14,7 @@
       endif;
     ?>
   </div>
-  <div class="gallery--body">
+  <div class="gallery--body gallery--body-less">
     <?php
     $photocount = 1;
     if(have_rows('gallery')):
@@ -59,7 +59,7 @@
   </div>
   <div class="gallery--loadmore">
     <div class="gallery--loadmore-text">
-      <p>Učitaj još</p>
+      <p onclick="">Učitaj još</p>
     </div>
   </div>
 </div>

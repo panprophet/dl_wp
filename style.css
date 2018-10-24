@@ -834,7 +834,7 @@ textarea {
 .usluge--right-bottom .arrow:hover {
   cursor: pointer;
 }
-.usluge--right-bottom .gallery {
+.usluge--right-bottom .galleryservice {
   height: 100%;
   width: 100%;
   -webkit-animation: fadeInFromNone 1.6s ease-in;
@@ -843,7 +843,7 @@ textarea {
   animation: fadeInFromNone 1.6s ease-in;
   display: flex;
 }
-.usluge--right-bottom .gallery .wrap {
+.usluge--right-bottom .galleryservice .wrap {
   height: 100%;
   min-width: 35%;
   display: flex;
@@ -854,7 +854,7 @@ textarea {
   -o-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
 }
-.usluge--right-bottom .gallery .wrap--number {
+.usluge--right-bottom .galleryservice .wrap--number {
   height: 20%;
   width: 95%;
   display: flex;
@@ -864,22 +864,22 @@ textarea {
   line-height: 24px;
   font-weight: 500;
 }
-.usluge--right-bottom .gallery .wrap--picture {
+.usluge--right-bottom .galleryservice .wrap--picture {
   height: 50%;
   width: 95%;
   display: flex;
   align-items: flex-end;
 }
-.usluge--right-bottom .gallery .wrap--picture .title {
+.usluge--right-bottom .galleryservice .wrap--picture .title {
   color: #FFFFFF;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
-.usluge--right-bottom .gallery .wrap--picture .title p {
+.usluge--right-bottom .galleryservice .wrap--picture .title p {
   margin-left: 20px;
 }
-.usluge--right-bottom .gallery .wrap--text {
+.usluge--right-bottom .galleryservice .wrap--text {
   height: 30%;
   width: 95%;
   display: flex;

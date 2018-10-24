@@ -98,7 +98,7 @@
         </svg>
       </div>
       <!-- Fizicka lica -->
-      <div class="gallery"
+      <div class="galleryservice"
             id="galleryFizicka">
         <?php
         $counter = 1;
@@ -127,7 +127,7 @@
       </div>
       <!-- Fizicka lca -->
       <!-- Profesionalna lica -->
-      <div class="gallery"
+      <div class="galleryservice"
             id="galleryProf">
             <?php
         $counter = 1;
