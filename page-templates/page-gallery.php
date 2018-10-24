@@ -14,7 +14,7 @@
       endif;
     ?>
   </div>
-  <div class="gallery--body gallery--body-less">
+  <div class="gallery--body gallery--body-less" id="gallerybody">
     <?php
     $photocount = 1;
     if(have_rows('gallery')):
@@ -39,9 +39,12 @@
     ?>
         <div class="img img-<?php echo $photocount ?>" style="background-image: url(<?php the_sub_field('image'); ?>); background-size: cover; background-repeat: no-repeat;">
           <div class="img--inner">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="img--inner-title"><?php the_sub_field('naziv') ?></div>
+            <div class="img--inner-sub">
+              <span class="img--inner-title-2--"><?php the_sub_field('naslov_2') ?></span>
+              <span></span>
+              <span>Read more</span></div>
+            <div class=""></div>
           </div>
         </div>
     <?php
@@ -59,7 +62,7 @@
   </div>
   <div class="gallery--loadmore">
     <div class="gallery--loadmore-text">
-      <p onclick="">Učitaj još</p>
+      <p onclick="gallery_expand()">Učitaj još</p>
     </div>
   </div>
 </div>

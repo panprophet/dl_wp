@@ -62,3 +62,12 @@ function single_gallery(event) {
     document.getElementById('pagefrom').innerHTML = "0" + page;
   }
 }
+function gallery_expand() {
+  if(document.getElementById('gallerybody').classList.contains('gallery--body-less')){
+    document.getElementById('gallerybody').classList.remove('gallery--body-less');
+    document.getElementById('gallerybody').classList.add('gallery--body-more');
+  } else {
+    document.getElementById('gallerybody').classList.remove('gallery--body-more');
+    document.getElementById('gallerybody').classList.add('gallery--body-less');
+  }
+}
