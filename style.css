@@ -1772,7 +1772,7 @@ textarea {
 }
 .post-temp--left-info--title {
   width: 90%;
-  font-size: 46px;
+  font-size: 48px;
   color: #FFFFFF;
   line-height: 58px;
   margin: 10px 0px;
@@ -1871,7 +1871,7 @@ textarea {
   height: 50%;
   display: flex;
   flex-direction: column;
-  margin: 5% 5%;
+  margin: 0 5% 5% 5%;
 }
 .post-temp--right-products--title {
   height: 25%;
