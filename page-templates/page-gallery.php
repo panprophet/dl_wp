@@ -76,10 +76,13 @@
       while(have_rows('gallery')): the_row();
   ?>
     <div class="slideshows-inner" id="slide_<?php echo $slidecounter ?>">
-      <div class="slideshows-inner--left" style="background-image: url(<?php the_sub_field('image') ?>); background-size: cover; background-repeat: no-repeat;">
-      <div class="slideshows-inner--left--icons">
-        <span class="slideshows-inner--left--icons-social"></span><span class="slideshows-inner--left--icons-back" onclick="go_to_slide(0, 0)">Nazad</span>
-      </div>
+      <div class="slideshows-inner--left">
+        <div class="slideshows-inner--left-inside" style="background-image: url(<?php the_sub_field('image') ?>); background-size: cover; background-repeat: no-repeat;">
+          <div class="slideshows-inner--left-inside--icons">
+            <span class="slideshows-inner--left-inside--icons-social"></span><span class="slideshows-inner--left-inside--icons-back" onclick="go_to_slide(0, 0)">Nazad</span>
+          </div>
+        </div>
+
       </div>
       <div class="slideshows-inner--right">
         <div class="slideshows-inner--right-top">

@@ -2254,26 +2254,34 @@ textarea {
   position: relative;
   height: 100%;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #0E0E0E;
+}
+.slideshows-inner--left-inside {
+  width: 98%;
+  height: 94%;
+  display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 }
-.slideshows-inner--left--icons {
+.slideshows-inner--left-inside--icons {
   height: 10%;
   width: 15%;
   display: flex;
   justify-content: space-between;
 }
-.slideshows-inner--left--icons-social {
+.slideshows-inner--left-inside--icons-social {
   width: 15%;
   height: 100%;
 }
-.slideshows-inner--left--icons-back {
+.slideshows-inner--left-inside--icons-back {
   width: 15%;
   height: 100%;
   color: #FFFFFF;
   font-size: 16px;
 }
-.slideshows-inner--left--icons-back:hover {
+.slideshows-inner--left-inside--icons-back:hover {
   cursor: pointer;
 }
 .slideshows-inner--right {
