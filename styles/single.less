@@ -426,8 +426,10 @@
 }
 @media screen and (max-width: 320px) {
   .post-temp{
+    height: auto;
     &--left{
       &-title{
+        height: 60px;
         justify-content: center;
       }
       &-info{
@@ -436,20 +438,22 @@
         }
         &--id{
           width: 100%;
-          margin-top: 8%;
+          margin: 10% 0 0;
         }
       }
     }
     &--right{
+      height: auto;
       &-info{
         height: auto;
         &--title{
-          height: 120px;
+          height: 150px;
         }
         &--description{
           height: auto;
         }
         &--spec{
+          height: 270px;
           .tab{
             margin: 0;
             &--title{
@@ -463,9 +467,32 @@
           }
         }
       }
+      &-products{
+        height: auto;
+        &--title{
+          margin: 15% 0 7%;
+          justify-content: center;
+        }
+        &--list{
+          flex-direction: column;
+          height: auto;
+          &-item{
+            width: 100%;
+            .pic{
+              height: 220px;
+              width: 288px;
+            }
+            .declaration{
+              align-items: center;
+              margin: 10px 0 30px;
+            }
+          }
+        }
+      }
     }
   }
   .flex{
     flex-direction: column;
+    margin-bottom: 20px;
   }
 }
