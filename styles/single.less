@@ -251,3 +251,38 @@
     }
   }
 }
+@media screen and (max-width: 1660px) {
+  .post-temp {
+    &--right {
+      &-info {
+        &--title {
+          font-size: @font-medium-bigger;
+          line-height: 29px;
+        }
+      }
+      &-products{
+        &--list{
+          &-item{
+            .pic{
+              height: 69px;
+              width: 76px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .post-temp{
+    &--left{
+      width: 45%;
+    }
+    &--midd{
+      display: none !important;
+    }
+    &--right{
+      width: 55%;
+    }
+  }
+}

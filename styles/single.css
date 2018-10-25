@@ -245,3 +245,24 @@
   line-height: 19px;
   color: #444444;
 }
+@media screen and (max-width: 1660px) {
+  .post-temp--right-info--title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+  .post-temp--right-products--list-item .pic {
+    height: 69px;
+    width: 76px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .post-temp--left {
+    width: 45%;
+  }
+  .post-temp--midd {
+    display: none !important;
+  }
+  .post-temp--right {
+    width: 55%;
+  }
+}
