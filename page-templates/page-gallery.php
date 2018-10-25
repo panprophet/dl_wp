@@ -79,7 +79,10 @@
       <div class="slideshows-inner--left">
         <div class="slideshows-inner--left-inside" style="background-image: url(<?php the_sub_field('image') ?>); background-size: cover; background-repeat: no-repeat;">
           <div class="slideshows-inner--left-inside--icons">
-            <span class="slideshows-inner--left-inside--icons-social"></span><span class="slideshows-inner--left-inside--icons-back" onclick="go_to_slide(0, 0)">Nazad</span>
+            <span class="slideshows-inner--left-inside--icons-social">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" background-color="white" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path fill="white" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            </span>
+            <span class="slideshows-inner--left-inside--icons-back" onclick="go_to_slide(0, 0)">Nazad</span>
           </div>
         </div>
 
@@ -90,8 +93,12 @@
           <div class="slideshows-inner--right-top--sub"><?php the_sub_field('naslov_2') ?></div>
         </div>
         <div class="slideshows-inner--right-bottom">
-          <div class="slideshows-inner--right-bottom--left" onclick="go_to_slide(<?php echo $slidecounter ?>, <?php echo $slidecounter - 1 ?>)"><img src="../wp-content/uploads/2018/10/arrow_small.png"></div>
-          <div class="slideshows-inner--right-bottom--right" onclick="go_to_slide(<?php echo $slidecounter ?>, <?php echo $slidecounter + 1 ?>)"><img src="../wp-content/uploads/2018/10/arrow_small.png"></div>
+          <div class="slideshows-inner--right-bottom--left" onclick="go_to_slide(<?php echo $slidecounter ?>, <?php echo $slidecounter - 1 ?>)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          </div>
+          <div class="slideshows-inner--right-bottom--right" onclick="go_to_slide(<?php echo $slidecounter ?>, <?php echo $slidecounter + 1 ?>)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </div>
         </div>
       </div>
     </div>

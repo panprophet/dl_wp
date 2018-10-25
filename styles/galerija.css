@@ -357,14 +357,15 @@
   height: 10%;
   width: 15%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-left: 20px;
 }
 .slideshows-inner--left-inside--icons-social {
-  width: 15%;
+  width: 50%;
   height: 100%;
 }
 .slideshows-inner--left-inside--icons-back {
-  width: 15%;
+  width: 50px;
   height: 100%;
   color: #FFFFFF;
   font-size: 16px;
@@ -395,16 +396,20 @@
 }
 .slideshows-inner--right-top--title {
   font-size: 46px;
+  font-weight: 500;
+  line-height: 50px;
 }
 .slideshows-inner--right-top--sub {
   font-size: 24px;
+  line-height: 32px;
 }
 .slideshows-inner--right-bottom {
-  width: 100%;
+  width: 98%;
   display: flex;
   position: relative;
   justify-content: space-between;
   align-items: center;
+  bottom: 10px;
 }
 .slideshows-inner--right-bottom--right {
   margin-right: 20px;
