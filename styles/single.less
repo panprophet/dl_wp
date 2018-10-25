@@ -387,15 +387,29 @@
           &-item{
             flex-direction: column;
             height: auto;
-            width: auto;
+            width: 149px;
             .pic{
               height: 124px;
               width: 149px;
             }
             .declaration{
               margin-left: 0;
+              margin-top: 10px;
               width: 100%;
               height: auto;
+            }
+          }
+        }
+      }
+      &-info{
+        &--spec{
+          .tab{
+            margin: 0 5%;
+            &--title{
+              margin: 0;
+              &-icon{
+                width: 2%;
+              }
             }
           }
         }
@@ -408,5 +422,50 @@
   }
   #product_3{
     display: flex;
+  }
+}
+@media screen and (max-width: 320px) {
+  .post-temp{
+    &--left{
+      &-title{
+        justify-content: center;
+      }
+      &-info{
+        &--subtitle{
+          width: 100%;
+        }
+        &--id{
+          width: 100%;
+          margin-top: 8%;
+        }
+      }
+    }
+    &--right{
+      &-info{
+        height: auto;
+        &--title{
+          height: 120px;
+        }
+        &--description{
+          height: auto;
+        }
+        &--spec{
+          .tab{
+            margin: 0;
+            &--title{
+              height: 80%;
+              justify-content: center;
+              align-items: flex-end;
+              &-icon{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .flex{
+    flex-direction: column;
   }
 }
