@@ -120,7 +120,7 @@ function register_kitchen_taxonomy(){
     'kuhinje',        //post type name
     array(
         'hierarchical' => true,
-        'label' => 'Fijoke',  //Display name
+        'label' => 'Kuhinje',  //Display name
         'show_ui' => true,
         'show_admin_column' => true,
         'query_var' => true,

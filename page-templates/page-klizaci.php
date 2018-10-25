@@ -1,7 +1,7 @@
 <?php /* Template Name: Klilzaci */ ?>
 
 <?php get_header(); ?>
-
+<?php $element_slug = 'Klizaci'; ?>
 <div class="kuhinja">
   <div class="kuhinja--top">
       <div class="kuhinja--top--left">
@@ -129,19 +129,20 @@
   <?php
 
   $terms = get_terms([
-    'taxonomy' => 'fijoke_categories',
+    'taxonomy' => 'kuhinje_categories',
     'hide-empty' => true
   ]);
 
   foreach($terms as $term) {
       $allPosts = new WP_Query( array(
-        'post_type' => 'fijoke',
+        'post_type' => 'kuhinje',
         'posts_per_page' => -1,
         'tax_query' => array(
           array (
-            'taxonomy' => 'fijoke_categories',
+            'taxonomy' => 'kuhinje_categories',
             'field' => 'slug',
             'terms' => $term->slug,
+            'parent' => $element_slug,
           ),
         ),
         'post__not_in'=> array ($idCurr),
