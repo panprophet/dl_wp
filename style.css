@@ -2875,6 +2875,18 @@ textarea {
   }
 }
 @media screen and (max-width: 840px) {
+  .landing--right-top {
+    align-items: flex-start;
+  }
+  .landing--right-top-left {
+    margin-left: 10%;
+  }
+  .landing--right-top-midd {
+    margin-left: 10%;
+  }
+  .landing--right-top-right {
+    margin-left: 10%;
+  }
   .usluge--right-bottom .galleryservice .wrap--picture {
     height: 35%;
   }
