@@ -49,8 +49,10 @@
     </div>
     <div class="post-temp--left-info">
       <div class="post-temp--left-info--title"><?php the_sub_field('naziv'); ?></div>
-      <div class="post-temp--left-info--subtitle"><?php the_sub_field('debljina_materijala'); ?></div>
-      <div class="post-temp--left-info--id"><?php the_sub_field('id_elementa'); ?></div>
+      <div class="flex">
+        <div class="post-temp--left-info--subtitle"><?php the_sub_field('debljina_materijala'); ?></div>
+        <div class="post-temp--left-info--id"><?php the_sub_field('id_elementa'); ?></div>
+      </div>
     </div>
   </div>
   <div class="post-temp--midd" style="background-image: url(<?php the_sub_field('main_image') ?>">
@@ -91,11 +93,12 @@
             'orderby' => 'rand',
           )
           );
+          $counter = 1;
           while ($loopPosts->have_posts() ) : $loopPosts->the_post();
             if(have_rows('fijoka_element')):
               while(have_rows('fijoka_element')): the_row();
         ?>
-        <div class="post-temp--right-products--list-item">
+        <div class="post-temp--right-products--list-item" id="product_<?php echo $counter ?>">
           <div class="pic" style="background-image: url(<?php the_sub_field('main_image') ?>"></div>
           <div class="declaration">
             <p><a href="<?php the_permalink() ?>"><?php the_sub_field('naziv') ?></a></p>
@@ -103,6 +106,7 @@
           </div>
         </div>
         <?php
+        $counter++;
               endwhile;
             endif;
           endwhile;
