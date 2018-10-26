@@ -63,6 +63,34 @@
     <div class="landing--right-bottom">
       <div class="image" style="background-image: url(<?php the_field('landinghome') ?>); "></div>
     </div>
+    <div>
+      <div class="landing--right-top-midd-720">
+        <div class="landing--right-top-midd--title">Poslovna jedinica Jajinci</div>
+        <div class="landing--right-top-midd--info">
+          <span>
+            <p>Ponedeljak - Petak</p>
+            <p>8:00 - 19:00</p>
+          </span>
+          <span>
+            <p>Subota</p>
+            <p>8:00 - 15:00</p>
+          </span>
+        </div>
+      </div>
+      <div class="landing--right-top-right-720">
+        <div class="landing--right-top-right--title">Poslovna jedinica Ledine</div>
+        <div class="landing--right-top-right--info">
+          <span>
+            <p>Ponedeljak - Petak</p>
+            <p>8:00 - 19:00</p>
+          </span>
+          <span>
+            <p>Subota</p>
+            <p>8:00 - 15:00</p>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="usluge">
