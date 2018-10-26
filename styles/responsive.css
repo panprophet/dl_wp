@@ -332,3 +332,8 @@
     height: 45%;
   }
 }
+@media screen and (max-width: 840px) {
+  .usluge--right-bottom .galleryservice .wrap--picture {
+    height: 35%;
+  }
+}
