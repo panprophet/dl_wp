@@ -156,13 +156,17 @@
   .landing--right-top {
     flex-direction: column;
     height: auto;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   .landing--right-top-left {
     min-width: 70%;
   }
+  .landing--right-top-left .title-lilliput {
+    margin-top: 10px;
+  }
   .landing--right-top-midd {
     min-width: 70%;
+    margin-top: 20%;
   }
   .landing--right-top-midd--title {
     font-size: 14px;
@@ -194,14 +198,21 @@
     margin: 20px 0px;
   }
   .landing--right-bottom {
+    position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
   .landing--right-bottom .image {
-    height: 70%;
+    height: 75%;
     background-position-x: center;
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+  }
+  .usluge--right-top {
+    height: 25%;
   }
   .usluge--right-top .tab-red {
     color: #666B70;
@@ -217,16 +228,52 @@
     font-size: 14px;
     line-height: 22px;
   }
+  .usluge--right-bottom .galleryservice .wrap {
+    min-width: 40%;
+  }
+  .usluge--right-bottom .galleryservice .wrap--number {
+    color: #EEEEEE;
+  }
+  .usluge--right-bottom .galleryservice .wrap--text {
+    width: 85%;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .usluge--right-bottom .galleryservice .wrap--picture {
+    height: 40%;
+    width: 100%;
+  }
   .kantovanje--right-top {
     width: 99%;
     margin-left: 1%;
+    position: relative;
   }
   .kantovanje--right-top--info {
     width: 50%;
+    justify-content: space-evenly;
+  }
+  .kantovanje--right-top--info .title {
+    margin: 7% 0 7%;
+    padding-bottom: 0;
+  }
+  .kantovanje--right-top--info .text {
+    padding-bottom: 0;
   }
   .kantovanje--right-top--image {
     width: 50%;
     background-position-x: center;
+  }
+  .kantovanje--right-bottom {
+    position: absolute;
+    bottom: 16%;
+  }
+  .kantovanje--right-bottom .link a {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .single_picture {
+    top: 73px;
+    padding-top: 0;
   }
   .partners--inner-right {
     flex-direction: row;
@@ -235,6 +282,9 @@
     height: auto;
     flex-direction: column;
     justify-content: space-around;
+  }
+  .partners--inner-right--top .partner {
+    width: 100%;
   }
   .kontakt--inner {
     width: 80%;

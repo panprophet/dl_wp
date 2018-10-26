@@ -225,12 +225,18 @@
       &-top {
         flex-direction: column;
         height: auto;
-        justify-content: space-around;
+        justify-content: space-evenly;
         &-left {
           min-width: 70%;
+          .title{
+            &-lilliput{
+              margin-top: 10px;
+            }
+          }
         }
         &-midd {
           min-width: 70%;
+          margin-top: 20%;
           &--title {
             font-size: @font-lilliput;
             line-height: 17px;
@@ -263,13 +269,17 @@
         }
       }
       &-bottom {
+        position: relative;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         .image {
-          height: 70%;
+          height: 75%;
           background-position-x: center;
+          position: absolute;
+          bottom: -30px;
+          width: 100%;
           }
       }
     }
@@ -277,6 +287,7 @@
   .usluge {
     &--right {
       &-top {
+        height: 25%;
         .tab-red {
           color: @dark-grey;
         }
@@ -295,6 +306,23 @@
             }
           }
         }
+        .galleryservice{
+          .wrap{
+            min-width: 40%;
+            &--number{
+              color: @mid-grey;
+            }
+            &--text{
+              width: 85%;
+              font-size: 14px;
+              line-height: 22px;
+            }
+            &--picture{
+              height: 40%;
+              width: 100%;
+            }
+          }
+        }
       }
     }
   }
@@ -303,15 +331,38 @@
       &-top {
         width: 99%;
         margin-left: 1%;
+        position: relative;
         &--info {
           width: 50%;
+          justify-content: space-evenly;
+          .title{
+            margin: 7% 0 7%;
+            padding-bottom: 0;
+          }
+          .text{
+            padding-bottom: 0;
+          }
         }
         &--image {
           width: 50%;
           background-position-x: center;
         }
       }
+      &-bottom{
+        position: absolute;
+        bottom: 16%;
+        .link{
+          a{
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+      }
     }
+  }
+  .single_picture{
+    top: 73px;
+    padding-top: 0;
   }
   .partners {
     &--inner {
@@ -321,6 +372,9 @@
           height: auto;
           flex-direction: column;
           justify-content: space-around;
+          .partner{
+            width: 100%;
+          }
         }
       }
     }
@@ -382,4 +436,7 @@
       }
     }
   }
+}
+@media screen and (max-width: 840px) {
+
 }
