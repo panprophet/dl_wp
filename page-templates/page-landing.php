@@ -63,7 +63,7 @@
     <div class="landing--right-bottom">
       <div class="image" style="background-image: url(<?php the_field('landinghome') ?>); "></div>
     </div>
-    <div>
+    <div class="display-flex">
       <div class="landing--right-top-midd-720">
         <div class="landing--right-top-midd--title">Poslovna jedinica Jajinci</div>
         <div class="landing--right-top-midd--info">

@@ -469,6 +469,55 @@
   }
 }
 @media screen and (max-width: 720px) {
+  .landing{
+    &--right{
+      flex-direction: column;
+      &-top{
+        align-items: center;
+        height: 25%;
+        &-left{
+          margin-left: 0;
+          text-align: center;
+        }
+        &-midd{
+          display: none;
+          &-720{
+            display: block;
+          }
+          &--info{
+            span{
+              text-align: center;
+            }
+          }
+        }
+        &-right{
+          display: none;
+          &-720{
+            display: block;
+          }
+          &--info{
+            span{
+              text-align: center;
+            }
+          }
+        }
+      }
+      &-bottom{
+        height: 40%;
+        .image{
+          height: 100%;
+          position: initial;
+          bottom: 0;
+        }
+      }
+    }
+  }
+  .display-flex{
+    display: flex;
+    height: 35%;
+    justify-content: space-around;
+    align-items: center;
+  }
   .kantovanje{
     height: 1100px;
     &--right{
@@ -563,7 +612,10 @@
     }
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 400px) {
+  .landing{
+    height: 1000px;
+  }
   .usluge{
     &--right{
       &-bottom{
@@ -574,6 +626,10 @@
         }
       }
     }
+  }
+  .display-flex{
+    height: 100%;
+    flex-direction: column;
   }
   .kantovanje{
     &--right{
