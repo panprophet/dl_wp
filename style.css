@@ -699,6 +699,9 @@ textarea {
   display: flex;
   flex-direction: column;
 }
+.landing--right-top-midd-720 {
+  display: none;
+}
 .landing--right-top-midd--title {
   color: #FFFFFF;
   font-size: 16px;
@@ -723,6 +726,9 @@ textarea {
   width: 30%;
   display: flex;
   flex-direction: column;
+}
+.landing--right-top-right-720 {
+  display: none;
 }
 .landing--right-top-right--title {
   color: #FFFFFF;
@@ -2893,6 +2899,49 @@ textarea {
   }
 }
 @media screen and (max-width: 720px) {
+  .landing--right {
+    flex-direction: column;
+  }
+  .landing--right-top {
+    align-items: center;
+    height: 25%;
+  }
+  .landing--right-top-left {
+    margin-left: 0;
+    text-align: center;
+  }
+  .landing--right-top-midd {
+    display: none;
+  }
+  .landing--right-top-midd-720 {
+    display: block;
+  }
+  .landing--right-top-midd--info span {
+    text-align: center;
+  }
+  .landing--right-top-right {
+    display: none;
+  }
+  .landing--right-top-right-720 {
+    display: block;
+  }
+  .landing--right-top-right--info span {
+    text-align: center;
+  }
+  .landing--right-bottom {
+    height: 40%;
+  }
+  .landing--right-bottom .image {
+    height: 100%;
+    position: initial;
+    bottom: 0;
+  }
+  .display-flex {
+    display: flex;
+    height: 35%;
+    justify-content: space-around;
+    align-items: center;
+  }
   .kantovanje {
     height: 1100px;
   }
@@ -2969,9 +3018,16 @@ textarea {
     margin-bottom: 10%;
   }
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 400px) {
+  .landing {
+    height: 1000px;
+  }
   .usluge--right-bottom .galleryservice .wrap {
     min-width: 100%;
+  }
+  .display-flex {
+    height: 100%;
+    flex-direction: column;
   }
   .kantovanje--right-top--image {
     height: 30%;
