@@ -81,9 +81,9 @@ function kitchen_post_types() {
     'has_archive' => false,
     'labels' => array(
       'name' => 'Kuhinje',
-      'add_new_item' => 'Add new Kitchen element',
+      'add_new_item' => 'Dodaj novi kuhinjski element',
       'edit_item' => 'Edit Kitchen element',
-      'all_items' => 'All Kitchen elements',
+      'all_items' => 'Svi Kuhinjski elementi',
       'singular_name' => 'kuhinja',
     ),
     'menu_icon' => 'dashicons-store',
@@ -116,16 +116,16 @@ add_action('init', 'fijoke_post_type');
 
 function register_kitchen_taxonomy(){
   register_taxonomy(
-    'kitchen_categories',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
-    'kitchen',        //post type name
+    'kuhinje_categories',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+    'kuhinje',        //post type name
     array(
         'hierarchical' => true,
-        'label' => 'Fijoke',  //Display name
+        'label' => 'Kuhinje',  //Display name
         'show_ui' => true,
         'show_admin_column' => true,
         'query_var' => true,
         'rewrite' => array(
-            'slug' => 'Kuhinjsi_elementi', // This controls the base slug that will display before each term
+            'slug' => 'Kuhinjski_elementi', // This controls the base slug that will display before each term
             'with_front' => false // Don't display the category base before
         )
     )
