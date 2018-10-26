@@ -2968,3 +2968,27 @@ textarea {
     margin-bottom: 10%;
   }
 }
+@media screen and (max-width: 550px) {
+  .usluge--right-bottom .galleryservice .wrap {
+    min-width: 100%;
+  }
+  .kantovanje--right-top--image {
+    height: 30%;
+  }
+  .kantovanje--right-bottom {
+    justify-content: flex-end;
+  }
+  .single_picture {
+    height: 260px;
+  }
+  .single_picture--frame {
+    height: 100%;
+  }
+  .single_picture--frame img {
+    width: 100%;
+    height: 100%;
+  }
+  .partners {
+    height: 1020px;
+  }
+}
