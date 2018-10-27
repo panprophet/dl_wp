@@ -1,7 +1,7 @@
-<?php /* Template Name: Sokle */ ?>
+<?php /* Template Name: Podzemni elementi */ ?>
 
 <?php get_header(); ?>
-<?php $element_slug = 'Sokle'; ?>
+<?php $element_slug = 'Podzemni_elementi'; ?>
 <div class="kuhinja">
   <div class="kuhinja--top">
       <div class="kuhinja--top--left">
