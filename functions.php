@@ -152,4 +152,16 @@ function register_fijoke_taxonomy(){
 }
 add_action('init', 'register_fijoke_taxonomy');
 
+function category_has_children ( $term, $taxonomy) {
+  $children = get_categories (
+    array(
+      'child_of' => $term,
+      'taxonomy' => $taxonomy,
+      'hide_empty' => false,
+      'field' => 'slug',
+    )
+  );
+  return $children;
+}
+
 flush_rewrite_rules( false );

@@ -1,7 +1,7 @@
-<?php /* Template Name: Kuhinjska galanterija */ ?>
+<?php /* Template Name: Sudopere */ ?>
 
 <?php get_header(); ?>
-<?php $element_slug = 'kuhinjska_galanterija'; ?>
+<?php $element_slug = 'sudopere'; ?>
 <div class="kuhinja">
   <div class="kuhinja--top">
       <div class="kuhinja--top--left">
@@ -129,7 +129,7 @@
   <?php
   $parent_cat = get_term_by('slug', $element_slug, 'kuhinje_categories');
   $parent_id = $parent_cat->term_id;
-    $children = get_terms('kuhinje_categories', array (
+  $children = get_terms('kuhinje_categories', array (
     'parent'=> $parent_id,
     'hide_empty' => false
   ));
@@ -169,6 +169,7 @@
         'tax_query' => $query_args,
       )
     );
+
   ?>
   <div class="more-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div>
     <!-- <div class="more-wrapper"> -->

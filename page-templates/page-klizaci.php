@@ -1,7 +1,7 @@
 <?php /* Template Name: Klilzaci */ ?>
 
 <?php get_header(); ?>
-<?php $element_slug = 'Klizaci'; ?>
+<?php $element_slug = 'klizaci'; ?>
 <div class="kuhinja">
   <div class="kuhinja--top">
       <div class="kuhinja--top--left">
@@ -127,28 +127,51 @@
 </div>
 <div class="more">
   <?php
-
+  $parent_cat = get_term_by('slug', $element_slug, 'kuhinje_categories');
+  $parent_id = $parent_cat->term_id;
+  $children = get_terms('kuhinje_categories', array (
+    'parent'=> $parent_id,
+    'hide_empty' => false
+  ));
+  if($children) {
   $terms = get_terms([
     'taxonomy' => 'kuhinje_categories',
-    'hide-empty' => true
+    'hide-empty' => true,
+    'child_of' => $parent_id,
   ]);
 
+  } else {
+
+  $terms[] = $parent_id;
+  }
   foreach($terms as $term) {
-      $allPosts = new WP_Query( array(
+    if($children) {
+    $query_args = array(
+      array (
+        'taxonomy' => 'kuhinje_categories',
+        'field' => 'slug',
+        'terms' => $term->slug,
+      ),
+    );
+    } else {
+    $query_args = array(
+      array (
+        'taxonomy' => 'kuhinje_categories',
+        'field' => 'id',
+        'terms' => $parent_id,
+      ),
+    );
+    }
+    $allPosts = new WP_Query(
+      array(
         'post_type' => 'kuhinje',
         'posts_per_page' => -1,
-        'tax_query' => array(
-          array (
-            'taxonomy' => 'kuhinje_categories',
-            'field' => 'slug',
-            'terms' => $term->slug,
-            'parent' => $element_slug,
-          ),
-        ),
-        'post__not_in'=> array ($idCurr),
-      ));
+        'tax_query' => $query_args,
+      )
+    );
+
   ?>
-  <div class="more-term"><?php echo $term->name ?></div>
+  <div class="more-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div>
     <!-- <div class="more-wrapper"> -->
     <?php
     $countDivs = 1;
