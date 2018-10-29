@@ -114,6 +114,26 @@ function fijoke_post_type() {
 
 add_action('init', 'fijoke_post_type');
 
+function materijali_post_type() {
+  register_post_type('materijali', array(
+    'public' => true,
+    'has_archive' => false,
+    'labels' => array(
+      'name' => 'Materijali',
+      'add_new_item' => 'Dodaj novi materijal',
+      'edit_item' => 'Materijal',
+      'all_items' => 'Svi materijali',
+      'singular_name' => 'materijal',
+    ),
+    'menu_icon' => 'dashicons-archive',
+    // 'rewrite' => array('slug' => 'kuhinje/fijoke'),
+    'rewrite' => array('slug' => '/materijali/materijal'),
+
+  ));
+
+}
+add_action('init', 'materijali_post_type');
+
 function register_kitchen_taxonomy(){
   register_taxonomy(
     'kuhinje_categories',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
@@ -151,6 +171,25 @@ function register_fijoke_taxonomy(){
   );
 }
 add_action('init', 'register_fijoke_taxonomy');
+
+function register_materijali_taxonomy(){
+  register_taxonomy(
+    'materijali_categories',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+    'materijali',        //post type name
+    array(
+        'hierarchical' => true,
+        'label' => 'Materijali',  //Display name
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array(
+            'slug' => 'Materijali', // This controls the base slug that will display before each term
+            'with_front' => false // Don't display the category base before
+        )
+    )
+  );
+}
+add_action('init', 'register_materijali_taxonomy');
 
 function category_has_children ( $term, $taxonomy) {
   $children = get_categories (

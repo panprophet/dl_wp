@@ -134,15 +134,13 @@
     'hide_empty' => false
   ));
   if($children) {
-  $terms = get_terms([
-    'taxonomy' => 'kuhinje_categories',
-    'hide-empty' => true,
-    'child_of' => $parent_id,
-  ]);
-
+    $terms = get_terms([
+      'taxonomy' => 'kuhinje_categories',
+      'hide-empty' => true,
+      'child_of' => $parent_id,
+    ]);
   } else {
-
-  $terms[] = $parent_id;
+    $terms[] = $parent_id;
   }
   foreach($terms as $term) {
     if($children) {

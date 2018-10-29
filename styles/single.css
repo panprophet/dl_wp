@@ -113,14 +113,14 @@
   margin: 10px 0px;
 }
 .post-temp--left-info--subtitle {
-  width: 100%;
+  width: 90%;
   font-size: 24px;
   color: #FFFFFF;
   line-height: 29px;
   margin-bottom: 80px;
 }
 .post-temp--left-info--id {
-  width: 100%;
+  width: 90%;
   font-size: 16px;
   line-height: 19px;
   color: #555F69;
@@ -230,6 +230,8 @@
 .post-temp--right-products--list-item .pic {
   height: 100%;
   width: 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .post-temp--right-products--list-item .declaration {
   width: 80%;
