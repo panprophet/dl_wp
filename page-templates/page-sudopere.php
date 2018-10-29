@@ -1,7 +1,7 @@
-<?php /* Template Name: Klilzaci */ ?>
+<?php /* Template Name: Sudopere */ ?>
 
 <?php get_header(); ?>
-<?php $element_slug = 'klizaci'; ?>
+<?php $element_slug = 'sudopere'; ?>
 <div class="kuhinja">
   <div class="kuhinja--top">
       <div class="kuhinja--top--left">
@@ -134,13 +134,15 @@
     'hide_empty' => false
   ));
   if($children) {
-    $terms = get_terms([
-      'taxonomy' => 'kuhinje_categories',
-      'hide-empty' => true,
-      'child_of' => $parent_id,
-    ]);
+  $terms = get_terms([
+    'taxonomy' => 'kuhinje_categories',
+    'hide-empty' => true,
+    'child_of' => $parent_id,
+  ]);
+
   } else {
-    $terms[] = $parent_id;
+
+  $terms[] = $parent_id;
   }
   foreach($terms as $term) {
     if($children) {

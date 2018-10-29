@@ -1,7 +1,7 @@
-<?php /* Template Name: Klilzaci */ ?>
+<?php /* Template Name: Zicani elementi */ ?>
 
 <?php get_header(); ?>
-<?php $element_slug = 'klizaci'; ?>
+<?php $element_slug = 'zicani_elementi'; ?>
 <div class="kuhinja">
   <div class="kuhinja--top">
       <div class="kuhinja--top--left">
@@ -127,6 +127,7 @@
 </div>
 <div class="more">
   <?php
+
   $parent_cat = get_term_by('slug', $element_slug, 'kuhinje_categories');
   $parent_id = $parent_cat->term_id;
   $children = get_terms('kuhinje_categories', array (
@@ -134,13 +135,15 @@
     'hide_empty' => false
   ));
   if($children) {
-    $terms = get_terms([
-      'taxonomy' => 'kuhinje_categories',
-      'hide-empty' => true,
-      'child_of' => $parent_id,
-    ]);
+  $terms = get_terms([
+    'taxonomy' => 'kuhinje_categories',
+    'hide-empty' => true,
+    'child_of' => $parent_id,
+  ]);
+
   } else {
-    $terms[] = $parent_id;
+
+  $terms[] = $parent_id;
   }
   foreach($terms as $term) {
     if($children) {
@@ -167,7 +170,6 @@
         'tax_query' => $query_args,
       )
     );
-
   ?>
   <div class="more-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div>
     <!-- <div class="more-wrapper"> -->
