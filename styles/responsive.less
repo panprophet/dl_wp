@@ -471,6 +471,58 @@
     }
   }
 }
+@media screen and (max-width: 780px){
+  .kontakt{
+    &--inner{
+      &-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &-form{
+        flex-direction: column;
+        align-items: center;
+        &--left{
+          align-items: center;
+          width: 90%;
+          div{
+            align-items: center;
+            width: 100%;
+          }
+        }
+        &--right{
+          align-items: center;
+          width: 90%;
+          div{
+            align-items: center;
+            width: 100%;
+          }
+        }
+      }
+      &-button{
+        justify-content: center;
+      }
+    }
+  }
+  .info{
+    &--top{
+      &-right{
+        &--contact{
+          width: 15%;
+          &-md{
+            width: 80%;
+          }
+          .section-link{
+            flex-direction: column;
+            height: 20%;
+            margin-top: 40px;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 720px) {
   .landing{
     &--right{
@@ -569,6 +621,26 @@
     }
   }
 }
+@media screen and (max-width: 640px){
+  .info{
+    &--top{
+      &-right{
+        &--contact{
+          width: 0;
+          .section{
+            padding-left: 3%;
+          }
+          &-md{
+            width: 100%;
+          }
+          .section-link{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 550px) {
   .usluge{
     &--right{
@@ -611,6 +683,58 @@
             margin-bottom: 10%;
           }
         }
+      }
+    }
+  }
+  .info{
+    height: 850px;
+    &--top{
+      height: 100%;
+      &-right{
+        &--contact{
+          &-md{
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding-bottom: 40px;
+          }
+          .section{
+            text-align: center;
+            &--info{
+              &-md{
+                flex-direction: column;
+                span{
+                  margin: 0;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &--bottom{
+      flex-direction: column;
+      height: 20%;
+      justify-content: space-around;
+      &-left{
+        order: 2;
+        font-size: 14px;
+        margin-left: 0;
+        text-align: center;
+      }
+      &-midd{
+        order: 1;
+        padding: 15px 0 15px;
+      }
+      &-right{
+        order: 3;
+        margin-right: 0;
+        font-size: 14px;
+        text-align: center;
       }
     }
   }

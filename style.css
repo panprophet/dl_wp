@@ -3606,6 +3606,48 @@ textarea {
     height: 35%;
   }
 }
+@media screen and (max-width: 780px) {
+  .kontakt--inner-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kontakt--inner-form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .kontakt--inner-form--left {
+    align-items: center;
+    width: 90%;
+  }
+  .kontakt--inner-form--left div {
+    align-items: center;
+    width: 100%;
+  }
+  .kontakt--inner-form--right {
+    align-items: center;
+    width: 90%;
+  }
+  .kontakt--inner-form--right div {
+    align-items: center;
+    width: 100%;
+  }
+  .kontakt--inner-button {
+    justify-content: center;
+  }
+  .info--top-right--contact {
+    width: 15%;
+  }
+  .info--top-right--contact-md {
+    width: 80%;
+  }
+  .info--top-right--contact .section-link {
+    flex-direction: column;
+    height: 20%;
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+}
 @media screen and (max-width: 720px) {
   .landing--right {
     flex-direction: column;
@@ -3696,6 +3738,20 @@ textarea {
     height: 50%;
   }
 }
+@media screen and (max-width: 640px) {
+  .info--top-right--contact {
+    width: 0;
+  }
+  .info--top-right--contact .section {
+    padding-left: 3%;
+  }
+  .info--top-right--contact-md {
+    width: 100%;
+  }
+  .info--top-right--contact .section-link {
+    display: none;
+  }
+}
 @media screen and (max-width: 550px) {
   .usluge--right-bottom .galleryservice .wrap {
     min-width: 60%;
@@ -3724,6 +3780,52 @@ textarea {
   }
   .partners--inner-right--top .partner {
     margin-bottom: 10%;
+  }
+  .info {
+    height: 850px;
+  }
+  .info--top {
+    height: 100%;
+  }
+  .info--top-right--contact-md {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 40px;
+  }
+  .info--top-right--contact .section {
+    text-align: center;
+  }
+  .info--top-right--contact .section--info-md {
+    flex-direction: column;
+  }
+  .info--top-right--contact .section--info-md span {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .info--bottom {
+    flex-direction: column;
+    height: 20%;
+    justify-content: space-around;
+  }
+  .info--bottom-left {
+    order: 2;
+    font-size: 14px;
+    margin-left: 0;
+    text-align: center;
+  }
+  .info--bottom-midd {
+    order: 1;
+    padding: 15px 0 15px;
+  }
+  .info--bottom-right {
+    order: 3;
+    margin-right: 0;
+    font-size: 14px;
+    text-align: center;
   }
 }
 @media screen and (max-width: 400px) {
