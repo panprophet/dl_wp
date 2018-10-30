@@ -243,6 +243,9 @@
     height: 40%;
     width: 100%;
   }
+  .usluge--right-bottom .dots {
+    display: flex;
+  }
   .kantovanje--right-top {
     width: 99%;
     margin-left: 1%;

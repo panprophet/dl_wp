@@ -153,6 +153,17 @@
         <?php endwhile; ?>
         <?php endif; ?>
       </div>
+      <div class="dots">
+        <div class="dots--inner" id="innerdots">
+        <?php for($i = 1; $i < $counter; $i++){
+          if($i == 1) {?>
+          <div class="dots--inner-dot focus"></div>
+          <?php } else { ?>
+          <div class="dots--inner-dot"></div>
+          <?php } ?>
+        <?php } ?>
+        </div>
+      </div>
       <!-- Fizicka lca -->
       <!-- Profesionalna lica -->
       <div class="galleryservice"
@@ -181,6 +192,17 @@
         <?php $counter++; ?>
         <?php endwhile; ?>
         <?php endif; ?>
+      </div>
+      <div class="dots">
+        <div class="dots--inner">
+        <?php for($i = 1; $i < $counter; $i++){
+          if($i == 1) {?>
+          <div class="dots--inner-dot focus" id="<?php echo "dot_".$i ?>"></div>
+          <?php } else { ?>
+          <div class="dots--inner-dot" id="<?php echo "dot_".$i ?>"></div>
+          <?php } ?>
+        <?php } ?>
+        </div>
       </div>
       <!-- Profesionalna lica-->
     </div>
