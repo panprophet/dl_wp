@@ -1,22 +1,24 @@
 var no = 0;
 // images slider
 window.addEventListener('load', function(){
-    var car = document.getElementById('galleryFizicka'),
+    var car1 = document.getElementById('galleryFizicka'),
+    car2 = document.getElementById('galleryProf'),
     startx,
     starty,
     distX = 0,
     distY = 0,
     touchobj = null,
     sel;
-    var dots = document.getElementById("innerdots").childElementCount;
+    var dotsFiz = document.getElementById("innerdotsfiz").childElementCount;
+    var dotsProf = document.getElementById("innerdotsprof").childElementCount;
 
-    car.addEventListener('touchstart', function(e) {
+    car1.addEventListener('touchstart', function(e) {
         touchobj = e.changedTouches[0];
         startx = parseInt(touchobj.clientX);
         starty = parseInt(touchobj.clientY);
     }, false);
 
-    car.addEventListener('touchmove', function(e) {
+    car1.addEventListener('touchmove', function(e) {
         touchobj = e.changedTouches[0];
         distX = parseInt(touchobj.clientX) - startx;
         distY = parseInt(touchobj.clientY) - starty;
@@ -24,51 +26,91 @@ window.addEventListener('load', function(){
             e.preventDefault();
         }
     }, false);
-    car.addEventListener('touchend', function(e) {
+    car1.addEventListener('touchend', function(e) {
     if(Math.abs(distX) > Math.abs(distY) == true) {
         setTimeout(() => {
             var move = 0;
 
-            for(let i = 1; i <= dots; i++) {
-                if (document.getElementById("dot_" + i).classList.contains("focus")){
-                    document.getElementById("dot_" + i).classList.remove("focus");
+            for(let i = 1; i <= dotsFiz; i++) {
+                if (document.getElementById('dotfiz_' + i).classList.contains("focus")){
+                    document.getElementById('dotfiz_' + i).classList.remove("focus");
                     sel = i;
                 }
             }
-            for(let i = 1; i <= dots; i++) {
-                if(distX < 0 && sel < dots){
+            for(let i = 1; i <= dotsFiz; i++) {
+                if(distX < 0 && sel < dotsFiz){
                     move = sel;
-                    moveSection(move, i);
+                    // moveSection(move, i);
+                    document.getElementById('pic_' + i).style.transform = "translateX("+ (-100 * (move)) +"%)";
                 } else if (distX > 0 && sel > 1) {
                     move = sel - 2;
-                    moveSection(move, i);
+                    // moveSection(move, i);
+                    document.getElementById('pic_' + i).style.transform = "translateX("+ (-100 * (move)) +"%)";
+
                 }
             }
 
-            if(distX < 0 && sel < dots) {
-                document.getElementById("dot_" + (sel+1)).classList.add("focus");
-    console.log(document.getElementById("dot_" + (sel+1)));
-
+            if(distX < 0 && sel < dotsFiz) {
+                document.getElementById('dotfiz_' + (sel+1)).classList.add("focus");
             } else if(distX > 0 && sel > 1){
-                document.getElementById("dot_" + (sel-1)).classList.add("focus");
-    console.log(document.getElementById("dot_" + (sel-1)));
-
+                document.getElementById('dotfiz_' + (sel-1)).classList.add("focus");
             } else {
-                document.getElementById("dot_" + sel).classList.add("focus");
-    console.log(document.getElementById("dot_" + (sel)));
-
+                document.getElementById('dotfiz_' + sel).classList.add("focus");
             }
         }, 100);
     }
 
     },false);
 
-}, false);
-function moveSection(move, i) {
-  console.log(move, i);
+    car2.addEventListener('touchstart', function(e) {
+        touchobj = e.changedTouches[0];
+        startx = parseInt(touchobj.clientX);
+        starty = parseInt(touchobj.clientY);
+    }, false);
 
-    document.getElementById("pic_" + i).style.transform = "translateX("+ (-100 * (move)) +"%)";
-}
+    car2.addEventListener('touchmove', function(e) {
+        touchobj = e.changedTouches[0];
+        distX = parseInt(touchobj.clientX) - startx;
+        distY = parseInt(touchobj.clientY) - starty;
+        if(Math.abs(distX) > Math.abs(distY) == true) {
+            e.preventDefault();
+        }
+    }, false);
+    car2.addEventListener('touchend', function(e) {
+    if(Math.abs(distX) > Math.abs(distY) == true) {
+        setTimeout(() => {
+            var move = 0;
+
+            for(let i = 1; i <= dotsProf; i++) {
+                if (document.getElementById('dotprof_' + i).classList.contains("focus")){
+                    document.getElementById('dotprof_' + i).classList.remove("focus");
+                    sel = i;
+                }
+            }
+            for(let i = 1; i <= dotsProf; i++) {
+                if(distX < 0 && sel < dotsProf){
+                    move = sel;
+                    // moveSection(move, i);
+                    document.getElementById('prof_' + i).style.transform = "translateX("+ (-100 * (move)) +"%)";
+                } else if (distX > 0 && sel > 1) {
+                    move = sel - 2;
+                    // moveSection(move, i);
+                    document.getElementById('prof_' + i).style.transform = "translateX("+ (-100 * (move)) +"%)";
+
+                }
+            }
+
+            if(distX < 0 && sel < dotsProf) {
+                document.getElementById('dotprof_' + (sel+1)).classList.add("focus");
+            } else if(distX > 0 && sel > 1){
+                document.getElementById('dotprof_' + (sel-1)).classList.add("focus");
+            } else {
+                document.getElementById('dotprof_' + sel).classList.add("focus");
+            }
+        }, 100);
+    }
+    },false);
+}, false);
 function slideImages(event) {
   event.preventDefault;
   let noPics;

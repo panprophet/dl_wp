@@ -154,12 +154,12 @@
         <?php endif; ?>
       </div>
       <div class="dots">
-        <div class="dots--inner" id="innerdots">
+        <div class="dots--inner" id="innerdotsfiz">
         <?php for($i = 1; $i < $counter; $i++){
           if($i == 1) {?>
-          <div class="dots--inner-dot focus"></div>
+          <div class="dots--inner-dot focus" id="<?php echo "dotfiz_".$i ?>"></div>
           <?php } else { ?>
-          <div class="dots--inner-dot"></div>
+          <div class="dots--inner-dot" id="<?php echo "dotfiz_".$i ?>"></div>
           <?php } ?>
         <?php } ?>
         </div>
@@ -194,12 +194,12 @@
         <?php endif; ?>
       </div>
       <div class="dots">
-        <div class="dots--inner">
+        <div class="dots--inner"  id="innerdotsprof">
         <?php for($i = 1; $i < $counter; $i++){
           if($i == 1) {?>
-          <div class="dots--inner-dot focus" id="<?php echo "dot_".$i ?>"></div>
+          <div class="dots--inner-dot focus" id="<?php echo "dotprof_".$i ?>"></div>
           <?php } else { ?>
-          <div class="dots--inner-dot" id="<?php echo "dot_".$i ?>"></div>
+          <div class="dots--inner-dot" id="<?php echo "dotprof_".$i ?>"></div>
           <?php } ?>
         <?php } ?>
         </div>
