@@ -57,6 +57,7 @@
         <div class="opis-title"><?php the_sub_field('title') ?></div>
         <div class="opis-text"><?php the_sub_field('description') ?></div>
       </div>
+      <div class="slika" style="background-image: url(<?php the_sub_field('bigpicture'); ?>); background-size: cover; background-repeat: no-repeat;">></div>
       <!-- Elementi jedne garniture -->
     <div class="elements">
 
