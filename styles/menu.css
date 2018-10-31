@@ -89,6 +89,7 @@
   cursor: pointer;
 }
 .menu--top-choice--lang {
+  display: none;
   flex: 2 40%;
   color: #FFFFFF;
   padding-left: 5%;
@@ -123,7 +124,7 @@
   display: flex;
   flex-direction: column;
 }
-.menu--wrap-midd-container .top {
+.menu--wrap-midd-container--top {
   height: 90px;
   display: flex;
   position: relative;
@@ -131,43 +132,43 @@
   align-items: center;
   border-bottom: 1px solid #373737;
 }
-.menu--wrap-midd-container .top-link {
+.menu--wrap-midd-container--top-link {
   color: #666B70;
   font-size: 16px;
   line-height: 22px;
   margin-right: 50px;
 }
-.menu--wrap-midd-container .top-link--active {
+.menu--wrap-midd-container--top-link--active {
   color: #FFFFFF;
   font-weight: 500;
 }
-.menu--wrap-midd-container .top-link--active::before {
+.menu--wrap-midd-container--top-link--active::before {
   content: "";
   padding-left: 10px;
   border-left: 1px solid #840505;
 }
-.menu--wrap-midd-container .top-link:hover {
+.menu--wrap-midd-container--top-link:hover {
   cursor: pointer;
 }
-.menu--wrap-midd-container .bottom {
+.menu--wrap-midd-container--bottom {
   height: 210px;
   width: 100%;
   position: relative;
   display: flex;
   overflow: hidden;
 }
-.menu--wrap-midd-container .bottom--wrapper {
+.menu--wrap-midd-container--bottom--wrapper {
   min-width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
 }
-.menu--wrap-midd-container .bottom--wrapper-column {
+.menu--wrap-midd-container--bottom--wrapper-column {
   color: #FFFFFF;
   font-size: 14px;
   line-height: 19px;
 }
-.menu--wrap-midd-container .bottom--wrapper-column p {
+.menu--wrap-midd-container--bottom--wrapper-column p {
   height: 20px;
   margin: 35px 0px;
 }
@@ -187,9 +188,10 @@
 }
 .menu--wrap-bottom-container .elements {
   width: 45%;
-  height: 95%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .menu--wrap-bottom-container .elements-title {
   height: 15%;
@@ -200,10 +202,11 @@
 .menu--wrap-bottom-container .elements-container {
   height: 85%;
   display: flex;
+  align-items: center;
 }
 .menu--wrap-bottom-container .elements-container--pic {
   width: 40%;
-  height: 80%;
+  height: 85%;
   border-bottom: 3px solid #840505;
 }
 .menu--wrap-bottom-container .elements-container--pic img {
@@ -212,7 +215,7 @@
 }
 .menu--wrap-bottom-container .elements-container--text {
   width: 60%;
-  height: 80%;
+  height: 85%;
   margin-left: 15px;
   font-size: 14px;
   line-height: 22px;
@@ -229,4 +232,77 @@
   opacity: 0;
   border-width: 0px;
   transition: max-height 0.5s ease-out, opacity 0.6s linear, border-width 0.5s ease-out;
+}
+@media only screen and (max-width: 1024px) {
+  .menu--wrap-midd {
+    height: 280px;
+  }
+  .menu--wrap-bottom {
+    height: 210px;
+  }
+  .menu--wrap-bottom-container {
+    width: 85%;
+    height: 85%;
+  }
+  .menu--wrap-bottom-container .elements {
+    width: 47%;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .menu--wrap-bottom-container {
+    justify-content: space-evenly;
+  }
+  .menu--wrap-bottom-container .elements {
+    width: 50%;
+  }
+  .menu--wrap-bottom-container .elements-container--text {
+    line-height: 19px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .menu--top-links ul li {
+    min-width: 85px;
+    max-width: 95px;
+    padding-left: 25px;
+  }
+  .menu--wrap-midd {
+    height: 180px;
+  }
+  .menu--wrap-midd-container .top {
+    height: 50px;
+  }
+  .menu--wrap-bottom {
+    height: 180px;
+  }
+  .menu--wrap-bottom-container .elements {
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .menu--wrap-bottom-container .elements-container {
+    justify-content: center;
+  }
+  .menu--wrap-bottom-container .elements-container--text {
+    display: none;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .menu--top-links ul li {
+    min-width: 80px;
+    max-width: 95px;
+    padding-left: 25px;
+  }
+  .menu--wrap-bottom {
+    height: 150px;
+  }
+  .menu--wrap-bottom-container {
+    justify-content: space-evenly;
+  }
+  .menu--wrap-bottom-container .elements {
+    width: 50%;
+  }
+  .menu--wrap-bottom-container .elements-container--text {
+    line-height: 19px;
+  }
 }

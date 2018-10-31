@@ -290,6 +290,17 @@
     height: 40%;
   }
 }
+@media screen and (max-width: 1366px) {
+  .post-temp--right-info {
+    height: 60%;
+  }
+  .post-temp--right-products {
+    height: 40%;
+  }
+  .post-temp--right-products--list-item {
+    height: 45%;
+  }
+}
 @media screen and (max-width: 1024px) {
   .post-temp--left {
     width: 45%;

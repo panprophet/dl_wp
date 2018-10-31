@@ -19,12 +19,12 @@ wp_enqueue_script( 'jquery' );
 }
 /* menu bar js */
 function menu_bar() {
-  wp_enqueue_script('navMenu', get_template_directory_uri() . './js/menu.js', array('jquery'), '1.0', true);
+  wp_enqueue_script('navMenu', get_template_directory_uri() . '/js/menu.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'menu_bar');
 /* sliders js */
 function img_slider() {
-  wp_enqueue_script('imgSliders', get_template_directory_uri() . './js/sliders.js', array('jquery'), '1.1', true);
+  wp_enqueue_script('imgSliders', get_template_directory_uri() . '/js/sliders.js', array('jquery'), '1.1', true);
 }
 add_action('wp_enqueue_scripts', 'img_slider');
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
@@ -66,14 +66,14 @@ $GLOBALS['comment'] = $comment;
 }
 add_filter( 'get_comments_number', 'blankslate_comments_number' );
 function blankslate_comments_number( $count )
-{
-if ( !is_admin() ) {
-global $id;
-$comments_by_type = &separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
-return count( $comments_by_type['comment'] );
-} else {
-return $count;
-}
+  {
+  if ( !is_admin() ) {
+  global $id;
+  $comments_by_type = &separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
+  return count( $comments_by_type['comment'] );
+  } else {
+  return $count;
+  }
 }
 function kitchen_post_types() {
   register_post_type('kuhinje', array(
