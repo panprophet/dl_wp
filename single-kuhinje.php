@@ -83,6 +83,23 @@
       <div class="post-temp--right-products--title">Povezani Proizvodi</div>
       <div class="post-temp--right-products--list">
         <?php
+          $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+         foreach($posttype as $term) {
+            $parent =  $term->parent;
+            if($parent) {
+              $name = get_term($parent, 'kuhinje_categories');
+              $pt = $name->slug;
+            } else {
+              $pt = $term->slug;
+            }
+          }
+          $query_args = array(
+            array (
+              'taxonomy' => 'kuhinje_categories',
+              'field' => 'slug',
+              'terms' => $pt,
+            ),
+          );
           $loopPosts = new WP_Query (
             array(
             'post_type' => 'kuhinje',
@@ -90,6 +107,7 @@
             'posts_per_page' => 3,
             'post__not_in'=> array ($post->ID),
             'orderby' => 'rand',
+            'tax_query' => $query_args,
           )
           );
           $counter = 1;

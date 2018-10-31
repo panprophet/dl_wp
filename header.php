@@ -24,9 +24,33 @@
         if( is_single() ) {
       ?>
         <div class="menu--top-links-single menu--top-links-single--open" id="singlelinks">
-         <?php //if() ?>
-         <span class="menu--top-links-single--back"><a href="javascript:history.back()"><?php echo get_the_title(get_page_by_path('/kuhinje/fijoke/')); ?></a></span>
-         <?php ?>
+
+         <span class="menu--top-links-single--back"><a href="<?php
+            $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+          foreach($posttype as $term) {
+              $parent =  $term->parent;
+              if($parent) {
+                $name = get_term($parent, 'kuhinje_categories');
+                $path = $name->name;
+              } else {
+                $path = $term->slug;
+              }
+            }
+          echo get_permalink(get_page_by_path('kuhinje/'.$path))
+         ?>">
+         <?php
+         $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+         foreach($posttype as $term) {
+            $parent =  $term->parent;
+            if($parent) {
+              $name = get_term($parent, 'kuhinje_categories');
+              echo $name->name;
+            } else {
+              echo $term->name;
+            }
+          }
+         ?>
+         </a></span>
          <span>/</span>
          <span class="menu--top-links-single--here"><?php the_title() ?></span>
         </div>
