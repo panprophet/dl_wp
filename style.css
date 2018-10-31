@@ -449,7 +449,7 @@ textarea {
   color: #FFFFFF;
 }
 .menu--wrap-show {
-  max-height: 600px;
+  max-height: 525px;
   opacity: 1;
   border-width: 5px;
   transition: max-height 0.5s ease-in, opacity 0.4s linear, border-width 0.5s ease-in;
@@ -2933,7 +2933,6 @@ textarea {
 .slideshows-inner--right-bottom--left:hover {
   cursor: pointer;
 }
-
 @media screen and (max-width: 1024px) {
   .gallery--body-wrap-1 {
     height: calc(100vh - 70px - 300px);
@@ -3149,14 +3148,6 @@ textarea {
     order: 2;
   }
 }
-@media only screen and (max-width: 1440px) {
-  .usluge--right-bottom .arrow {
-    height: 100px;
-  }
-  .kantovanje--right-top--info .text {
-    margin-top: 0px;
-  }
-}
 .ploce {
   width: 100%;
   position: relative;
@@ -3164,7 +3155,6 @@ textarea {
   background-color: #0E0E0E;
   display: flex;
   flex-direction: column;
-
 }
 .ploce--top {
   margin-left: 30px;
