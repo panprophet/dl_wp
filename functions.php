@@ -1,4 +1,10 @@
 <?php
+/*
+ * Theme Name: Tema WP
+ * Description: Starter Theme to use with Timber
+ * Author: Buildcon
+ * Version: 0.0.1
+ */
 add_action( 'after_setup_theme', 'blankslate_setup' );
 
 //plugin custom checker
