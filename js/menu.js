@@ -33,12 +33,16 @@ function changeTab(event) {
     document.getElementById("galleryFizicka").classList.remove("gallery-hide");
     // setTimeout(function() {
     document.getElementById("galleryProf").classList.add("gallery-hide");
+    document.getElementById("markerfiz").classList.remove("dots--none");
+    document.getElementById("markerprof").classList.add("dots--none");
     // }, 1600);
   } else if(tab_id === 'tab2' && document.getElementById("tab1").classList.contains("tab-red")) {
     document.getElementById("tab1").classList.remove("tab-red");
     document.getElementById("tab2").classList.add("tab-red");
     document.getElementById("galleryProf").classList.remove("gallery-hide");
     document.getElementById("galleryFizicka").classList.add("gallery-hide");
+    document.getElementById("markerprof").classList.remove("dots--none");
+    document.getElementById("markerfiz").classList.add("dots--none");
   }
 }
 // submenu animation

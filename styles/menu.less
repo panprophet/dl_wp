@@ -347,6 +347,10 @@
             align-items: center;
             &-container {
               justify-content: center;
+              &--pic {
+                width: 60%;
+                height: 90%;
+              }
               &--text {
                 display: none;
               }
@@ -359,15 +363,34 @@
 }
 @media only screen and (max-width: 720px) {
   .menu {
+    // flex-direction: row;
+    // order: 1;
+    // justify-content: center;
+    // align-items: center;
     &--top {
+      // order: 2;
+      // width: 30%;
+      // flex-direction: column;
+      // height: 525px;
+      &-logo {
+        // order: 2;
+      }
       &-links {
+        // flex-direction: column;
+        // height: 100%;
+        // order: 3;
         ul {
+          // flex-direction: column;
+          // height: 100%;
           li {
-            min-width: 80px;
-            max-width: 95px;
-            padding-left: 25px;
+            // min-width: 80px;
+            // max-width: 95px;
+            // padding-left: 25px;
           }
         }
+      }
+      &-choice {
+        // order: 1;
       }
     }
     &--wrap {
@@ -378,6 +401,9 @@
           .elements {
             width: 50%;
             &-container {
+              &--pic {
+
+              }
               &--text {
                 line-height: 19px;
               }
