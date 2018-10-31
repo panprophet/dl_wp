@@ -1,5 +1,4 @@
 <?php /* Template Post Type: post, page, Materijali */ ?>
-
 <?php get_header() ?>
 
 <?php

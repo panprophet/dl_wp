@@ -90,14 +90,14 @@
             id="map_1" style="background-image: url(<?php if(is_home() || is_front_page()) { echo './wp-content/uploads/2018/10/Map_1-1.png'; }
             else if(is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Map_1-1.png'; }
             else if(is_page()) { echo '../wp-content/uploads/2018/10/Map_1-1.png'; }
-            else if(is_single()) { echo '../../../../wp-content/uploads/2018/10/Map_1-1.png'; } ?>); ">
+            else if(is_single()) { echo '../../../wp-content/uploads/2018/10/Map_1-1.png'; } ?>); ">
           </div>
         </a>
         <a href="#" target="_blank">
           <div class="map2" id="map_2" style="background-image: url(<?php if(is_home() || is_front_page()) { echo './wp-content/uploads/2018/10/Map_2.png'; }
             else if(is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Map_2.png'; }
             else if(is_page()) { echo '../wp-content/uploads/2018/10/Map_2.png'; }
-            else if(is_single()) { echo '../../../../wp-content/uploads/2018/10/Map_2.png'; } ?>);">
+            else if(is_single()) { echo '../../../wp-content/uploads/2018/10/Map_2.png'; } ?>);">
           </div>
         </a>
       </div>

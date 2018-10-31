@@ -11,10 +11,11 @@
   <nav class="menu">
     <div class="menu--top">
       <div class="menu--top-logo">
-        <a href="<?php echo home_url('/') ?>"><img src="<?php if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
+        <a href="<?php echo home_url('/') ?>"><img src="<?php
+         if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
           else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_page() ) { echo '../wp-content/uploads/2018/10/drvo_lux_logo.png';}
-          else if( is_single() ) { echo '../../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
+          else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
         </a>
       </div>
 
@@ -24,7 +25,7 @@
       ?>
         <div class="menu--top-links-single menu--top-links-single--open" id="singlelinks">
          <?php //if() ?>
-         <span class="menu--top-links-single--back"><a href="<?php echo home_url('/kuhinje/fijoke/'); ?>"><?php echo get_the_title(get_page_by_path('/kuhinje/fijoke/')); ?></a></span>
+         <span class="menu--top-links-single--back"><a href="javascript:history.back()"><?php echo get_the_title(get_page_by_path('/kuhinje/fijoke/')); ?></a></span>
          <?php ?>
          <span>/</span>
          <span class="menu--top-links-single--here"><?php the_title() ?></span>
@@ -86,16 +87,31 @@
         <div class="menu--wrap-midd-container">
           <div class="top"
                 id="subLink">
-            <div class="top-link top-link--active"
-                  id="subLink_1"
-                  onclick="subMenu(1)">Pločasti Materijali</div>
-            <div class="top-link"
-                  id="subLink_2"
-                  onclick="subMenu(2)">Okovi</div>
+
+           <?php
+            $wp_my_query = new WP_Query();
+            $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+            $materijali = get_page_by_title('Materijali');
+            $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
+            foreach (array_reverse($materijali_children) as $child) {
+              if(get_the_id() == $child->ID){
+            ?>
+              <div class="top-link top-link--active" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <?php
+              } else {
+              ?>
+              <div class="top-link" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <?php
+              }
+              ?>
+            <?php
+            }
+            ?>
           </div>
-          <div class="bottom"
-                id="submenu">
-            <div class="bottom--wrapper"
+          <!-- <div class="bottom"
+                id="submenu"> -->
+            <!-- <div class="bottom--wrapper"
                   id="submenu_1">
               <div class="bottom--wrapper-column">
                 <p>
@@ -127,8 +143,8 @@
                   <a href="#">OSB I Sper ploce</a>
                 </p>
               </div>
-            </div>
-            <div class="bottom--wrapper"
+            </div> -->
+            <!-- <div class="bottom--wrapper"
                   id="submenu_2">
               <div class="bottom--wrapper-column">
                 <p>
@@ -160,14 +176,14 @@
                   <a href="#">Okovi 7</a>
                 </p>
               </div>
-            </div>
-          </div>
+            </div> -->
+          <!-- </div> -->
         </div>
       </div>
       <div class="menu--wrap-bottom">
         <div class="menu--wrap-bottom-container">
           <div class="elements">
-            <div class="elements-title">Kuhinja</div>
+            <div class="elements-title"><?php $fijoke = get_page_by_title('Fijoke'); ?><a href="<?php echo $fijoke->guid; ?>">Kuhinje</a></div>
             <div class="elements-container">
               <div class="elements-container--pic">
                 <img src="<?php the_field('menubottomleft'); ?>" /> </div>

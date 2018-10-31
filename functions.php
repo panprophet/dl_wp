@@ -87,7 +87,7 @@ function kitchen_post_types() {
       'singular_name' => 'kuhinja',
     ),
     'menu_icon' => 'dashicons-store',
-    'rewrite' => array( 'slug' => 'kuhinja'),
+    'rewrite' => array( 'slug' => '/kuhinja/element'),
 
   ));
 }
@@ -106,7 +106,7 @@ function fijoke_post_type() {
     ),
     'menu_icon' => 'dashicons-archive',
     // 'rewrite' => array('slug' => 'kuhinje/fijoke'),
-    'rewrite' => array('slug' => '/kuhinje/fijoke/fijoka'),
+    'rewrite' => array('slug' => '/kuhinje/fijoke'),
 
   ));
 
