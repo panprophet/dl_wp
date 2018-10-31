@@ -141,3 +141,26 @@
   animation: fadeOutToNone 0.8ss ease-out;
   display: none;
 }
+.usluge--right-bottom .dots {
+  width: 100%;
+  height: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.usluge--right-bottom .dots--inner {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.usluge--right-bottom .dots--inner-dot {
+  width: 16px;
+  min-height: 2px;
+  background-color: #DEDEDE;
+  padding-top: 23px;
+}
+.usluge--right-bottom .dots--inner .focus {
+  background-color: #840505;
+}
