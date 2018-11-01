@@ -134,7 +134,18 @@
             ?>
           </div>
           <div class="menu--wrap-midd-container--bottom">
-            <div class="bottom"></div>
+            <div class="bottom">
+              <?php
+                $terms = get_terms([
+                  'taxonomy' => 'kuhinje_categories',
+                  'hide-empty' => true,
+                  'child_of' => 'plocasti_materijali',
+                ]);
+                foreach ( $terms as $term ) {
+                  echo $term->name;
+                }
+              ?>
+            </div>
           </div>
         </div>
       </div>
