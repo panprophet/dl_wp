@@ -11,10 +11,11 @@
   <nav class="menu">
     <div class="menu--top">
       <div class="menu--top-logo">
-        <a href="<?php echo home_url('/') ?>"><img src="<?php if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
+        <a href="<?php echo home_url('/') ?>"><img src="<?php
+         if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
           else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_page() ) { echo '../wp-content/uploads/2018/10/drvo_lux_logo.png';}
-          else if( is_single() ) { echo '../../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
+          else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
         </a>
       </div>
 
@@ -23,9 +24,33 @@
         if( is_single() ) {
       ?>
         <div class="menu--top-links-single menu--top-links-single--open" id="singlelinks">
-         <?php //if() ?>
-         <span class="menu--top-links-single--back"><a href="<?php echo home_url('/kuhinje/fijoke/'); ?>"><?php echo get_the_title(get_page_by_path('/kuhinje/fijoke/')); ?></a></span>
-         <?php ?>
+
+         <span class="menu--top-links-single--back"><a href="<?php
+            $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+          foreach($posttype as $term) {
+              $parent =  $term->parent;
+              if($parent) {
+                $name = get_term($parent, 'kuhinje_categories');
+                $path = $name->name;
+              } else {
+                $path = $term->slug;
+              }
+            }
+          echo get_permalink(get_page_by_path('kuhinje/'.$path))
+         ?>">
+         <?php
+         $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+         foreach($posttype as $term) {
+            $parent =  $term->parent;
+            if($parent) {
+              $name = get_term($parent, 'kuhinje_categories');
+              echo $name->name;
+            } else {
+              echo $term->name;
+            }
+          }
+         ?>
+         </a></span>
          <span>/</span>
          <span class="menu--top-links-single--here"><?php the_title() ?></span>
         </div>
@@ -84,104 +109,67 @@
           id="dropdown">
       <div class="menu--wrap-midd">
         <div class="menu--wrap-midd-container">
-          <div class="top"
+          <div class="menu--wrap-midd-container--top"
                 id="subLink">
-            <div class="top-link top-link--active"
-                  id="subLink_1"
-                  onclick="subMenu(1)">Pločasti Materijali</div>
-            <div class="top-link"
-                  id="subLink_2"
-                  onclick="subMenu(2)">Okovi</div>
+
+           <?php
+            $wp_my_query = new WP_Query();
+            $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+            $materijali = get_page_by_title('Materijali');
+            $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
+            foreach (array_reverse($materijali_children) as $child) {
+              if(get_the_id() == $child->ID){
+            ?>
+              <div class="menu--wrap-midd-container--top-link top-link--active" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <?php
+              } else {
+              ?>
+              <div class="menu--wrap-midd-container--top-link" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <?php
+              }
+              ?>
+            <?php
+            }
+            ?>
           </div>
-          <div class="bottom"
-                id="submenu">
-            <div class="bottom--wrapper"
-                  id="submenu_1">
-              <div class="bottom--wrapper-column">
-                <p>
-                  <a href="#">Oplemenjena iverica</a>
-                </p>
-                <p>
-                  <a href="#">Radne ploce</a>
-                </p>
-                <p>
-                  <a href="#">Medijapan ( MDF )</a>
-                </p>
-              </div>
-              <div class="bottom--wrapper-column">
-                <p>
-                  <a href="#">Akril na ( MDF )</a>
-                </p>
-                <p>
-                  <a href="#">Lesonit</a>
-                </p>
-                <p>
-                  <a href="#">Kompakt</a>
-                </p>
-              </div>
-              <div class="bottom--wrapper-column">
-                <p>
-                  <a href="#">Neoplemenjena (Sirova) iverica</a>
-                </p>
-                <p>
-                  <a href="#">OSB I Sper ploce</a>
-                </p>
-              </div>
-            </div>
-            <div class="bottom--wrapper"
-                  id="submenu_2">
-              <div class="bottom--wrapper-column">
-                <p>
-                  <a href="#">Okovi 1</a>
-                </p>
-                <p>
-                  <a href="#">Okovi 2</a>
-                </p>
-                <p>
-                  <a href="#">Okovi 3 ( MDF )</a>
-                </p>
-              </div>
-              <div class="bottom--wrapper-column">
-                <p>
-                  <a href="#">Okovi 4 ( MDF )</a>
-                </p>
-                <p>
-                  <a href="#">Okovi 5</a>
-                </p>
-                <p>
-                  <a href="#">Okovi 6</a>
-                </p>
-              </div>
-              <div class="bottom--wrapper-column">
-                <p>
-                  <a href="#">Okovi 6</a>
-                </p>
-                <p>
-                  <a href="#">Okovi 7</a>
-                </p>
-              </div>
-            </div>
+          <div class="menu--wrap-midd-container--bottom">
+            <div class="bottom"></div>
           </div>
         </div>
       </div>
       <div class="menu--wrap-bottom">
         <div class="menu--wrap-bottom-container">
+        <?php ?>
           <div class="elements">
-            <div class="elements-title">Kuhinja</div>
+            <div class="elements-title"><?php $fijoke = get_page_by_title('Fijoke'); ?><a href="<?php echo $fijoke->guid; ?>">Kuhinje</a></div>
             <div class="elements-container">
               <div class="elements-container--pic">
-                <img src="<?php the_field('menubottomleft'); ?>" /> </div>
-              <div class="elements-container--text"><?php the_field('menutextleft'); ?></div>
+                <img src="<?php
+                if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/Slide_gallery_3.png'; }
+                else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Slide_gallery_3.png'; }
+                else if( is_page() ) { echo '../wp-content/uploads/2018/10/Slide_gallery_3.png'; }
+                else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/Slide_gallery_3.png';}
+                ?> " alt="Kuhinje" /> </div>
+              <div class="elements-container--text">Fioke, klizači, podizni mehanizmi, žičani elementi, diht lajsne, sokle, aluminijumski kantovi, ugradna tehnika, kuhinjska galanterija, sudopere i slavine, alu ramovi sa staklennom ispunom.</div>
             </div>
           </div>
           <div class="elements">
             <div class="elements-title">Plakari</div>
             <div class="elements-container">
               <div class="elements-container--pic">
-                <img src="<?php the_field('menubottomright'); ?>" /> </div>
-              <div class="elements-container--text"><?php the_field('menutextright'); ?></div>
+                <img src="
+                <?php
+                if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/Slide_gallery_2.png'; }
+                else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Slide_gallery_2.png'; }
+                else if( is_page() ) { echo '../wp-content/uploads/2018/10/Slide_gallery_2.png'; }
+                else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/Slide_gallery_2.png';}
+                ?>
+                " /> </div>
+              <div class="elements-container--text">Izvlakači, garderoberi, liftovi, mehanizmi za otvaranje, aluminijumski profili za vrata, staklene ispune, razna galanterija</div>
             </div>
           </div>
+          <?php ?>
         </div>
       </div>
     </div>

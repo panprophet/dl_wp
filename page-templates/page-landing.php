@@ -153,7 +153,7 @@
         <?php endwhile; ?>
         <?php endif; ?>
       </div>
-      <div class="dots">
+      <div class="dots" id="markerfiz">
         <div class="dots--inner" id="innerdotsfiz">
         <?php for($i = 1; $i < $counter; $i++){
           if($i == 1) {?>
@@ -193,7 +193,7 @@
         <?php endwhile; ?>
         <?php endif; ?>
       </div>
-      <div class="dots">
+      <div class="dots" id="markerprof">
         <div class="dots--inner"  id="innerdotsprof">
         <?php for($i = 1; $i < $counter; $i++){
           if($i == 1) {?>

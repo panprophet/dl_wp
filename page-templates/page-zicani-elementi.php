@@ -1,7 +1,7 @@
 <?php /* Template Name: Zicani elementi */ ?>
 
 <?php get_header(); ?>
-<?php $element_slug = 'zicani_elementi'; ?>
+<?php $element_slug = 'zicani-elementi'; ?>
 <div class="kuhinja">
   <div class="kuhinja--top">
       <div class="kuhinja--top--left">

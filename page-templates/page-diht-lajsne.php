@@ -127,6 +127,7 @@
 </div>
 <div class="more">
   <?php
+
   $parent_cat = get_term_by('slug', $element_slug, 'kuhinje_categories');
   $parent_id = $parent_cat->term_id;
   $children = get_terms('kuhinje_categories', array (

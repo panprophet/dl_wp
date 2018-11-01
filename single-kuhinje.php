@@ -62,15 +62,15 @@
       <div class="post-temp--right-info--description"><?php the_sub_field('opis'); ?></div>
       <div class="post-temp--right-info--spec">
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Dimenzije</span><span class="tab--title-icon" style="background-image: url('../../../../wp-content/uploads/2018/10/arrow_2.png')"></span></div>
+          <div class="tab--title"><span class="tab--title-text">Dimenzije</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span></div>
 
         </div>
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Debljina ploce</span><span class="tab--title-icon" style="background-image: url('../../../../wp-content/uploads/2018/10/arrow_2.png')"></span>
+          <div class="tab--title"><span class="tab--title-text">Debljina ploce</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span>
         </div>
         </div>
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Proizvodjac</span><span class="tab--title-icon" style="background-image: url('../../../../wp-content/uploads/2018/10/arrow_2.png')"></span>
+          <div class="tab--title"><span class="tab--title-text">Proizvodjac</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span>
           </div>
         </div>
       </div>
@@ -83,6 +83,23 @@
       <div class="post-temp--right-products--title">Povezani Proizvodi</div>
       <div class="post-temp--right-products--list">
         <?php
+          $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+         foreach($posttype as $term) {
+            $parent =  $term->parent;
+            if($parent) {
+              $name = get_term($parent, 'kuhinje_categories');
+              $pt = $name->slug;
+            } else {
+              $pt = $term->slug;
+            }
+          }
+          $query_args = array(
+            array (
+              'taxonomy' => 'kuhinje_categories',
+              'field' => 'slug',
+              'terms' => $pt,
+            ),
+          );
           $loopPosts = new WP_Query (
             array(
             'post_type' => 'kuhinje',
@@ -90,13 +107,15 @@
             'posts_per_page' => 3,
             'post__not_in'=> array ($post->ID),
             'orderby' => 'rand',
+            'tax_query' => $query_args,
           )
           );
+          $counter = 1;
           while ($loopPosts->have_posts() ) : $loopPosts->the_post();
             if(have_rows('fijoka_element')):
               while(have_rows('fijoka_element')): the_row();
         ?>
-        <div class="post-temp--right-products--list-item">
+        <div class="post-temp--right-products--list-item" id="product_<?php echo $counter ?>">
           <div class="pic" style="background-image: url(<?php the_sub_field('main_image') ?>"></div>
           <div class="declaration">
             <p><a href="<?php the_permalink() ?>"><?php the_sub_field('naziv') ?></a></p>
@@ -104,6 +123,7 @@
           </div>
         </div>
         <?php
+          $counter++;
               endwhile;
             endif;
           endwhile;
