@@ -1,3 +1,9 @@
+/*
+ * Theme Name: Tema WP
+ * Description: Starter Theme to use with Timber
+ * Author: Buildcon
+ * Version: 0.0.1
+ */
 @font-face {
   font-family: SourceSansPro;
   font-weight: 300;
@@ -2846,7 +2852,6 @@ textarea {
 .slideshows-inner--right-bottom--left:hover {
   cursor: pointer;
 }
-
 @media screen and (max-width: 1024px) {
   .gallery--body-wrap-1 {
     height: calc(100vh - 70px - 300px);
@@ -3062,14 +3067,6 @@ textarea {
     order: 2;
   }
 }
-@media only screen and (max-width: 1440px) {
-  .usluge--right-bottom .arrow {
-    height: 100px;
-  }
-  .kantovanje--right-top--info .text {
-    margin-top: 0px;
-  }
-}
 .ploce {
   width: 100%;
   position: relative;
@@ -3077,7 +3074,6 @@ textarea {
   background-color: #0E0E0E;
   display: flex;
   flex-direction: column;
-
 }
 .ploce--top {
   margin-left: 30px;
