@@ -118,15 +118,19 @@
 
             $materijali = get_page_by_title('Materijali');
             $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
+
             foreach (array_reverse($materijali_children) as $child) {
-              if(get_the_id() == $child->ID){
+              $chil_child = get_pages(array('child_of' => $child->ID));
+              if(count($chil_child) != 0) {
+                if(get_the_id() == $child->ID){
             ?>
-              <div class="menu--wrap-midd-container--top-link top-link--active" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <div class="menu--wrap-midd-container--top-link menu--wrap-midd-container--top-link--active" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
               <?php
-              } else {
+                } else {
               ?>
               <div class="menu--wrap-midd-container--top-link" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
               <?php
+                }
               }
               ?>
             <?php

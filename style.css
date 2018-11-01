@@ -389,18 +389,18 @@ textarea {
   display: flex;
   overflow: hidden;
 }
-.menu--wrap-midd-container--bottom--wrapper {
+.menu--wrap-midd-container--bottom-wrapper {
   min-width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
 }
-.menu--wrap-midd-container--bottom--wrapper-column {
+.menu--wrap-midd-container--bottom-wrapper-column {
   color: #FFFFFF;
   font-size: 14px;
   line-height: 19px;
 }
-.menu--wrap-midd-container--bottom--wrapper-column p {
+.menu--wrap-midd-container--bottom-wrapper-column p {
   height: 20px;
   margin: 35px 0px;
 }
