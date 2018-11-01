@@ -115,8 +115,8 @@
   border-bottom: 0px solid #840505;
 }
 .menu--wrap-midd {
-  max-height: 500px;
-  height: 500px;
+  max-height: 300px;
+  height: 300px;
   transition: max-height 0.5s ease-out;
   position: relative;
   display: flex;
@@ -167,6 +167,11 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  -webkit-transition: 0.8s ease-in-out;
+  -moz-transition: 0.8s ease-in-out;
+  -o-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 .menu--wrap-midd-container--bottom-wrapper-column {
   color: #FFFFFF;

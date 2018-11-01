@@ -108,7 +108,7 @@
     <div class="menu--wrap menu--wrap-hide"
           id="dropdown">
       <div class="menu--wrap-midd">
-        <div class="menu--wrap-midd-container">
+        <div class="menu--wrap-midd-container" id="materijalilinks">
           <div class="menu--wrap-midd-container--top"
                 id="subLink">
 
@@ -119,60 +119,88 @@
             $materijali = get_page_by_title('Materijali');
             $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
 
+            $countMat = 1;
             foreach (array_reverse($materijali_children) as $child) {
               $chil_child = get_pages(array('child_of' => $child->ID));
               if(count($chil_child) != 0) {
                 if(get_the_id() == $child->ID){
             ?>
-              <div class="menu--wrap-midd-container--top-link menu--wrap-midd-container--top-link--active" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <div class="menu--wrap-midd-container--top-link menu--wrap-midd-container--top-link--active" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
               <?php
                 } else {
               ?>
-              <div class="menu--wrap-midd-container--top-link" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <div class="menu--wrap-midd-container--top-link" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
               <?php
                 }
+              $countMat++;
               }
               ?>
             <?php
             }
             ?>
           </div>
-          <div class="menu--wrap-midd-container--bottom">
+          <div class="menu--wrap-midd-container--bottom" id="submenu">
             <?php
-              $parent_cat = get_term_by('slug', 'plocasti_materijali', 'materijali_categories');
-              $parent_id = $parent_cat->term_id;
-              $children = get_terms('materijali_categories', array (
-                'parent' => $parent_id,
-                'hide_empty' => false
-              ));
+              $wp_my_query = new WP_Query();
+              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
 
-              foreach ( $children as $key => $term ) {
+              $ploce = get_page_by_path('materijali/radne-ploce');
+              $terms = get_page_children($ploce->ID, $all_wp_pages);
+              ?>
+            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
+              <?php
+              foreach ( $terms as $key => $term ) {
                 if($key === 0) {
                 ?>
-                <div class="menu--wrap-midd-container--bottom-wrapper">
-                  <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <div class="menu--wrap-midd-container--bottom-wrapper-column">
                 <?php
                 }
-                if($key === 2 || $key === 5){
+                if($key === 3 || $key === 6){
                 ?>
-              </div>
-              <div class="menu--wrap-midd-container--bottom-wrapper-column">
-                <?php
-                }
-                ?>
-                <p><a href="<?php echo get_permalink( get_page_by_title($term->name)) ?>"><?php echo $term->name; ?></a></p>
-                <?php
-                if($key === 8) {
-                  ?>
                 </div>
-                  <?php
+                <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
                 }
-
+                ?>
+                <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+                <?php
               }
               ?>
-              <!-- </div> -->
               <?php
             ?>
+              </div>
+            </div>
+            <?php
+              $wp_my_query = new WP_Query();
+              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+              $ploce = get_page_by_path('materijali/okovi');
+              $terms = get_page_children($ploce->ID, $all_wp_pages);
+              ?>
+            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_2">
+              <?php
+              foreach ( $terms as $key => $term ) {
+                if($key === 0) {
+                ?>
+                <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
+                }
+                if($key === 3 || $key === 6){
+                ?>
+                </div>
+                <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
+                }
+                ?>
+                <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+                <?php
+              }
+              ?>
+              <?php
+            ?>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

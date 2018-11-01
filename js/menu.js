@@ -58,11 +58,11 @@ function subMenu(section) {
 function subLinkActive(section) {
   var noSubLinks = document.getElementById('subLink').childElementCount;
   for(var i = 1; i <= noSubLinks; i++) {
-   if(document.getElementById('subLink_' + i).classList.contains('top-link--active')){
-     document.getElementById('subLink_' + i).classList.remove('top-link--active');
+   if(document.getElementById('mat_' + i).classList.contains('menu--wrap-midd-container--top-link--active')){
+     document.getElementById('mat_' + i).classList.remove('menu--wrap-midd-container--top-link--active');
    }
   }
-  document.getElementById('subLink_' + section).classList.add('top-link--active');
+  document.getElementById('mat_' + section).classList.add('menu--wrap-midd-container--top-link--active');
 }
 function expand_decription(idelem){
   var noElem = document.getElementsByClassName('elements-description--element').length;
