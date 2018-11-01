@@ -260,7 +260,8 @@ textarea {
   overflow: hidden;
 }
 .menu--top-links-single--open {
-  max-width: 250px;
+  min-width: 150px;
+  max-width: 300px;
   transition: max-width 0.5s ease-out;
 }
 .menu--top-links-single--close {
@@ -268,9 +269,11 @@ textarea {
   transition: max-width 1s ease-out;
 }
 .menu--top-links-single--back {
+  height: 100%;
   margin-right: 8px;
   min-width: 95px;
   max-width: 100px;
+  width: 100px;
 }
 .menu--top-links-single--here {
   margin-left: 8px;
@@ -1087,7 +1090,7 @@ textarea {
   height: auto;
   width: 100%;
   position: relative;
-  top: 70px;
+  top: 73px;
   padding-top: 40px;
 }
 .single_picture--frame {
