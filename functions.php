@@ -1,6 +1,4 @@
 <?php
-
-
 //custom update checker
 require_once dirname(__FILE__) .'/lib/ext/plugin-update-checker/plugin-update-checker.php';
 $abUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
