@@ -134,18 +134,41 @@
             ?>
           </div>
           <div class="menu--wrap-midd-container--bottom">
-            <div class="bottom">
-              <?php
-                $terms = get_terms([
-                  'taxonomy' => 'kuhinje_categories',
-                  'hide-empty' => true,
-                  'child_of' => 'plocasti_materijali',
-                ]);
-                foreach ( $terms as $term ) {
-                  echo $term->name;
+            <?php
+              $parent_cat = get_term_by('slug', 'plocasti_materijali', 'materijali_categories');
+              $parent_id = $parent_cat->term_id;
+              $children = get_terms('materijali_categories', array (
+                'parent' => $parent_id,
+                'hide_empty' => false
+              ));
+
+              foreach ( $children as $key => $term ) {
+                if($key === 0) {
+                ?>
+                <div class="menu--wrap-midd-container--bottom-wrapper">
+                  <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
                 }
+                if($key === 2 || $key === 5){
+                ?>
+              </div>
+              <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
+                }
+                ?>
+                <p><a href="<?php echo get_permalink( get_page_by_title($term->name)) ?>"><?php echo $term->name; ?></a></p>
+                <?php
+                if($key === 8) {
+                  ?>
+                </div>
+                  <?php
+                }
+
+              }
               ?>
-            </div>
+              <!-- </div> -->
+              <?php
+            ?>
           </div>
         </div>
       </div>
