@@ -618,7 +618,7 @@ textarea {
 }
 .info--top-right--contact .section-link {
   width: 50%;
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
 }
 .info--top-right--contact .section-link--social {
@@ -3238,14 +3238,14 @@ textarea {
   margin: 50px 0px;
 }
 .materijali-term {
-  width: 95%;
+  width: 100%;
   height: 120px;
   display: flex;
   align-items: center;
   font-size: 32px;
   line-height: 44px;
   color: #666B70;
-  padding-left: 10px;
+  padding-left: 5%;
 }
 .materijali-wrapper {
   width: 95%;
@@ -3267,6 +3267,9 @@ textarea {
 .materijali-wrapper-1 .pic-2 {
   grid-column: 2 / 4;
   grid-row: 1 / 3;
+}
+.materijali-wrapper-1 .pic-2 .pic--inner-top {
+  height: 1500px;
 }
 .materijali-wrapper-1 .pic-3 {
   grid-column: 1;
@@ -3313,11 +3316,7 @@ textarea {
   justify-content: flex-end;
   padding-left: 20px;
   background-color: #FFFFFF;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-  -moz-transition: opacity 0.6s ease-out;
-  -webkit-transition: opacity 0.6s ease-out;
-  -o-transition: opacity 0.6s ease-out;
+  opacity: 1;
 }
 .materijali-wrapper-1 .pic--inner-midd--naslov1 {
   color: #666B70;
@@ -3339,11 +3338,7 @@ textarea {
   align-items: flex-end;
   background-color: #FFFFFF;
   padding-left: 20px;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-  -moz-transition: opacity 0.6s ease-out;
-  -webkit-transition: opacity 0.6s ease-out;
-  -o-transition: opacity 0.6s ease-out;
+  opacity: 1;
 }
 .materijali-wrapper-1 .pic--inner-bottom--left {
   width: 50%;
@@ -3380,20 +3375,6 @@ textarea {
   font-size: 32px;
   line-height: 49px;
   font-weight: 500;
-}
-.materijali-wrapper-1 .pic:hover .pic--inner-midd {
-  opacity: 1;
-  transition: opacity 0.8s ease-in;
-  -moz-transition: opacity 0.8s ease-in;
-  -webkit-transition: opacity 0.8s ease-in;
-  -o-transition: opacity 0.8s ease-in;
-}
-.materijali-wrapper-1 .pic:hover .pic--inner-bottom {
-  opacity: 1;
-  transition: opacity 0.8s ease-in;
-  -moz-transition: opacity 0.8s ease-in;
-  -webkit-transition: opacity 0.8s ease-in;
-  -o-transition: opacity 0.8s ease-in;
 }
 .materijali-wrapper-2,
 .materijali-wrapper-3 {
@@ -3471,11 +3452,7 @@ textarea {
   justify-content: flex-end;
   padding-left: 20px;
   background-color: #FFFFFF;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-  -moz-transition: opacity 0.6s ease-out;
-  -webkit-transition: opacity 0.6s ease-out;
-  -o-transition: opacity 0.6s ease-out;
+  opacity: 1;
 }
 .materijali-wrapper-2 .pic--inner-midd--naslov1,
 .materijali-wrapper-3 .pic--inner-midd--naslov1 {
@@ -3500,11 +3477,7 @@ textarea {
   align-items: flex-end;
   background-color: #FFFFFF;
   padding-left: 20px;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-  -moz-transition: opacity 0.6s ease-out;
-  -webkit-transition: opacity 0.6s ease-out;
-  -o-transition: opacity 0.6s ease-out;
+  opacity: 1;
 }
 .materijali-wrapper-2 .pic--inner-bottom--left,
 .materijali-wrapper-3 .pic--inner-bottom--left {
@@ -3548,21 +3521,105 @@ textarea {
   line-height: 49px;
   font-weight: 500;
 }
-.materijali-wrapper-2 .pic:hover .pic--inner-midd,
-.materijali-wrapper-3 .pic:hover .pic--inner-midd {
-  opacity: 1;
-  transition: opacity 0.8s ease-in;
-  -moz-transition: opacity 0.8s ease-in;
-  -webkit-transition: opacity 0.8s ease-in;
-  -o-transition: opacity 0.8s ease-in;
+@media screen and (max-width: 960px) {
+  .materijali-wrapper-1 {
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 350px 350px;
+    height: 750px;
+  }
+  .materijali-wrapper-1 .pic-2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+  .materijali-wrapper-1 .pic-2 .pic--inner-top {
+    height: 1350px;
+  }
+  .materijali-wrapper-1 .pic--inner-bottom {
+    align-items: center;
+    padding-right: 20px;
+  }
+  .materijali-wrapper-1 .pic--inner-bottom--left {
+    display: none;
+  }
+  .materijali-wrapper-1 .pic--inner-bottom--right {
+    width: 100%;
+    align-items: center;
+  }
+  .materijali-wrapper-2 {
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 350px 350px;
+    height: 700px;
+  }
+  .materijali-wrapper-2 .pic-6 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+  .materijali-wrapper-2 .pic--inner-bottom {
+    align-items: center;
+    padding-right: 20px;
+  }
+  .materijali-wrapper-2 .pic--inner-bottom--left {
+    display: none;
+  }
+  .materijali-wrapper-2 .pic--inner-bottom--right {
+    width: 100%;
+    align-items: center;
+  }
 }
-.materijali-wrapper-2 .pic:hover .pic--inner-bottom,
-.materijali-wrapper-3 .pic:hover .pic--inner-bottom {
-  opacity: 1;
-  transition: opacity 0.8s ease-in;
-  -moz-transition: opacity 0.8s ease-in;
-  -webkit-transition: opacity 0.8s ease-in;
-  -o-transition: opacity 0.8s ease-in;
+@media screen and (max-width: 600px) {
+  .ploce--bottom {
+    padding: 0 20px 0;
+  }
+  .materijali-wrapper-1 {
+    grid-template-rows: 300px 300px;
+    height: 650px;
+  }
+  .materijali-wrapper-1 .pic-2 .pic--inner-top {
+    height: 1170px;
+  }
+  .materijali-wrapper-2 {
+    grid-template-rows: 300px 300px;
+    height: 620px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .materijali-wrapper-1 {
+    grid-template-columns: 95%;
+    grid-template-rows: 250px 250px 250px;
+    height: 810px;
+  }
+  .materijali-wrapper-1 .pic-1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .materijali-wrapper-1 .pic-2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .materijali-wrapper-1 .pic-2 .pic--inner-top {
+    height: 80%;
+  }
+  .materijali-wrapper-1 .pic-3 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .materijali-wrapper-2 {
+    grid-template-columns: 95%;
+    grid-template-rows: 250px 250px 250px;
+    height: 790px;
+  }
+  .materijali-wrapper-2 .pic-4 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .materijali-wrapper-2 .pic-5 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .materijali-wrapper-2 .pic-6 {
+    grid-column: 1;
+    grid-row: 3;
+  }
 }
 @media only screen and (max-width: 1440px) {
   .usluge--right-bottom .arrow {
@@ -3857,6 +3914,9 @@ textarea {
   }
   .kontakt--inner {
     width: 80%;
+  }
+  .info {
+    height: 630px;
   }
   .info--top {
     height: 45%;
