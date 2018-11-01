@@ -8,14 +8,14 @@ if( !is_front_page() || !is_home()) {
   <div class="kontakt">
     <div class="kontakt--inner">
       <div class="kontakt--inner-title">Kontakt</div>
-      <form class="kontakt--inner-form">
+      <form class="kontakt--inner-form" method="POST" action="page-sendmail.php">
         <div class="kontakt--inner-form--left">
           <div>
             <label>Ime i Prezime</label>
-            <input type="text"> </div>
+            <input type="text" name="imeprezime"> </div>
           <div>
             <label>E-mail</label>
-            <input type="email"> </div>
+            <input type="email" name="mail" type="email"> </div>
         </div>
         <div class="kontakt--inner-form--right">
           <div>
@@ -23,7 +23,7 @@ if( !is_front_page() || !is_home()) {
             <input type="text"> </div>
           <div>
             <label>Poruka</label>
-            <input type="text"> </div>
+            <input type="text" name="message"> </div>
         </div>
       </form>
       <div class="kontakt--inner-button">

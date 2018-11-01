@@ -66,14 +66,14 @@ $GLOBALS['comment'] = $comment;
 }
 add_filter( 'get_comments_number', 'blankslate_comments_number' );
 function blankslate_comments_number( $count )
-{
-if ( !is_admin() ) {
-global $id;
-$comments_by_type = &separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
-return count( $comments_by_type['comment'] );
-} else {
-return $count;
-}
+  {
+  if ( !is_admin() ) {
+  global $id;
+  $comments_by_type = &separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
+  return count( $comments_by_type['comment'] );
+  } else {
+  return $count;
+  }
 }
 function kitchen_post_types() {
   register_post_type('kuhinje', array(
@@ -87,7 +87,7 @@ function kitchen_post_types() {
       'singular_name' => 'kuhinja',
     ),
     'menu_icon' => 'dashicons-store',
-    'rewrite' => array( 'slug' => 'kuhinja'),
+    'rewrite' => array( 'slug' => '/kuhinja/element'),
 
   ));
 }
@@ -106,7 +106,7 @@ function fijoke_post_type() {
     ),
     'menu_icon' => 'dashicons-archive',
     // 'rewrite' => array('slug' => 'kuhinje/fijoke'),
-    'rewrite' => array('slug' => '/kuhinje/fijoke/fijoka'),
+    'rewrite' => array('slug' => '/kuhinje/fijoke'),
 
   ));
 
