@@ -3249,24 +3249,44 @@ textarea {
   margin-left: 30px;
   height: calc(100vh - 70px - 90px);
   display: flex;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  /* IE6-9 */
 }
 .ploce--top-hero {
   width: 100%;
   min-height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: bottom;
+}
+.ploce--top-hero--title {
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 35px;
+  margin-left: 3%;
+  margin-bottom: 3%;
 }
 .ploce--top-hero--text {
   width: 740px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
+  margin-left: 3%;
+  margin-bottom: 3%;
 }
 .ploce--top-hero--text :nth-child(1) {
   margin-top: 20px;
-  text-align: center;
+  text-align: left;
   color: #FFFFFF;
   font-size: 16px;
   line-height: 22px;
@@ -3274,7 +3294,7 @@ textarea {
 .ploce--top-hero--text :nth-child(2) {
   width: 63%;
   margin-top: 20px;
-  text-align: center;
+  text-align: left;
   color: #FFFFFF;
   font-size: 16px;
   line-height: 22px;
