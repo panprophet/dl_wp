@@ -18,14 +18,17 @@
           $materijali = get_page_by_title('Materijali');
           $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
           foreach ($materijali_children as $child) {
-            if(get_the_id() == $child->ID){
+            $chil_child = get_pages(array('child_of' => $child->ID));
+            if(count($chil_child) != 0) {
+              if(get_the_id() == $child->ID){
       ?>
             <div class="ploce--midd-title--link active"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
       <?php
-            }else {
+              }else {
       ?>
             <div class="ploce--midd-title--link"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
       <?php
+              }
             }
           }
       ?>
@@ -105,7 +108,20 @@
     ?>
       <div class="pic pic-<?php echo $countDivs ?>">
         <div class="pic--inner">
-          <div class="pic--inner-top" style="background-image: url(<?php the_sub_field('main_image'); ?>); background-size: cover; background-repeat: no-repeat;">
+        <?php
+          $carNo = 1;
+          if(have_rows('image_carousel')){
+            while(have_rows('image_carousel')){
+            the_row();
+              if($carNo == 1){
+          ?>
+            <div class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;">
+          <?php
+              }
+            $carNo++;
+            }
+          }
+        ?>
           </div>
           <div class="pic--inner-midd">
             <p class="pic--inner-midd--naslov1"><?php the_title(); ?></p>
