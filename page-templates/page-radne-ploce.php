@@ -125,12 +125,12 @@
           </div>
           <div class="pic--inner-midd">
             <!-- <p class="pic--inner-midd--naslov1"><?php the_title(); ?></p> -->
-            <p class="pic--inner-midd--naslov2"><?php the_sub_field('naziv'); ?></p>
+            <p class="pic--inner-midd--naslov2"><?php the_sub_field('opis'); ?></p>
           </div>
           <div class="pic--inner-bottom">
             <!-- nesto od ovoga ne treba da ide the tile , naziv ili opis.. raspitaj se sta je sta -->
             <div class="pic--inner-bottom--left">
-              <div class="pic--inner-bottom--left--opis"><?php the_sub_field('opis'); ?></div>
+              <div class="pic--inner-bottom--left--opis"><?php the_sub_field('naziv'); ?></div>
               <div class="pic--inner-bottom--left--redline"></div>
             </div>
             <div class="pic--inner-bottom--right">

@@ -1,4 +1,4 @@
-<?php /* Template Name: Plocasti materijali */ ?>
+<?php /* Template Name: Plocasti materijali grupa */ ?>
 
 <?php
   global $post;

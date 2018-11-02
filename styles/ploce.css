@@ -175,6 +175,7 @@
   line-height: 33px;
   font-weight: 500;
   margin-bottom: 5px;
+  padding-left: 10px;
 }
 .materijali-wrapper-1 .pic--inner-bottom {
   height: 10%;
@@ -193,7 +194,7 @@
   width: auto;
   min-width: 70px;
   margin-right: 20px;
-  height: 21px;
+  height: 26px;
   overflow: hidden;
   color: #666B70;
   font-size: 24px;
@@ -206,6 +207,7 @@
 }
 .materijali-wrapper-1 .pic--inner-bottom--right {
   width: auto;
+  height: 26px;
   flex: 1;
   display: flex;
   justify-content: space-between;
