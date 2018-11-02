@@ -3527,6 +3527,10 @@ textarea {
   font-weight: 500;
 }
 @media screen and (max-width: 960px) {
+  .ploce--top {
+    height: 500px;
+    margin-left: 0;
+  }
   .materijali-wrapper-1 {
     grid-template-columns: 45% 45%;
     grid-template-rows: 350px 350px;
