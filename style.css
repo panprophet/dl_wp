@@ -350,12 +350,14 @@ textarea {
   justify-content: center;
 }
 .menu--wrap-midd-container {
-  width: 77%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .menu--wrap-midd-container--top {
   height: 90px;
+  width: 77%;
   display: flex;
   position: relative;
   justify-content: flex-start;
@@ -381,24 +383,29 @@ textarea {
   cursor: pointer;
 }
 .menu--wrap-midd-container--bottom {
-  height: 210px;
-  width: 100%;
+  height: 300px;
+  width: 77%;
   position: relative;
   display: flex;
   overflow: hidden;
 }
-.menu--wrap-midd-container--bottom--wrapper {
+.menu--wrap-midd-container--bottom-wrapper {
   min-width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  -webkit-transition: 0.8s ease-in-out;
+  -moz-transition: 0.8s ease-in-out;
+  -o-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
-.menu--wrap-midd-container--bottom--wrapper-column {
+.menu--wrap-midd-container--bottom-wrapper-column {
   color: #FFFFFF;
   font-size: 14px;
   line-height: 19px;
 }
-.menu--wrap-midd-container--bottom--wrapper-column p {
+.menu--wrap-midd-container--bottom-wrapper-column p {
   height: 20px;
   margin: 35px 0px;
 }
@@ -3354,7 +3361,6 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-left: 20px;
   background-color: #FFFFFF;
   opacity: 1;
 }
