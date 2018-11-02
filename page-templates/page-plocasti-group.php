@@ -3,7 +3,7 @@
 <?php
   global $post;
   $post_slug = $post->post_name;
-  echo $post_slug;
+  // echo $post_slug;
  ?>
 <div class="ploce">
   <div class="ploce--top">
@@ -13,25 +13,27 @@
   <div class="ploce--midd">
     <div class="ploce--midd-title">
       <?php
-      $wp_my_query = new WP_Query();
-          $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', 'order' => 'ASC'));
+      // $wp_my_query = new WP_Query();
+      //     $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', 'order' => 'ASC'));
 
-          $materijali = get_page_by_title('Materijali');
-          $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
-          foreach ($materijali_children as $child) {
-            $chil_child = get_pages(array('child_of' => $child->ID));
-            if(count($chil_child) != 0) {
-              if(get_the_id() == $child->ID){
+      //     $materijali = get_page_by_title('Materijali');
+      //     $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
+      //     foreach ($materijali_children as $child) {
+      //       $chil_child = get_pages(array('child_of' => $child->ID));
+      //       if(count($chil_child) != 0) {
+      //         if(get_the_id() == $child->ID){
       ?>
-            <div class="ploce--midd-title--link active"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+            <!-- <div class="ploce--midd-title--link active"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div> -->
+            <div class="ploce--midd-title--link active"><?php the_title(); ?></div>
+
       <?php
-              }else {
+              // }else {
       ?>
-            <div class="ploce--midd-title--link"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+            <!-- <div class="ploce--midd-title--link"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div> -->
       <?php
-              }
-            }
-          }
+          //     }
+          //   }
+          // }
       ?>
     </div>
   </div>
@@ -43,39 +45,16 @@
 </div>
 <div class="materijali">
  <?php
-  $parent_cat = get_term_by('slug', $element_slug, 'materijali_categories');
-  $parent_id = $parent_cat->term_id;
-  $children = get_terms('materijali_categories', array (
-    'parent' => $parent_id,
-    'hide_empty' => false
-  ));
-  if($children) {
-    $terms = get_terms([
-      'taxonomy' => 'materijali_categories',
-      'hide-empty' => true,
-      'child_of' => $parent_id,
-    ]);
-  } else {
+  $parent_cat = get_term_by('slug', $post_slug, 'materijali_categories');
     $terms[] = $parent_id;
-  }
   foreach($terms as $term) {
-    if($children) {
     $query_args = array(
       array (
         'taxonomy' => 'materijali_categories',
         'field' => 'slug',
-        'terms' => $term->slug,
+        'terms' => $parent_cat,
       ),
     );
-    } else {
-    $query_args = array(
-      array (
-        'taxonomy' => 'materijali_categories',
-        'field' => 'id',
-        'terms' => $parent_id,
-      ),
-    );
-    }
     $allPosts = new WP_Query(
       array(
         'post_type' => 'materijali',
@@ -85,7 +64,7 @@
     );
 
   ?>
-  <div class="materijali-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div>
+  <div class="materijali-term"><?php if($children) { echo $term->slug; } else { echo the_title(); } ?></div>
     <!-- <div class="materijali-wrapper"> -->
     <?php
     $countDivs = 1;

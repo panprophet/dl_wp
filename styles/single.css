@@ -192,10 +192,11 @@
   cursor: pointer;
 }
 .post-temp--right-info--spec .tab--title-icon {
-  width: 5%;
-  height: 6px;
+  width: 20%;
+  height: 20px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   background-size: contain;
   background-repeat: no-repeat;
 }

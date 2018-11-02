@@ -39,7 +39,7 @@
                 $parent =  $term->parent;
                 if($parent) {
                   $name = get_term($parent, $kategorija);
-                  $path = $name->slug;
+                  $path = $name->name;
                 } else {
                   $path = $term->slug;
                 }

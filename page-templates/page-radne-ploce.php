@@ -7,6 +7,9 @@
 
   <div class="ploce--top">
     <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
+        <div class="ploce--top-hero--text">
+        <?php the_field('unutrasnji_text') ?>
+    </div>
     </div>
   </div>
   <div class="ploce--midd">
@@ -34,11 +37,11 @@
       ?>
     </div>
   </div>
-  <div class="ploce--bottom">
+  <!-- <div class="ploce--bottom">
     <div class="ploce--bottom-text">
         <?php the_field('unutrasnji_text') ?>
     </div>
-  </div>
+  </div> -->
 </div>
 <div class="materijali">
  <?php
