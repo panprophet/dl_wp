@@ -1333,6 +1333,7 @@ textarea {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding-bottom: 10px;
 }
 .kuhinja--top--left--back a span {
   width: 15%;
@@ -1557,16 +1558,12 @@ textarea {
   display: flex;
   flex-direction: column;
   padding: 20px 0px 0px 20px;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-  -moz-transition: opacity 0.6s ease-out;
-  -webkit-transition: opacity 0.6s ease-out;
-  -o-transition: opacity 0.6s ease-out;
+  opacity: 1;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
   /* IE6-9 */
@@ -1603,6 +1600,8 @@ textarea {
   width: 100%;
   height: 21px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: #FFFFFF;
   font-size: 16px;
   line-height: 22px;
@@ -1622,13 +1621,6 @@ textarea {
   color: #FFFFFF;
   font-size: 16px;
   line-height: 22px;
-}
-.more-wrapper-1 .pic:hover .pic--inner {
-  opacity: 1;
-  transition: opacity 0.8s ease-in;
-  -moz-transition: opacity 0.8s ease-in;
-  -webkit-transition: opacity 0.8s ease-in;
-  -o-transition: opacity 0.8s ease-in;
 }
 .more-wrapper-2,
 .more-wrapper-3 {
@@ -1693,16 +1685,12 @@ textarea {
   width: 100%;
   height: 100%;
   padding: 20px 0px 0px 20px;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-  -moz-transition: opacity 0.6s ease-out;
-  -webkit-transition: opacity 0.6s ease-out;
-  -o-transition: opacity 0.6s ease-out;
+  opacity: 1;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
   /* IE6-9 */
@@ -1745,6 +1733,8 @@ textarea {
   width: 100%;
   height: 21px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: #FFFFFF;
   font-size: 16px;
   line-height: 22px;
@@ -1767,14 +1757,6 @@ textarea {
   color: #FFFFFF;
   font-size: 16px;
   line-height: 22px;
-}
-.more-wrapper-2 .pic:hover .pic--inner,
-.more-wrapper-3 .pic:hover .pic--inner {
-  opacity: 1;
-  transition: opacity 0.6s ease-in;
-  -moz-transition: opacity 0.6s ease-in;
-  -webkit-transition: opacity 0.6s ease-in;
-  -o-transition: opacity 0.6s ease-in;
 }
 .active {
   width: auto;
@@ -1840,6 +1822,7 @@ textarea {
     display: block;
     height: 335px;
     width: 95%;
+    background-position: center;
   }
   .bottom-single--left .elements {
     width: 94%;
@@ -1928,13 +1911,58 @@ textarea {
     grid-template-rows: 250px 250px;
     height: 540px;
   }
+  .more-wrapper-1 .pic--inner-top {
+    min-height: 35%;
+  }
+  .more-wrapper-1 .pic--inner-midd {
+    height: 40%;
+  }
+  .more-wrapper-1 .pic--inner-midd--naslov1 {
+    font-size: 14px;
+  }
+  .more-wrapper-1 .pic--inner-midd--naslov2 {
+    font-size: 20px;
+  }
+  .more-wrapper-1 .pic--inner-midd--opis {
+    font-size: 14px;
+  }
   .more-wrapper-2 {
     grid-template-rows: 250px 250px;
     height: 270px;
   }
+  .more-wrapper-2 .pic--inner-top {
+    min-height: 35%;
+  }
+  .more-wrapper-2 .pic--inner-midd {
+    height: 40%;
+  }
+  .more-wrapper-2 .pic--inner-midd--naslov1 {
+    font-size: 14px;
+  }
+  .more-wrapper-2 .pic--inner-midd--naslov2 {
+    font-size: 20px;
+  }
+  .more-wrapper-2 .pic--inner-midd--opis {
+    font-size: 14px;
+  }
   .more-wrapper-3 {
     grid-template-rows: 250px 250px;
     height: 240px;
+  }
+  .more-wrapper-3 .pic--inner-top {
+    min-height: 35%;
+  }
+  .more-wrapper-3 .pic--inner-midd {
+    height: 40%;
+  }
+  .more-wrapper-3 .pic--inner-midd--naslov1 {
+    font-size: 14px;
+  }
+  .more-wrapper-3 .pic--inner-midd--naslov2 {
+    font-size: 20px;
+  }
+  .more-wrapper-3 .pic--inner-midd--opis {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 360px) {
@@ -1950,6 +1978,7 @@ textarea {
   }
   .bottom-single--left .slika {
     height: 260px;
+    background-position: center;
   }
   .bottom-single--left .elements-description--material--expanded {
     min-height: 340px;
@@ -2029,18 +2058,28 @@ textarea {
   }
   .bottom-single--left .slika {
     height: 210px;
+    background-position: center;
   }
   .more-wrapper-1 {
     grid-template-rows: 200px 200px 200px;
     height: 640px;
   }
+  .more-wrapper-1 .pic--inner-midd--opis {
+    display: none;
+  }
   .more-wrapper-2 {
     grid-template-rows: 200px 200px 200px;
     height: 640px;
   }
+  .more-wrapper-2 .pic--inner-midd--opis {
+    display: none;
+  }
   .more-wrapper-3 {
     grid-template-rows: 200px 200px 200px;
     height: 300px;
+  }
+  .more-wrapper-3 .pic--inner-midd--opis {
+    display: none;
   }
 }
 .post-temp {
