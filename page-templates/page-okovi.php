@@ -108,7 +108,20 @@
     ?>
       <div class="pic pic-<?php echo $countDivs ?>">
         <div class="pic--inner">
-          <div class="pic--inner-top" style="background-image: url(<?php the_sub_field('main_image'); ?>); background-size: cover; background-repeat: no-repeat;">
+        <?php
+          $carNo = 1;
+          if(have_rows('image_carousel')){
+            while(have_rows('image_carousel')){
+            the_row();
+              if($carNo == 1){
+          ?>
+            <div class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;">
+          <?php
+              }
+            $carNo++;
+            }
+          }
+        ?>
           </div>
           <div class="pic--inner-midd">
             <p class="pic--inner-midd--naslov1"><?php the_title(); ?></p>

@@ -26,29 +26,44 @@
         <div class="menu--top-links-single menu--top-links-single--open" id="singlelinks">
 
          <span class="menu--top-links-single--back"><a href="<?php
-            $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+
+            $posttypelink = get_the_terms($post->ID, 'kuhinje_categories');
+            $kategorija = 'kuhinje_categories';
+            $link = 'kuhinje/';
+            if(!$posttypelink ) {
+              $posttypelink  = get_the_terms($post->ID, 'materijali_categories');
+              $kategorija = 'materijali_categories';
+              $link = 'materijali/';
+            }
+            foreach($posttypelink as $term) {
+                $parent =  $term->parent;
+                if($parent) {
+                  $name = get_term($parent, $kategorija);
+                  $path = $name->slug;
+                } else {
+                  $path = $term->slug;
+                }
+            }
+          echo get_permalink(get_page_by_path($link.$path))
+          // echo $posttype;
+         ?>">
+         <?php
+          $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+          $kategorija = 'kuhinje_categories';
+          if(!$posttype) {
+              $posttype = get_the_terms($post->ID, 'materijali_categories');
+              $kategorija = 'materijali_categories';
+          }
           foreach($posttype as $term) {
               $parent =  $term->parent;
               if($parent) {
-                $name = get_term($parent, 'kuhinje_categories');
-                $path = $name->name;
+                $name = get_term($parent, $kategorija);
+                echo $name->name;
               } else {
-                $path = $term->slug;
+                echo $term->name;
               }
             }
-          echo get_permalink(get_page_by_path('kuhinje/'.$path))
-         ?>">
-         <?php
-         $posttype = get_the_terms($post->ID, 'kuhinje_categories');
-         foreach($posttype as $term) {
-            $parent =  $term->parent;
-            if($parent) {
-              $name = get_term($parent, 'kuhinje_categories');
-              echo $name->name;
-            } else {
-              echo $term->name;
-            }
-          }
+            // echo $posttype;
          ?>
          </a></span>
          <span>/</span>
@@ -147,7 +162,7 @@
               $ploce = get_page_by_path('materijali/radne-ploce');
               $terms = get_page_children($ploce->ID, $all_wp_pages);
               ?>
-            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(wp_title() === "Okovi") { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
+            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
               <?php
               foreach ( $terms as $key => $term ) {
                 if($key === 0) {
@@ -177,7 +192,7 @@
               $ploce = get_page_by_path('materijali/okovi');
               $terms = get_page_children($ploce->ID, $all_wp_pages);
               ?>
-            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(wp_title() === "Okovi") { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_2">
+            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_2">
               <?php
               foreach ( $terms as $key => $term ) {
                 if($key === 0) {
