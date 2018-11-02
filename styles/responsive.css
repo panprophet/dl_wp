@@ -292,6 +292,9 @@
   .kontakt--inner {
     width: 80%;
   }
+  .info {
+    height: 630px;
+  }
   .info--top {
     height: 45%;
   }
