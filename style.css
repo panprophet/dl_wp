@@ -2579,7 +2579,7 @@ textarea {
   overflow: hidden;
 }
 .gallery--body-wrap-1 {
-  height: calc(100vh - 70px - 150px);
+  height: calc(100vh - 70px - 149px);
   display: -ms-grid;
   display: grid;
   grid-gap: 5px;
@@ -2648,11 +2648,7 @@ textarea {
   justify-content: flex-end;
   padding-left: 30px;
   padding-bottom: 30px;
-  opacity: 0;
-  transition: opacity 0.4s ease-out;
-  -moz-transition: opacity 0.4s ease-out;
-  -webkit-transition: opacity 0.4s ease-out;
-  -o-transition: opacity 0.4s ease-out;
+  opacity: 1;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
@@ -2693,16 +2689,9 @@ textarea {
 .gallery--body-wrap-1 .img--inner-sub--more:hover {
   cursor: pointer;
 }
-.gallery--body-wrap-1 .img:hover .img--inner {
-  opacity: 1;
-  transition: opacity 0.4s ease-in;
-  -moz-transition: opacity 0.4s ease-in;
-  -webkit-transition: opacity 0.4s ease-in;
-  -o-transition: opacity 0.4s ease-in;
-}
 .gallery--body-wrap-2,
 .gallery--body-wrap-3 {
-  height: calc(100vh - 70px - 150px);
+  height: calc(100vh - 70px - 149px);
   display: -ms-grid;
   display: grid;
   grid-gap: 5px;
@@ -2785,11 +2774,7 @@ textarea {
   justify-content: flex-end;
   padding-left: 30px;
   padding-bottom: 30px;
-  opacity: 0;
-  transition: opacity 0.4s ease-out;
-  -moz-transition: opacity 0.4s ease-out;
-  -webkit-transition: opacity 0.4s ease-out;
-  -o-transition: opacity 0.4s ease-out;
+  opacity: 1;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
@@ -2836,17 +2821,10 @@ textarea {
 .gallery--body-wrap-3 .img--inner-sub--more:hover {
   cursor: pointer;
 }
-.gallery--body-wrap-2 .img:hover .img--inner,
-.gallery--body-wrap-3 .img:hover .img--inner {
-  opacity: 1;
-  transition: opacity 0.4s ease-in;
-  -moz-transition: opacity 0.4s ease-in;
-  -webkit-transition: opacity 0.4s ease-in;
-  -o-transition: opacity 0.4s ease-in;
-}
 .gallery--body-less {
   max-height: calc(3*(100vh - 200px));
   transition: max-height 0.8s ease-out;
+  margin-top: 70px;
 }
 .gallery--body-more {
   max-height: calc(10*(100vh - 200px));
