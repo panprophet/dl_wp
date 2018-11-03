@@ -62,15 +62,15 @@
       <div class="post-temp--right-info--description"><?php the_sub_field('opis'); ?></div>
       <div class="post-temp--right-info--spec">
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Dimenzije</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span></div>
+          <div class="tab--title"><span class="tab--title-text">Obrada</span><span class="tab--title-icon"><?php the_sub_field('dimenzije'); ?></span></div>
 
         </div>
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Debljina ploce</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span>
+          <div class="tab--title"><span class="tab--title-text">Debljina ploče</span><span class="tab--title-icon"><?php the_sub_field('debljina_materijala'); ?></span>
         </div>
         </div>
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Proizvodjac</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span>
+          <div class="tab--title"><span class="tab--title-text">Proizvođac</span><span class="tab--title-icon"><?php the_sub_field('proizvodjac'); ?></span>
           </div>
         </div>
       </div>
