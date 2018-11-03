@@ -140,11 +140,11 @@
               if(count($chil_child) != 0) {
                 if(get_the_id() == $child->ID){
             ?>
-              <div class="menu--wrap-midd-container--top-link menu--wrap-midd-container--top-link--active" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <div class="menu--wrap-midd-container--top-link menu--wrap-midd-container--top-link--active" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
               <?php
                 } else {
               ?>
-              <div class="menu--wrap-midd-container--top-link" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <div class="menu--wrap-midd-container--top-link" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
               <?php
                 }
               $countMat++;
