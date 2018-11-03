@@ -488,14 +488,16 @@
     height: 220px;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    justify-content: center;
     background-color: @black;
     &--title {
-      height: 50%;
+      height: 25%;
       width: 100%;
       font-size: 35px;
       color: @white;
       line-height: 44px;
+      padding-left: 30px;
     }
     &--info {
       height: 50%;
@@ -507,10 +509,15 @@
         line-height: 22px;
         font-size: 16px;
         color: @white;
+        padding-left: 30px;
+        padding-top: 20px;
       }
       &-link {
-        width: 50%;
+        width: 40%;
         height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 20px;
         a{
           font-size: @font-small;
           color: @white;

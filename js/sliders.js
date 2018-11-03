@@ -1,5 +1,5 @@
 var no = 0;
-// images slider
+// touch images slider
 window.addEventListener('load', function(){
     var car1 = document.getElementById('galleryFizicka'),
     car2 = document.getElementById('galleryProf'),
@@ -80,7 +80,6 @@ window.addEventListener('load', function(){
     if(Math.abs(distX) > Math.abs(distY) == true) {
         setTimeout(() => {
             var move = 0;
-
             for(let i = 1; i <= dotsProf; i++) {
                 if (document.getElementById('dotprof_' + i).classList.contains("focus")){
                     document.getElementById('dotprof_' + i).classList.remove("focus");
@@ -99,7 +98,6 @@ window.addEventListener('load', function(){
 
                 }
             }
-
             if(distX < 0 && sel < dotsProf) {
                 document.getElementById('dotprof_' + (sel+1)).classList.add("focus");
             } else if(distX > 0 && sel > 1){
@@ -147,30 +145,38 @@ function changeMap(event) {
     document.getElementById(elemId).classList.add('circle-active');
   }
 }
+// single page mini gallery
 function single_gallery(event) {
   let action = event;
-  let elemId = document.getElementById('slide').childElementCount;
+  let elemcount = document.getElementById('slide').childElementCount;
   let pagefrom = document.getElementById('pagefrom').innerHTML;
-  // let pageto = document.getElementById('pageto');
-  let page = 1;
-
-  if(action === 'next') {
-    for (let i = 1; i <= elemId; i++){
-      document.getElementById(i).style.transform = "translateX(" + (-100 * (elemId-1)) + "%)";
-    }
-    if ( page <= elemId ) {
-      page += 1;
-    }
-  } else if(action === 'prev') {
-    for (let i = 1; i <= elemId; i++){
-      document.getElementById(i).style.transform = "translateX(" + ( -100 * (elemId-2)) + "%)";
-    }
-    if (page > 1) {
-      page -= 1;
+  let pageto;
+  if(pagefrom.substring(0,1)==0) {
+    pageto = parseInt(pagefrom.substring(1,2));
+  } else {
+    pageto = parseInt(pagefrom);
+  }
+  if(pageto + 1 <= elemcount){
+    if(action === 'next') {
+      for (let i = 1; i <= elemcount; i++){
+        document.getElementById("material_" + i).style.transform = "translateX(" + ( -100 * pageto ) + "%)";
+      }
+      pageto += 1;
     }
   }
-  if( page < 10 ) {
-    document.getElementById('pagefrom').innerHTML = "0" + page;
+  if(pageto-1 > 0){
+
+    if(action === 'prev') {
+      for (let j = 1; j <= elemcount; j++){
+        document.getElementById("material_" + j).style.transform = "translateX(" + ( 100 * (elemcount-pageto-1) ) + "%)";
+      }
+      pageto -= 1;
+    }
+  }
+  if( pageto < 10 ) {
+    document.getElementById('pagefrom').innerHTML = "0" + pageto;
+  } else {
+    document.getElementById('pagefrom').innerHTML = pageto;
   }
 }
 function gallery_expand() {
@@ -190,8 +196,6 @@ function go_to_slide(arg1, arg2) {
     document.getElementById('megaslider').classList.remove('slideshows--hidden');
     document.getElementById('megaslider').classList.add('slideshows--shown');
     for(let i = 1; i <= slides; i++) {
-      // console.log(100 * difference * i);
-
       document.getElementById('slide_' + i).style.transform = "translateX(" + (-100 * ((arg2 - 1))) + "%)";
     }
   }
@@ -200,9 +204,6 @@ function go_to_slide(arg1, arg2) {
     document.getElementById('megaslider').classList.add('slideshows--hidden');
   }
   if ( arg2 !== 0 && document.getElementById('megaslider').classList.contains('slideshows--shown') ) {
-
-    console.log(difference);
-
     for(let i = 1; i <= slides; i++) {
       document.getElementById('slide_' + i).style.transform = "translateX(" + (-100 * ((arg2 - 1))) + "%)";
       if( arg2 > slides ) {
