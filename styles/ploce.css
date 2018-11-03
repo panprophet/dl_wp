@@ -423,14 +423,17 @@
   height: 220px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #0E0E0E;
 }
 .materijali-readmore--title {
-  height: 50%;
+  height: 25%;
   width: 100%;
   font-size: 35px;
   color: #FFFFFF;
   line-height: 44px;
+  padding-left: 30px;
 }
 .materijali-readmore--info {
   height: 50%;
@@ -443,10 +446,15 @@
   line-height: 22px;
   font-size: 16px;
   color: #FFFFFF;
+  padding-left: 30px;
+  padding-top: 20px;
 }
 .materijali-readmore--info-link {
-  width: 50%;
+  width: 40%;
   height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
 }
 .materijali-readmore--info-link a {
   font-size: 16px;

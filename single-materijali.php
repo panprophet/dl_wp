@@ -25,7 +25,7 @@
         if(have_rows('image_carousel')):
         while(have_rows('image_carousel')): the_row();
       ?>
-        <div class="post-temp--left-slide--gallery-picture" id="<?php echo ($picNo+1); ?>"><img src="<?php the_sub_field('galerry_image'); ?>"></div>
+        <div class="post-temp--left-slide--gallery-picture" id="material_<?php echo ($picNo+1); ?>"><img src="<?php the_sub_field('galerry_image'); ?>"></div>
       <?php
         $picNo++;
         endwhile;
@@ -36,11 +36,11 @@
         if($picNo > 1) {
       ?>
         <div class="post-temp--left-slide--slider">
-          <span class="arrow arrrow-left" style="background-image: url('../../../../wp-content/uploads/2018/10/arrow_small.png');" onclick="single_gallery('prev')"></span>
+          <span class="arrow arrrow-left" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_small.png');" onclick="single_gallery('prev')"></span>
           <span class="pages-from" id="pagefrom">01</span>
           <span class="pages-separator">/</span>
           <span class="pages-to" id="pageto"><?php if($picNo < 10) { echo '0'. $picNo;} else { echo $picNo; } ?></span>
-          <span class="arrow arrow-right" style="background-image: url('../../../../wp-content/uploads/2018/10/arrow_small.png');" onclick="single_gallery('next')"></span>
+          <span class="arrow arrow-right" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_small.png');" onclick="single_gallery('next')"></span>
         </div>
       <?php
         }
