@@ -88,11 +88,10 @@
     );
 
   ?>
-  <div class="materijali-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div>
+  <!-- <div class="materijali-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div> -->
     <!-- <div class="materijali-wrapper"> -->
     <?php
     $countDivs = 1;
-
       while ($allPosts->have_posts() ) : $allPosts->the_post();
         if(have_rows('materijali_element')):
           while(have_rows('materijali_element')): the_row();
@@ -149,11 +148,11 @@
       // $countDivs = 1;
         $countDivs++;
 
-      if($countDivs == 10 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
-      ?>
-    </div>
-      <?php
+      // if($countDivs == 10 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
+        if($countDivs == 7 || ($countDivs-1) == ($wp_query->post_count)){
         $countDivs = 1;
+      ?>
+      <?php
       }
         endwhile;
       endif;
@@ -161,6 +160,25 @@
     wp_reset_postdata();
     ?>
     </div>
+            <div class="materijali-readmore">
+          <div class="materijali-readmore--title">
+          <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
+          </div>
+          <div class="materijali-readmore--info">
+            <div class="materijali-readmore--info-text">Sastavni deo svake kuhinje je radna površina,tj. radna ploča.
+Kuhinjske radne ploče,u odnosu na oplemenjenu ivericu, imaju povećanu otpornost na udarce,ogrebotine,hemikalije i toplotu.
+</div>
+            <div class="materijali-readmore--info-link"><a href="<?php
+              $page = new WP_Query(array(
+                'post_type' => 'page',
+                'name' => $term->slug,
+              ));
+            foreach($page as $p) {
+              echo $p->guid;
+            }
+            ?>">Vidi više</a></div>
+          </div>
+        </div>
     <?php
   }
   ?>

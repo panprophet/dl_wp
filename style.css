@@ -3365,7 +3365,6 @@ textarea {
   align-items: center;
   position: relative;
   top: 70px;
-  margin: 50px 0px;
 }
 .materijali-term {
   width: 100%;
@@ -3389,6 +3388,7 @@ textarea {
   grid-template-columns: 30% 30% 30%;
   grid-template-rows: 400px 400px;
   justify-content: center;
+  margin: 50px 0px;
 }
 .materijali-wrapper-1 .pic-1 {
   grid-column: 1;
@@ -3519,6 +3519,7 @@ textarea {
   grid-template-columns: 30% 30% 30%;
   grid-template-rows: 400px 400px;
   justify-content: center;
+  margin: 50px 0px;
 }
 .materijali-wrapper-2 .pic-1,
 .materijali-wrapper-3 .pic-1 {
@@ -3654,6 +3655,41 @@ textarea {
   color: #666B70;
   font-size: 32px;
   line-height: 49px;
+  font-weight: 500;
+}
+.materijali-readmore {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  background-color: #0E0E0E;
+}
+.materijali-readmore--title {
+  height: 50%;
+  width: 100%;
+  font-size: 35px;
+  color: #FFFFFF;
+  line-height: 44px;
+}
+.materijali-readmore--info {
+  height: 50%;
+  width: 100%;
+  display: flex;
+}
+.materijali-readmore--info-text {
+  width: 50%;
+  height: 100%;
+  line-height: 22px;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+.materijali-readmore--info-link {
+  width: 50%;
+  height: 100%;
+}
+.materijali-readmore--info-link a {
+  font-size: 16px;
+  color: #FFFFFF;
   font-weight: 500;
 }
 @media screen and (max-width: 960px) {

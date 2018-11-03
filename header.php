@@ -159,7 +159,7 @@
               $wp_my_query = new WP_Query();
               $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
 
-              $ploce = get_page_by_path('materijali/radne-ploce');
+              $ploce = get_page_by_path('materijali/plocasti_materijali');
               $terms = get_page_children($ploce->ID, $all_wp_pages);
               ?>
             <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
