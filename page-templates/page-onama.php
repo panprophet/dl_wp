@@ -2,7 +2,7 @@
 
 <?php get_header(); ?>
 <div class="onama">
-  <div class="onama--top" style="background-image: url(<?php the_field('velilka_slika'); ?>); background-size: cover; background-repeat: no-repeat;"></div>
+  <div class="onama--top" style="background-image: url(<?php the_field('velilka_slika'); ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
   <div class="onama--bottom">
     <div class="onama--bottom-wrapper">
       <div class="onama--bottom-wrapper--title"><?php the_field('naslov'); ?></div>
@@ -62,7 +62,7 @@
     <?php
       }
     ?>
-      <div class="renderi--bottom-wrapper--pic renderi--bottom-wrapper--pic-<?php echo $counter; ?>" id="render_<?php echo $counter; ?>" style="background-image: url(<?php the_sub_field('render_image'); ?>); background-size: cover; background-repeat: no-repeat;"></div>
+      <div class="renderi--bottom-wrapper--pic renderi--bottom-wrapper--pic-<?php echo $counter; ?>" id="render_<?php echo $counter; ?>" style="background-image: url(<?php the_sub_field('render_image'); ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
     <?php
     if(get_row_index() == $totalFields) {
     ?>
