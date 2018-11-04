@@ -236,6 +236,12 @@
   grid-column: 3;
 }
 @media only screen and (max-width: 1366px) {
+  .onama--top {
+    height: 70%;
+  }
+  .onama--bottom {
+    height: 30%;
+  }
   .onamainfo {
     height: 120vh;
   }
