@@ -1,0 +1,89 @@
+.service {
+  height: calc(100vh - 70px);
+  width: 100%;
+  top: 70px;
+  display: flex;
+  position: relative;
+}
+.service--left {
+  height: 100%;
+  width: 6%;
+  display: flex;
+  flex-direction: column;
+}
+.service--left-top {
+  height: 90%;
+  background-color: #0E0E0E;
+}
+.service--left-bottom {
+  height: 10%;
+}
+.service--right {
+  height: 100%;
+  width: 94%;
+  display: flex;
+  background-color: #151515;
+}
+.service--right-left {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.service--right-left--top {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 60px;
+}
+.service--right-left--top-title {
+  width: 50%;
+  font-size: 60px;
+  line-height: 70px;
+  color: #FFFFFF;
+}
+.service--right-left--top-text {
+  width: 70%;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666B70;
+}
+.service--right-left--bottom {
+  height: 20%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.service--right-left--bottom-pic {
+  min-width: 33.3%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.service--right-left--bottom-pic--inner {
+  height: 15%;
+}
+.service--right-right {
+  width: 60%;
+  height: 100%;
+}
+.service--right-right--wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.service--right-right--wrapper-image {
+  min-width: 100%;
+  min-height: 100%;
+}
+.serviceintro {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  top: 70px;
+  display: flex;
+  position: relative;
+}
