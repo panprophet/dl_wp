@@ -3389,6 +3389,9 @@ textarea {
   justify-content: center;
   margin: 50px 0px;
 }
+.materijali-wrapper-1 .pic {
+  height: 100%;
+}
 .materijali-wrapper-1 .pic-1 {
   grid-column: 1;
   grid-row: 1;
@@ -3519,6 +3522,11 @@ textarea {
   grid-template-rows: 400px 400px;
   justify-content: center;
   margin: 50px 0px;
+}
+.materijali-wrapper-2 .pic,
+.materijali-wrapper-3 .pic {
+  height: 100%;
+  width: 100%;
 }
 .materijali-wrapper-2 .pic-1,
 .materijali-wrapper-3 .pic-1 {
