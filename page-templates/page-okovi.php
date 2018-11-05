@@ -134,7 +134,7 @@
               <div class="pic--inner-bottom--left--redline"></div>
             </div>
             <div class="pic--inner-bottom--right">
-              <div class="pic--inner-bottom--right--more"><a href="<?php the_permalink() ?>">Read more</a></div>
+              <div class="pic--inner-bottom--right--more"><a href="<?php the_permalink() ?>">Vidi više</a></div>
               <div class="pic--inner-bottom--right--cena"><?php the_sub_field('cena'); ?></div>
             </div>
           </div>
