@@ -44,7 +44,7 @@
             <div class="img--inner-sub">
               <span class="img--inner-sub--title"><?php the_sub_field('naslov_2') ?></span>
               <span class="img--inner-sub--dash"></span>
-              <span class="img--inner-sub--more" onclick="go_to_slide( 0 , <?php echo $photoclass ?>)">Read more</span></div>
+              <span class="img--inner-sub--more" onclick="go_to_slide( 0 , <?php echo $photoclass; ?>)">Vidi više</span></div>
             <div class=""></div>
           </div>
         </div>

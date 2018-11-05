@@ -26,29 +26,44 @@
         <div class="menu--top-links-single menu--top-links-single--open" id="singlelinks">
 
          <span class="menu--top-links-single--back"><a href="<?php
-            $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+
+            $posttypelink = get_the_terms($post->ID, 'kuhinje_categories');
+            $kategorija = 'kuhinje_categories';
+            $link = 'kuhinje/';
+            if(!$posttypelink ) {
+              $posttypelink  = get_the_terms($post->ID, 'materijali_categories');
+              $kategorija = 'materijali_categories';
+              $link = 'materijali/';
+            }
+            foreach($posttypelink as $term) {
+                $parent =  $term->parent;
+                if($parent) {
+                  $name = get_term($parent, $kategorija);
+                  $path = $name->name;
+                } else {
+                  $path = $term->slug;
+                }
+            }
+          echo get_permalink(get_page_by_path($link.$path))
+          // echo $posttype;
+         ?>">
+         <?php
+          $posttype = get_the_terms($post->ID, 'kuhinje_categories');
+          $kategorija = 'kuhinje_categories';
+          if(!$posttype) {
+              $posttype = get_the_terms($post->ID, 'materijali_categories');
+              $kategorija = 'materijali_categories';
+          }
           foreach($posttype as $term) {
               $parent =  $term->parent;
               if($parent) {
-                $name = get_term($parent, 'kuhinje_categories');
-                $path = $name->name;
+                $name = get_term($parent, $kategorija);
+                echo $name->name;
               } else {
-                $path = $term->slug;
+                echo $term->name;
               }
             }
-          echo get_permalink(get_page_by_path('kuhinje/'.$path))
-         ?>">
-         <?php
-         $posttype = get_the_terms($post->ID, 'kuhinje_categories');
-         foreach($posttype as $term) {
-            $parent =  $term->parent;
-            if($parent) {
-              $name = get_term($parent, 'kuhinje_categories');
-              echo $name->name;
-            } else {
-              echo $term->name;
-            }
-          }
+            // echo $posttype;
          ?>
          </a></span>
          <span>/</span>
@@ -108,7 +123,7 @@
     <div class="menu--wrap menu--wrap-hide"
           id="dropdown">
       <div class="menu--wrap-midd">
-        <div class="menu--wrap-midd-container">
+        <div class="menu--wrap-midd-container" id="materijalilinks">
           <div class="menu--wrap-midd-container--top"
                 id="subLink">
 
@@ -118,23 +133,89 @@
 
             $materijali = get_page_by_title('Materijali');
             $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
+
+            $countMat = 1;
             foreach (array_reverse($materijali_children) as $child) {
-              if(get_the_id() == $child->ID){
+              $chil_child = get_pages(array('child_of' => $child->ID));
+              if(count($chil_child) != 0) {
+                if(get_the_id() == $child->ID){
             ?>
-              <div class="menu--wrap-midd-container--top-link top-link--active" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <div class="menu--wrap-midd-container--top-link menu--wrap-midd-container--top-link--active" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
               <?php
-              } else {
+                } else {
               ?>
-              <div class="menu--wrap-midd-container--top-link" id="subLink_1"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+              <div class="menu--wrap-midd-container--top-link" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
               <?php
+                }
+              $countMat++;
               }
               ?>
             <?php
             }
             ?>
           </div>
-          <div class="menu--wrap-midd-container--bottom">
-            <div class="bottom"></div>
+          <div class="menu--wrap-midd-container--bottom" id="submenu">
+            <?php
+              $wp_my_query = new WP_Query();
+              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+              $ploce = get_page_by_path('materijali/plocasti_materijali');
+              $terms = get_page_children($ploce->ID, $all_wp_pages);
+              ?>
+            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
+              <?php
+              foreach ( $terms as $key => $term ) {
+                if($key === 0) {
+                ?>
+                <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
+                }
+                if($key === 3 || $key === 6){
+                ?>
+                </div>
+                <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
+                }
+                ?>
+                <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+                <?php
+              }
+              ?>
+              <?php
+            ?>
+              </div>
+            </div>
+            <?php
+              $wp_my_query = new WP_Query();
+              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+              $ploce = get_page_by_path('materijali/okovi');
+              $terms = get_page_children($ploce->ID, $all_wp_pages);
+              ?>
+            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_2">
+              <?php
+              foreach ( $terms as $key => $term ) {
+                if($key === 0) {
+                ?>
+                <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
+                }
+                if($key === 3 || $key === 6){
+                ?>
+                </div>
+                <div class="menu--wrap-midd-container--bottom-wrapper-column">
+                <?php
+                }
+                ?>
+                <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+                <?php
+              }
+              ?>
+              <?php
+            ?>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

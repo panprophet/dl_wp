@@ -1,6 +1,7 @@
 <?php /* Template Name: Fijoke */ ?>
 
 <?php get_header(); ?>
+<?php $element_slug = 'fijoke'; ?>
 
 <div class="kuhinja">
   <div class="kuhinja--top">
@@ -108,7 +109,7 @@
             <div class="elements-description--material-description">
               <div class="text"><?php the_sub_field('opiselementa'); ?></div><div class="thumb" style="background-image: url(<?php the_sub_field('slikaelementa'); ?>); background-size: cover; background-repeat: no-repeat;"></div>
             </div>
-            <div class="elements-description--material-link"><a href="#">Read more</a></div>
+            <div class="elements-description--material-link"><a href="#">Vidi više</a></div>
           </div>
       </div>
 
@@ -128,25 +129,46 @@
 </div>
 <div class="more">
   <?php
-
-  $terms = get_terms([
-    'taxonomy' => 'fijoke_categories',
-    'hide-empty' => true
-  ]);
-
+  $parent_cat = get_term_by('slug', $element_slug, 'kuhinje_categories');
+  $parent_id = $parent_cat->term_id;
+  $children = get_terms('kuhinje_categories', array (
+    'parent'=> $parent_id,
+    'hide_empty' => false
+  ));
+  if($children) {
+    $terms = get_terms([
+      'taxonomy' => 'kuhinje_categories',
+      'hide-empty' => true,
+      'child_of' => $parent_id,
+    ]);
+  } else {
+    $terms[] = $parent_id;
+  }
   foreach($terms as $term) {
-      $allPosts = new WP_Query( array(
-        'post_type' => 'fijoke',
-        'posts_per_page' => -1,
-        'tax_query' => array(
-          array (
-            'taxonomy' => 'fijoke_categories',
-            'field' => 'slug',
-            'terms' => $term->slug,
-          ),
+    if($children) {
+      $query_args = array(
+        array (
+          'taxonomy' => 'kuhinje_categories',
+          'field' => 'slug',
+          'terms' => $term->slug,
         ),
-        'post__not_in'=> array ($idCurr),
-      ));
+      );
+    } else {
+      $query_args = array(
+        array (
+          'taxonomy' => 'kuhinje_categories',
+          'field' => 'id',
+          'terms' => $parent_id,
+        ),
+      );
+    }
+    $allPosts = new WP_Query(
+      array(
+        'post_type' => 'kuhinje',
+        'posts_per_page' => -1,
+        'tax_query' => $query_args,
+      )
+    );
   ?>
   <div class="more-term"><?php echo $term->name ?></div>
     <!-- <div class="more-wrapper"> -->
@@ -181,7 +203,7 @@
             <p class="pic--inner-midd--opis"><?php the_sub_field('opis'); ?></p>
           </div>
           <div class="pic--inner-bottom">
-            <div class="pic--inner-bottom--redline"></div><div class="pic--inner-bottom--more"><a href="<?php the_permalink() ?>">Read more</a></div>
+            <div class="pic--inner-bottom--redline"></div><div class="pic--inner-bottom--more"><a href="<?php the_permalink() ?>">Vidi više</a></div>
           </div>
 
         </div>

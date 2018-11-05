@@ -25,7 +25,7 @@
         if(have_rows('image_carousel')):
         while(have_rows('image_carousel')): the_row();
       ?>
-        <div class="post-temp--left-slide--gallery-picture" id="<?php echo ($picNo+1); ?>"><img src="<?php the_sub_field('galerry_image'); ?>"></div>
+        <div class="post-temp--left-slide--gallery-picture" id="material_<?php echo ($picNo+1); ?>"><img src="<?php the_sub_field('galerry_image'); ?>"></div>
       <?php
         $picNo++;
         endwhile;
@@ -36,11 +36,11 @@
         if($picNo > 1) {
       ?>
         <div class="post-temp--left-slide--slider">
-          <span class="arrow arrrow-left" style="background-image: url('../../../../wp-content/uploads/2018/10/arrow_small.png');" onclick="single_gallery('prev')"></span>
+          <span class="arrow arrrow-left" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_small.png');" onclick="single_gallery('prev')"></span>
           <span class="pages-from" id="pagefrom">01</span>
           <span class="pages-separator">/</span>
           <span class="pages-to" id="pageto"><?php if($picNo < 10) { echo '0'. $picNo;} else { echo $picNo; } ?></span>
-          <span class="arrow arrow-right" style="background-image: url('../../../../wp-content/uploads/2018/10/arrow_small.png');" onclick="single_gallery('next')"></span>
+          <span class="arrow arrow-right" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_small.png');" onclick="single_gallery('next')"></span>
         </div>
       <?php
         }
@@ -59,18 +59,18 @@
   <div class="post-temp--right">
     <div class="post-temp--right-info">
       <div class="post-temp--right-info--title">Informacije</div>
-      <div class="post-temp--right-info--description"><?php the_sub_field('opis'); ?></div>
+      <div class="post-temp--right-info--description"><?php the_sub_field('informacije'); ?></div>
       <div class="post-temp--right-info--spec">
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Dimenzije</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span></div>
+          <div class="tab--title"><span class="tab--title-text">Obrada</span><span class="tab--title-icon"><?php the_sub_field('dimenzije'); ?></span></div>
 
         </div>
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Debljina ploce</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span>
+          <div class="tab--title"><span class="tab--title-text">Debljina ploče</span><span class="tab--title-icon"><?php the_sub_field('debljina_materijala'); ?></span>
         </div>
         </div>
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Proizvodjac</span><span class="tab--title-icon" style="background-image: url('../../../wp-content/uploads/2018/10/arrow_2.png')"></span>
+          <div class="tab--title"><span class="tab--title-text">Proizvođac</span><span class="tab--title-icon"><?php the_sub_field('proizvodjac'); ?></span>
           </div>
         </div>
       </div>
