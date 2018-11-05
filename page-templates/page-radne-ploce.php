@@ -7,10 +7,12 @@
 
   <div class="ploce--top">
     <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
+    <div class="gradient">    
         <div class="ploce--top-hero--title"><?php $title = the_title(); echo strtoupper($title); ?></div>
         <div class="ploce--top-hero--text">
         <?php the_field('unutrasnji_text') ?>
         </div>
+    </div>
     </div>
   </div>
   <div class="ploce--midd">
@@ -88,15 +90,32 @@
     );
 
   ?>
-  <!-- <div class="materijali-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div> -->
-    <!-- <div class="materijali-wrapper"> -->
+    <div class="materijali-readmore">
+      <div class="materijali-readmore--title">
+      <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
+      </div>
+      <div class="materijali-readmore--info">
+        <div class="materijali-readmore--info-text">Sastavni deo svake kuhinje je radna površina,tj. radna ploča. Kuhinjske radne ploče,u odnosu na oplemenjenu ivericu, imaju povećanu otpornost na udarce,ogrebotine,hemikalije i toplotu.</div>
+        <div class="materijali-readmore--info-link"><a href="<?php
+          $page = new WP_Query(array(
+            'post_type' => 'page',
+            'name' => $term->slug,
+          ));
+        foreach($page as $p) {
+          echo $p->guid;
+        }
+        ?>">Vidi više</a></div>
+      </div>
+    </div>
     <?php
     $countDivs = 1;
       while ($allPosts->have_posts() ) : $allPosts->the_post();
         if(have_rows('materijali_element')):
           while(have_rows('materijali_element')): the_row();
+
     ?>
-    <?php if($countDivs == 1) { ?>
+    <?php
+    if($countDivs == 1) { ?>
     <div class="materijali-wrapper-<?php echo $countDivs ?>">
     <?php }
     if($countDivs == 4) { ?>
@@ -127,11 +146,9 @@
         ?>
           </div>
           <div class="pic--inner-midd">
-            <!-- <p class="pic--inner-midd--naslov1"><?php the_title(); ?></p> -->
             <p class="pic--inner-midd--naslov2"><?php the_sub_field('opis'); ?></p>
           </div>
           <div class="pic--inner-bottom">
-            <!-- nesto od ovoga ne treba da ide the tile , naziv ili opis.. raspitaj se sta je sta -->
             <div class="pic--inner-bottom--left">
               <div class="pic--inner-bottom--left--opis"><?php the_sub_field('naziv'); ?></div>
               <div class="pic--inner-bottom--left--redline"></div>
@@ -148,10 +165,11 @@
       // $countDivs = 1;
         $countDivs++;
 
-      // if($countDivs == 10 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
-        if($countDivs == 7 || ($countDivs-1) == ($wp_query->post_count)){
+      if($countDivs == 10 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
+        // if($countDivs == 7 || ($countDivs-1) == ($wp_query->post_count)){
         $countDivs = 1;
       ?>
+      </div>
       <?php
       }
         endwhile;
@@ -160,25 +178,7 @@
     wp_reset_postdata();
     ?>
     </div>
-            <div class="materijali-readmore">
-          <div class="materijali-readmore--title">
-          <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
-          </div>
-          <div class="materijali-readmore--info">
-            <div class="materijali-readmore--info-text">Sastavni deo svake kuhinje je radna površina,tj. radna ploča.
-Kuhinjske radne ploče,u odnosu na oplemenjenu ivericu, imaju povećanu otpornost na udarce,ogrebotine,hemikalije i toplotu.
-</div>
-            <div class="materijali-readmore--info-link"><a href="<?php
-              $page = new WP_Query(array(
-                'post_type' => 'page',
-                'name' => $term->slug,
-              ));
-            foreach($page as $p) {
-              echo $p->guid;
-            }
-            ?>">Vidi više</a></div>
-          </div>
-        </div>
+
     <?php
   }
   ?>
