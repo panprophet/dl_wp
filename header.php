@@ -223,30 +223,26 @@
         <div class="menu--wrap-bottom-container">
         <?php ?>
           <div class="elements">
-            <div class="elements-title"><?php $fijoke = get_page_by_title('Fijoke'); ?><a href="<?php echo $fijoke->guid; ?>">Kuhinje</a></div>
+            <div class="elements-title"><?php $fijoke = get_page_by_title('Fijoke'); ?>Kuhinje</div>
             <div class="elements-container">
-              <div class="elements-container--pic">
-                <img src="<?php
-                if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/Slide_gallery_3.png'; }
-                else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Slide_gallery_3.png'; }
-                else if( is_page() ) { echo '../wp-content/uploads/2018/10/Slide_gallery_3.png'; }
-                else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/Slide_gallery_3.png';}
-                ?> " alt="Kuhinje" /> </div>
+              <div class="elements-container--pic" style="background-image: url(<?php
+                if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
+                else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
+                else if( is_page() ) { echo '../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
+                else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/kuhinja-mala.jpg';}
+                ?>); background-repeat: no-repeat;"></div>
               <div class="elements-container--text">Fioke, klizači, podizni mehanizmi, žičani elementi, diht lajsne, sokle, aluminijumski kantovi, ugradna tehnika, kuhinjska galanterija, sudopere i slavine, alu ramovi sa staklennom ispunom.</div>
             </div>
           </div>
           <div class="elements">
             <div class="elements-title">Plakari</div>
             <div class="elements-container">
-              <div class="elements-container--pic">
-                <img src="
-                <?php
-                if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/Slide_gallery_2.png'; }
-                else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Slide_gallery_2.png'; }
-                else if( is_page() ) { echo '../wp-content/uploads/2018/10/Slide_gallery_2.png'; }
-                else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/Slide_gallery_2.png';}
-                ?>
-                " /> </div>
+              <div class="elements-container--pic"  style="background-image: url(<?php
+                if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/plakari-mala.jpg'; }
+                else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
+                else if( is_page() ) { echo '../wp-content/uploads/2018/11/plakari-mala.jpg'; }
+                else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/plakari-mala.jpg';}
+                ?>); background-repeat: no-repeat;"></div>
               <div class="elements-container--text">Izvlakači, garderoberi, liftovi, mehanizmi za otvaranje, aluminijumski profili za vrata, staklene ispune, razna galanterija</div>
             </div>
           </div>

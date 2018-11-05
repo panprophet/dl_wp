@@ -82,7 +82,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex: 1 20%;
+  flex: 1 10%;
 }
 .menu--top-choice--contact {
   flex: 1 20%;
@@ -101,6 +101,7 @@
   cursor: pointer;
 }
 .menu--top-choice--ham {
+  height: 18px;
   flex: 1 15%;
   display: flex;
   justify-content: flex-end;
@@ -183,8 +184,8 @@
   margin: 35px 0px;
 }
 .menu--wrap-bottom {
-  height: 220px;
-  max-height: 220px;
+  height: 260px;
+  max-height: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -232,7 +233,7 @@
   color: #FFFFFF;
 }
 .menu--wrap-show {
-  max-height: 525px;
+  max-height: 565px;
   opacity: 1;
   border-width: 5px;
   transition: max-height 0.5s ease-in, opacity 0.4s linear, border-width 0.5s ease-in;
@@ -242,6 +243,11 @@
   opacity: 0;
   border-width: 0px;
   transition: max-height 0.5s ease-out, opacity 0.6s linear, border-width 0.5s ease-out;
+}
+@media only screen and (max-width: 1366px) {
+  .menu--wrap-bottom-container .elements {
+    width: 49%;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .menu--wrap-midd {
