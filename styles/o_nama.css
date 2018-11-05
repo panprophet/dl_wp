@@ -194,32 +194,6 @@
 .renderi--bottom-wrapper--pic-3 {
   grid-column: 3;
 }
-<<<<<<< HEAD
-=======
-.renderi--bottom-wrapper--pic:hover {
-  cursor: pointer;
-}
-@media only screen and (max-width: 1680px) {
-  .onama--bottom-wrapper--title {
-    margin-left: 7%;
-  }
-  .onama--bottom-wrapper--text {
-    margin-left: 7%;
-  }
-  .video--top-wrapper--title {
-    margin-left: 7%;
-  }
-  .video--top-wrapper--text {
-    margin-left: 7%;
-  }
-  .renderi--top-wrapper--title {
-    margin-left: 7%;
-  }
-  .renderi--top-wrapper--text {
-    margin-left: 7%;
-  }
-}
->>>>>>> master
 @media only screen and (max-width: 1366px) {
   .onama--top {
     height: 70%;
