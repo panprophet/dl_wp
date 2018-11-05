@@ -194,6 +194,50 @@
 .renderi--bottom-wrapper--pic-3 {
   grid-column: 3;
 }
+.renderi--bottom-wrapper--pic-top {
+  height: 80%;
+  width: 100%;
+}
+.renderi--bottom-wrapper--pic-bottom {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.renderi--bottom-wrapper--pic-bottom--top {
+  height: 50%;
+  color: #666B70;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 5px;
+}
+.renderi--bottom-wrapper--pic-bottom--bottom {
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.renderi--bottom-wrapper--pic-bottom--bottom-title {
+  color: #666B70;
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.renderi--bottom-wrapper--pic-bottom--bottom-redline {
+  width: 70px;
+  margin-right: 20px;
+  border-bottom: 3px solid #840505;
+}
+.renderi--bottom-wrapper--pic-bottom--bottom-readmore {
+  width: 80px;
+  color: #666B70;
+  font-size: 16px;
+  line-height: 22px;
+}
+.renderi--bottom-wrapper--pic-bottom--bottom-readmore:hover {
+  cursor: pointer;
+}
 @media only screen and (max-width: 1366px) {
   .onama--top {
     height: 70%;
