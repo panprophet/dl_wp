@@ -1,5 +1,6 @@
+  <?php get_header(); ?>
   <?php
-    $to = "info@drvolux.rs";
+    $to = "office@drvolux.rs";
     $from = $_POST["mail"];
     $imeprezime = $_POST["imeprezime"];
     // pitaj za subject
@@ -14,3 +15,4 @@
         echo "<div class=\"response\"><div> NOT OK </div></div>";
     }
 ?>
+<?php get_footer(); ?>

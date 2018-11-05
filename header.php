@@ -85,7 +85,7 @@
       </div>
       <div class="menu--top-choice">
         <div class="menu--top-choice--contact">
-          <p>Kontakt</p>
+          <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>"><p>Kontakt</p></a>
         </div>
         <div class="menu--top-choice--lang">ENG / SRB</div>
         <div class="menu--top-choice--ham"
