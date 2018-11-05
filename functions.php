@@ -1,5 +1,17 @@
 <?php
+//custom update checker
+require_once dirname(__FILE__) .'/lib/ext/plugin-update-checker/plugin-update-checker.php';
+$abUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/panprophet/dl_wp/',
+    __FILE__,
+    'dl_wp'
+);
+$abUpdateChecker->setAuthentication('12943909f22c712a064cc26f72135bce7099879a');
+$abUpdateChecker->setBranch('stage-update');
 add_action( 'after_setup_theme', 'blankslate_setup' );
+
+
+
 function blankslate_setup()
 {
 load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
