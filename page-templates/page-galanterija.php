@@ -107,7 +107,7 @@
             <div class="elements-description--material-description">
               <div class="text"><?php the_sub_field('opiselementa'); ?></div><div class="thumb" style="background-image: url(<?php the_sub_field('slikaelementa'); ?>); background-size: cover; background-repeat: no-repeat;"></div>
             </div>
-            <div class="elements-description--material-link"><a href="#">Read more</a></div>
+            <div class="elements-description--material-link"><a href="#">Vidi više</a></div>
           </div>
       </div>
 
@@ -203,7 +203,7 @@
             <p class="pic--inner-midd--opis"><?php the_sub_field('opis'); ?></p>
           </div>
           <div class="pic--inner-bottom">
-            <div class="pic--inner-bottom--redline"></div><div class="pic--inner-bottom--more"><a href="<?php the_permalink() ?>">Read more</a></div>
+            <div class="pic--inner-bottom--redline"></div><div class="pic--inner-bottom--more"><a href="<?php the_permalink() ?>">Vidi više</a></div>
           </div>
 
         </div>
