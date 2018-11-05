@@ -59,7 +59,7 @@
   <div class="post-temp--right">
     <div class="post-temp--right-info">
       <div class="post-temp--right-info--title">Informacije</div>
-      <div class="post-temp--right-info--description"><?php the_sub_field('opis'); ?></div>
+      <div class="post-temp--right-info--description"><?php the_sub_field('informacije'); ?></div>
       <div class="post-temp--right-info--spec">
         <div class="tab">
           <div class="tab--title"><span class="tab--title-text">Obrada</span><span class="tab--title-icon"><?php the_sub_field('dimenzije'); ?></span></div>
