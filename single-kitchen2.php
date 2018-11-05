@@ -114,7 +114,7 @@
               <div class="elements-description--material-description">
                 <div class="text"><?php the_sub_field('opiselementa'); ?></div><div class="thumb" style="background-image: url(<?php the_sub_field('slikaelementa'); ?>); background-size: cover; background-repeat: no-repeat;"></div>
               </div>
-              <div class="elements-description--material-link"><a href="#">Read more</a></div>
+              <div class="elements-description--material-link"><a href="#">Vidi više</a></div>
             </div>
           </div>
         </div>
