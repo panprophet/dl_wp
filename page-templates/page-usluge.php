@@ -62,7 +62,17 @@
     <?php
       }
     ?>
-      <div class="renderi--bottom-wrapper--pic renderi--bottom-wrapper--pic-<?php echo $counter; ?>" id="render_<?php echo $counter; ?>" style="background-image: url(<?php the_sub_field('render_image'); ?>); background-size: cover; background-repeat: no-repeat; background-position: center;" onclick="go_to_slide( 0 , <?php echo $photoclass; ?>)"></div>
+      <div class="renderi--bottom-wrapper--pic renderi--bottom-wrapper--pic-<?php echo $counter; ?>" id="render_<?php echo $counter; ?>">
+        <div class="renderi--bottom-wrapper--pic-top" style="background-image: url(<?php the_sub_field('render_image'); ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+        <div class="renderi--bottom-wrapper--pic-bottom">
+          <div class="renderi--bottom-wrapper--pic-bottom--top"><?php the_sub_field('opis'); ?></div>
+          <div class="renderi--bottom-wrapper--pic-bottom--bottom">
+            <div class="renderi--bottom-wrapper--pic-bottom--bottom-title"><?php the_sub_field('naziv'); ?></div>
+            <div class="renderi--bottom-wrapper--pic-bottom--bottom-redline"></div>
+            <div class="renderi--bottom-wrapper--pic-bottom--bottom-readmore" onclick="go_to_slide( 0 , <?php echo $photoclass; ?>)">Read more</div>
+          </div>
+        </div>
+      </div>
     <?php
     if(get_row_index() == $totalFields) {
     ?>
