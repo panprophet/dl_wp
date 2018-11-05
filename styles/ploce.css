@@ -7,7 +7,6 @@
   flex-direction: column;
 }
 .ploce--top {
-  margin-left: 30px;
   height: calc(100vh - 70px - 90px);
   display: flex;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
