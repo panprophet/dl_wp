@@ -214,7 +214,7 @@
           }
           &--bottom {
             height: 50%;
-            width: 90%;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -248,7 +248,20 @@
   }
 }
 @media only screen and (max-width: 1440px) {
+  .onama{
+    &--bottom{
+      height: 220px;
+    }
+  }
+  .video{
+    &--top{
+      height: 220px;
+    }
+  }
   .renderi{
+    &--top{
+      height: 220px;
+    }
     &--bottom{
       &-wrapper{
         &--pic{
@@ -259,31 +272,15 @@
   }
 }
 @media only screen and (max-width: 1366px) {
-  .onama {
-    &--top {
-      height: 70%;
-    }
-    &--bottom {
-      height: 30%;
-    }
-  }
   .onamainfo {
     height: 120vh;
   }
   .video {
-    &--top {
-      height: 30%;
-    }
     &--bottom {
       height: 70%;
       &-wrapper {
         width: 65%;
       }
-    }
-  }
-  .renderi {
-    &--top {
-      height: 166px;
     }
   }
 }
@@ -304,6 +301,9 @@
 @media only screen and (max-width: 1024px) {
   .onama{
     height: auto;
+    &--top{
+      height: 60%;
+    }
     &--bottom{
       &-wrapper{
         width: 95%;
@@ -314,6 +314,17 @@
     height: auto;
     flex-direction: column;
     align-items: center;
+    &--right{
+      height: 60%;
+      &-top{
+        height: 220px;
+        top: 0;
+      }
+      &-bottom{
+        height: 220px;
+        top: auto;
+      }
+    }
     &--left{
       width: 100%;
       height: auto;
@@ -370,13 +381,13 @@
         height: 250px;
         width: 320px;
         top: 0;
-        right: 30%;
+        // right: 30%;
       }
       &-bottom{
         height: 250px;
         width: 320px;
         top: -20%;
-        right: 20%;
+        // right: 20%;
       }
     }
   }
@@ -403,6 +414,13 @@
   }
 }
 @media only screen and (max-width: 800px) {
+  .onamainfo{
+    &--right{
+      &-top{
+        margin-left: 0;
+      }
+    }
+  }
   .onama{
     &--bottom{
       &-wrapper{
@@ -441,6 +459,17 @@
   }
 }
 @media only screen and (max-width: 640px) {
+  .onamainfo{
+    &--right{
+      height: 460px;
+      &-top{
+        right: 20%;
+      }
+      &-bottom{
+        margin-left: 20%;
+      }
+    }
+  }
   .video{
     &--bottom{
       height: 400px;
@@ -512,23 +541,31 @@
     }
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 360px) {
+  .onamainfo{
+    &--right{
+      height: 540px;
+    }
+  }
   .onama{
+    &--top{
+      height: 350px;
+    }
     &--bottom{
-      height: 40%;
       &-wrapper{
         &--title{
           font-size: 22px;
+          line-height: 24px;
         }
       }
     }
   }
   .video{
     &--top{
-      height: 40%;
       &-wrapper{
         &--title{
           font-size: 22px;
+          line-height: 24px;
         }
       }
     }
@@ -538,6 +575,7 @@
       &-wrapper{
         &--title{
           font-size: 22px;
+          line-height: 24px;
         }
       }
     }
