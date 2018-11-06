@@ -88,7 +88,7 @@
           ));
           if($page_q->have_posts()) {
             while($page_q->have_posts()) {
-              $page_q=>the_post();
+              $page_q->the_post();
               echo the_field('vidi_vise_tekst');
             }
           }
