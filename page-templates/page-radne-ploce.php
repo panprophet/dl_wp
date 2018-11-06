@@ -28,34 +28,8 @@
           endwhile;
         endif;
         ?>
-      <?php
-      // $wp_my_query = new WP_Query();
-      //     $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', 'order' => 'ASC'));
-
-      //     $materijali = get_page_by_title('Materijali');
-      //     $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
-      //     foreach ($materijali_children as $child) {
-      //       $chil_child = get_pages(array('child_of' => $child->ID));
-      //       if(count($chil_child) != 0) {
-      //         if(get_the_id() == $child->ID){
-      ?>
-            <!-- <div class="ploce--midd-title--link active"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div> -->
-      <?php
-              // }else {
-      ?>
-            <!-- <div class="ploce--midd-title--link"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div> -->
-      <?php
-          //     }
-          //   }
-          // }
-      ?>
     </div>
   </div>
-  <!-- <div class="ploce--bottom">
-    <div class="ploce--bottom-text">
-        <?php the_field('unutrasnji_text') ?>
-    </div>
-  </div> -->
 </div>
 <div class="materijali">
  <?php
