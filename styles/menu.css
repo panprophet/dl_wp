@@ -184,6 +184,7 @@
   margin: 35px 0px;
 }
 .menu--wrap-bottom {
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -395,7 +396,7 @@
     height: 210px;
   }
   .menu--wrap-bottom-container {
-    width: 88%;
+    width: 93%;
     height: 85%;
   }
   .menu--wrap-bottom-container .elements {

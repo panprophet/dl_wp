@@ -98,7 +98,20 @@
               while(have_rows('materijali_element')): the_row();
         ?>
         <div class="post-temp--right-products--list-item" id="product_<?php echo $counter ?>">
-          <div class="pic" style="background-image: url(<?php the_sub_field('main_image') ?>"></div>
+        <?php
+          $carNo = 1;
+          if(have_rows('image_carousel')){
+            while(have_rows('image_carousel')){
+            the_row();
+              if($carNo == 1){
+        ?>
+          <div class="pic" style="background-image: url(<?php the_sub_field('galerry_image') ?>"></div>
+        <?php
+              }
+            $carNo++;
+            }
+          }
+        ?>
           <div class="declaration">
             <p><a href="<?php the_permalink() ?>"><?php the_sub_field('naziv') ?></a></p>
             <p><?php the_sub_field('id_elementa') ?></p>

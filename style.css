@@ -417,6 +417,7 @@ textarea {
   margin: 35px 0px;
 }
 .menu--wrap-bottom {
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -628,7 +629,7 @@ textarea {
     height: 210px;
   }
   .menu--wrap-bottom-container {
-    width: 88%;
+    width: 93%;
     height: 85%;
   }
   .menu--wrap-bottom-container .elements {
@@ -2372,6 +2373,7 @@ textarea {
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: rgba(85, 95, 105, 0.02);
 }
 .post-temp--right-info--title {
   height: 20%;
@@ -3380,7 +3382,7 @@ textarea {
   flex-direction: column;
 }
 .ploce--top {
-  height: calc(100vh - 70px - 90px);
+  height: calc(100vh - 70px - 220px);
   display: flex;
 }
 .ploce--top-hero {
@@ -3437,7 +3439,7 @@ textarea {
 }
 .ploce--midd {
   width: 100%;
-  height: 90px;
+  height: 220px;
   border-bottom: 1px solid #484848;
   display: flex;
   align-items: center;
@@ -3445,16 +3447,20 @@ textarea {
 }
 .ploce--midd-title {
   height: 100%;
+  width: 90%;
   text-align: center;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  margin-bottom: -1px;
 }
 .ploce--midd-title--link {
   margin-left: 25px;
   margin-right: 25px;
   padding-bottom: 20px;
   padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   color: #FFFFFF;
   font-size: 32px;
   line-height: 48px;
@@ -3463,6 +3469,10 @@ textarea {
   color: #FFFFFF;
   font-size: 32px;
   line-height: 48px;
+}
+.ploce--midd-title--partner img {
+  height: 100%;
+  width: 100%;
 }
 .ploce--bottom {
   height: 250px;
@@ -3510,7 +3520,7 @@ textarea {
   font-size: 32px;
   line-height: 44px;
   color: #666B70;
-  padding-left: 5%;
+  padding-left: 3%;
 }
 .materijali-wrapper {
   width: 95%;
@@ -3524,7 +3534,7 @@ textarea {
   grid-template-columns: 30.8% 30.5% 30.8%;
   grid-template-rows: 400px 400px;
   justify-content: center;
-  margin: 50px 0px;
+  margin-top: 25px;
 }
 .materijali-wrapper-1 .pic {
   height: 100%;
@@ -3598,7 +3608,6 @@ textarea {
   line-height: 33px;
   font-weight: 500;
   margin-bottom: 5px;
-  padding-left: 10px;
 }
 .materijali-wrapper-1 .pic--inner-bottom {
   height: 10%;
@@ -3606,7 +3615,6 @@ textarea {
   justify-content: space-between;
   align-items: center;
   background-color: #FFFFFF;
-  padding-left: 10px;
   opacity: 1;
 }
 .materijali-wrapper-1 .pic--inner-bottom--left {
@@ -3637,7 +3645,7 @@ textarea {
   align-items: center;
 }
 .materijali-wrapper-1 .pic--inner-bottom--right--more {
-  width: 80px;
+  width: 90px;
   color: #666B70;
   font-size: 16px;
   line-height: 22px;
@@ -3658,7 +3666,7 @@ textarea {
   grid-template-columns: 30.8% 30.5% 30.8%;
   grid-template-rows: 400px 400px;
   justify-content: center;
-  margin: 50px 0px;
+  margin-top: 25px;
 }
 .materijali-wrapper-2 .pic,
 .materijali-wrapper-3 .pic {
@@ -3728,7 +3736,6 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-left: 20px;
   background-color: #FFFFFF;
   opacity: 1;
 }
@@ -3754,7 +3761,6 @@ textarea {
   justify-content: space-between;
   align-items: center;
   background-color: #FFFFFF;
-  padding-left: 10px;
   opacity: 1;
 }
 .materijali-wrapper-2 .pic--inner-bottom--left,
@@ -3767,7 +3773,7 @@ textarea {
   width: auto;
   min-width: 70px;
   margin-right: 20px;
-  height: 21px;
+  height: 26px;
   overflow: hidden;
   color: #666B70;
   font-size: 24px;
@@ -3789,7 +3795,8 @@ textarea {
 }
 .materijali-wrapper-2 .pic--inner-bottom--right--more,
 .materijali-wrapper-3 .pic--inner-bottom--right--more {
-  width: 80px;
+  width: 90px;
+  height: 26px;
   color: #666B70;
   font-size: 16px;
   line-height: 22px;
@@ -3816,7 +3823,7 @@ textarea {
   font-size: 35px;
   color: #FFFFFF;
   line-height: 44px;
-  padding-left: 55px;
+  padding-left: 3%;
 }
 .materijali-readmore--info {
   height: 50%;
@@ -3829,7 +3836,7 @@ textarea {
   line-height: 22px;
   font-size: 16px;
   color: #FFFFFF;
-  padding-left: 55px;
+  padding-left: 3%;
   padding-top: 20px;
 }
 .materijali-readmore--info-link {
@@ -3865,7 +3872,6 @@ textarea {
   .materijali-wrapper-1 .pic--inner-bottom {
     align-items: center;
     padding-right: 10px;
-    padding-left: 10px;
   }
   .materijali-wrapper-1 .pic--inner-bottom--left {
     display: none;
