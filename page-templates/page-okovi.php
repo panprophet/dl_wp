@@ -31,51 +31,81 @@
   </div>
 </div>
 <div class="materijali">
-   <?php
-  $parent_cat = get_term_by('slug', $element_slug, 'materijali_categories');
-  $parent_id = $parent_cat->term_id;
-  $children = get_terms('materijali_categories', array (
-    'parent' => $parent_id,
-    'hide_empty' => false
-  ));
-  if($children) {
-    $terms = get_terms([
-      'taxonomy' => 'materijali_categories',
-      'hide-empty' => true,
-      'child_of' => $parent_id,
-    ]);
-  } else {
-    $terms[] = $parent_id;
-  }
-  foreach($terms as $term) {
+  <?php
+    $parent_cat = get_term_by('slug', $element_slug, 'materijali_categories');
+    $parent_id = $parent_cat->term_id;
+    $children = get_terms('materijali_categories', array (
+      'parent' => $parent_id,
+      'hide_empty' => false
+    ));
     if($children) {
-    $query_args = array(
-      array (
+      $terms = get_terms([
         'taxonomy' => 'materijali_categories',
-        'field' => 'slug',
-        'terms' => $term->slug,
-      ),
-    );
+        'hide-empty' => true,
+        'child_of' => $parent_id,
+      ]);
     } else {
-    $query_args = array(
-      array (
-        'taxonomy' => 'materijali_categories',
-        'field' => 'id',
-        'terms' => $parent_id,
-      ),
-    );
+      $terms[] = $parent_id;
     }
-    $allPosts = new WP_Query(
-      array(
-        'post_type' => 'materijali',
-        'posts_per_page' => -1,
-        'tax_query' => $query_args,
-      )
-    );
+    foreach($terms as $term) {
+      if($children) {
+      $query_args = array(
+        array (
+          'taxonomy' => 'materijali_categories',
+          'field' => 'slug',
+          'terms' => $term->slug,
+        ),
+      );
+      } else {
+      $query_args = array(
+        array (
+          'taxonomy' => 'materijali_categories',
+          'field' => 'id',
+          'terms' => $parent_id,
+        ),
+      );
+      }
+      $allPosts = new WP_Query(
+        array(
+          'post_type' => 'materijali',
+          'posts_per_page' => -1,
+          'tax_query' => $query_args,
+        )
+      );
 
-  ?>
-  <div class="materijali-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div>
-    <!-- <div class="materijali-wrapper"> -->
+    ?>
+    <div class="materijali-readmore">
+      <div class="materijali-readmore--title">
+      <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
+      </div>
+      <div class="materijali-readmore--info">
+        <div class="materijali-readmore--info-text">
+          <?php
+          $page_q = new WP_Query(array(
+            'post_type' => 'page',
+            'name' => $term->slug,
+          ));
+          if($page_q->have_posts()) {
+            while($page_q->have_posts()) {
+              $page_q->the_post();
+              echo the_field('vidi_vise_tekst');
+            }
+          }
+          wp_reset_postdata();
+          ?>
+        </div>
+        <div class="materijali-readmore--info-link"><a href="<?php
+          $page = new WP_Query(array(
+            'post_type' => 'page',
+            'name' => $term->slug,
+          ));
+        foreach($page as $p) {
+          echo $p->guid;
+        }
+        wp_reset_postdata();
+        ?>">Vidi više</a></div>
+      </div>
+    </div>
     <?php
     $countDivs = 1;
 
