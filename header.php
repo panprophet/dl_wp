@@ -264,7 +264,7 @@
       </div>
       <div class="mobilemenu--top-choice">
         <div class="mobilemenu--top-choice--contact">
-          <a href="<?php get_permalink(get_page_by_title("Kontakt")); ?>">Kontakt</a>
+          <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>">Kontakt</a>
         </div>
         <div class="mobilemenu--top-choice--lang">ENG / SRB</div>
         <div class="mobilemenu--top-choice--ham"
