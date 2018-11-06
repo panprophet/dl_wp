@@ -280,6 +280,16 @@
 .mobilemenu--top-choice--contact:hover {
   cursor: pointer;
 }
+.mobilemenu--top-choice--contact-hide {
+  opacity: 0;
+  transition: opacity 0.4s linear;
+  pointer-events: none;
+}
+.mobilemenu--top-choice--contact-show {
+  opacity: 1;
+  transition: opacity 0.4s linear;
+  pointer-events: all;
+}
 .mobilemenu--top-choice--lang {
   display: none;
   flex: 2 40%;

@@ -13,6 +13,7 @@
       <div class="menu--top-logo">
         <a href="<?php echo home_url('/') ?>"><img src="<?php
          if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
+          else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png'; }
           else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_page() ) { echo '../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
@@ -227,6 +228,7 @@
             <div class="elements-container">
               <div class="elements-container--pic" style="background-image: url(<?php
                 if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
+                else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if( is_page() ) { echo '../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/kuhinja-mala.jpg';}
@@ -239,6 +241,7 @@
             <div class="elements-container">
               <div class="elements-container--pic"  style="background-image: url(<?php
                 if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/plakari-mala.jpg'; }
+                else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if( is_page() ) { echo '../wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/plakari-mala.jpg';}
@@ -257,13 +260,14 @@
       <div class="mobilemenu--top-logo">
         <a href="<?php echo home_url('/') ?>"><img src="<?php
          if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
+          else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png'; }
           else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_page() ) { echo '../wp-content/uploads/2018/10/drvo_lux_logo.png';}
-          else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
+          else if( is_single() || (is_page() && $post->post_parent)) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
         </a>
       </div>
       <div class="mobilemenu--top-choice">
-        <div class="mobilemenu--top-choice--contact">
+        <div class="mobilemenu--top-choice--contact mobilemenu--top-choice--contact-hide" id="contact">
           <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>">Kontakt</a>
         </div>
         <div class="mobilemenu--top-choice--lang">ENG / SRB</div>

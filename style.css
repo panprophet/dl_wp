@@ -513,6 +513,16 @@ textarea {
 .mobilemenu--top-choice--contact:hover {
   cursor: pointer;
 }
+.mobilemenu--top-choice--contact-hide {
+  opacity: 0;
+  transition: opacity 0.4s linear;
+  pointer-events: none;
+}
+.mobilemenu--top-choice--contact-show {
+  opacity: 1;
+  transition: opacity 0.4s linear;
+  pointer-events: all;
+}
 .mobilemenu--top-choice--lang {
   display: none;
   flex: 2 40%;
@@ -3511,7 +3521,7 @@ textarea {
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 30.8% 30.5% 30.8%;
   grid-template-rows: 400px 400px;
   justify-content: center;
   margin: 50px 0px;
@@ -3645,7 +3655,7 @@ textarea {
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 30.8% 30.5% 30.8%;
   grid-template-rows: 400px 400px;
   justify-content: center;
   margin: 50px 0px;
@@ -3806,7 +3816,7 @@ textarea {
   font-size: 35px;
   color: #FFFFFF;
   line-height: 44px;
-  padding-left: 30px;
+  padding-left: 55px;
 }
 .materijali-readmore--info {
   height: 50%;
@@ -3819,15 +3829,16 @@ textarea {
   line-height: 22px;
   font-size: 16px;
   color: #FFFFFF;
-  padding-left: 30px;
+  padding-left: 55px;
   padding-top: 20px;
 }
 .materijali-readmore--info-link {
-  width: 40%;
+  width: 50%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
   padding-top: 20px;
+  padding-right: 56px;
 }
 .materijali-readmore--info-link a {
   font-size: 16px;
