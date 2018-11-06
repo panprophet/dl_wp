@@ -7,7 +7,7 @@
 
   <div class="ploce--top">
     <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
-    <div class="gradient">    
+    <div class="gradient">
         <div class="ploce--top-hero--title"><?php $title = the_title(); echo strtoupper($title); ?></div>
         <div class="ploce--top-hero--text">
         <?php the_field('unutrasnji_text') ?>
@@ -17,26 +17,37 @@
   </div>
   <div class="ploce--midd">
     <div class="ploce--midd-title">
+        <?php if(have_rows('partnerstop')) :
+            while (have_rows('partnerstop')) :
+            the_row();
+        ?>
+        <div class="ploce--midd-title--partner">
+          <img src="<?php the_sub_field('partner') ?>">
+        </div>
+        <?php
+          endwhile;
+        endif;
+        ?>
       <?php
-      $wp_my_query = new WP_Query();
-          $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', 'order' => 'ASC'));
+      // $wp_my_query = new WP_Query();
+      //     $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', 'order' => 'ASC'));
 
-          $materijali = get_page_by_title('Materijali');
-          $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
-          foreach ($materijali_children as $child) {
-            $chil_child = get_pages(array('child_of' => $child->ID));
-            if(count($chil_child) != 0) {
-              if(get_the_id() == $child->ID){
+      //     $materijali = get_page_by_title('Materijali');
+      //     $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
+      //     foreach ($materijali_children as $child) {
+      //       $chil_child = get_pages(array('child_of' => $child->ID));
+      //       if(count($chil_child) != 0) {
+      //         if(get_the_id() == $child->ID){
       ?>
-            <div class="ploce--midd-title--link active"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+            <!-- <div class="ploce--midd-title--link active"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div> -->
       <?php
-              }else {
+              // }else {
       ?>
-            <div class="ploce--midd-title--link"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
+            <!-- <div class="ploce--midd-title--link"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div> -->
       <?php
-              }
-            }
-          }
+          //     }
+          //   }
+          // }
       ?>
     </div>
   </div>

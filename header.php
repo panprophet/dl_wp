@@ -163,7 +163,7 @@
               $ploce = get_page_by_path('materijali/plocasti_materijali');
               $terms = get_page_children($ploce->ID, $all_wp_pages);
               ?>
-            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
+            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
               <?php
               foreach ( $terms as $key => $term ) {
                 if($key === 0) {
@@ -193,7 +193,7 @@
               $ploce = get_page_by_path('materijali/okovi');
               $terms = get_page_children($ploce->ID, $all_wp_pages);
               ?>
-            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(get_the_id() === $post->ID) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_2">
+            <div class="menu--wrap-midd-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_2">
               <?php
               foreach ( $terms as $key => $term ) {
                 if($key === 0) {
