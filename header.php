@@ -251,4 +251,108 @@
       </div>
     </div>
   </nav>
+  <!-- mobile menu -->
+  <nav class="mobilemenu">
+    <div class="mobilemenu--top">
+      <div class="mobilemenu--top-logo">
+        <a href="<?php echo home_url('/') ?>"><img src="<?php
+         if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
+          else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
+          else if( is_page() ) { echo '../wp-content/uploads/2018/10/drvo_lux_logo.png';}
+          else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
+        </a>
+      </div>
+      <div class="mobilemenu--top-choice">
+        <div class="mobilemenu--top-choice--contact">
+          <a href="<?php get_permalink(get_page_by_title("Kontakt")); ?>">Kontakt</a>
+        </div>
+        <div class="mobilemenu--top-choice--lang">ENG / SRB</div>
+        <div class="mobilemenu--top-choice--ham"
+              onclick="toggleMobileMenu()">
+          <!-- <img src="images/ham.svg">  -->
+          <svg version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 18 12"
+                style="enable-background:new 0 0 18 12;"
+                xml:space="preserve">
+            <style type="text/css">
+              .st0 {
+                fill: #ffffff;
+              }
+
+              .st1 {
+                fill: #840505;
+              }
+            </style>
+            <path class="st0"
+                  id="hammobile"
+                  d="M0,12h6v-2H0V12z M0,0v2h18V0H0z M0,7h12V5H0V7z" /> </svg>
+          </div>
+      </div>
+    </div>
+    <div class="mobilemenu--bottom mobilemenu--bottom-hide" id="dropdownmob">
+      <div class="mobilemenu--bottom-container">
+      <?php
+        $wp_my_query = new WP_Query();
+        $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+        $materijali = get_page_by_title('Materijali');
+        $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
+
+        $countMat = 1;
+        foreach (array_reverse($materijali_children) as $child) {
+          $chil_child = get_pages(array('child_of' => $child->ID));
+          if(count($chil_child) != 0) {
+        ?>
+          <div class="mobilemenu--bottom-container--link mobilemenu--bottom-container--top-link--active" id="<?php echo "mat_".$countMat; ?>"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+        <?php
+          if($countMat == 1){
+            $wp_my_query = new WP_Query();
+            $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+            $ploce = get_page_by_path('materijali/plocasti_materijali');
+            $terms = get_page_children($ploce->ID, $all_wp_pages);
+            foreach ( $terms as $key => $term ) {
+        ?>
+        <p class="mobilemenu--bottom-container--link-sub"><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+        <?php
+            }
+          }
+          if($countMat == 2){
+            $wp_my_query = new WP_Query();
+            $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+            $ploce = get_page_by_path('materijali/okovi');
+            $terms = get_page_children($ploce->ID, $all_wp_pages);
+            foreach ( $terms as $key => $term ) {
+            ?>
+        <p class="mobilemenu--bottom-container--link-sub"><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+        <?php
+            }
+          }
+          $countMat++;
+          }
+        ?>
+        <?php
+        }
+      ?>
+        <?php
+        $menuItems = wp_nav_menu( array(
+            'theme_location',
+            'container' => false,
+            'items_wrap' => '<ul>%3$s</ul>',
+            // 'menu_id' => 'links',
+            // 'menu_class' => 'menu--top-links menu--top-links--closed'
+          )
+        );
+        ?>
+        <div class="mobilemenu--bottom-container--link">Kuhinje</div>
+        <div class="mobilemenu--bottom-container--link">Plakari</div>
+      </diV>
+    </div>
+  </nav>
   <!-- top bar -->
