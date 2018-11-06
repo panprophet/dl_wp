@@ -80,7 +80,21 @@
       <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
       </div>
       <div class="materijali-readmore--info">
-        <div class="materijali-readmore--info-text">Sastavni deo svake kuhinje je radna površina,tj. radna ploča. Kuhinjske radne ploče,u odnosu na oplemenjenu ivericu, imaju povećanu otpornost na udarce,ogrebotine,hemikalije i toplotu.</div>
+        <div class="materijali-readmore--info-text">
+          <?php
+          $page_q = new WP_Query(array(
+            'post_type' => 'page',
+            'name' => $term->slug,
+          ));
+          if($page_q->have_posts()) {
+            while($page_q->have_posts()) {
+              $page_q->the_post();
+              echo the_field('vidi_vise_tekst');
+            }
+          }
+          wp_reset_postdata();
+          ?>
+        </div>
         <div class="materijali-readmore--info-link"><a href="<?php
           $page = new WP_Query(array(
             'post_type' => 'page',
@@ -89,6 +103,7 @@
         foreach($page as $p) {
           echo $p->guid;
         }
+        wp_reset_postdata();
         ?>">Vidi više</a></div>
       </div>
     </div>
