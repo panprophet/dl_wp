@@ -216,7 +216,7 @@
 }
 .renderi--bottom-wrapper--pic-bottom--bottom {
   height: 50%;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -244,31 +244,28 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1440px) {
+  .onama--bottom {
+    height: 220px;
+  }
+  .video--top {
+    height: 220px;
+  }
+  .renderi--top {
+    height: 220px;
+  }
   .renderi--bottom-wrapper--pic {
     height: 405px;
   }
 }
 @media only screen and (max-width: 1366px) {
-  .onama--top {
-    height: 70%;
-  }
-  .onama--bottom {
-    height: 30%;
-  }
   .onamainfo {
     height: 120vh;
-  }
-  .video--top {
-    height: 30%;
   }
   .video--bottom {
     height: 70%;
   }
   .video--bottom-wrapper {
     width: 65%;
-  }
-  .renderi--top {
-    height: 166px;
   }
 }
 @media only screen and (max-width: 1280px) {
@@ -285,6 +282,9 @@
   .onama {
     height: auto;
   }
+  .onama--top {
+    height: 60%;
+  }
   .onama--bottom-wrapper {
     width: 95%;
   }
@@ -292,6 +292,17 @@
     height: auto;
     flex-direction: column;
     align-items: center;
+  }
+  .onamainfo--right {
+    height: 60%;
+  }
+  .onamainfo--right-top {
+    height: 220px;
+    top: 0;
+  }
+  .onamainfo--right-bottom {
+    height: 220px;
+    top: auto;
   }
   .onamainfo--left {
     width: 100%;
@@ -332,13 +343,11 @@
     height: 250px;
     width: 320px;
     top: 0;
-    right: 30%;
   }
   .onamainfo--right-bottom {
     height: 250px;
     width: 320px;
     top: -20%;
-    right: 20%;
   }
   .renderi--bottom-wrapper {
     grid-template-columns: 45% 45%;
@@ -359,6 +368,9 @@
   }
 }
 @media only screen and (max-width: 800px) {
+  .onamainfo--right-top {
+    margin-left: 0;
+  }
   .onama--bottom-wrapper--title {
     font-size: 32px;
   }
@@ -379,6 +391,15 @@
   }
 }
 @media only screen and (max-width: 640px) {
+  .onamainfo--right {
+    height: 460px;
+  }
+  .onamainfo--right-top {
+    right: 20%;
+  }
+  .onamainfo--right-bottom {
+    margin-left: 20%;
+  }
   .video--bottom {
     height: 400px;
   }
@@ -428,20 +449,23 @@
     grid-row: 3;
   }
 }
-@media only screen and (max-width: 480px) {
-  .onama--bottom {
-    height: 40%;
+@media only screen and (max-width: 360px) {
+  .onamainfo--right {
+    height: 540px;
+  }
+  .onama--top {
+    height: 350px;
   }
   .onama--bottom-wrapper--title {
     font-size: 22px;
-  }
-  .video--top {
-    height: 40%;
+    line-height: 24px;
   }
   .video--top-wrapper--title {
     font-size: 22px;
+    line-height: 24px;
   }
   .renderi--top-wrapper--title {
     font-size: 22px;
+    line-height: 24px;
   }
 }
