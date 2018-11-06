@@ -23,6 +23,28 @@ function toggleMenu() {
 
   }
 }
+function toggleMobileMenu() {
+  if(document.getElementById("dropdownmob").classList.contains("mobilemenu--bottom-hide")) {
+    document.getElementById("dropdownmob").classList.remove("mobilemenu--bottom-hide");
+    document.getElementById("dropdownmob").classList.add("mobilemenu--bottom-show");
+    document.getElementById("hammobile").classList.remove("st0");
+    document.getElementById("hammobile").classList.add("st1");
+    document.getElementById("contact").classList.remove("mobilemenu--top-choice--contact-hide");
+    document.getElementById("contact").classList.add("mobilemenu--top-choice--contact-show");
+  } else {
+    document.getElementById("dropdownmob").classList.remove("mobilemenu--bottom-show");
+    document.getElementById("dropdownmob").classList.add("mobilemenu--bottom-hide");
+    document.getElementById("hammobile").classList.remove("st1");
+    document.getElementById("hammobile").classList.add("st0");
+    document.getElementById("contact").classList.remove("mobilemenu--top-choice--contact-show");
+    document.getElementById("contact").classList.add("mobilemenu--top-choice--contact-hide");
+    // setTimeout(function(){
+    //   document.getElementById("singlelinks").classList.remove("mobilemenu--top-links-single--close");
+    //   document.getElementById("singlelinks").classList.add("mobilemenu--top-links-single--open");
+    // }, 850);
+
+  }
+}
 // change tab in submenu
 function changeTab(event) {
   let tab_id = event.target.id;
