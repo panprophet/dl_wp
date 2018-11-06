@@ -132,13 +132,9 @@
     if($countDivs == 4) { ?>
     </div>
     <div class="materijali-wrapper-<?php echo $countDivs/2 ?>">
-      <?php }
-      if($countDivs == 7) { ?>
-    </div>
-    <div class="materijali-wrapper-<?php echo intval($countDivs/2) ?>">
       <?php
-      }
-    ?>
+    }
+      ?>
       <div class="pic pic-<?php echo $countDivs ?>">
         <div class="pic--inner">
         <?php
@@ -173,15 +169,13 @@
         </div>
       </div>
     <?php
-      // $countDivs = 1;
-        $countDivs++;
-
-      if($countDivs == 10 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
-        // if($countDivs == 7 || ($countDivs-1) == ($wp_query->post_count)){
+      $countDivs++;
+      if($countDivs == 7 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
         $countDivs = 1;
       ?>
-      </div>
+      <!-- </div> -->
       <?php
+        break 2;
       }
         endwhile;
       endif;

@@ -447,7 +447,7 @@
   font-size: 35px;
   color: #FFFFFF;
   line-height: 44px;
-  padding-left: 55px;
+  padding-left: 3%;
 }
 .materijali-readmore--info {
   height: 50%;
@@ -460,7 +460,7 @@
   line-height: 22px;
   font-size: 16px;
   color: #FFFFFF;
-  padding-left: 55px;
+  padding-left: 3%;
   padding-top: 20px;
 }
 .materijali-readmore--info-link {
