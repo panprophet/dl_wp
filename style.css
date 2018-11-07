@@ -548,26 +548,65 @@ textarea {
 .mobilemenu--bottom {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   position: relative;
   overflow: hidden;
 }
 .mobilemenu--bottom-container {
-  width: 70%;
+  width: 95%;
   display: flex;
   flex-direction: column;
-  padding-left: 70px;
+  padding: 20px 0px;
+  border-bottom: 2px solid #840505;
+}
+.mobilemenu--bottom-container--top {
+  display: flex;
+}
+.mobilemenu--bottom-container--top-link {
+  font-size: 18px;
+  color: #666B70;
+  padding-left: 5%;
+  margin-bottom: 5px;
+  font-weight: 300;
+}
+.mobilemenu--bottom-container--top-link a {
+  font-weight: 300;
+  font-size: 18px;
+}
+.mobilemenu--bottom-container--bottom {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+}
+.mobilemenu--bottom-container--bottom-wrapper {
+  display: flex;
+  min-width: 100%;
+  overflow: hidden;
+  justify-content: space-evenly;
+}
+.mobilemenu--bottom-container--bottom-wrapper-column {
+  display: flex;
+  flex-direction: column;
+}
+.mobilemenu--bottom-container--bottom-wrapper-column p {
+  font-size: 14px;
+  color: #484848;
+  margin-bottom: 5px;
+  font-weight: 300;
 }
 .mobilemenu--bottom-container--link {
   font-size: 14px;
   color: #666B70;
-  padding-left: 30px;
+  padding-left: 5%;
   margin-bottom: 5px;
-  font-weight: 500;
+  font-weight: 300;
 }
 .mobilemenu--bottom-container--link a {
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 18px;
 }
 .mobilemenu--bottom-container--link-sub {
   font-size: 14px;
@@ -576,13 +615,12 @@ textarea {
 }
 .mobilemenu--bottom-container ul {
   display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 .mobilemenu--bottom-container ul li {
   min-width: 95px;
   max-width: 150px;
-  padding-left: 30px;
+  padding-left: 5%;
   font-size: 14px;
   line-height: 19px;
   color: #666B70;
@@ -590,7 +628,8 @@ textarea {
   margin-bottom: 5px;
 }
 .mobilemenu--bottom-container ul li a {
-  font-weight: 500;
+  font-weight: 300;
+  font-size: 18px;
 }
 .mobilemenu--bottom-hide {
   max-height: 0px;
@@ -602,6 +641,7 @@ textarea {
   height: 0px;
 }
 .mobilemenu--bottom-show {
+  height: 90vh;
   max-height: 90vh;
   opacity: 1;
   transition: max-height 0.5s ease-in, opacity 0.4s linear;
