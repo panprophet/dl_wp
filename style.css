@@ -559,7 +559,7 @@ textarea {
   display: flex;
   flex-direction: column;
   padding: 20px 0px;
-  border-bottom: 2px solid #840505;
+  border-bottom: 1px solid #840505;
 }
 .mobilemenu--bottom-container--top {
   display: flex;
@@ -642,7 +642,7 @@ textarea {
 }
 .mobilemenu--bottom-show {
   height: 90vh;
-  max-height: 90vh;
+  max-height: 150vh;
   opacity: 1;
   transition: max-height 0.5s ease-in, opacity 0.4s linear;
   padding: 25px 0px;
