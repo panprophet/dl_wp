@@ -598,7 +598,7 @@ textarea {
   font-weight: 300;
 }
 .mobilemenu--bottom-container--link {
-  font-size: 14px;
+  font-size: 18px;
   color: #666B70;
   padding-left: 5%;
   margin-bottom: 5px;
@@ -696,22 +696,76 @@ textarea {
     display: flex;
   }
 }
-@media only screen and (max-width: 400px) {
-  .mobilemenu--bottom {
-    justify-content: space-around;
+@media only screen and (max-width: 640px) {
+  .mobilemenu--bottom #menumaterijali {
+    height: 65vh;
   }
   .mobilemenu--bottom-container {
-    width: 85%;
-    padding-left: 30px;
+    padding: 10px 0px;
+  }
+  .mobilemenu--bottom-container--bottom {
+    flex-direction: column;
+    height: 50vh;
+  }
+  .mobilemenu--bottom-container--bottom-wrapper {
+    min-height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobilemenu--bottom-container--bottom-wrapper-column {
+    width: 280px;
+  }
+  .mobilemenu--bottom-container--bottom-wrapper-column p {
+    margin-top: 10px;
+  }
+  .mobilemenu--bottom-show {
+    height: 130vh;
+    padding: 10px 0px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .mobilemenu--bottom {
+    justify-content: flex-start;
+    padding: 10px 0px;
+  }
+  .mobilemenu--bottom #menumaterijali {
+    height: 60px;
+  }
+  .mobilemenu--bottom #menumain {
+    flex-direction: column;
+  }
+  .mobilemenu--bottom #menunostali {
+    padding: 0px 0px;
+  }
+  .mobilemenu--bottom #menunostali .mobilemenu--bottom-container--link {
+    padding: 0px 0px;
+  }
+  .mobilemenu--bottom-container {
+    padding: 0px;
+    border-bottom: none;
+  }
+  .mobilemenu--bottom-container--top {
+    flex-direction: column;
+  }
+  .mobilemenu--bottom-container--top-link {
+    margin-bottom: 10px;
+  }
+  .mobilemenu--bottom-container--bottom {
+    display: none;
   }
   .mobilemenu--bottom-container--link {
-    padding: 10px 0px;
+    margin-bottom: 10px;
   }
   .mobilemenu--bottom-container--link-sub {
     display: none;
   }
+  .mobilemenu--bottom-container ul {
+    flex-direction: column;
+  }
   .mobilemenu--bottom-container ul li {
-    padding: 10px 0px;
+    padding-left: 5%;
+    margin-bottom: 10px;
   }
   .mobilemenu--bottom-show {
     padding: 30px 0px;

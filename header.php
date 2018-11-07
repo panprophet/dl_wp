@@ -299,7 +299,7 @@
       </div>
     </div>
     <div class="mobilemenu--bottom mobilemenu--bottom-hide" id="dropdownmob">
-      <div class="mobilemenu--bottom-container">
+      <div class="mobilemenu--bottom-container" id="menumaterijali">
         <div class="mobilemenu--bottom-container--top">
         <?php
           $wp_my_query = new WP_Query();
@@ -392,7 +392,7 @@
             </div>
         </div>
       </div>
-      <div class="mobilemenu--bottom-container">
+      <div class="mobilemenu--bottom-container" id="menumain">
         <?php
         $menuItems = wp_nav_menu( array(
             'theme_location',
@@ -404,7 +404,7 @@
         );
         ?>
       </diV>
-      <div class="mobilemenu--bottom-container">
+      <div class="mobilemenu--bottom-container" id="menuostali">
         <div class="mobilemenu--bottom-container--top">
           <div class="mobilemenu--bottom-container--link">Kuhinje</div>
           <div class="mobilemenu--bottom-container--link">Plakari</div>
