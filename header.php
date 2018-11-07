@@ -299,51 +299,100 @@
       </div>
     </div>
     <div class="mobilemenu--bottom mobilemenu--bottom-hide" id="dropdownmob">
-      <div class="mobilemenu--bottom-container">
-      <?php
-        $wp_my_query = new WP_Query();
-        $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
-
-        $materijali = get_page_by_title('Materijali');
-        $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
-
-        $countMat = 1;
-        foreach (array_reverse($materijali_children) as $child) {
-          $chil_child = get_pages(array('child_of' => $child->ID));
-          if(count($chil_child) != 0) {
-        ?>
-          <div class="mobilemenu--bottom-container--link mobilemenu--bottom-container--top-link--active" id="<?php echo "mat_".$countMat; ?>"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+      <div class="mobilemenu--bottom-container" id="menumaterijali">
+        <div class="mobilemenu--bottom-container--top">
         <?php
-          if($countMat == 1){
-            $wp_my_query = new WP_Query();
-            $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+          $wp_my_query = new WP_Query();
+          $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
 
-            $ploce = get_page_by_path('materijali/plocasti_materijali');
-            $terms = get_page_children($ploce->ID, $all_wp_pages);
-            foreach ( $terms as $key => $term ) {
-        ?>
-        <p class="mobilemenu--bottom-container--link-sub"><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
-        <?php
+          $materijali = get_page_by_title('Materijali');
+          $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
+
+          $countMat = 1;
+          foreach (array_reverse($materijali_children) as $child) {
+            $chil_child = get_pages(array('child_of' => $child->ID));
+            if(count($chil_child) != 0) {
+              if(get_the_id() == $child->ID){
+          ?>
+            <div class="mobilemenu--bottom-container--top mobilemenu--bottom-container--top-link--active" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+          <?php
+            } else {
+          ?>
+            <div class="mobilemenu--bottom-container--top-link" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+          <?php
             }
+            $countMat++;
+            }
+          ?>
+        <?php
           }
-          if($countMat == 2){
-            $wp_my_query = new WP_Query();
-            $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+        ?>
+        </div>
 
-            $ploce = get_page_by_path('materijali/okovi');
-            $terms = get_page_children($ploce->ID, $all_wp_pages);
-            foreach ( $terms as $key => $term ) {
+        <div class="mobilemenu--bottom-container--bottom">
+               <?php
+              $wp_my_query = new WP_Query();
+              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+              $ploce = get_page_by_path('materijali/plocasti_materijali');
+              $terms = get_page_children($ploce->ID, $all_wp_pages);
+              ?>
+            <div class="mobilemenu--bottom-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
+              <?php
+              foreach ( $terms as $key => $term ) {
+                if($key === 0) {
+                ?>
+                <div class="mobilemenu--bottom-container--bottom-wrapper-column">
+                <?php
+                }
+                if($key === 3 || $key === 6){
+                ?>
+                </div>
+                <div class="mobilemenu--bottom-container--bottom-wrapper-column">
+                <?php
+                }
+                ?>
+                <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+                <?php
+              }
+              ?>
+              <?php
             ?>
-        <p class="mobilemenu--bottom-container--link-sub"><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
-        <?php
-            }
-          }
-          $countMat++;
-          }
-        ?>
-        <?php
-        }
-      ?>
+              </div>
+            </div>
+            <?php
+              $wp_my_query = new WP_Query();
+              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+
+              $ploce = get_page_by_path('materijali/okovi');
+              $terms = get_page_children($ploce->ID, $all_wp_pages);
+              ?>
+            <div class="mobilemenu--bottom-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_2">
+              <?php
+              foreach ( $terms as $key => $term ) {
+                if($key === 0) {
+                ?>
+                <div class="mobilemenu--bottom-container--bottom-wrapper-column">
+                <?php
+                }
+                if($key === 3 || $key === 6){
+                ?>
+                </div>
+                <div class="mobilemenu--bottom-container--bottom-wrapper-column">
+                <?php
+                }
+                ?>
+                <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+                <?php
+              }
+              ?>
+              <?php
+            ?>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="mobilemenu--bottom-container" id="menumain">
         <?php
         $menuItems = wp_nav_menu( array(
             'theme_location',
@@ -354,9 +403,13 @@
           )
         );
         ?>
-        <div class="mobilemenu--bottom-container--link">Kuhinje</div>
-        <div class="mobilemenu--bottom-container--link">Plakari</div>
       </diV>
+      <div class="mobilemenu--bottom-container" id="menuostali">
+        <div class="mobilemenu--bottom-container--top">
+          <div class="mobilemenu--bottom-container--link">Kuhinje</div>
+          <div class="mobilemenu--bottom-container--link">Plakari</div>
+        </div>
+      </div>
     </div>
   </nav>
   <!-- top bar -->

@@ -345,23 +345,64 @@
   &--bottom {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     position: relative;
     overflow: hidden;
     &-container{
-      width: 70%;
+      width: 95%;
       display: flex;
       flex-direction: column;
-      padding-left: 70px;
+      padding: 20px 0px;
+      border-bottom: 1px solid @border-menu;
+      // padding-left: 70px;
+      &--top {
+        display: flex;
+        &-link{
+          font-size: 18px;
+          color: @dark-grey;
+          padding-left: 5%;
+          margin-bottom: 5px;
+          font-weight: 300;
+          a {
+            font-weight: 300;
+            font-size: 18px;
+          }
+        }
+      }
+      &--bottom {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        align-items: center;
+        &-wrapper{
+          display: flex;
+          min-width: 100%;
+          overflow: hidden;
+          justify-content: space-evenly;
+          &-column {
+            display: flex;
+            flex-direction: column;
+            p {
+              font-size: @font-lilliput;
+              color: @darker-grey;
+              // padding-left: 30px;
+              margin-bottom: 5px;
+              font-weight: 300;
+            }
+          }
+        }
+      }
       &--link{
-        font-size: @font-lilliput;
+        font-size: 18px;
         color: @dark-grey;
-        padding-left: 30px;
+        padding-left: 5%;
         margin-bottom: 5px;
-        font-weight: 500;
+        font-weight: 300;
         a {
-          font-weight: 500;
+          font-weight: 300;
+          font-size: 18px;
         }
         &-sub {
           font-size: @font-lilliput;
@@ -371,21 +412,20 @@
       }
       ul{
         display: flex;
-        flex-direction: column;
-        // justify-content: flex-start;
-        // align-items: center;
+        // justify-content: space-evenly;
         overflow: hidden;
         li {
           min-width: 95px;
           max-width: 150px;
-          padding-left: 30px;
+          padding-left: 5%;
           font-size: @font-lilliput;
           line-height: 19px;
           color: @dark-grey;
           list-style: none;
           margin-bottom: 5px;
           a {
-            font-weight: 500;
+            font-weight: 300;
+            font-size: 18px;
           }
         }
       }
@@ -402,7 +442,8 @@
       }
     }
     &-show {
-      max-height: 90vh;
+      height: 90vh;
+      max-height: 150vh;
       opacity: 1;
       transition: max-height 0.5s ease-in, opacity 0.4s linear;
       padding: 25px 0px;
@@ -482,23 +523,80 @@
     display: flex;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 640px) {
+.mobilemenu {
+  &--bottom {
+    #menumaterijali {
+      height: 65vh;
+    }
+    &-container {
+      padding: 10px 0px;
+      &--bottom {
+        flex-direction: column;
+        height: 50vh;
+        &-wrapper {
+          min-height: 100%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          &-column {
+            width: 280px;
+            p {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+    &-show {
+      height: 130vh;
+      padding: 10px 0px;
+    }
+  }
+}
+}
+@media only screen and (max-width: 550px) {
   .mobilemenu {
     // height: 90vh;
     &--bottom {
-      justify-content: space-around;
+      justify-content: flex-start;
+      padding: 10px 0px;
+      #menumaterijali {
+        height: 60px;
+      }
+      #menumain {
+        flex-direction: column;
+      }
+      #menunostali {
+        padding: 0px 0px;
+        .mobilemenu--bottom-container--link {
+          padding: 0px 0px;
+        }
+      }
       &-container{
-        width: 85%;
-        padding-left: 30px;
+        // width: 85%;
+        padding: 0px;
+        border-bottom: none;
+        &--top {
+          flex-direction: column;
+          &-link {
+            margin-bottom: 10px;
+          }
+        }
+        &--bottom {
+          display: none;
+        }
         &--link{
-          padding: 10px 0px;
+          margin-bottom: 10px;
           &-sub {
             display: none;
           }
         }
         ul {
+          flex-direction: column;
           li {
-            padding: 10px 0px;
+            padding-left: 5%;
+            margin-bottom: 10px;
           }
         }
       }
