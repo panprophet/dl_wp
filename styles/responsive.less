@@ -812,3 +812,78 @@
     height: 1020px;;
   }
 }
+@media screen and (max-width: 360px) {
+  .display-flex{
+    height: 60%;;
+  }
+  .usluge{
+    &--right{
+      &-top{
+        .tab{
+          font-weight: 300;
+        }
+      }
+      &-bottom{
+        .galleryservice{
+          .wrap{
+            &--picture{
+              height: 60%;
+              display: flex;
+              justify-content: center;
+              .title{
+                flex-direction: column;
+                p{
+                  margin-left: 0;
+                }
+              }
+            }
+            &--text{
+              letter-spacing: 0px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .kantovanje{
+    &--right{
+      &-top{
+        &--info{
+          .title{
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+  .partner{
+    &--inner{
+      &-right{
+        &--top{
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .kontakt{
+    &--inner{
+      &-form{
+        &--left{
+          div{
+            input{
+              font-weight: 300;
+            }
+          }
+        }
+        &--right{
+          div{
+            input{
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
+}
