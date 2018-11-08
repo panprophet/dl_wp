@@ -20,7 +20,7 @@ if( !is_front_page() || !is_home()) {
         <div class="kontakt--inner-form--right">
           <div>
             <label>Naslov</label>
-            <input type="text"> </div>
+            <input type="text" name="naslov"> </div>
           <div>
             <label>Poruka</label>
             <input type="text" name="message"> </div>
