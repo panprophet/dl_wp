@@ -272,7 +272,7 @@
         </div>
         <div class="mobilemenu--top-choice--lang">ENG / SRB</div>
         <div class="mobilemenu--top-choice--ham"
-              onclick="toggleMobileMenu()">
+              onclick="toggleMobileMenu();">
           <!-- <img src="images/ham.svg">  -->
           <svg version="1.1"
                 id="Layer_1"

@@ -2,7 +2,7 @@
  * Theme Name: Tema WP
  * Description: Starter Theme to use with Timber
  * Author: Buildcon
- * Version: 0.0.2
+ * Version: 0.0.3
  */
 @font-face {
   font-family: Rubik;
@@ -1185,7 +1185,7 @@ textarea {
   min-width: 35%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -o-transition: 1s ease-in-out;
@@ -1218,13 +1218,12 @@ textarea {
 }
 .usluge--right-bottom .galleryservice .wrap--text {
   height: 30%;
-  width: 95%;
+  width: 80%;
   display: flex;
   align-items: center;
   font-size: 16px;
   color: #666B70;
   line-height: 24px;
-  letter-spacing: 2px;
 }
 .usluge--right-bottom .gallery-hide {
   -webkit-animation: fadeOutToNone 0.8s ease-out;

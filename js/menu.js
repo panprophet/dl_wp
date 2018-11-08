@@ -7,8 +7,10 @@ function toggleMenu() {
     document.getElementById("links").classList.add("menu--top-links--opened")
     document.getElementById("ham").classList.remove("st0");
     document.getElementById("ham").classList.add("st1");
-    document.getElementById("singlelinks").classList.remove("menu--top-links-single--open");
-    document.getElementById("singlelinks").classList.add("menu--top-links-single--close");
+    if(document.getElementById("singlelinks")) {
+      document.getElementById("singlelinks").classList.remove("menu--top-links-single--open");
+      document.getElementById("singlelinks").classList.add("menu--top-links-single--close");
+    }
   } else {
     document.getElementById("dropdown").classList.remove("menu--wrap-show");
     document.getElementById("dropdown").classList.add("menu--wrap-hide");
