@@ -522,6 +522,44 @@
 }
 @media screen and (max-width: 1024px){
   .materijali{
+    &-wrapper{
+      &-1{
+        .pic--inner-bottom{
+          &--right{
+            justify-content: flex-end;
+          }
+          &--left{
+            &--redline{
+              display: none;
+            }
+          }
+        }
+      }
+      &-2{
+        .pic--inner-bottom{
+          &--right{
+            justify-content: flex-end;
+          }
+          &--left{
+            &--redline{
+              display: none;
+            }
+          }
+        }
+      }
+      &-3{
+        .pic--inner-bottom{
+          &--right{
+            justify-content: flex-end;
+          }
+          &--left{
+            &--redline{
+              display: none;
+            }
+          }
+        }
+      }
+    }
     &-readmore {
       &--info {
         &-text {
@@ -537,8 +575,19 @@
 @media screen and (max-width: 960px){
   .ploce{
     &--top{
-      height: 500px;
       margin-left: 0;
+      height: 470px;
+      &-hero{
+        &--title{
+          font-size: 30px;
+        }
+        &--text{
+          display: none;
+        }
+      }
+    }
+    &--midd{
+      height: 180px;
     }
   }
   .materijali{
@@ -552,11 +601,15 @@
             grid-column: ~"2 / 3";
             grid-row: ~"1 / 3";
             .pic--inner-top{
-              height: 1350px;
+              height: 670px;
             }
           }
           &--inner{
+            &-midd{
+              height: 45px;
+            }
             &-bottom{
+              height: 45px;
               align-items: center;
               padding-right: 10px;
               // padding-left: 10px;
@@ -574,13 +627,16 @@
       &-2{
         grid-template-columns: 45% 45%;
         grid-template-rows: 350px 350px;
-        height: 700px;
+        height: 750px;
         .pic{
           &-6{
             grid-column: ~"1 / 3";
             grid-row: 2;
           }
           &--inner{
+            &-midd{
+              height: 45px;
+            }
             &-bottom{
               align-items: center;
               padding-right: 20px;
@@ -595,6 +651,23 @@
           }
         }
       }
+    }
+    &-readmore{
+      &--title{
+        font-size: 25px;
+      }
+      &--info{
+        &-text{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px){
+  .ploce{
+    &--top{
+      height: 390px;
     }
   }
 }
@@ -612,14 +685,14 @@
         .pic{
           &-2{
             .pic--inner-top{
-              height: 1170px;
+              height: 590px;
             }
           }
         }
       }
       &-2{
         grid-template-rows: 300px 300px;
-        height: 620px;
+        height: 650px;
       }
     }
   }
@@ -675,12 +748,21 @@
             grid-column: 1;
             grid-row: 3;
           }
+          &--inner{
+            &-bottom{
+              &--right{
+                &--more{
+                  text-align: end;
+                }
+              }
+            }
+          }
         }
       }
       &-2{
         grid-template-columns: 95%;
         grid-template-rows: 250px 250px 250px;
-        height: 790px;
+        height: 810px;
         .pic{
           &-4{
             grid-column: 1;
@@ -694,7 +776,65 @@
             grid-column: 1;
             grid-row: 3;
           }
+          &--inner{
+            &-bottom{
+              &--right{
+                &--more{
+                  text-align: end;
+                }
+              }
+            }
+          }
         }
+      }
+    }
+    &-readmore{
+      &--title{
+        height: 70px;
+      }
+      &--info{
+        height: 130px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 360px){
+  .ploce{
+    &--top{
+      &-hero{
+        &--titile{
+          text-align: center;
+        }
+      }
+    }
+    &--midd{
+      height: 400px;
+      &-title{
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .materijali{
+    &-readmore{
+      height: auto;
+      &--info{
+        flex-direction: column;
+        height: auto;
+        &-text{
+          padding-left: 0;
+          text-align: center;
+        }
+        &-link{
+          height: 100px;
+          padding-right: 0;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      &--title{
+        padding-left: 0;
+        height: 90px;
+        justify-content: center;
       }
     }
   }
