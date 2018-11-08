@@ -19,7 +19,7 @@
     if(wp_mail($to, $subject, $message, $headers)) {
         wp_redirect(get_permalink(get_page_by_title('Kontakt')));
     } else {
-        echo "ne valja";
+        echo "ne valja ne valja";
     }
 ?>
 </div>
