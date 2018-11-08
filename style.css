@@ -575,6 +575,18 @@ textarea {
   font-weight: 300;
   font-size: 18px;
 }
+.mobilemenu--bottom-container--top-link--active {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.mobilemenu--bottom-container--top-link--active::before {
+  content: "";
+  padding-left: 10px;
+  border-left: 1px solid #840505;
+}
+.mobilemenu--bottom-container--top-link:hover {
+  cursor: pointer;
+}
 .mobilemenu--bottom-container--bottom {
   display: flex;
   width: 100%;
@@ -586,15 +598,20 @@ textarea {
   min-width: 100%;
   overflow: hidden;
   justify-content: space-evenly;
+  -webkit-transition: 0.8s ease-in-out;
+  -moz-transition: 0.8s ease-in-out;
+  -o-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 .mobilemenu--bottom-container--bottom-wrapper-column {
   display: flex;
   flex-direction: column;
+  margin: 15px;
 }
 .mobilemenu--bottom-container--bottom-wrapper-column p {
   font-size: 14px;
   color: #484848;
-  margin-bottom: 5px;
+  margin: 5px 0px;
   font-weight: 300;
 }
 .mobilemenu--bottom-container--link {
@@ -724,7 +741,7 @@ textarea {
     padding: 10px 0px;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 540px) {
   .mobilemenu--bottom {
     justify-content: flex-start;
     padding: 10px 0px;
@@ -3486,7 +3503,7 @@ textarea {
   flex-direction: column;
 }
 .ploce--top {
-  height: calc(100vh - 70px - 220px);
+  height: calc(100vh - 70px);
   display: flex;
 }
 .ploce--top-hero {

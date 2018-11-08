@@ -71,20 +71,25 @@ function changeTab(event) {
 function subMenu(section) {
   var section = section;
   var noSubMenus = document.getElementById('submenu').childElementCount;
+  var noSubMenus2 = document.getElementById('submob').childElementCount;
 
   for(var i = 1; i <= noSubMenus; i++ ){
     document.getElementById('submenu_' + i).style.transform = "translateX(" + (-100 * (section-1))  + "%)";
+    document.getElementById('submob_' + i).style.transform = "translateX(" + (-100 * (section-1))  + "%)";
   }
   subLinkActive(section);
 }
 function subLinkActive(section) {
   var noSubLinks = document.getElementById('subLink').childElementCount;
+  var noSubLinks2 = document.getElementById('subLink2').childElementCount;
   for(var i = 1; i <= noSubLinks; i++) {
    if(document.getElementById('mat_' + i).classList.contains('menu--wrap-midd-container--top-link--active')){
      document.getElementById('mat_' + i).classList.remove('menu--wrap-midd-container--top-link--active');
+     document.getElementById('matmob_' + i).classList.remove('mobilemenu--bottom-container--top-link--active');
    }
   }
   document.getElementById('mat_' + section).classList.add('menu--wrap-midd-container--top-link--active');
+  document.getElementById('matmob_' + section).classList.add('mobilemenu--bottom-container--top-link--active');
 }
 function expand_decription(idelem){
   var noElem = document.getElementsByClassName('elements-description--element').length;
