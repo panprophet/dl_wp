@@ -1,3 +1,5 @@
+<?php /* Template Name: Sent mail */ ?>
+
   <?php get_header(); ?>
   <?php
     $to = "office@drvolux.rs";
