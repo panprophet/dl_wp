@@ -7,7 +7,7 @@
   flex-direction: column;
 }
 .ploce--top {
-  height: calc(100vh - 70px - 220px);
+  height: calc(100vh - 70px);
   display: flex;
 }
 .ploce--top-hero {

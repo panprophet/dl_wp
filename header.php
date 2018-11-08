@@ -86,7 +86,7 @@
       </div>
       <div class="menu--top-choice">
         <div class="menu--top-choice--contact">
-          <p>Kontakt</p>
+          <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>"><p>Kontakt</p></a>
         </div>
         <div class="menu--top-choice--lang">ENG / SRB</div>
         <div class="menu--top-choice--ham"
@@ -272,7 +272,7 @@
         </div>
         <div class="mobilemenu--top-choice--lang">ENG / SRB</div>
         <div class="mobilemenu--top-choice--ham"
-              onclick="toggleMobileMenu()">
+              onclick="toggleMobileMenu();">
           <!-- <img src="images/ham.svg">  -->
           <svg version="1.1"
                 id="Layer_1"
@@ -299,8 +299,8 @@
       </div>
     </div>
     <div class="mobilemenu--bottom mobilemenu--bottom-hide" id="dropdownmob">
-      <div class="mobilemenu--bottom-container" id="menumaterijali">
-        <div class="mobilemenu--bottom-container--top">
+      <div class="mobilemenu--bottom-container" id="materijalilinks2">
+        <div class="mobilemenu--bottom-container--top" id="subLink2">
         <?php
           $wp_my_query = new WP_Query();
           $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
@@ -314,11 +314,11 @@
             if(count($chil_child) != 0) {
               if(get_the_id() == $child->ID){
           ?>
-            <div class="mobilemenu--bottom-container--top mobilemenu--bottom-container--top-link--active" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+            <div class="mobilemenu--bottom-container--top-link mobilemenu--bottom-container--top-link--active" id="<?php echo "matmob_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
           <?php
             } else {
           ?>
-            <div class="mobilemenu--bottom-container--top-link" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+            <div class="mobilemenu--bottom-container--top-link" id="<?php echo "matmob_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
           <?php
             }
             $countMat++;
@@ -329,7 +329,7 @@
         ?>
         </div>
 
-        <div class="mobilemenu--bottom-container--bottom">
+        <div class="mobilemenu--bottom-container--bottom" id="submob">
                <?php
               $wp_my_query = new WP_Query();
               $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
@@ -337,15 +337,11 @@
               $ploce = get_page_by_path('materijali/plocasti_materijali');
               $terms = get_page_children($ploce->ID, $all_wp_pages);
               ?>
-            <div class="mobilemenu--bottom-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_1">
+            <div class="mobilemenu--bottom-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submob_1">
+              <div class="mobilemenu--bottom-container--bottom-wrapper-column">
               <?php
               foreach ( $terms as $key => $term ) {
-                if($key === 0) {
-                ?>
-                <div class="mobilemenu--bottom-container--bottom-wrapper-column">
-                <?php
-                }
-                if($key === 3 || $key === 6){
+                if($key % 3 == 0){
                 ?>
                 </div>
                 <div class="mobilemenu--bottom-container--bottom-wrapper-column">
@@ -367,15 +363,11 @@
               $ploce = get_page_by_path('materijali/okovi');
               $terms = get_page_children($ploce->ID, $all_wp_pages);
               ?>
-            <div class="mobilemenu--bottom-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submenu_2">
+            <div class="mobilemenu--bottom-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submob_2">
+              <div class="mobilemenu--bottom-container--bottom-wrapper-column">
               <?php
               foreach ( $terms as $key => $term ) {
-                if($key === 0) {
-                ?>
-                <div class="mobilemenu--bottom-container--bottom-wrapper-column">
-                <?php
-                }
-                if($key === 3 || $key === 6){
+                if($key % 3 == 0){
                 ?>
                 </div>
                 <div class="mobilemenu--bottom-container--bottom-wrapper-column">
