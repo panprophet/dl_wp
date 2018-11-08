@@ -10,7 +10,7 @@
     $subject = $_POST["naslov"];
     $message = $_POST["message"];
     $message = 'Poruka od: '.$imeprezime.'\r\n'.$message;
-    $headers = "From: <$from>";
+    $headers = "From: <$from>"."\r\n"."Reply-to: <$from>"."\r\n".'X-Mailer: PHP/'.phpversion();
 
     if (mail($to, $subject, $message, $headers)) {
         echo  "<div class=\"response--message\"><div>Poruka uspešno poslata!</div><div>Javićemo vam se ubrzo.</div></div>";
