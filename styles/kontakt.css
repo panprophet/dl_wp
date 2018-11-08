@@ -96,8 +96,20 @@
   height: 15%;
   width: 67%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+}
+.kontakt--inner-button--message {
+  width: 350px;
+  height: 36px;
+}
+.kontakt--inner-button--message p {
+  font-size: 14px;
+  color: #840505;
+  display: none;
+}
+.kontakt--inner-button--message-show p {
+  display: block;
 }
 .kontakt--inner-button button {
   width: 95px;

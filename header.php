@@ -139,15 +139,9 @@
             foreach (array_reverse($materijali_children) as $child) {
               $chil_child = get_pages(array('child_of' => $child->ID));
               if(count($chil_child) != 0) {
-                if(get_the_id() == $child->ID){
             ?>
-              <div class="menu--wrap-midd-container--top-link menu--wrap-midd-container--top-link--active" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+              <div class="menu--wrap-midd-container--top-link <?php if((!is_page('okovi') && $countMat == 1) || (is_page('okovi') && $countMat == 2)){ echo 'menu--wrap-midd-container--top-link--active'; } ?>" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
               <?php
-                } else {
-              ?>
-              <div class="menu--wrap-midd-container--top-link" id="<?php echo "mat_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
-              <?php
-                }
               $countMat++;
               }
               ?>
@@ -312,15 +306,10 @@
           foreach (array_reverse($materijali_children) as $child) {
             $chil_child = get_pages(array('child_of' => $child->ID));
             if(count($chil_child) != 0) {
-              if(get_the_id() == $child->ID){
+              // if(get_the_id() == $child->ID){
           ?>
-            <div class="mobilemenu--bottom-container--top-link mobilemenu--bottom-container--top-link--active" id="<?php echo "matmob_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+            <div class="mobilemenu--bottom-container--top-link <?php if((!is_page('okovi') && $countMat == 1) || (is_page('okovi') && $countMat == 2)) { echo 'mobilemenu--bottom-container--top-link--active'; }?>" id="<?php echo "matmob_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
           <?php
-            } else {
-          ?>
-            <div class="mobilemenu--bottom-container--top-link" id="<?php echo "matmob_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
-          <?php
-            }
             $countMat++;
             }
           ?>

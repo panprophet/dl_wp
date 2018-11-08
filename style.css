@@ -721,17 +721,12 @@ textarea {
     padding: 10px 0px;
   }
   .mobilemenu--bottom-container--bottom {
-    flex-direction: column;
     height: 50vh;
   }
   .mobilemenu--bottom-container--bottom-wrapper {
     min-height: 100%;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .mobilemenu--bottom-container--bottom-wrapper-column {
-    width: 280px;
   }
   .mobilemenu--bottom-container--bottom-wrapper-column p {
     margin-top: 10px;
@@ -1501,8 +1496,20 @@ textarea {
   height: 15%;
   width: 67%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+}
+.kontakt--inner-button--message {
+  width: 350px;
+  height: 36px;
+}
+.kontakt--inner-button--message p {
+  font-size: 14px;
+  color: #840505;
+  display: none;
+}
+.kontakt--inner-button--message-show p {
+  display: block;
 }
 .kontakt--inner-button button {
   width: 95px;

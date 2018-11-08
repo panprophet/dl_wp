@@ -488,17 +488,12 @@
     padding: 10px 0px;
   }
   .mobilemenu--bottom-container--bottom {
-    flex-direction: column;
     height: 50vh;
   }
   .mobilemenu--bottom-container--bottom-wrapper {
     min-height: 100%;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .mobilemenu--bottom-container--bottom-wrapper-column {
-    width: 280px;
   }
   .mobilemenu--bottom-container--bottom-wrapper-column p {
     margin-top: 10px;
