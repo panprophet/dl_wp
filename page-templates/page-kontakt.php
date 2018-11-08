@@ -12,22 +12,23 @@ if( !is_front_page() || !is_home()) {
         <div class="kontakt--inner-form--left">
           <div>
             <label>Ime i Prezime</label>
-            <input type="text" name="imeprezime"> </div>
+            <input type="text" name="imeprezime" id="imeprezime"> </div>
           <div>
             <label>E-mail</label>
-            <input type="email" name="mail" type="email"> </div>
+            <input type="email" name="mail" type="email" id="email"> </div>
         </div>
         <div class="kontakt--inner-form--right">
           <div>
             <label>Naslov</label>
-            <input type="text" name="naslov"> </div>
+            <input type="text" name="naslov" id="naslov"> </div>
           <div>
             <label>Poruka</label>
-            <input type="text" name="message"> </div>
+            <input type="text" name="message" id="poruka"> </div>
         </div>
       </form>
       <div class="kontakt--inner-button">
-        <button onclick="document.getElementById('kontaktform').submit();">
+        <div class="kontakt--inner-button--message" id="errormail"><p>* sva polja moraju biti ispravno popunjena</p></div>
+        <button onclick="checkmail();">
           <p>Poslati</p>
         </button>
       </div>

@@ -100,8 +100,22 @@
       height: 15%;
       width: 67%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
+      &--message {
+        width: 350px;
+        height: 36px;
+        p {
+          font-size: 14px;
+          color: @border-menu;
+          display: none;
+        }
+        &-show {
+          p{
+            display: block;
+          }
+        }
+      }
       button {
         width: 95px;
         height: 36px;

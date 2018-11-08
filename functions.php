@@ -45,6 +45,11 @@ function gallery_swipe() {
 }
 add_action( 'wp_enqueue_scripts', 'gallery_swipe' );
 
+function mail_checker() {
+  wp_enqueue_script('checkmail', get_template_directory_uri() . '/js/checkmail.js', array('jquery'), '1.1', true);
+}
+add_action('wp_enqueue_scripts', 'mail_checker');
+
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
 function blankslate_enqueue_comment_reply_script()
 {
