@@ -7,7 +7,7 @@ $abUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'dl_wp'
 );
 $abUpdateChecker->setAuthentication('12943909f22c712a064cc26f72135bce7099879a');
-$abUpdateChecker->setBranch('stage-update');
+// $abUpdateChecker->setBranch('stage-update');
 add_action( 'after_setup_theme', 'blankslate_setup' );
 
 
