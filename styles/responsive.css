@@ -652,9 +652,14 @@
   .usluge--right-bottom .galleryservice .wrap--text {
     letter-spacing: 0px;
     text-align: center;
+    font-size: 12px;
+    line-height: 20px;
   }
   .kantovanje--right-top--info .title {
     font-weight: 300;
+  }
+  .kantovanje--right-top--info .text {
+    font-size: 14px;
   }
   .partner--inner-right--top {
     margin-top: 20px;
