@@ -7,7 +7,7 @@
 
   <div class="ploce--top">
     <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
-    <div class="gradient">    
+    <div class="gradient">
         <div class="ploce--top-hero--title"><?php $title = the_title(); echo strtoupper($title); ?></div>
         <div class="ploce--top-hero--text">
         <?php the_field('unutrasnji_text') ?>
@@ -17,34 +17,19 @@
   </div>
   <div class="ploce--midd">
     <div class="ploce--midd-title">
-      <?php
-      $wp_my_query = new WP_Query();
-          $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', 'order' => 'ASC'));
-
-          $materijali = get_page_by_title('Materijali');
-          $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
-          foreach ($materijali_children as $child) {
-            $chil_child = get_pages(array('child_of' => $child->ID));
-            if(count($chil_child) != 0) {
-              if(get_the_id() == $child->ID){
-      ?>
-            <div class="ploce--midd-title--link active"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
-      <?php
-              }else {
-      ?>
-            <div class="ploce--midd-title--link"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
-      <?php
-              }
-            }
-          }
-      ?>
+        <?php if(have_rows('partnerstop')) :
+            while (have_rows('partnerstop')) :
+            the_row();
+        ?>
+        <div class="ploce--midd-title--partner">
+          <img src="<?php the_sub_field('partner') ?>">
+        </div>
+        <?php
+          endwhile;
+        endif;
+        ?>
     </div>
   </div>
-  <!-- <div class="ploce--bottom">
-    <div class="ploce--bottom-text">
-        <?php the_field('unutrasnji_text') ?>
-    </div>
-  </div> -->
 </div>
 <div class="materijali">
  <?php
@@ -95,7 +80,21 @@
       <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
       </div>
       <div class="materijali-readmore--info">
-        <div class="materijali-readmore--info-text">Sastavni deo svake kuhinje je radna površina,tj. radna ploča. Kuhinjske radne ploče,u odnosu na oplemenjenu ivericu, imaju povećanu otpornost na udarce,ogrebotine,hemikalije i toplotu.</div>
+        <div class="materijali-readmore--info-text">
+          <?php
+          $page_q = new WP_Query(array(
+            'post_type' => 'page',
+            'name' => $term->slug,
+          ));
+          if($page_q->have_posts()) {
+            while($page_q->have_posts()) {
+              $page_q->the_post();
+              echo the_field('vidi_vise_tekst');
+            }
+          }
+          wp_reset_postdata();
+          ?>
+        </div>
         <div class="materijali-readmore--info-link"><a href="<?php
           $page = new WP_Query(array(
             'post_type' => 'page',
@@ -104,6 +103,7 @@
         foreach($page as $p) {
           echo $p->guid;
         }
+        wp_reset_postdata();
         ?>">Vidi više</a></div>
       </div>
     </div>
@@ -121,13 +121,9 @@
     if($countDivs == 4) { ?>
     </div>
     <div class="materijali-wrapper-<?php echo $countDivs/2 ?>">
-      <?php }
-      if($countDivs == 7) { ?>
-    </div>
-    <div class="materijali-wrapper-<?php echo intval($countDivs/2) ?>">
       <?php
-      }
-    ?>
+    }
+      ?>
       <div class="pic pic-<?php echo $countDivs ?>">
         <div class="pic--inner">
         <?php
@@ -162,15 +158,13 @@
         </div>
       </div>
     <?php
-      // $countDivs = 1;
-        $countDivs++;
-
-      if($countDivs == 10 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
-        // if($countDivs == 7 || ($countDivs-1) == ($wp_query->post_count)){
+      $countDivs++;
+      if($countDivs == 7 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
         $countDivs = 1;
       ?>
-      </div>
+      <!-- </div> -->
       <?php
+        break 2;
       }
         endwhile;
       endif;

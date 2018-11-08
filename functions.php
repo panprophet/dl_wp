@@ -7,7 +7,7 @@ $abUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'dl_wp'
 );
 $abUpdateChecker->setAuthentication('12943909f22c712a064cc26f72135bce7099879a');
-$abUpdateChecker->setBranch('stage-update');
+// $abUpdateChecker->setBranch('stage-update');
 add_action( 'after_setup_theme', 'blankslate_setup' );
 
 
@@ -39,6 +39,12 @@ function img_slider() {
   wp_enqueue_script('imgSliders', get_template_directory_uri() . '/js/sliders.js', array('jquery'), '1.1', true);
 }
 add_action('wp_enqueue_scripts', 'img_slider');
+// big galleries swipe
+function gallery_swipe() {
+  wp_enqueue_script('gallerySwipe', get_template_directory_uri() . '/js/gallery.js', array('jquery'), '1.1', true);
+}
+add_action( 'wp_enqueue_scripts', 'gallery_swipe' );
+
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
 function blankslate_enqueue_comment_reply_script()
 {

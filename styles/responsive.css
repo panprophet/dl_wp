@@ -7,6 +7,9 @@
   }
 }
 @media only screen and (max-width: 1366px) {
+  .usluge--right-bottom .galleryservice {
+    height: 95%;
+  }
   .usluge--right-bottom .arrow {
     height: 80px;
   }
@@ -75,6 +78,9 @@
   .usluge--right-bottom .gallery .wrap--text {
     height: 35%;
   }
+  .kantovanje {
+    height: 680px;
+  }
   .kantovanje--left {
     display: none;
   }
@@ -84,6 +90,9 @@
   .kantovanje--right-top {
     width: 95%;
     margin-left: 5%;
+  }
+  .kantovanje--right-top--image {
+    height: 100%;
   }
   .kantovanje--right-bottom {
     width: 95%;
@@ -150,6 +159,9 @@
   }
 }
 @media only screen and (max-width: 960px) {
+  .landing {
+    height: 800px;
+  }
   .landing--right {
     display: flex;
   }
@@ -205,10 +217,10 @@
     justify-content: flex-end;
   }
   .landing--right-bottom .image {
-    height: 75%;
+    height: 80%;
     background-position-x: center;
     position: absolute;
-    bottom: -30px;
+    bottom: -65px;
     width: 100%;
   }
   .usluge--right-top {
@@ -247,12 +259,13 @@
     display: flex;
   }
   .kantovanje--right-top {
-    width: 99%;
-    margin-left: 1%;
+    width: 100%;
+    margin-left: 0;
     position: relative;
   }
   .kantovanje--right-top--info {
     width: 50%;
+    min-height: 85%;
     justify-content: space-evenly;
   }
   .kantovanje--right-top--info .title {
@@ -260,7 +273,7 @@
     padding-bottom: 0;
   }
   .kantovanje--right-top--info .text {
-    padding-bottom: 0;
+    padding-bottom: 5%;
   }
   .kantovanje--right-top--image {
     width: 50%;
@@ -268,14 +281,15 @@
   }
   .kantovanje--right-bottom {
     position: absolute;
-    bottom: 16%;
+    bottom: 8%;
+    margin-left: 2%;
   }
   .kantovanje--right-bottom .link a {
     font-size: 16px;
     line-height: 22px;
   }
   .single_picture {
-    top: 73px;
+    top: 75px;
     padding-top: 0;
   }
   .partners--inner-right {
@@ -435,6 +449,9 @@
     position: initial;
     bottom: 0;
   }
+  .usluge--right-bottom .galleryservice .wrap--text {
+    height: 40%;
+  }
   .display-flex {
     display: flex;
     height: 35%;
@@ -454,7 +471,7 @@
   }
   .kantovanje--right-top--info {
     width: 100%;
-    min-height: 50%;
+    min-height: 55%;
     height: auto;
     justify-content: center;
   }
@@ -581,12 +598,18 @@
   .landing {
     height: 1000px;
   }
+  .usluge--right-top {
+    height: 15%;
+  }
   .usluge--right-bottom .galleryservice .wrap {
     min-width: 100%;
   }
   .display-flex {
     height: 100%;
     flex-direction: column;
+  }
+  .kantovanje--right-top--info {
+    min-height: 75%;
   }
   .kantovanje--right-top--image {
     height: 30%;
@@ -606,5 +629,45 @@
   }
   .partners {
     height: 1020px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .display-flex {
+    height: 60%;
+  }
+  .usluge--right-top .tab {
+    font-weight: 300;
+  }
+  .usluge--right-bottom .galleryservice .wrap--picture {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+  }
+  .usluge--right-bottom .galleryservice .wrap--picture .title {
+    flex-direction: column;
+  }
+  .usluge--right-bottom .galleryservice .wrap--picture .title p {
+    margin-left: 0;
+  }
+  .usluge--right-bottom .galleryservice .wrap--text {
+    letter-spacing: 0px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .kantovanje--right-top--info .title {
+    font-weight: 300;
+  }
+  .kantovanje--right-top--info .text {
+    font-size: 14px;
+  }
+  .partner--inner-right--top {
+    margin-top: 20px;
+  }
+  .kontakt--inner-form--left div input {
+    font-weight: 300;
+  }
+  .kontakt--inner-form--right div input {
+    font-weight: 300;
   }
 }

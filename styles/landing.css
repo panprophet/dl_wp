@@ -205,7 +205,7 @@
   cursor: pointer;
 }
 .usluge--right-bottom .galleryservice {
-  height: 100%;
+  height: 94%;
   width: 100%;
   -webkit-animation: fadeInFromNone 1.6s ease-in;
   -moz-animation: fadeInFromNone 1.6s ease-in;
@@ -265,6 +265,32 @@
   -o-animation: fadeOutToNone 0.8s ease-out;
   animation: fadeOutToNone 0.8ss ease-out;
   display: none;
+}
+.usluge--right-bottom .dots {
+  width: 100%;
+  height: 5%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.usluge--right-bottom .dots--inner {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.usluge--right-bottom .dots--inner-dot {
+  width: 16px;
+  min-height: 2px;
+  background-color: #DEDEDE;
+  padding-top: 3px;
+}
+.usluge--right-bottom .dots--inner .focus {
+  background-color: #840505;
+}
+.usluge--right-bottom .dots--none {
+  display: none!important;
 }
 .kantovanje {
   height: calc(100vh - 70px);
@@ -350,7 +376,7 @@
   height: auto;
   width: 100%;
   position: relative;
-  top: 70px;
+  top: 75px;
   padding-top: 40px;
 }
 .single_picture--frame {
@@ -440,7 +466,7 @@
 }
 .kontakt--inner-form {
   height: 70%;
-  width: 75%;
+  width: 80%;
   display: flex;
 }
 .kontakt--inner-form--left {

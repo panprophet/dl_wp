@@ -3,7 +3,6 @@
 <?php
   global $post;
   $post_slug = $post->post_name;
-  // echo $post_slug;
  ?>
 <div class="ploce">
   <div class="ploce--top">
@@ -43,7 +42,7 @@
 
   ?>
   <div class="materijali-term"><?php if($children) { echo $term->slug; } else { echo the_title(); } ?></div>
-    <!-- <div class="materijali-wrapper"> -->
+
     <?php
     $countDivs = 1;
 
@@ -84,25 +83,22 @@
           }
         ?>
             <div class="pic--inner-midd">
-              <!-- <p class="pic--inner-midd--naslov1"><?php the_title(); ?></p> -->
               <p class="pic--inner-midd--naslov2"><?php the_sub_field('naziv'); ?></p>
             </div>
 
             <div class="pic--inner-bottom">
-                <!-- nesto od ovoga ne treba da ide the tile , naziv ili opis.. raspitaj se sta je sta -->
               <div class="pic--inner-bottom--left">
                 <div class="pic--inner-bottom--left--opis"><?php the_sub_field('opis'); ?></div>
                 <div class="pic--inner-bottom--left--redline"></div>
               </div>
               <div class="pic--inner-bottom--right">
-                <div class="pic--inner-bottom--right--more"><a href="<?php the_permalink() ?>">Read more</a></div>
+                <div class="pic--inner-bottom--right--more"><a href="<?php the_permalink() ?>">Vidi više</a></div>
                 <div class="pic--inner-bottom--right--cena"><?php the_sub_field('cena'); ?></div>
               </div>
             </div>
         </div>
       </div>
     <?php
-      // $countDivs = 1;
         $countDivs++;
 
       if($countDivs == 10 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
@@ -120,7 +116,6 @@
     <?php
   }
   ?>
-  <!-- </div> -->
 </div>
 <?php get_template_part('/page-templates/page', 'kontakt'); ?>
 <?php get_footer() ?>

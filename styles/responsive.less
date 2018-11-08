@@ -29,6 +29,9 @@
   .usluge {
     &--right {
       &-bottom {
+        .galleryservice {
+          height: 95%;
+        }
         .arrow {
           height: 80px;
         }
@@ -129,6 +132,7 @@
     }
   }
   .kantovanje {
+    height: 680px;
     &--left {
       display: none;
     }
@@ -137,6 +141,9 @@
       &-top {
         width: 95%;
         margin-left: 5%;
+        &--image{
+          height: 100%;
+        }
       }
       &-bottom {
         width: 95%;
@@ -220,6 +227,7 @@
 }
 @media only screen and (max-width: 960px) {
   .landing {
+    height: 800px;
     &--right {
       display: flex;
       &-top {
@@ -275,10 +283,10 @@
         flex-direction: column;
         justify-content: flex-end;
         .image {
-          height: 75%;
+          height: 80%;
           background-position-x: center;
           position: absolute;
-          bottom: -30px;
+          bottom: -65px;
           width: 100%;
           }
       }
@@ -332,18 +340,19 @@
   .kantovanje {
     &--right {
       &-top {
-        width: 99%;
-        margin-left: 1%;
+        width: 100%;
+        margin-left: 0;
         position: relative;
         &--info {
           width: 50%;
+          min-height: 85%;
           justify-content: space-evenly;
           .title{
             margin: 7% 0 7%;
             padding-bottom: 0;
           }
           .text{
-            padding-bottom: 0;
+            padding-bottom: 5%;
           }
         }
         &--image {
@@ -353,7 +362,8 @@
       }
       &-bottom{
         position: absolute;
-        bottom: 16%;
+        bottom: 8%;
+        margin-left: 2%;
         .link{
           a{
             font-size: 16px;
@@ -364,7 +374,7 @@
     }
   }
   .single_picture{
-    top: 73px;
+    top: 75px;
     padding-top: 0;
   }
   .partners {
@@ -568,6 +578,19 @@
       }
     }
   }
+  .usluge{
+    &--right{
+      &-bottom{
+        .galleryservice{
+          .wrap{
+            &--text{
+              height: 40%;
+            }
+          }
+        }
+      }
+    }
+  }
   .display-flex{
     display: flex;
     height: 35%;
@@ -586,7 +609,7 @@
         align-items: center;
         &--info{
           width: 100%;
-          min-height: 50%;
+          min-height: 55%;
           height: auto;
           justify-content: center;
           .title{
@@ -746,6 +769,9 @@
   }
   .usluge{
     &--right{
+      &-top{
+        height: 15%;
+      }
       &-bottom{
         .galleryservice{
           .wrap{
@@ -762,6 +788,9 @@
   .kantovanje{
     &--right{
       &-top{
+        &--info{
+          min-height: 75%;
+        }
         &--image{
           height: 30%;
         }
@@ -783,5 +812,85 @@
   }
   .partners{
     height: 1020px;;
+  }
+}
+@media screen and (max-width: 360px) {
+  .display-flex{
+    height: 60%;;
+  }
+  .usluge{
+    &--right{
+      &-top{
+        .tab{
+          font-weight: 300;
+        }
+      }
+      &-bottom{
+        .galleryservice{
+          .wrap{
+            &--picture{
+              height: 60%;
+              display: flex;
+              justify-content: center;
+              .title{
+                flex-direction: column;
+                p{
+                  margin-left: 0;
+                }
+              }
+            }
+            &--text{
+              letter-spacing: 0px;
+              text-align: center;
+              font-size: 12px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .kantovanje{
+    &--right{
+      &-top{
+        &--info{
+          .title{
+            font-weight: 300;
+          }
+          .text{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .partner{
+    &--inner{
+      &-right{
+        &--top{
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .kontakt{
+    &--inner{
+      &-form{
+        &--left{
+          div{
+            input{
+              font-weight: 300;
+            }
+          }
+        }
+        &--right{
+          div{
+            input{
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
   }
 }

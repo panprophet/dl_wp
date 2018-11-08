@@ -11,27 +11,17 @@
   </div>
   <div class="ploce--midd">
     <div class="ploce--midd-title">
-      <?php
-      $wp_my_query = new WP_Query();
-          $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', 'order' => 'ASC'));
-
-          $materijali = get_page_by_title('Materijali');
-          $materijali_children = get_page_children($materijali->ID, $all_wp_pages);
-          foreach ($materijali_children as $child) {
-            $chil_child = get_pages(array('child_of' => $child->ID));
-            if(count($chil_child) != 0) {
-              if(get_the_id() == $child->ID){
-      ?>
-            <div class="ploce--midd-title--link active"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
-      <?php
-              }else {
-      ?>
-            <div class="ploce--midd-title--link"><a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a></div>
-      <?php
-              }
-            }
-          }
-      ?>
+        <?php if(have_rows('partnerstop')) :
+            while (have_rows('partnerstop')) :
+            the_row();
+        ?>
+        <div class="ploce--midd-title--partner">
+          <img src="<?php the_sub_field('partner') ?>">
+        </div>
+        <?php
+          endwhile;
+        endif;
+        ?>
     </div>
   </div>
   <div class="ploce--bottom">
@@ -41,51 +31,81 @@
   </div>
 </div>
 <div class="materijali">
-   <?php
-  $parent_cat = get_term_by('slug', $element_slug, 'materijali_categories');
-  $parent_id = $parent_cat->term_id;
-  $children = get_terms('materijali_categories', array (
-    'parent' => $parent_id,
-    'hide_empty' => false
-  ));
-  if($children) {
-    $terms = get_terms([
-      'taxonomy' => 'materijali_categories',
-      'hide-empty' => true,
-      'child_of' => $parent_id,
-    ]);
-  } else {
-    $terms[] = $parent_id;
-  }
-  foreach($terms as $term) {
+  <?php
+    $parent_cat = get_term_by('slug', $element_slug, 'materijali_categories');
+    $parent_id = $parent_cat->term_id;
+    $children = get_terms('materijali_categories', array (
+      'parent' => $parent_id,
+      'hide_empty' => false
+    ));
     if($children) {
-    $query_args = array(
-      array (
+      $terms = get_terms([
         'taxonomy' => 'materijali_categories',
-        'field' => 'slug',
-        'terms' => $term->slug,
-      ),
-    );
+        'hide-empty' => true,
+        'child_of' => $parent_id,
+      ]);
     } else {
-    $query_args = array(
-      array (
-        'taxonomy' => 'materijali_categories',
-        'field' => 'id',
-        'terms' => $parent_id,
-      ),
-    );
+      $terms[] = $parent_id;
     }
-    $allPosts = new WP_Query(
-      array(
-        'post_type' => 'materijali',
-        'posts_per_page' => -1,
-        'tax_query' => $query_args,
-      )
-    );
+    foreach($terms as $term) {
+      if($children) {
+      $query_args = array(
+        array (
+          'taxonomy' => 'materijali_categories',
+          'field' => 'slug',
+          'terms' => $term->slug,
+        ),
+      );
+      } else {
+      $query_args = array(
+        array (
+          'taxonomy' => 'materijali_categories',
+          'field' => 'id',
+          'terms' => $parent_id,
+        ),
+      );
+      }
+      $allPosts = new WP_Query(
+        array(
+          'post_type' => 'materijali',
+          'posts_per_page' => -1,
+          'tax_query' => $query_args,
+        )
+      );
 
-  ?>
-  <div class="materijali-term"><?php if($children) { echo $term->name; } else { echo the_title(); } ?></div>
-    <!-- <div class="materijali-wrapper"> -->
+    ?>
+    <div class="materijali-readmore">
+      <div class="materijali-readmore--title">
+      <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
+      </div>
+      <div class="materijali-readmore--info">
+        <div class="materijali-readmore--info-text">
+          <?php
+          $page_q = new WP_Query(array(
+            'post_type' => 'page',
+            'name' => $term->slug,
+          ));
+          if($page_q->have_posts()) {
+            while($page_q->have_posts()) {
+              $page_q->the_post();
+              echo the_field('vidi_vise_tekst');
+            }
+          }
+          wp_reset_postdata();
+          ?>
+        </div>
+        <div class="materijali-readmore--info-link"><a href="<?php
+          $page = new WP_Query(array(
+            'post_type' => 'page',
+            'name' => $term->slug,
+          ));
+        foreach($page as $p) {
+          echo $p->guid;
+        }
+        wp_reset_postdata();
+        ?>">Vidi više</a></div>
+      </div>
+    </div>
     <?php
     $countDivs = 1;
 
