@@ -18,7 +18,7 @@ get_header();
     if(wp_mail($to, $subject, $message, $headers)) {
   ?>
     <div class="response--container">
-      <div class="response--container-logo" style="background-image: url(<?php echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png'; ?>); bacground-repeat: no-repeat;"></div>
+      <div class="response--container-logo" style="background-image: url(<?php echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png'; ?>); background-repeat: no-repeat;"></div>
       <div class="response--container-text">
         <p class="response--container-text--big">Hvala što ste poslali E-mail</p>
         <p class="response--container-text--small">Uskoro cemo Vas kontaktirati</p>
@@ -31,7 +31,7 @@ get_header();
     } else {
   ?>
   <div class="response--container">
-    <div class="response--container-logo" style="background-image: url(<?php echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png'; ?>); bacground-repeat: no-repeat;"></div>
+    <div class="response--container-logo" style="background-image: url(<?php echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png'; ?>); background-repeat: no-repeat;"></div>
     <div class="response--container-text">
         <p class="response--container-text--big">Došlo je do greške prilikom slanja</p>
         <p class="response--container-text--small">Molimo vas pokušajte kasnije</p>
