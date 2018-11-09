@@ -8,7 +8,7 @@ if( !is_front_page() || !is_home()) {
   <div class="kontakt">
     <div class="kontakt--inner">
       <div class="kontakt--inner-title">Kontakt</div>
-      <form class="kontakt--inner-form" method="POST" action="./page-sendmail.php" id="kontaktform">
+      <form class="kontakt--inner-form" method="POST" action="http://drvolux.rs/email-sent/" id="kontaktform">
         <div class="kontakt--inner-form--left">
           <div>
             <label>Ime i Prezime</label>
