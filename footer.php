@@ -32,7 +32,7 @@
               </div>
             </div>
             <div class="section">
-              <div class="section--title">Vojvodjanska 494C, Ledine</div>
+              <div class="section--title">Vojvođanska 494C, Ledine</div>
               <div class="section--info section--info-md">
                 <span>
                   <p>Telefoni:</p>
