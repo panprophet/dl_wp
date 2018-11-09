@@ -135,3 +135,47 @@
     }
   }
 }
+.response {
+  height: calc(~"100vh - 70px");
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 70px;
+  &--container {
+    height: 250px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &-logo {
+      width: 36px;
+      height: 27px;
+      margin-bottom: 55px
+    }
+    &-text {
+      height: 43px;
+      width: 430px;
+      margin-bottom: 75px;
+      &--big {
+        font-size: 36px;
+        color: @dark-grey;
+        line-height: 42px;
+      }
+      &--small {
+        font-size: 20px;
+        color: @dark-grey;
+        line-height: 23px;
+      }
+    }
+    &-link {
+      width: 45px;
+      border-bottom: 1px solid @border-menu;
+      a {
+        color: @border-menu;
+        font-size: @font-small;
+      }
+    }
+  }
+}
