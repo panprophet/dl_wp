@@ -23,7 +23,7 @@
             <circle cx="6.99999" cy="6.99999" r="4.2" fill="#840505"/>
           </svg>
           </span>
-        <span class="title">Pocetna</span>
+        <span class="title">Početna</span>
       </div>
     </div>
   </div>
@@ -112,7 +112,7 @@
     <div class="usluge--right-top">
       <div class="tab tab-red"
             id="tab1"
-            onclick="changeTab(event)">Fizčka Lica</div>
+            onclick="changeTab(event)">Fizčka lica</div>
       <div class="tab"
             id="tab2"
             onclick="changeTab(event)">Profesionalna lica</div>
