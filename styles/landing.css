@@ -218,7 +218,7 @@
   min-width: 35%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -o-transition: 1s ease-in-out;
@@ -251,13 +251,12 @@
 }
 .usluge--right-bottom .galleryservice .wrap--text {
   height: 30%;
-  width: 95%;
+  width: 80%;
   display: flex;
   align-items: center;
   font-size: 16px;
   color: #666B70;
   line-height: 24px;
-  letter-spacing: 2px;
 }
 .usluge--right-bottom .gallery-hide {
   -webkit-animation: fadeOutToNone 0.8s ease-out;
@@ -493,7 +492,7 @@
   width: 90%;
   background-color: #0E0E0E;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 300;
   color: #ffffff;
   display: flex;
   align-items: flex-end;
@@ -524,7 +523,7 @@
   width: 90%;
   background-color: #0E0E0E;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 300;
   color: #ffffff;
   display: flex;
   align-items: flex-end;
@@ -535,8 +534,20 @@
   height: 15%;
   width: 67%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+}
+.kontakt--inner-button--message {
+  width: 350px;
+  height: 36px;
+}
+.kontakt--inner-button--message p {
+  font-size: 14px;
+  color: #840505;
+  display: none;
+}
+.kontakt--inner-button--message-show p {
+  display: block;
 }
 .kontakt--inner-button button {
   width: 95px;
@@ -552,4 +563,55 @@
   height: 100%;
   font-size: 14px;
   color: #FFFFFF;
+}
+.response {
+  height: calc(100vh - 70px);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 70px;
+}
+.response--container {
+  height: 250px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.response--container-logo {
+  width: 93px;
+  height: 30px;
+  position: relative;
+  padding-bottom: 60px;
+}
+.response--container-text {
+  height: 90px;
+  width: 470px;
+  margin-bottom: 75px;
+}
+.response--container-text--big {
+  font-size: 36px;
+  color: #666B70;
+  line-height: 42px;
+  padding-bottom: 5%;
+}
+.response--container-text--small {
+  width: 63%;
+  font-size: 20px;
+  color: #666B70;
+  line-height: 23px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.response--container-link {
+  width: 45px;
+  border-bottom: 1px solid #840505;
+  padding: 20px 0px;
+}
+.response--container-link a {
+  color: #840505;
+  font-size: 16px;
 }
