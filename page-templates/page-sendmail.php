@@ -24,7 +24,7 @@ get_header();
         <p class="response--container-text--small">Uskoro cemo Vas kontaktirati</p>
       </div>
       <div class="response--container-link">
-        <a href="<?php home_url('/');?>">Home</a>
+        <a href="<?php echo home_url('/');?>">Home</a>
       </div>
     </div>
   <?php
