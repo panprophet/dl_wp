@@ -152,6 +152,10 @@
 .response--container-text {
   height: 90px;
   width: 470px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 75px;
 }
 .response--container-text--big {
@@ -165,8 +169,6 @@
   font-size: 20px;
   color: #666B70;
   line-height: 23px;
-  margin-left: 50%;
-  transform: translateX(-50%);
 }
 .response--container-link {
   width: 45px;
@@ -176,4 +178,21 @@
 .response--container-link a {
   color: #840505;
   font-size: 16px;
+}
+@media screen and (max-width: 520px) {
+  .response--container-text {
+    height: 90px;
+    width: 320px;
+    margin-bottom: 75px;
+  }
+  .response--container-text--big {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .response--container-text--small {
+    width: 63%;
+    font-size: 18px;
+    color: #666B70;
+    line-height: 23px;
+  }
 }

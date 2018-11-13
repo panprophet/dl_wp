@@ -159,6 +159,10 @@
     &-text {
       height: 90px;
       width: 470px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-bottom: 75px;
       &--big {
         font-size: 36px;
@@ -171,8 +175,6 @@
         font-size: 20px;
         color: @dark-grey;
         line-height: 23px;
-        margin-left: 50%;
-        transform: translateX(-50%);
       }
     }
     &-link {
@@ -182,6 +184,27 @@
       a {
         color: @border-menu;
         font-size: @font-small;
+      }
+    }
+  }
+}
+@media screen and (max-width: 520px) {
+  .response {
+    &--container {
+      &-text {
+        height: 90px;
+        width: 320px;
+        margin-bottom: 75px;
+        &--big {
+          font-size: 24px;
+          line-height: 36px;
+        }
+        &--small {
+          width: 63%;
+          font-size: 18px;
+          color: @dark-grey;
+          line-height: 23px;
+        }
       }
     }
   }
