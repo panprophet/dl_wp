@@ -196,3 +196,20 @@
     line-height: 23px;
   }
 }
+@media screen and (max-width: 820px) and (orientation: landscape) {
+  .kontakt {
+    height: auto;
+  }
+  .kontakt--inner {
+    padding: 10px 0px;
+  }
+  .kontakt--inner-title {
+    margin: 20px 0px;
+  }
+  .kontakt--inner-form {
+    height: 240px;
+  }
+  .kontakt--inner-button {
+    margin: 20px 0px;
+  }
+}

@@ -894,3 +894,61 @@
     }
   }
 }
+@media screen and (max-width: 820px) and (orientation: landscape) {
+  .landing {
+    &--right {
+      &-bottom {
+        .image {
+          bottom: 0px;
+        }
+      }
+    }
+  }
+  .usluge {
+    &--right {
+      &-top {
+        height: 20%;
+        .tab {
+          height: 35px;
+          &-red::after {
+            padding-bottom: 8px;
+          }
+        }
+      }
+      &-bottom {
+        .galleryservice {
+          margin-left: 5px;
+          .wrap {
+            &--number {
+              height: 15%;
+              font-size: 22px;
+            }
+            &--picture {
+              height: 50%;
+              .title {
+                margin-bottom: 9px;
+                p{
+                  height: 35px;
+                  display: flex;
+                  align-items: flex-end;
+                  font-size: 9px;
+                  img {
+                    height: 100%;
+                  }
+                  a {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+            &--text {
+              height: 35%;
+              font-size: 9px;
+              line-height: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
