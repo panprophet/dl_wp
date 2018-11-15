@@ -114,3 +114,14 @@ function toggleSearch() {
     document.getElementById('searchbox').classList.add('search--expanded');
   }
 }
+function setBorder(id) {
+  console.log(id);
+
+  document.getElementById(id).style.borderBottom = "1px solid #840505";
+}
+function removeBorder(id) {
+  console.log(id);
+
+  document.getElementById(id).style.borderBottom = "1px solid rgba(196, 196, 196, 0.2)";
+
+}

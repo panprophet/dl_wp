@@ -12,18 +12,18 @@ if( !is_front_page() || !is_home()) {
         <div class="kontakt--inner-form--left">
           <div>
             <label>Ime i Prezime</label>
-            <input type="text" name="imeprezime" id="imeprezime"> </div>
+            <input type="text" name="imeprezime" id="imeprezime" onfocus="setBorder(this.id);" onblur="removeBorder(this.id);"> </div>
           <div>
             <label>E-mail</label>
-            <input type="email" name="usermail" type="email" id="email"> </div>
+            <input type="email" name="usermail" type="email" id="email" onfocus="setBorder(this.id);" onblur="removeBorder(this.id);"> </div>
         </div>
         <div class="kontakt--inner-form--right">
           <div>
             <label>Naslov</label>
-            <input type="text" name="naslov" id="naslov"> </div>
+            <input type="text" name="naslov" id="naslov" onfocus="setBorder(this.id);" onblur="removeBorder(this.id);"> </div>
           <div>
             <label>Poruka</label>
-            <input type="text" name="message" id="poruka"> </div>
+            <input type="text" name="message" id="poruka" onfocus="setBorder(this.id);" onblur="removeBorder(this.id);"> </div>
         </div>
       </form>
       <div class="kontakt--inner-button">
