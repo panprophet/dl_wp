@@ -850,7 +850,7 @@ textarea {
 }
 .info--top-right--contact .section--title-medium {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 22px;
 }
 .info--top-right--contact .section--title-small {
@@ -882,7 +882,7 @@ textarea {
   padding-left: 30px;
 }
 .info--top-right--contact .section-link--social a {
-  font-weight: 500;
+  font-weight: 300;
 }
 .info--midd {
   width: 100%;
@@ -989,7 +989,7 @@ textarea {
 }
 .landing--left-icon p {
   transform: rotate(-90deg);
-  font-size: 16px;
+  font-size: 14px;
   color: #666B70;
 }
 .landing--left-badge {
@@ -1000,7 +1000,7 @@ textarea {
 .landing--left-badge .rotate {
   transform: rotate(-90deg);
   color: #FFFFFF;
-  font-size: 16px;
+  font-size: 14px;
 }
 .landing--left-badge .rotate .title {
   margin-left: 5px;
@@ -1039,7 +1039,7 @@ textarea {
 .landing--right-top-midd--title {
   color: #FFFFFF;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 20px;
   margin-bottom: 16px;
 }
@@ -1067,7 +1067,7 @@ textarea {
 .landing--right-top-right--title {
   color: #FFFFFF;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 20px;
   margin-bottom: 16px;
 }
@@ -1115,7 +1115,7 @@ textarea {
 .usluge--left-badge .rotate {
   transform: rotate(-90deg);
   color: #FFFFFF;
-  font-size: 16px;
+  font-size: 14px;
   position: absolute;
 }
 .usluge--left-badge .rotate .title {
@@ -1139,7 +1139,7 @@ textarea {
   height: 44px;
   font-size: 20px;
   line-height: 27px;
-  font-weight: 500;
+  font-weight: 300;
   color: #B3B8BD;
   letter-spacing: -0.5px;
 }
@@ -1201,8 +1201,9 @@ textarea {
   align-items: center;
   font-size: 50px;
   color: #666B70;
+  opacity: 0.2;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
 }
 .usluge--right-bottom .galleryservice .wrap--picture {
   height: 50%;
@@ -1224,7 +1225,7 @@ textarea {
   width: 80%;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
   color: #666B70;
   line-height: 24px;
 }
@@ -1300,14 +1301,14 @@ textarea {
   font-size: 24px;
   color: #666B70;
   line-height: 33px;
-  font-weight: 500;
+  font-weight: 300;
   margin-top: 50px;
   padding-bottom: 20px;
 }
 .kantovanje--right-top--info .text {
   width: 85%;
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 14px;
   color: #666B70;
   line-height: 22px;
   padding-bottom: 20px;
@@ -1429,7 +1430,7 @@ textarea {
   height: 15%;
   color: #555F69;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: -2px;
   line-height: 20px;
 }

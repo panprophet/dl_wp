@@ -220,12 +220,12 @@
       </div>
       <div class="kantovanje--right-top--image" style="background-image: url('<?php the_field('kantovanjeimage'); ?>');"></div>
     </div>
-    <div class="kantovanje--right-bottom">
+    <!-- <div class="kantovanje--right-bottom">
       <div class="line"></div>
       <div class="link">
         <a href="#">Vidi više</a>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 <div class="single_picture">
