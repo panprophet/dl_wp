@@ -89,13 +89,13 @@
           <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>"><p>Kontakt</p></a>
         </div>
         <div class="menu--top-choice--lang">ENG / SRB</div>
-        <div class="menu--top-choice--search"><img src="<?php
+        <!-- <div class="menu--top-choice--search"><img src="<?php
         if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
           else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
           else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
           else if( is_page() ) { echo '../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
           else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-         ?>" onclick="toggleSearch();" /></div>
+         ?>" onclick="toggleSearch();" /></div> -->
         <div class="menu--top-choice--ham"
               onclick="toggleMenu()">
           <!-- <img src="images/ham.svg">  -->
@@ -271,13 +271,13 @@
         <div class="mobilemenu--top-choice--contact mobilemenu--top-choice--contact-hide" id="contact">
           <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>">Kontakt</a>
         </div>
-        <div class="mobilemenu--top-choice--search"><img src="<?php
+        <!-- <div class="mobilemenu--top-choice--search"><img src="<?php
           if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
             else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
             else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
             else if( is_page() ) { echo '../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
             else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-          ?>" onclick="toggleSearch();" /></div>
+          ?>" onclick="toggleSearch();" /></div> -->
         <div class="mobilemenu--top-choice--lang">ENG / SRB</div>
         <div class="mobilemenu--top-choice--ham"
               onclick="toggleMobileMenu();">
