@@ -55,6 +55,11 @@ function mail_checker() {
 }
 add_action('wp_enqueue_scripts', 'mail_checker');
 
+function search_script() {
+  wp_enqueue_script('checkmail', get_template_directory_uri() . '/js/searchscript.js', array('jquery'), '1.1', true);
+}
+add_action('wp_enqueue_scripts', 'search_script');
+
 add_action( 'comment_form_before', 'blankslate_enqueue_comment_reply_script' );
 function blankslate_enqueue_comment_reply_script()
 {

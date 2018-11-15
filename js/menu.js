@@ -93,7 +93,7 @@ function subLinkActive(section) {
   document.getElementById('mat_' + section).classList.add('menu--wrap-midd-container--top-link--active');
   document.getElementById('matmob_' + section).classList.add('mobilemenu--bottom-container--top-link--active');
 }
-function expand_decription(idelem){
+function expand_decription(idelem) {
   var noElem = document.getElementsByClassName('elements-description--element').length;
   for(var i = 1; i <= noElem; i++) {
     if(document.getElementById('material_' + i + '').classList.contains('elements-description--material--expanded')){
@@ -106,4 +106,11 @@ function expand_decription(idelem){
     document.getElementById('material_' + idelem + '' ).classList.add('elements-description--material--expanded');
   }, 800);
 
+}
+function toggleSearch() {
+  if(document.getElementById('searchbox').classList.contains('search--expanded')) {
+    document.getElementById('searchbox').classList.remove('search--expanded');
+  } else {
+    document.getElementById('searchbox').classList.add('search--expanded');
+  }
 }
