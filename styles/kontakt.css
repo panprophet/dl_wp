@@ -126,6 +126,13 @@
   font-size: 14px;
   color: #FFFFFF;
 }
+.kontakt--inner-button button:hover {
+  border: 1px solid #840505;
+}
+.kontakt--inner-button button:active {
+  background-color: #B20000;
+  border: 1px solid #B20000;
+}
 .response {
   height: calc(100vh - 70px);
   width: 100%;
