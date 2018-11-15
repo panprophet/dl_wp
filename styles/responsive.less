@@ -776,6 +776,26 @@
         .galleryservice{
           .wrap{
             min-width: 100%;
+            align-items: center;
+            &--picture{
+              position: relative;
+              justify-content: center;
+              .title{
+                position: absolute;
+                bottom: -30%;
+                p{
+                  color: @dark-grey;
+                  &:first-child{
+                    display: none;
+                  }
+                }
+              }
+            }
+            &--text{
+              align-items: flex-end;
+              padding-bottom: 10px;
+              text-align: center;
+            }
           }
         }
       }
@@ -819,6 +839,7 @@
     height: 60%;;
   }
   .usluge{
+    height: 100vh;
     &--right{
       &-top{
         .tab{

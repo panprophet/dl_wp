@@ -603,6 +603,26 @@
   }
   .usluge--right-bottom .galleryservice .wrap {
     min-width: 100%;
+    align-items: center;
+  }
+  .usluge--right-bottom .galleryservice .wrap--picture {
+    position: relative;
+    justify-content: center;
+  }
+  .usluge--right-bottom .galleryservice .wrap--picture .title {
+    position: absolute;
+    bottom: -30%;
+  }
+  .usluge--right-bottom .galleryservice .wrap--picture .title p {
+    color: #666B70;
+  }
+  .usluge--right-bottom .galleryservice .wrap--picture .title p:first-child {
+    display: none;
+  }
+  .usluge--right-bottom .galleryservice .wrap--text {
+    align-items: flex-end;
+    padding-bottom: 10px;
+    text-align: center;
   }
   .display-flex {
     height: 100%;
@@ -634,6 +654,9 @@
 @media screen and (max-width: 360px) {
   .display-flex {
     height: 60%;
+  }
+  .usluge {
+    height: 100vh;
   }
   .usluge--right-top .tab {
     font-weight: 300;
