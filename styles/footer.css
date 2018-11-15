@@ -57,7 +57,7 @@
 }
 .info--top-right--contact .section--title-medium {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 22px;
 }
 .info--top-right--contact .section--title-small {
@@ -89,7 +89,7 @@
   padding-left: 30px;
 }
 .info--top-right--contact .section-link--social a {
-  font-weight: 500;
+  font-weight: 300;
 }
 .info--midd {
   width: 100%;
