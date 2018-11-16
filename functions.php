@@ -56,7 +56,7 @@ function mail_checker() {
 add_action('wp_enqueue_scripts', 'mail_checker');
 
 function search_script() {
-  wp_enqueue_script('checkmail', get_template_directory_uri() . '/js/searchscript.js', array('jquery'), '1.1', true);
+  wp_enqueue_script('searchscript', get_template_directory_uri() . '/js/searchscript.js', array('jquery'), '1.1', true);
 }
 add_action('wp_enqueue_scripts', 'search_script');
 
@@ -151,12 +151,14 @@ function materijali_post_type() {
   register_post_type('materijali', array(
     'public' => true,
     'has_archive' => false,
+    'show_in_rest' => true,
     'labels' => array(
       'name' => 'Materijali',
       'add_new_item' => 'Dodaj novi materijal',
       'edit_item' => 'Materijal',
       'all_items' => 'Svi materijali',
       'singular_name' => 'materijal',
+      'rest_base' => 'materijali',
     ),
     'menu_icon' => 'dashicons-archive',
     // 'rewrite' => array('slug' => 'kuhinje/fijoke'),
@@ -215,6 +217,8 @@ function register_materijali_taxonomy(){
         'show_ui' => true,
         'show_admin_column' => true,
         'query_var' => true,
+        'show_in_rest' => true,
+        'rest_base' => 'materijalirest',
         'rewrite' => array(
             'slug' => 'Materijali', // This controls the base slug that will display before each term
             'with_front' => false // Don't display the category base before

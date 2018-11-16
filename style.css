@@ -362,7 +362,6 @@ textarea {
   cursor: pointer;
 }
 .menu--top-choice--search img {
-  height: 65%;
   width: 65%;
 }
 .menu--top-choice--search:hover {
@@ -878,6 +877,16 @@ textarea {
 }
 .search--results-container {
   height: 96%;
+  display: flex;
+  flex-direction: column;
+}
+.search--results-container--row {
+  width: 95%;
+  display: flex;
+}
+.search--results-container--row-title {
+  width: 100%;
+  color: #DEDEDE;
 }
 .search--expanded {
   opacity: 1;
