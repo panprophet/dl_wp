@@ -18,7 +18,7 @@
   font-family: 'Rubik', 'sans-serif';
   font-weight: 300;
   font-size: 16px;
-  letter-spacing: 0.7px;
+  letter-spacing: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -357,6 +357,7 @@ textarea {
   -ms-flex: 1 20%;
   flex: 1 20%;
   color: #FFFFFF;
+  text-align: end;
 }
 .menu--top-choice--contact:hover {
   cursor: pointer;
@@ -546,7 +547,7 @@ textarea {
 }
 .menu--wrap-bottom-container .elements-container--pic {
   width: 40%;
-  height: 85%;
+  height: 75%;
   border-bottom: 3px solid #840505;
 }
 .menu--wrap-bottom-container .elements-container--pic img {
@@ -1457,7 +1458,7 @@ textarea {
   margin-left: 20px;
 }
 .usluge--right-bottom .galleryservice .wrap--text {
-  height: 30%;
+  height: 18%;
   width: 80%;
   display: flex;
   align-items: center;
@@ -1538,7 +1539,6 @@ textarea {
   color: #666B70;
   line-height: 33px;
   font-weight: 300;
-  margin-top: 50px;
   padding-bottom: 20px;
 }
 .kantovanje--right-top--info .text {
@@ -4071,7 +4071,7 @@ textarea {
 }
 .materijali-wrapper-1 .pic--inner-midd--naslov2 {
   color: #666B70;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 33px;
   font-weight: 500;
 }
@@ -4094,7 +4094,7 @@ textarea {
   height: 26px;
   overflow: hidden;
   color: #666B70;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 22px;
 }
 .materijali-wrapper-1 .pic--inner-bottom--left--redline {
@@ -5012,6 +5012,9 @@ textarea {
   .usluge--right-bottom .arrow {
     height: 100px;
   }
+  .usluge--right-bottom .galleryservice .wrap--text {
+    height: 30%;
+  }
   .kantovanje--right-top--info .text {
     margin-top: 0px;
   }
@@ -5404,6 +5407,9 @@ textarea {
   }
   .kontakt--inner-button {
     justify-content: center;
+  }
+  .kontakt--inner-button--message {
+    width: auto;
   }
   .info--top-right--contact {
     width: 15%;

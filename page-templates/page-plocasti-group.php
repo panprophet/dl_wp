@@ -7,6 +7,7 @@
 <div class="ploce">
   <div class="ploce--top">
     <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
+      <div class="gradient"></div>
     </div>
   </div>
   <div class="ploce--midd">
@@ -72,7 +73,7 @@
             the_row();
             if($carNo == 1){
           ?>
-            <div class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;"></div>
+            <a href="<?php the_permalink() ?>" class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;"></a>
             <?php
             $carNo++;
             }

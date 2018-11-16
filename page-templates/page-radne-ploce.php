@@ -7,12 +7,12 @@
 
   <div class="ploce--top">
     <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
-    <div class="gradient">
-        <div class="ploce--top-hero--title"><?php $title = the_title(); echo strtoupper($title); ?></div>
-        <div class="ploce--top-hero--text">
-        <?php the_field('unutrasnji_text') ?>
-        </div>
-    </div>
+      <div class="gradient">
+          <div class="ploce--top-hero--title"><?php $title = the_title(); echo strtoupper($title); ?></div>
+          <div class="ploce--top-hero--text">
+          <?php the_field('unutrasnji_text') ?>
+          </div>
+      </div>
     </div>
   </div>
   <div class="ploce--midd">
@@ -133,14 +133,14 @@
             the_row();
               if($carNo == 1){
           ?>
-            <div class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;">
+            <a href="<?php the_permalink() ?>" class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;">
           <?php
               }
             $carNo++;
             }
           }
         ?>
-          </div>
+          </a>
           <div class="pic--inner-midd">
             <p class="pic--inner-midd--naslov2"><?php the_sub_field('opis'); ?></p>
           </div>
