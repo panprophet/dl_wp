@@ -135,14 +135,14 @@
             the_row();
               if($carNo == 1){
           ?>
-            <div class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;">
+            <a href="<?php the_permalink() ?>" class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;">
           <?php
               }
             $carNo++;
             }
           }
         ?>
-          </div>
+          </a>
           <div class="pic--inner-midd">
             <p class="pic--inner-midd--naslov1"><?php the_title(); ?></p>
             <!-- <p class="pic--inner-midd--naslov2"><?php the_sub_field('naziv'); ?></p> -->

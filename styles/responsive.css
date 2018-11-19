@@ -2,6 +2,9 @@
   .usluge--right-bottom .arrow {
     height: 100px;
   }
+  .usluge--right-bottom .galleryservice .wrap--text {
+    height: 30%;
+  }
   .kantovanje--right-top--info .text {
     margin-top: 0px;
   }
@@ -477,6 +480,9 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+  .kontakt--inner-button--message {
+    width: auto;
   }
   .info--top-right--contact {
     width: 15%;
