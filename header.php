@@ -344,7 +344,7 @@
               <div class="mobilemenu--bottom-container--bottom-wrapper-column">
               <?php
               foreach ( $terms as $key => $term ) {
-                if($key % 3 == 0){
+                if($key % 3 == 0 && $key != 0){
                 ?>
                 </div>
                 <div class="mobilemenu--bottom-container--bottom-wrapper-column">
@@ -370,7 +370,7 @@
               <div class="mobilemenu--bottom-container--bottom-wrapper-column">
               <?php
               foreach ( $terms as $key => $term ) {
-                if($key % 3 == 0){
+                if($key % 3 == 0 && $key != 0){
                 ?>
                 </div>
                 <div class="mobilemenu--bottom-container--bottom-wrapper-column">
@@ -411,7 +411,7 @@
   <!-- Search box -->
   <div class="search" id="searchbox">
     <div class="search--input">
-      <input type="text" name="search" placeholder="Search" onkeyup="searchbox(event);" />
+      <input type="text" name="search" placeholder="Pretraga" onkeyup="getSearch(event);" />
     </div>
     <div class="search--results">
       <div class="search--results-container" id="searchresults">

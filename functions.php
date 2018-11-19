@@ -154,7 +154,7 @@ function materijali_post_type() {
     'show_in_rest' => true,
     'rest_base' => 'materijali',
     'rest_controller_class' => 'WP_REST_Posts_Controller',
-    'supports' => array( 'naziv', 'opis', 'informacije', 'cena', 'id_elementa', 'debljina_materijala', 'proizvodjac', 'dimenzije' ),
+    // 'supports' => array( 'naziv', 'opis', 'informacije', 'cena', 'id_elementa', 'debljina_materijala', 'proizvodjac', 'dimenzije' ),
     'labels' => array(
       'name' => 'Materijali',
       'add_new_item' => 'Dodaj novi materijal',

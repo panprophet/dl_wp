@@ -107,13 +107,7 @@ function expand_decription(idelem) {
   }, 800);
 
 }
-function toggleSearch() {
-  if(document.getElementById('searchbox').classList.contains('search--expanded')) {
-    document.getElementById('searchbox').classList.remove('search--expanded');
-  } else {
-    document.getElementById('searchbox').classList.add('search--expanded');
-  }
-}
+
 function setBorder(id) {
   console.log(id);
 
