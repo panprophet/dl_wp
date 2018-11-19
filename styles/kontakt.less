@@ -4,18 +4,31 @@
   height: calc(~"100vh - 70px");
   width: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 70px;
   background-color: @black;
   border-top: 1px solid #2C2C2C;
   &--inner {
     height: 80%;
     width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     &-title {
       width: 80%;
       height: 15%;
@@ -28,19 +41,35 @@
     &-form {
       height: 70%;
       width: 80%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       &--left {
         height: 100%;
         width: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         div {
           height: 50%;
           width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: flex-start;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-pack: space-evenly;
+              -ms-flex-pack: space-evenly;
+                  justify-content: space-evenly;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
           label {
             font-size: @font-lilliput;
             color: @mid-grey;
@@ -54,8 +83,12 @@
             font-size: 14px;
             font-weight: 300;
             color: #ffffff;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: flex-end;
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;
             border: none;
             border-bottom: 1px solid rgba(196, 196, 196, 0.2);
           }
@@ -65,15 +98,29 @@
       &--right {
         height: 100%;
         width: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         div {
           height: 50%;
           width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: flex-start;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-pack: space-evenly;
+              -ms-flex-pack: space-evenly;
+                  justify-content: space-evenly;
+          -webkit-box-align: start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
           label {
             font-size: @font-lilliput;
             color: @mid-grey;
@@ -87,8 +134,12 @@
             font-size: 14px;
             font-weight: 300;
             color: #ffffff;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: flex-end;
+            -webkit-box-align: end;
+                -ms-flex-align: end;
+                    align-items: flex-end;
             border: none;
             border-bottom: 1px solid rgba(196, 196, 196, 0.2);
           }
@@ -99,9 +150,15 @@
     &-button {
       height: 15%;
       width: 67%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       &--message {
         width: 350px;
         height: 36px;
@@ -121,9 +178,15 @@
         height: 36px;
         // color: #b0b0b0;
         background-color: @black;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-end;
-        align-items: center;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         border: 1px solid #73808C;
         p {
           width: 100%;
@@ -147,16 +210,29 @@
   height: calc(~"100vh - 70px");
   width: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 70px;
   &--container {
     height: 250px;
     width: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     &-logo {
       width: 93px;
@@ -168,9 +244,16 @@
       height: 90px;
       width: 470px;
       position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       margin-bottom: 75px;
       &--big {
         font-size: 36px;
