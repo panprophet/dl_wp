@@ -321,7 +321,7 @@
 }
 .menu--wrap-bottom-container .elements-container--pic {
   width: 40%;
-  height: 73%;
+  height: 74%;
   border-bottom: 3px solid #840505;
 }
 .menu--wrap-bottom-container .elements-container--pic img {
@@ -339,7 +339,7 @@
 .menu--wrap-show {
   max-height: 565px;
   opacity: 1;
-  border-width: 5px;
+  border-width: 1px;
   -webkit-transition: max-height 0.5s ease-in, opacity 0.4s linear, border-width 0.5s ease-in;
   transition: max-height 0.5s ease-in, opacity 0.4s linear, border-width 0.5s ease-in;
 }
@@ -722,6 +722,11 @@
     width: 49%;
   }
 }
+@media only screen and (max-width: 1280px) {
+  .menu--wrap-bottom-container .elements-container {
+    height: 80%;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .menu--wrap-midd {
     height: 280px;
@@ -740,8 +745,14 @@
     height: 85%;
   }
   .menu--wrap-bottom-container .elements {
-    width: 47%;
+    width: 48%;
     height: 100%;
+  }
+  .menu--wrap-bottom-container .elements-container {
+    height: 85%;
+  }
+  .menu--wrap-bottom-container .elements-container--pic {
+    height: 86%;
   }
 }
 @media only screen and (max-width: 960px) {

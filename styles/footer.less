@@ -4,26 +4,44 @@
   height: calc(~"100vh - 70px");
   width: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   // align-items: center;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   top: 70px;
   background-color: #000000;
   &--top {
     height: 25%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     &-left {
       width: 10%;
       height: 100%;
       &-badge {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         .rotate {
-          transform: rotate(-90deg);
+          -webkit-transform: rotate(-90deg);
+                  transform: rotate(-90deg);
           color: @white;
           font-size: 16px;
           position: absolute;
@@ -38,15 +56,23 @@
     &-right {
       width: 90%;
       height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       // align-items: flex-start;
       // justify-content: center;
       &--contact {
         width: 50%;
         height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
         .section {
           width: 50%;
           margin-top: 50px;
@@ -65,6 +91,8 @@
           }
           &--info {
             width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             margin-bottom: 16px;
             color: @white;
@@ -83,6 +111,8 @@
         .section-link {
           width: 50%;
           margin-top: 40px;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           &--social {
             color: @white;
@@ -98,9 +128,15 @@
   &--midd {
     width: 100%;
     height: 55%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     overflow: hidden;
     a {
       height: 100%;
@@ -111,8 +147,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         -webkit-transition: 1s ease-in-out;
-        -moz-transition: 1s ease-in-out;
-        -o-transition: 1s ease-in-out;
         transition: 1s ease-in-out;
 
       }
@@ -126,8 +160,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         -webkit-transition: 1s ease-in-out;
-        -moz-transition: 1s ease-in-out;
-        -o-transition: 1s ease-in-out;
         transition: 1s ease-in-out;
       }
     }
@@ -135,9 +167,15 @@
   &--bottom {
     height: 10%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     &-left {
       width: 33.33%;
       font-size: @font-small;
@@ -147,13 +185,23 @@
     }
     &-midd {
       width: 33.33%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       &--inner {
         width: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         .circle {
           width: 15px;
           height: 15px;
