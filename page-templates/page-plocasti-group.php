@@ -15,26 +15,6 @@
       </div>
     </div>
   </div>
-  <div class="ploce--midd">
-    <div class="ploce--midd-title">
-        <?php if(have_rows('partnerstop')) :
-            while (have_rows('partnerstop')) :
-            the_row();
-        ?>
-        <div class="ploce--midd-title--partner">
-          <img src="<?php the_sub_field('partner') ?>">
-        </div>
-        <?php
-          endwhile;
-        endif;
-        ?>
-    </div>
-  </div>
-  <div class="ploce--bottom">
-    <div class="ploce--bottom-text">
-        <?php the_field('unutrasnji_text') ?>
-    </div>
-  </div>
 </div>
 <div class="materijali">
  <?php
@@ -57,9 +37,7 @@
     );
 
   ?>
-  <div class="materijali-term"><?php if($children) { echo $term->slug; } else { echo the_title(); } ?></div>
-
-    <?php
+  <?php
     $countDivs = 1;
 
       while ($allPosts->have_posts() ) : $allPosts->the_post();
