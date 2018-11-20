@@ -39,10 +39,6 @@ async function toggleSearch() {
   if(document.getElementById('searchbox').classList.contains('search--expanded')) {
     document.getElementById('searchbox').classList.remove('search--expanded');
     document.getElementsByName('search')[0].value = '';
-    document.getElementsByClassName("menu--top-choice--ham")[0].style.pointerEvents = 'auto';
-    document.getElementsByClassName("menu--top-choice--contact")[0].style.pointerEvents = 'auto';
-    document.getElementsByClassName("menu--top-logo")[0].style.pointerEvents = 'auto';
-
     // startScroller();
   } else {
     // get_data('http://localhost/drvolux/wp-json/wp/v2/materijali?per_page=100')
@@ -50,9 +46,15 @@ async function toggleSearch() {
       .then((res) => {
         var time;
 
-        if(document.getElementById("dropdown").classList.contains("menu--wrap-show")){
+        if(document.getElementById("dropdown") && document.getElementById("dropdown").classList.contains("menu--wrap-show")){
             toggleMenu();
             time = 800;
+        } else {
+          time = 0;
+        }
+        if(document.getElementById("dropdownmob") && document.getElementById("dropdownmob").classList.contains("mobilemenu--bottom-show")) {
+          toggleMobileMenu();
+          time = 800;
         } else {
           time = 0;
         }
@@ -67,9 +69,6 @@ async function toggleSearch() {
         });
         setTimeout(() => {
           document.getElementById('searchbox').classList.add('search--expanded');
-          document.getElementsByClassName("menu--top-choice--ham")[0].style.pointerEvents = 'none';
-          document.getElementsByClassName("menu--top-choice--contact")[0].style.pointerEvents = 'none';
-          document.getElementsByClassName("menu--top-logo")[0].style.pointerEvents = 'none';
         }, time);
         // stopScroller();
       })
@@ -151,5 +150,4 @@ function get_data(url) {
     other_s.open('GET', url);
     other_s.send();
   });
-
 }
