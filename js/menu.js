@@ -1,16 +1,28 @@
 // show hide menu, change svg hamburger fill
 function toggleMenu() {
   if(document.getElementById("dropdown").classList.contains("menu--wrap-hide")) {
-    document.getElementById("dropdown").classList.remove("menu--wrap-hide");
-    document.getElementById("dropdown").classList.add("menu--wrap-show");
-    document.getElementById("links").classList.remove("menu--top-links--closed")
-    document.getElementById("links").classList.add("menu--top-links--opened")
-    document.getElementById("ham").classList.remove("st0");
-    document.getElementById("ham").classList.add("st1");
-    if(document.getElementById("singlelinks")) {
-      document.getElementById("singlelinks").classList.remove("menu--top-links-single--open");
-      document.getElementById("singlelinks").classList.add("menu--top-links-single--close");
+    var timeout;
+
+    if(document.getElementById('searchbox').classList.contains('search--expanded')) {
+      toggleSearch();
+      timeout = 850;
+    } else {
+      timeout = 0;
     }
+
+    setTimeout(() => {
+      document.getElementById("dropdown").classList.remove("menu--wrap-hide");
+      document.getElementById("dropdown").classList.add("menu--wrap-show");
+      document.getElementById("links").classList.remove("menu--top-links--closed")
+      document.getElementById("links").classList.add("menu--top-links--opened")
+      document.getElementById("ham").classList.remove("st0");
+      document.getElementById("ham").classList.add("st1");
+
+      if(document.getElementById("singlelinks")) {
+        document.getElementById("singlelinks").classList.remove("menu--top-links-single--open");
+        document.getElementById("singlelinks").classList.add("menu--top-links-single--close");
+      }
+    }, timeout);
   } else {
     document.getElementById("dropdown").classList.remove("menu--wrap-show");
     document.getElementById("dropdown").classList.add("menu--wrap-hide");
@@ -18,21 +30,34 @@ function toggleMenu() {
     document.getElementById("links").classList.add("menu--top-links--closed")
     document.getElementById("ham").classList.remove("st1");
     document.getElementById("ham").classList.add("st0");
-    setTimeout(function(){
-      document.getElementById("singlelinks").classList.remove("menu--top-links-single--close");
-      document.getElementById("singlelinks").classList.add("menu--top-links-single--open");
-    }, 850);
 
+    setTimeout(function(){
+      if(document.getElementById("singlelinks")){
+        document.getElementById("singlelinks").classList.remove("menu--top-links-single--close");
+        document.getElementById("singlelinks").classList.add("menu--top-links-single--open");
+      }
+    }, 850);
   }
 }
 function toggleMobileMenu() {
   if(document.getElementById("dropdownmob").classList.contains("mobilemenu--bottom-hide")) {
-    document.getElementById("dropdownmob").classList.remove("mobilemenu--bottom-hide");
-    document.getElementById("dropdownmob").classList.add("mobilemenu--bottom-show");
-    document.getElementById("hammobile").classList.remove("st0");
-    document.getElementById("hammobile").classList.add("st1");
-    document.getElementById("contact").classList.remove("mobilemenu--top-choice--contact-hide");
-    document.getElementById("contact").classList.add("mobilemenu--top-choice--contact-show");
+    var timeout;
+
+    if(document.getElementById('searchbox').classList.contains('search--expanded')) {
+      toggleSearch();
+      timeout = 850;
+    } else {
+      timeout = 0;
+    }
+    setTimeout(() => {
+      document.getElementById("dropdownmob").classList.remove("mobilemenu--bottom-hide");
+      document.getElementById("dropdownmob").classList.add("mobilemenu--bottom-show");
+      document.getElementById("hammobile").classList.remove("st0");
+      document.getElementById("hammobile").classList.add("st1");
+      document.getElementById("contact").classList.remove("mobilemenu--top-choice--contact-hide");
+      document.getElementById("contact").classList.add("mobilemenu--top-choice--contact-show");
+    }, timeout);
+
   } else {
     document.getElementById("dropdownmob").classList.remove("mobilemenu--bottom-show");
     document.getElementById("dropdownmob").classList.add("mobilemenu--bottom-hide");

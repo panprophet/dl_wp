@@ -357,7 +357,7 @@ textarea {
   -ms-flex: 1 20%;
   flex: 1 20%;
   color: #FFFFFF;
-  text-align: end;
+  text-align: left;
 }
 .menu--top-choice--contact:hover {
   cursor: pointer;
@@ -394,8 +394,8 @@ textarea {
 .menu--top-choice--ham {
   height: 18px;
   -webkit-box-flex: 1;
-  -ms-flex: 1 15%;
-  flex: 1 15%;
+  -ms-flex: 1 10%;
+  flex: 1 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -964,6 +964,15 @@ textarea {
   }
 }
 @media only screen and (max-width: 1024px) {
+  .menu--top-choice {
+    flex: 1 15%;
+  }
+  .menu--top-choice--contact {
+    text-align: left;
+  }
+  .menu--top-choice--ham {
+    flex: 1 5%;
+  }
   .menu--wrap-midd {
     height: 280px;
   }
@@ -992,6 +1001,9 @@ textarea {
   }
 }
 @media only screen and (max-width: 960px) {
+  .menu--top-choice {
+    flex: 1 20%;
+  }
   .menu--wrap-bottom-container {
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
@@ -1012,6 +1024,9 @@ textarea {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .mobilemenu--top-choice--ham {
+    flex: 0 20%;
   }
 }
 @media only screen and (max-width: 640px) {
