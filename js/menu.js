@@ -19,8 +19,10 @@ function toggleMenu() {
     document.getElementById("ham").classList.remove("st1");
     document.getElementById("ham").classList.add("st0");
     setTimeout(function(){
-      document.getElementById("singlelinks").classList.remove("menu--top-links-single--close");
-      document.getElementById("singlelinks").classList.add("menu--top-links-single--open");
+      if(document.getElementById("singlelinks")){
+        document.getElementById("singlelinks").classList.remove("menu--top-links-single--close");
+        document.getElementById("singlelinks").classList.add("menu--top-links-single--open");
+      }
     }, 850);
 
   }

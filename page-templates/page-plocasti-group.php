@@ -7,12 +7,27 @@
 <div class="ploce">
   <div class="ploce--top">
     <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
-      <div class="gradient"></div>
+      <div class="gradient">
+          <div class="ploce--top-hero--title"><?php $title = the_title(); echo strtoupper($title); ?></div>
+          <div class="ploce--top-hero--text">
+          <?php the_field('unutrasnji_text') ?>
+          </div>
+      </div>
     </div>
   </div>
   <div class="ploce--midd">
     <div class="ploce--midd-title">
-      <div class="ploce--midd-title--link active"><?php the_title(); ?></div>
+        <?php if(have_rows('partnerstop')) :
+            while (have_rows('partnerstop')) :
+            the_row();
+        ?>
+        <div class="ploce--midd-title--partner">
+          <img src="<?php the_sub_field('partner') ?>">
+        </div>
+        <?php
+          endwhile;
+        endif;
+        ?>
     </div>
   </div>
   <div class="ploce--bottom">

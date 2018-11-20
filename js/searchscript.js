@@ -1,4 +1,5 @@
 var datamat;
+var data;
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
@@ -16,9 +17,9 @@ function preventDefaultForScrollKeys(e) {
 }
 
 function stopScroller() {
-  window.onwheel = preventDefault; // modern standard
-  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-  window.ontouchmove  = preventDefault; // mobile
+  window.onwheel = preventDefault;
+  window.onmousewheel = document.onmousewheel = preventDefault;
+  window.ontouchmove  = preventDefault;
   document.onkeydown  = preventDefaultForScrollKeys;
   var searchbox = document.getElementById('searchbox');
   searchbox.onmousewheel = document.onmousewheel = null;
@@ -37,54 +38,74 @@ function startScroller() {
 async function toggleSearch() {
   if(document.getElementById('searchbox').classList.contains('search--expanded')) {
     document.getElementById('searchbox').classList.remove('search--expanded');
+    document.getElementsByName('search')[0].value = '';
+    document.getElementsByClassName("menu--top-choice--ham")[0].style.pointerEvents = 'auto';
+    document.getElementsByClassName("menu--top-choice--contact")[0].style.pointerEvents = 'auto';
+    document.getElementsByClassName("menu--top-logo")[0].style.pointerEvents = 'auto';
+
     // startScroller();
   } else {
     // get_data('http://localhost/drvolux/wp-json/wp/v2/materijali?per_page=100')
     get_data('http://drvolux.rs/wp-json/wp/v2/materijali?per_page=100')
-
       .then((res) => {
+        var time;
+
+        if(document.getElementById("dropdown").classList.contains("menu--wrap-show")){
+            toggleMenu();
+            time = 800;
+        } else {
+          time = 0;
+        }
         datamat = JSON.parse(res.responseText);
-        document.getElementById('searchbox').classList.add('search--expanded');
+
+        get_data('http://drvolux.rs/wp-json/wp/v2/pages?per_page=100')
+        .then((res) => {
+          data = JSON.parse(res.responseText);
+        })
+        .catch((err)=>{
+          console.log(err);
+        });
+        setTimeout(() => {
+          document.getElementById('searchbox').classList.add('search--expanded');
+          document.getElementsByClassName("menu--top-choice--ham")[0].style.pointerEvents = 'none';
+          document.getElementsByClassName("menu--top-choice--contact")[0].style.pointerEvents = 'none';
+          document.getElementsByClassName("menu--top-logo")[0].style.pointerEvents = 'none';
+        }, time);
         // stopScroller();
       })
       .catch((err)=>{
         console.log(err);
       });
   }
-}
+};
 function getSearch(event){
+  var timeout;
   if(event.target.value !== event.altKey || event.target.value !== event.ctrlKey){
     setTimeout(() => {
         var term = event.target.value.toLowerCase();
-        searchbox(term);
+        searchbox(term)
     }, 1500);
   }
 }
 async function searchbox(term) {
   var container = document.getElementById('searchresults');
-  var data;
   var foundindex = -1;
   setTimeout(() => {
     container.innerHTML = "";
   }, 500);
 
-  // get_data('http://localhost/drvolux/wp-json/wp/v2/pages?search=' + term + '')
-  get_data('http://drvolux.rs/wp-json/wp/v2/pages?search=' + term + '')
-  .then((res) => {
-    data = JSON.parse(res.responseText);
-  })
-  .then(() => {
-    // if(data && term != '' && term != ' ') {
-    if(data && term != '' && term != ' ' && term.length > 1) {
-      data.forEach(elem => {
-        if(elem.title.rendered !== 'Landing page') {
+    data.forEach(elem => {
+    if(data && term != '' && term != ' ' && term.length > 1 && elem.title.rendered !== 'Landing page' && elem.title.rendered !== 'Email sent') {
+      if(elem.title.rendered !== 'Landing page') {
+        if(elem.title.rendered.toLowerCase().indexOf(term) >= 0) {
+
           setTimeout(() => {
             container.innerHTML += '<div class="search--results-container--row"><a href="' + elem.guid.rendered +  '"><div class="search--results-container--row-title">' + elem.title.rendered + '</div></a><div class="search--results-container--row-sifra">Svi proizvodi</div></div>';
-          }, 1000);
+          }, 500);
         }
-      });
+      }
     }
-  })
+  });
 
   datamat.forEach((elem, index) => {
     if(term != '' && term != ' ' && term.length > 1) {
@@ -132,12 +153,3 @@ function get_data(url) {
   });
 
 }
-// function displayResults(link, title, elem_id, container){
-
-//   if(title != '' && elem_id != '') {
-
-//     container.innerHTML += '<div class="search--results-container--row"><a href="' + link +  '"><div class="search--results-container--row-title">' + title + '</div></a><div class="">' + elem_id + '</div></div>';
-//   } else {
-//     container.innerHTML = '';
-//   }
-// }
