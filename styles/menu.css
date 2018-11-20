@@ -599,8 +599,10 @@
   margin-bottom: 5px;
 }
 .mobilemenu--bottom-container ul li a {
+  width: 100%;
   font-weight: 300;
   font-size: 18px;
+  text-align: center;
 }
 .mobilemenu--bottom-hide {
   max-height: 0px;
