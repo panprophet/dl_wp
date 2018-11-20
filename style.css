@@ -2133,6 +2133,9 @@ textarea {
   border: 1px solid #73808C;
 }
 .kontakt--inner-button button p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   font-size: 14px;
@@ -6543,9 +6546,6 @@ textarea {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }
-  .kontakt--inner-button--message {
-    width: auto;
   }
   .info--top-right--contact {
     width: 15%;

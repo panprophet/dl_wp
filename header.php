@@ -411,7 +411,7 @@
   <!-- Search box -->
   <div class="search" id="searchbox">
     <div class="search--input">
-      <input type="text" name="search" placeholder="Pretraga" onkeyup="getSearch(event);" />
+      <input type="text" name="search" placeholder="Pretraga" onkeyup="toggleSearch(event);" />
     </div>
     <div class="search--results">
       <div class="search--results-container" id="searchresults">
