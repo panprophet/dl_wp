@@ -39,7 +39,9 @@ async function toggleSearch() {
     document.getElementById('searchbox').classList.remove('search--expanded');
     // startScroller();
   } else {
-    get_data('http://localhost/drvolux/wp-json/wp/v2/materijali?per_page=100')
+    // get_data('http://localhost/drvolux/wp-json/wp/v2/materijali?per_page=100')
+    get_data('http://http://drvolux.rs/wp-json/wp/v2/materijali?per_page=100')
+
       .then((res) => {
         datamat = JSON.parse(res.responseText);
         document.getElementById('searchbox').classList.add('search--expanded');
@@ -66,7 +68,8 @@ async function searchbox(term) {
     container.innerHTML = "";
   }, 500);
 
-  get_data('http://localhost/drvolux/wp-json/wp/v2/pages?search=' + term + '')
+  // get_data('http://localhost/drvolux/wp-json/wp/v2/pages?search=' + term + '')
+  get_data('http://drvolux.rs/wp-json/wp/v2/pages?search=' + term + '')
   .then((res) => {
     data = JSON.parse(res.responseText);
   })
