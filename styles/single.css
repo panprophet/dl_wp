@@ -256,9 +256,6 @@
   line-height: 24px;
   color: #4C4C4C;
 }
-.post-temp--right-info--spec .tab--title-text:hover {
-  cursor: pointer;
-}
 .post-temp--right-info--spec .tab--title-icon {
   width: 20%;
   height: 20px;
@@ -421,12 +418,6 @@
   }
 }
 @media screen and (max-width: 840px) {
-  .post-temp--left-info--title {
-    font-size: 42px;
-    line-height: 51px;
-  }
-}
-@media screen and (max-width: 720px) {
   .post-temp {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -454,12 +445,16 @@
     justify-content: center;
     height: 35%;
   }
+  .post-temp--left-info--title {
+    font-size: 42px;
+    line-height: 51px;
+  }
   .post-temp--left-info--subtitle {
-    width: 50%;
+    width: 90%;
     margin-bottom: 0px;
   }
   .post-temp--left-info--id {
-    width: 50%;
+    width: 90%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -520,6 +515,20 @@
     display: flex;
   }
 }
+@media screen and (max-width: 640px) {
+  .post-temp--left-info--subtitle {
+    width: 90%;
+  }
+  .post-temp--left-info--id {
+    width: 90%;
+    margin: 10% 0 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  #product_3 {
+    display: none;
+  }
+}
 @media screen and (max-width: 320px) {
   .post-temp {
     height: auto;
@@ -531,10 +540,10 @@
     justify-content: center;
   }
   .post-temp--left-info--subtitle {
-    width: 100%;
+    width: 90%;
   }
   .post-temp--left-info--id {
-    width: 100%;
+    width: 90%;
     margin: 10% 0 0;
   }
   .post-temp--right {
@@ -557,15 +566,15 @@
   }
   .post-temp--right-info--spec .tab--title {
     height: 80%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .post-temp--right-info--spec .tab--title-text {
+    margin-left: 5%;
   }
   .post-temp--right-info--spec .tab--title-icon {
-    display: none;
+    margin-right: 5%;
   }
   .post-temp--right-products {
     height: auto;

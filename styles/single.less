@@ -254,9 +254,6 @@
               font-size: @font-small;
               line-height: 24px;
               color: #4C4C4C;
-              &:hover {
-                cursor:  pointer;
-              }
             }
             &-icon {
               width: 20%;
@@ -457,18 +454,6 @@
   }
 }
 @media screen and (max-width: 840px) {
-  .post-temp {
-    &--left {
-      &-info {
-        &--title {
-          font-size: @font-big-small;
-          line-height: 51px;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 720px) {
   .post-temp{
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -495,12 +480,16 @@
             -ms-flex-pack: center;
                 justify-content: center;
         height: 35%;
+        &--title {
+          font-size: @font-big-small;
+          line-height: 51px;
+        }
         &--subtitle{
-          width: 50%;
+          width: 90%;
           margin-bottom: 0px;
         }
         &--id{
-          width: 50%;
+          width: 90%;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -570,6 +559,26 @@
     display: flex;
   }
 }
+@media screen and (max-width: 640px) {
+  .post-temp{
+    &--left{
+      &-info{
+        &--subtitle{
+          width: 90%;
+        }
+        &--id{
+          width: 90%;
+          margin: 10% 0 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  #product_3 {
+    display: none;
+  }
+}
 @media screen and (max-width: 320px) {
   .post-temp{
     height: auto;
@@ -582,10 +591,10 @@
       }
       &-info{
         &--subtitle{
-          width: 100%;
+          width: 90%;
         }
         &--id{
-          width: 100%;
+          width: 90%;
           margin: 10% 0 0;
         }
       }
@@ -606,14 +615,14 @@
             margin: 0;
             &--title{
               height: 80%;
-              -webkit-box-pack: center;
-                  -ms-flex-pack: center;
-                      justify-content: center;
-              -webkit-box-align: end;
-                  -ms-flex-align: end;
-                      align-items: flex-end;
-              &-icon{
-                display: none;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              &-text {
+                margin-left: 5%;
+              }
+              &-icon {
+                margin-right: 5%;
               }
             }
           }

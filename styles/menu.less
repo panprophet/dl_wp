@@ -334,7 +334,6 @@
           &-title {
             height: 15%;
             font-size: @font-small;
-            font-weight: 500;
             color: @white;
           }
           &-container {
@@ -799,12 +798,16 @@
   .menu {
     &--top {
       &-choice {
-        flex: 1 15%;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 15%;
+                flex: 1 15%;
         &--contact {
           text-align: left;
         }
         &--ham {
-          flex: 1 5%;
+          -webkit-box-flex: 1;
+              -ms-flex: 1 5%;
+                  flex: 1 5%;
         }
       }
     }
@@ -844,7 +847,9 @@
   .menu {
     &--top {
       &-choice {
-        flex: 1 20%;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 20%;
+                flex: 1 20%;
       }
     }
     &--wrap {
@@ -877,7 +882,9 @@
     &--top {
       &-choice {
         &--ham {
-          flex: 0 20%;
+          -webkit-box-flex: 0;
+              -ms-flex: 0 20%;
+                  flex: 0 20%;
         }
       }
     }

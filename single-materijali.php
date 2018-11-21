@@ -70,7 +70,7 @@
         </div>
         </div>
         <div class="tab">
-          <div class="tab--title"><span class="tab--title-text">Proizvođac</span><span class="tab--title-icon"><?php the_sub_field('proizvodjac'); ?></span>
+          <div class="tab--title"><span class="tab--title-text">Proizvođač</span><span class="tab--title-icon"><?php the_sub_field('proizvodjac'); ?></span>
           </div>
         </div>
       </div>
@@ -127,6 +127,3 @@
     </div>
   </div>
 </div>
-
-
-<?php get_footer(); ?>
