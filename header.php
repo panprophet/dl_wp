@@ -415,7 +415,7 @@
   </nav>
   <!-- top bar -->
   <!-- Search box -->
-  <div class="search" id="searchbox">
+  <div class="search search--collapsed" id="searchbox">
     <div class="search--input">
       <input type="text" name="search" placeholder="Pretraga" onkeyup="getSearch(event);" />
     </div>
