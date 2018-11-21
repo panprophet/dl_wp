@@ -1,5 +1,6 @@
 
 <!-- <footer id="footer" role="contentinfo"> -->
+  <?php if(!is_single()) : ?>
     <footer class="info">
       <div class="info--top">
         <div class="info--top-left">
@@ -118,6 +119,7 @@
         <div class="info--bottom-right">Dimis</div>
       </div>
     </footer>
+<?php endif; ?>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -1,7 +1,17 @@
 // show hide menu, change svg hamburger fill
+function toggleSingleLinks() {
+  if(document.getElementById("singlelinks").classList.contains("menu--top-links-single--close")) {
+    document.getElementById("singlelinks").classList.remove("menu--top-links-single--close");
+    document.getElementById("singlelinks").classList.add("menu--top-links-single--open");
+  } else {
+    document.getElementById("singlelinks").classList.remove("menu--top-links-single--open");
+    document.getElementById("singlelinks").classList.add("menu--top-links-single--close");
+  }
+}
+
 function toggleMenu() {
   if(document.getElementById("dropdown").classList.contains("menu--wrap-hide")) {
-    var timeout;
+  var timeout;
 
     if(document.getElementById('searchbox').classList.contains('search--expanded')) {
       toggleSearch();
@@ -9,7 +19,10 @@ function toggleMenu() {
     } else {
       timeout = 0;
     }
-
+    if(document.getElementById("singlelinks") && document.getElementById("singlelinks").classList.contains("menu--top-links-single--open")) {
+      toggleSingleLinks();
+      timeout = 800;
+    }
     setTimeout(() => {
       document.getElementById("dropdown").classList.remove("menu--wrap-hide");
       document.getElementById("dropdown").classList.add("menu--wrap-show");
@@ -17,26 +30,26 @@ function toggleMenu() {
       document.getElementById("links").classList.add("menu--top-links--opened")
       document.getElementById("ham").classList.remove("st0");
       document.getElementById("ham").classList.add("st1");
-
-      if(document.getElementById("singlelinks")) {
-        document.getElementById("singlelinks").classList.remove("menu--top-links-single--open");
-        document.getElementById("singlelinks").classList.add("menu--top-links-single--close");
-      }
     }, timeout);
   } else {
-    document.getElementById("dropdown").classList.remove("menu--wrap-show");
-    document.getElementById("dropdown").classList.add("menu--wrap-hide");
-    document.getElementById("links").classList.remove("menu--top-links--opened")
-    document.getElementById("links").classList.add("menu--top-links--closed")
-    document.getElementById("ham").classList.remove("st1");
-    document.getElementById("ham").classList.add("st0");
+    var timeout2;
+    if(document.getElementById("singlelinks") && document.getElementById("singlelinks").classList.contains("menu--top-links-single--close")) {
+      timeout2 = 800;
+    }
+    // setTimeout(function(){
+      document.getElementById("dropdown").classList.remove("menu--wrap-show");
+      document.getElementById("dropdown").classList.add("menu--wrap-hide");
+      document.getElementById("links").classList.remove("menu--top-links--opened")
+      document.getElementById("links").classList.add("menu--top-links--closed")
+      document.getElementById("ham").classList.remove("st1");
+      document.getElementById("ham").classList.add("st0");
+    // }, timeout2);
 
-    setTimeout(function(){
-      if(document.getElementById("singlelinks")){
-        document.getElementById("singlelinks").classList.remove("menu--top-links-single--close");
-        document.getElementById("singlelinks").classList.add("menu--top-links-single--open");
-      }
-    }, 850);
+    if(document.getElementById("singlelinks") && document.getElementById("singlelinks").classList.contains("menu--top-links-single--close")) {
+      setTimeout(function(){
+        toggleSingleLinks();
+      }, timeout2);
+    }
   }
 }
 function toggleMobileMenu() {
