@@ -116,6 +116,12 @@ function subMenu(section) {
   for(var i = 1; i <= noSubMenus; i++ ){
     document.getElementById('submenu_' + i).style.transform = "translateX(" + (-100 * (section-1))  + "%)";
     document.getElementById('submob_' + i).style.transform = "translateX(" + (-100 * (section-1))  + "%)";
+    document.getElementById('submenu_' + i).style.opacity = "0";
+    console.log(i, section);
+
+    if(i == parseInt(section)) {
+      document.getElementById('submenu_' + i).style.opacity = "1";
+    }
   }
   subLinkActive(section);
 }
