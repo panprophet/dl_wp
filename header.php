@@ -40,14 +40,21 @@
                 $parent =  $term->parent;
                 if($parent) {
                   $name = get_term($parent, $kategorija);
-                  $path = $name->name;
-                } else {
+                  $path = $name->slug;
+                }
+                else {
                   $path = $term->slug;
                 }
+                if($parent) {
+                  $fullpath = $link.$path. '/' .$term->slug;
+                } else {
+                  $fullpath = $link.$path;
+                }
             }
-          echo get_permalink(get_page_by_path($link.$path))
-          // echo $posttype;
+            echo get_permalink(get_page_by_path($fullpath));
+            // proveriti da li dobro radi ukoliko categorija nema parenta, nemam za sada takav slucaj
          ?>">
+         <!-- <div><?php echo $link.$path. '/' .$term->slug; ?></div> -->
          <?php
           $posttype = get_the_terms($post->ID, 'kuhinje_categories');
           $kategorija = 'kuhinje_categories';
@@ -57,12 +64,12 @@
           }
           foreach($posttype as $term) {
               $parent =  $term->parent;
-              if($parent) {
-                $name = get_term($parent, $kategorija);
-                echo $name->name;
-              } else {
+              // if($parent) {
+              //   $name = get_term($parent, $kategorija);
+              //   echo $name->name;
+              // } else {
                 echo $term->name;
-              }
+              // }
             }
             // echo $posttype;
          ?>
@@ -97,8 +104,7 @@
           else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
          ?>" onclick="toggleSearch();" /></div>
         <div class="menu--top-choice--ham"
-              onclick="toggleMenu()">
-          <!-- <img src="images/ham.svg">  -->
+              onclick="toggleMenu();">
           <svg version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"

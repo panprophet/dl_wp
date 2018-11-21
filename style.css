@@ -544,7 +544,6 @@ textarea {
 .menu--wrap-bottom-container .elements-title {
   height: 15%;
   font-size: 16px;
-  font-weight: 500;
   color: #FFFFFF;
 }
 .menu--wrap-bottom-container .elements-container {
@@ -965,12 +964,16 @@ textarea {
 }
 @media only screen and (max-width: 1024px) {
   .menu--top-choice {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 15%;
     flex: 1 15%;
   }
   .menu--top-choice--contact {
     text-align: left;
   }
   .menu--top-choice--ham {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 5%;
     flex: 1 5%;
   }
   .menu--wrap-midd {
@@ -1002,6 +1005,8 @@ textarea {
 }
 @media only screen and (max-width: 960px) {
   .menu--top-choice {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 20%;
     flex: 1 20%;
   }
   .menu--wrap-bottom-container {
@@ -1026,6 +1031,8 @@ textarea {
     display: flex;
   }
   .mobilemenu--top-choice--ham {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 20%;
     flex: 0 20%;
   }
 }
@@ -1980,6 +1987,7 @@ textarea {
   top: 70px;
   background-color: #0E0E0E;
   border-top: 1px solid #2C2C2C;
+  border-bottom: 1px solid #840505;
 }
 .kontakt--inner {
   height: 80%;
@@ -2042,7 +2050,7 @@ textarea {
 .kontakt--inner-form--left div label {
   font-size: 14px;
   color: #EEEEEE;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
   line-height: 20px;
 }
 .kontakt--inner-form--left div input {
@@ -2091,7 +2099,7 @@ textarea {
 .kontakt--inner-form--right div label {
   font-size: 14px;
   color: #EEEEEE;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
   line-height: 20px;
 }
 .kontakt--inner-form--right div input {
@@ -2267,6 +2275,7 @@ textarea {
   }
   .kontakt--inner {
     padding: 10px 0px;
+    height: auto;
   }
   .kontakt--inner-title {
     margin: 20px 0px;
@@ -2666,10 +2675,8 @@ textarea {
   flex-direction: column;
   padding: 20px 0px 0px 20px;
   opacity: 1;
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, right top, left bottom, color-stop(23.88%, rgba(0, 0, 0, 0)), color-stop(90.5%, #000000));
-  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(23.88%, rgba(0, 0, 0, 0)), color-stop(90.5%, #000000));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
   /* IE6-9 */
@@ -2810,10 +2817,8 @@ textarea {
   height: 100%;
   padding: 20px 0px 0px 20px;
   opacity: 1;
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, right top, left bottom, color-stop(23.88%, rgba(0, 0, 0, 0)), color-stop(90.5%, #000000));
-  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(23.88%, rgba(0, 0, 0, 0)), color-stop(90.5%, #000000));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 23.88%, #000000 90.5%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
   /* IE6-9 */
@@ -3497,9 +3502,6 @@ textarea {
   line-height: 24px;
   color: #4C4C4C;
 }
-.post-temp--right-info--spec .tab--title-text:hover {
-  cursor: pointer;
-}
 .post-temp--right-info--spec .tab--title-icon {
   width: 20%;
   height: 20px;
@@ -3662,12 +3664,6 @@ textarea {
   }
 }
 @media screen and (max-width: 840px) {
-  .post-temp--left-info--title {
-    font-size: 42px;
-    line-height: 51px;
-  }
-}
-@media screen and (max-width: 720px) {
   .post-temp {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3695,12 +3691,16 @@ textarea {
     justify-content: center;
     height: 35%;
   }
+  .post-temp--left-info--title {
+    font-size: 42px;
+    line-height: 51px;
+  }
   .post-temp--left-info--subtitle {
-    width: 50%;
+    width: 90%;
     margin-bottom: 0px;
   }
   .post-temp--left-info--id {
-    width: 50%;
+    width: 90%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3761,6 +3761,20 @@ textarea {
     display: flex;
   }
 }
+@media screen and (max-width: 640px) {
+  .post-temp--left-info--subtitle {
+    width: 90%;
+  }
+  .post-temp--left-info--id {
+    width: 90%;
+    margin: 10% 0 0;
+  }
+}
+@media screen and (max-width: 420px) {
+  #product_3 {
+    display: none;
+  }
+}
 @media screen and (max-width: 320px) {
   .post-temp {
     height: auto;
@@ -3772,10 +3786,10 @@ textarea {
     justify-content: center;
   }
   .post-temp--left-info--subtitle {
-    width: 100%;
+    width: 90%;
   }
   .post-temp--left-info--id {
-    width: 100%;
+    width: 90%;
     margin: 10% 0 0;
   }
   .post-temp--right {
@@ -3798,15 +3812,15 @@ textarea {
   }
   .post-temp--right-info--spec .tab--title {
     height: 80%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .post-temp--right-info--spec .tab--title-text {
+    margin-left: 5%;
   }
   .post-temp--right-info--spec .tab--title-icon {
-    display: none;
+    margin-right: 5%;
   }
   .post-temp--right-products {
     height: auto;
@@ -4682,8 +4696,8 @@ textarea {
   justify-content: flex-end;
   /* FF3.6-15 */
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-gradient(linear, right top, left bottom, color-stop(40%, rgba(0, 0, 0, 0)), color-stop(90.5%, #000000));
-  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 40%, #000000 90.5%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(0, 0, 0, 0)), color-stop(90.5%, #000000));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, #000000 90.5%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
   /* IE6-9 */
@@ -6566,9 +6580,19 @@ textarea {
     width: 100%;
   }
   .kontakt--inner-button {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+  .kontakt--inner-button--message {
+    width: 320px;
+  }
+  .kontakt--inner-button--message p {
+    text-align: center;
   }
   .info--top-right--contact {
     width: 15%;

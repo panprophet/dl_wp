@@ -311,7 +311,6 @@
 .menu--wrap-bottom-container .elements-title {
   height: 15%;
   font-size: 16px;
-  font-weight: 500;
   color: #FFFFFF;
 }
 .menu--wrap-bottom-container .elements-container {
@@ -732,12 +731,16 @@
 }
 @media only screen and (max-width: 1024px) {
   .menu--top-choice {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 15%;
     flex: 1 15%;
   }
   .menu--top-choice--contact {
     text-align: left;
   }
   .menu--top-choice--ham {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 5%;
     flex: 1 5%;
   }
   .menu--wrap-midd {
@@ -769,6 +772,8 @@
 }
 @media only screen and (max-width: 960px) {
   .menu--top-choice {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 20%;
     flex: 1 20%;
   }
   .menu--wrap-bottom-container {
@@ -793,6 +798,8 @@
     display: flex;
   }
   .mobilemenu--top-choice--ham {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 20%;
     flex: 0 20%;
   }
 }
