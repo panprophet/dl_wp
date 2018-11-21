@@ -3517,9 +3517,6 @@ textarea {
   background-size: contain;
   background-repeat: no-repeat;
 }
-.post-temp--right-info--spec .tab--title-icon:hover {
-  cursor: pointer;
-}
 .post-temp--right-products {
   height: 50%;
   display: -webkit-box;
