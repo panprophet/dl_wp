@@ -284,8 +284,8 @@
             -webkit-box-align: center;
                 -ms-flex-align: center;
                     align-items: center;
-            -webkit-transition: 0.8s ease-in-out;
-            transition: 0.8s ease-in-out;
+            -webkit-transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+            transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
             &-column {
               color: @white;
               font-size: @font-lilliput;
@@ -1064,6 +1064,9 @@
             padding-left: 3%;
           }
         }
+        &--link {
+          padding-right: 1%;
+        }
         &--bottom {
           height: 36vh;
         }
@@ -1084,12 +1087,22 @@
             padding-left: 3%;
           }
         }
+        &--link {
+          padding-left: 3%;
+          padding-right: 7%;
+        }
         &--bottom {
           height: 40vh;
           &-wrapper {
             &-column {
               margin: 7px 15px 13px 15px;
             }
+          }
+        }
+        ul {
+          justify-content: space-between;
+          li {
+            padding-left: 0%;
           }
         }
       }

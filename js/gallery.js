@@ -1,4 +1,5 @@
 window.addEventListener('load', function(){
+  if(document.getElementById('megaslider')) {
     var mega = document.getElementById('megaslider'),
     picNo = document.getElementById('megaslider').childElementCount,
     startx,
@@ -48,4 +49,5 @@ window.addEventListener('load', function(){
           }, 100);
       }
     },false);
+  }
 }, false);

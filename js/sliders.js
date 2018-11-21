@@ -1,6 +1,7 @@
 var no = 0;
 // touch images slider
 window.addEventListener('load', function(){
+  if(document.getElementById('galleryFizicka') && document.getElementById('galleryProf')) {
     var car1 = document.getElementById('galleryFizicka'),
     car2 = document.getElementById('galleryProf'),
     startx,
@@ -9,9 +10,10 @@ window.addEventListener('load', function(){
     distY = 0,
     touchobj = null,
     sel;
-    var dotsFiz = document.getElementById("innerdotsfiz").childElementCount;
-    var dotsProf = document.getElementById("innerdotsprof").childElementCount;
-
+    if(document.getElementById("innerdotsfiz") && document.getElementById("innerdotsprof")){
+      var dotsFiz = document.getElementById("innerdotsfiz").childElementCount;
+      var dotsProf = document.getElementById("innerdotsprof").childElementCount;
+    }
     car1.addEventListener('touchstart', function(e) {
         touchobj = e.changedTouches[0];
         startx = parseInt(touchobj.clientX);
@@ -108,6 +110,7 @@ window.addEventListener('load', function(){
         }, 100);
     }
     },false);
+  }
 }, false);
 function slideImages(event) {
   event.preventDefault;

@@ -20,7 +20,6 @@ window.addEventListener('load', function(){
       startx = parseInt(touchobj.clientX);
       starty = parseInt(touchobj.clientY);
       go_to = elemId.substring(8);
-      console.log(go_to, elem);
 
     }, false);
     mega.addEventListener('touchmove', function(e) {
@@ -39,8 +38,16 @@ window.addEventListener('load', function(){
             for(let i = 1; i <= subNo; i++) {
               if(distX < 0){
                 document.getElementById('submenu_' + i).style.transform = "translateX("+ (-100 * (go_to)) +"%)";
+                document.getElementById('submenu_' + i).style.opacity = "0";
+                if(i == parseInt(go_to) + 1) {
+                  document.getElementById('submenu_' + i).style.opacity = "1";
+                }
               } else if (distX > 0) {
                 document.getElementById('submenu_' + i).style.transform = "translateX("+ (-100 * (go_to-2)) +"%)";
+                document.getElementById('submenu_' + i).style.opacity = "0";
+                if(i == parseInt(go_to) - 1) {
+                  document.getElementById('submenu_' + i).style.opacity = "1";
+                }
               }
               if(document.getElementById('mat_' + i).classList.contains('menu--wrap-midd-container--top-link--active')) {
                 document.getElementById('mat_' + i).classList.remove('menu--wrap-midd-container--top-link--active');
@@ -60,7 +67,6 @@ window.addEventListener('load', function(){
       startx = parseInt(touchobj.clientX);
       starty = parseInt(touchobj.clientY);
       go_to = elemId.substring(7);
-      console.log(go_to, elem);
 
     }, false);
     mini.addEventListener('touchmove', function(e) {
@@ -79,8 +85,16 @@ window.addEventListener('load', function(){
             for(let i = 1; i <= subNoMin; i++) {
               if(distX < 0){
                 document.getElementById('submob_' + i).style.transform = "translateX("+ (-100 * (go_to)) +"%)";
+                document.getElementById('submob_' + i).style.opacity = "0";
+                if(i == parseInt(go_to) + 1) {
+                  document.getElementById('submob_' + i).style.opacity = "1";
+                }
               } else if (distX > 0) {
                 document.getElementById('submob_' + i).style.transform = "translateX("+ (-100 * (go_to-2)) +"%)";
+                document.getElementById('submob_' + i).style.opacity = "0";
+                if(i == parseInt(go_to)-1) {
+                  document.getElementById('submob_' + i).style.opacity = "1";
+                }
               }
               if(document.getElementById('matmob_' + i).classList.contains('mobilemenu--bottom-container--top-link--active')) {
                 setTimeout(() => {
