@@ -38,6 +38,8 @@ function startScroller() {
 async function toggleSearch() {
   if(document.getElementById('searchbox').classList.contains('search--expanded')) {
     document.getElementById('searchbox').classList.remove('search--expanded');
+    document.getElementById('searchbox').classList.add('search--collapsed');
+
     document.getElementsByName('search')[0].value = '';
     // startScroller();
   } else {
@@ -68,6 +70,7 @@ async function toggleSearch() {
           console.log(err);
         });
         setTimeout(() => {
+          document.getElementById('searchbox').classList.remove('search--collapsed');
           document.getElementById('searchbox').classList.add('search--expanded');
         }, time);
         // stopScroller();

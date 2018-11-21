@@ -4,9 +4,14 @@
 <?php $element_slug = 'okovi'; ?>
 
 <div class="ploce">
-
   <div class="ploce--top">
     <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
+      <div class="gradient">
+          <div class="ploce--top-hero--title"><?php $title = the_title(); echo strtoupper($title); ?></div>
+          <div class="ploce--top-hero--text">
+          <?php the_field('unutrasnji_text') ?>
+          </div>
+      </div>
     </div>
   </div>
   <div class="ploce--midd">
@@ -22,11 +27,6 @@
           endwhile;
         endif;
         ?>
-    </div>
-  </div>
-  <div class="ploce--bottom">
-    <div class="ploce--bottom-text">
-        <?php the_field('unutrasnji_text') ?>
     </div>
   </div>
 </div>

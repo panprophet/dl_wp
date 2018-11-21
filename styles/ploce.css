@@ -740,6 +740,9 @@
   .ploce--top {
     height: 390px;
   }
+  .ploce--midd {
+    display: none;
+  }
 }
 @media screen and (max-width: 600px) {
   .ploce--bottom {
