@@ -64,7 +64,7 @@
   </div>
   <div class="gallery--loadmore">
     <div class="gallery--loadmore-text">
-      <p onclick="gallery_expand()">Učitaj još</p>
+      <p onclick="gallery_expand(this)">Učitaj još</p>
     </div>
   </div>
 </div>
