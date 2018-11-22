@@ -121,6 +121,9 @@
 .info--top-right--contact .section-link--social a {
   font-weight: 300;
 }
+.info--top-right--contact .section-link--social:hover {
+  color: #840505;
+}
 .info--midd {
   width: 100%;
   height: 55%;

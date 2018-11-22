@@ -186,13 +186,17 @@ function single_gallery(event) {
     document.getElementById('pagefrom').innerHTML = pageto;
   }
 }
-function gallery_expand() {
+function gallery_expand(element) {
   if(document.getElementById('gallerybody').classList.contains('gallery--body-less')){
     document.getElementById('gallerybody').classList.remove('gallery--body-less');
     document.getElementById('gallerybody').classList.add('gallery--body-more');
+    element.innerHTML = "";
+    element.innerHTML = "Učitaj manje";
   } else {
     document.getElementById('gallerybody').classList.remove('gallery--body-more');
     document.getElementById('gallerybody').classList.add('gallery--body-less');
+    element.innerHTML = "";
+    element.innerHTML = "Učitaj još";
   }
 }
 function go_to_slide(arg1, arg2) {

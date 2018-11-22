@@ -146,7 +146,7 @@
 }
 .kontakt--inner-button {
   height: 15%;
-  width: 67%;
+  width: 72%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -202,9 +202,15 @@
 .kontakt--inner-button button:hover {
   border: 1px solid #840505;
 }
+.kontakt--inner-button button:hover p {
+  color: #840505 !important;
+}
 .kontakt--inner-button button:active {
   background-color: #B20000;
   border: 1px solid #B20000;
+}
+.kontakt--inner-button button:active p {
+  color: #FFFFFF !important;
 }
 .response {
   height: calc(100vh - 70px);

@@ -1,4 +1,7 @@
 @media only screen and (max-width: 1440px) {
+  .usluge--left-badge {
+    top: 84.5%;
+  }
   .usluge--right-bottom .arrow {
     height: 100px;
   }
@@ -10,6 +13,9 @@
   }
 }
 @media only screen and (max-width: 1366px) {
+  .usluge--left-badge {
+    top: 86.5%;
+  }
   .usluge--right-bottom .galleryservice {
     height: 95%;
   }

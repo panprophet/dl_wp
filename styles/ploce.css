@@ -290,13 +290,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: #FFFFFF;
   opacity: 1;
 }
@@ -311,6 +305,14 @@
   font-size: 19px;
   line-height: 33px;
   font-weight: 500;
+}
+.materijali-wrapper-1 .pic--inner-midd--more {
+  display: none;
+  align-items: center;
+  width: 90px;
+  color: #666B70;
+  font-size: 20px;
+  line-height: 22px;
 }
 .materijali-wrapper-1 .pic--inner-bottom {
   height: 10%;
@@ -463,13 +465,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: #FFFFFF;
   opacity: 1;
 }
@@ -486,6 +482,15 @@
   font-size: 20px;
   line-height: 33px;
   font-weight: 500;
+}
+.materijali-wrapper-2 .pic--inner-midd--more,
+.materijali-wrapper-3 .pic--inner-midd--more {
+  display: none;
+  align-items: center;
+  width: 90px;
+  color: #666B70;
+  font-size: 20px;
+  line-height: 22px;
 }
 .materijali-wrapper-2 .pic--inner-bottom,
 .materijali-wrapper-3 .pic--inner-bottom {
@@ -681,12 +686,21 @@
     grid-row: 1 / 3;
   }
   .materijali-wrapper-1 .pic-2 .pic--inner-top {
-    height: 670px;
+    height: 650px;
   }
   .materijali-wrapper-1 .pic--inner-midd {
-    height: 45px;
+    height: 70px;
+  }
+  .materijali-wrapper-1 .pic--inner-midd--naslov2 {
+    display: flex;
+    align-items: center;
+  }
+  .materijali-wrapper-1 .pic--inner-midd--more {
+    display: flex;
+    margin-top: 3px;
   }
   .materijali-wrapper-1 .pic--inner-bottom {
+    display: none;
     height: 45px;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -712,9 +726,18 @@
     grid-row: 2;
   }
   .materijali-wrapper-2 .pic--inner-midd {
-    height: 45px;
+    height: 70px;
+  }
+  .materijali-wrapper-2 .pic--inner-midd--naslov2 {
+    display: flex;
+    align-items: center;
+  }
+  .materijali-wrapper-2 .pic--inner-midd--more {
+    display: flex;
+    margin-top: 3px;
   }
   .materijali-wrapper-2 .pic--inner-bottom {
+    display: none;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -724,6 +747,42 @@
     display: none;
   }
   .materijali-wrapper-2 .pic--inner-bottom--right {
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .materijali-wrapper-3 {
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 350px 350px;
+    height: 750px;
+  }
+  .materijali-wrapper-3 .pic-6 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+  .materijali-wrapper-3 .pic--inner-midd {
+    height: 70px;
+  }
+  .materijali-wrapper-3 .pic--inner-midd--naslov2 {
+    display: flex;
+    align-items: center;
+  }
+  .materijali-wrapper-3 .pic--inner-midd--more {
+    display: flex;
+    margin-top: 3px;
+  }
+  .materijali-wrapper-3 .pic--inner-bottom {
+    display: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-right: 20px;
+  }
+  .materijali-wrapper-3 .pic--inner-bottom--left {
+    display: none;
+  }
+  .materijali-wrapper-3 .pic--inner-bottom--right {
     width: 100%;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -756,6 +815,10 @@
     height: 590px;
   }
   .materijali-wrapper-2 {
+    grid-template-rows: 300px 300px;
+    height: 650px;
+  }
+  .materijali-wrapper-3 {
     grid-template-rows: 300px 300px;
     height: 650px;
   }
@@ -820,6 +883,26 @@
     grid-row: 3;
   }
   .materijali-wrapper-2 .pic--inner-bottom--right--more {
+    text-align: end;
+  }
+  .materijali-wrapper-3 {
+    grid-template-columns: 95%;
+    grid-template-rows: 250px 250px 250px;
+    height: 810px;
+  }
+  .materijali-wrapper-3 .pic-4 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .materijali-wrapper-3 .pic-5 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .materijali-wrapper-3 .pic-6 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .materijali-wrapper-3 .pic--inner-bottom--right--more {
     text-align: end;
   }
   .materijali-readmore--title {

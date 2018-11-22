@@ -77,7 +77,8 @@
           }
         ?>
             <div class="pic--inner-midd">
-              <p class="pic--inner-midd--naslov2"><?php the_sub_field('naziv'); ?></p>
+              <div class="pic--inner-midd--naslov2"><?php the_sub_field('naziv'); ?></div>
+              <div class="pic--inner-midd--more"><a href="<?php the_permalink() ?>">Vidi više</a></div>
             </div>
 
             <div class="pic--inner-bottom">

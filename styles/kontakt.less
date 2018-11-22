@@ -150,7 +150,7 @@
     }
     &-button {
       height: 15%;
-      width: 67%;
+      width: 72%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -206,11 +206,17 @@
         }
         &:hover {
           border: 1px solid @border-menu;
+          p {
+            color: @border-menu!important;
+          }
         }
         &:active {
           background-color: @button-active;
           // transition: background-color 0.1s linear;
           border: 1px solid @button-active;
+          p {
+            color: @white!important;
+          }
         }
       }
     }
