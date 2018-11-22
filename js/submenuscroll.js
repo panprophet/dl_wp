@@ -132,8 +132,6 @@ if(document.getElementById('maps')) {
     startx = parseInt(touchobj.clientX);
     starty = parseInt(touchobj.clientY);
     go_to = elemId.substring(4);
-  console.log(maps, mapscount, go_to, elemId);
-
   }, false);
 
   maps.addEventListener('touchmove', function(e) {
