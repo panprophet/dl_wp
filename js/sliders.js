@@ -139,6 +139,10 @@ function changeMap(event) {
   // if(elemId === '2') {
   for(var i = 1; i <= noMaps; i++ ){
     document.getElementById("map_" + i).style.transform = "translateX(" + (-100 * (elemId-1)) + "%)";
+    document.getElementById('map_' + i).style.opacity = "0";
+    if(i == parseInt(elemId)) {
+      document.getElementById('map_' + i).style.opacity = "1";
+    }
   }
   if(elemId === '2') {
     document.getElementById(elemId-1).classList.remove('circle-active');

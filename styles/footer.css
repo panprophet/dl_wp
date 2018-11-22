@@ -144,8 +144,8 @@
   min-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 .info--midd a {
   height: 100%;
@@ -156,8 +156,8 @@
   min-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 .info--bottom {
   height: 10%;

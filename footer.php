@@ -87,7 +87,7 @@
       <div class="info--midd"
            id="maps">
         <a href="https://www.google.com/maps/place/DRVOLUX/@44.799082,20.2897741,13z/data=!4m8!1m2!2m1!1sdrvolux!3m4!1s0x475a68d245f130f1:0x1bc8a56bcc6a57e8!8m2!3d44.799082!4d20.324793" target="_blank">
-          <div class="map1"
+          <div class="map map1"
             id="map_1" style="background-image: url(<?php if(is_home() || is_front_page()) { echo './wp-content/uploads/2018/10/Map_1-1.png'; }
             else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/Map_1-1.png'; }
             else if(is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Map_1-1.png'; }
@@ -96,7 +96,7 @@
           </div>
         </a>
         <a href="#" target="_blank">
-          <div class="map2" id="map_2" style="background-image: url(<?php if(is_home() || is_front_page()) { echo './wp-content/uploads/2018/10/Map_2.png'; }
+          <div class="map map2" id="map_2" style="background-image: url(<?php if(is_home() || is_front_page()) { echo './wp-content/uploads/2018/10/Map_2.png'; }
             else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/Map_2.png'; }
             else if(is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Map_2.png'; }
             else if(is_page()) { echo '../wp-content/uploads/2018/10/Map_2.png'; }

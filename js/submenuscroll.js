@@ -111,3 +111,66 @@ window.addEventListener('load', function(){
       }
     },false);
 }, false)
+
+window.addEventListener('load', function(){
+if(document.getElementById('maps')) {
+  var maps = document.getElementById('maps'),
+  mapscount = document.getElementById('maps').childElementCount,
+  startx,
+  starty,
+  distX = 0,
+  distY = 0,
+  touchobj = null,
+  elem,
+  elemId,
+  go_to;
+
+  maps.addEventListener('touchstart', function(e) {
+    touchobj = e.changedTouches[0];
+    elem = e.target.closest('.map');
+    elemId = elem.id;
+    startx = parseInt(touchobj.clientX);
+    starty = parseInt(touchobj.clientY);
+    go_to = elemId.substring(4);
+  }, false);
+
+  maps.addEventListener('touchmove', function(e) {
+    touchobj = e.changedTouches[0];
+    distX = parseInt(touchobj.clientX) - startx;
+    distY = parseInt(touchobj.clientY) - starty;
+    if(Math.abs(distX) > Math.abs(distY) == true) {
+        e.preventDefault();
+    }
+  }, false);
+
+  maps.addEventListener('touchend', function(e) {
+    if(Math.abs(distX) > Math.abs(distY) == true) {
+      setTimeout(() => {
+        var move = 0;
+        if((go_to == 1 && distX < 0) || (go_to == mapscount && distX > 0)){
+          for(let i = 1; i <= mapscount; i++) {
+            if(distX < 0){
+              document.getElementById('map_' + i).style.transform = "translateX("+ (-100 * (go_to)) +"%)";
+              document.getElementById('map_' + i).style.opacity = "0";
+              if(i == parseInt(go_to) + 1) {
+                document.getElementById('map_' + i).style.opacity = "1";
+              }
+            } else if (distX > 0) {
+              document.getElementById('map_' + i).style.transform = "translateX("+ (-100 * (go_to-2)) +"%)";
+              document.getElementById('map_' + i).style.opacity = "0";
+              if(i == parseInt(go_to) - 1) {
+                document.getElementById('map_' + i).style.opacity = "1";
+              }
+            }
+            if(document.getElementById('' + i).classList.contains('circle-active')) {
+              document.getElementById('' + i).classList.remove('circle-active');
+            } else {
+              document.getElementById('' + i).classList.add('circle-active');
+            }
+          }
+      }
+      }, 100);
+    }
+  },false);
+}
+}, false);
