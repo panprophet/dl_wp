@@ -678,8 +678,12 @@
     height: 45px;
     border-bottom: 1px solid @border-menu;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     &-icon {
       height: 50%;
       width: 5%;
@@ -694,10 +698,6 @@
         background-color: @black;
         color: @white;
         border: none;
-        // border-color: @dark-grey;
-        // border-style: solid;
-        // border-width: 1px;
-        // border-radius: 3px;
         padding: 0px 10px;
       }
     }
@@ -723,27 +723,29 @@
               align-items: center;
       overflow: auto;
       margin-top: 15px;
-      a {
-        width: 50%;
-      }
+
       &--row {
         width: 95%;
-        min-height: 20px;
+        min-height: fit-content;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
         margin: 5px 0px;
+          a {
+            width: 70%;
+          }
           &-title {
+            width: 100%;
             color: @mid-grey-darker;
           }
           &-sifra {
-            width: 50%;
+            width: 30%;
             color: @mid-grey-darker;
             text-align: right;
           }
@@ -760,8 +762,9 @@
   }
   &--collapsed {
     max-height: 0vh;
-    -webkit-transition: min-height 0.5s ease-in-out, max-height 0.6s ease-in-out, opacity 1s ease-in-out;
-    transition: min-height 0.5s ease-in-out, max-height 0.6s ease-in-out;
+    opacity: 0;
+    -webkit-transition: min-height 0.5s ease-in-out, opacity 0.4s ease-in-out, max-height 0.6s ease-in-out;
+    transition: min-height 0.5s ease-in-out, opacity 0.4s ease-in-out, max-height 0.6s ease-in-out;
     overflow: hidden;
   }
 }
@@ -944,7 +947,7 @@
   }
   .search {
     border-left: 80px solid rgba(14,14,14, 0.75);
-    border-right: 800px solid rgba(14,14,14, 0.75);
+    border-right: 80px solid rgba(14,14,14, 0.75);
   }
 }
 @media only screen and (max-width: 540px) {
@@ -1032,12 +1035,12 @@
         }
         &--row {
           width: 95%;
-          min-height: 25px;
+          // min-height: 25px;
             &-title {
-              width: 70%;
+              width: 80%;
             }
             &-sifra {
-              width: 30%;
+              width: 20%;
             }
         }
       }

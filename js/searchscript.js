@@ -41,6 +41,7 @@ async function toggleSearch() {
     document.getElementById('searchbox').classList.add('search--collapsed');
 
     document.getElementsByName('search')[0].value = '';
+    document.getElementById('searchresults').innerHTML = '';
     // startScroller();
   } else {
     // get_data('http://localhost/drvolux/wp-json/wp/v2/materijali?per_page=100')
