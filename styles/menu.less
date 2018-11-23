@@ -668,27 +668,44 @@
       -ms-flex-align: center;
           align-items: center;
   z-index: 5555555;
+  border-left: 440px solid rgba(14,14,14, 0.75);
+  border-right: 440px solid rgba(14,14,14, 0.75);
+  /* border-bottom: 340px solid rgba(14,14,14, 0.75); */
+  background-clip: padding-box;
+  background-origin: padding-box;
   &--input {
     width: 90%;
     height: 45px;
     border-bottom: 1px solid @border-menu;
     position: relative;
-    input {
-      width: 100%;
-      height: 80%;
-      position: relative;
-      background-color: @black;
-      color: @white;
-      border-color: @dark-grey;
-      border-style: solid;
-      border-width: 1px;
-      border-radius: 3px;
-      padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    &-icon {
+      height: 50%;
+      width: 5%;
+    }
+    &-field {
+      width: 95%;
+      height: 50%;
+      input {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: @black;
+        color: @white;
+        border: none;
+        // border-color: @dark-grey;
+        // border-style: solid;
+        // border-width: 1px;
+        // border-radius: 3px;
+        padding: 0px 10px;
+      }
     }
   }
   &--results {
     width: 90%;
-    height: 85vh;
+    // height: 85vh;
+    height: 81vh;
     overflow: hidden;
     position: relative;
     &-container {
@@ -705,6 +722,7 @@
           -ms-flex-align: center;
               align-items: center;
       overflow: auto;
+      margin-top: 15px;
       a {
         width: 50%;
       }
@@ -722,7 +740,6 @@
                 align-items: center;
         margin: 5px 0px;
           &-title {
-            width: 50%;
             color: @mid-grey-darker;
           }
           &-sifra {
@@ -775,7 +792,10 @@
       }
     }
   }
-
+  .search {
+    border-left: 340px solid rgba(14,14,14, 0.75);
+    border-right: 340px solid rgba(14,14,14, 0.75);
+  }
 }
 @media only screen and (max-width: 1024px) {
   .menu {
@@ -825,6 +845,10 @@
       }
     }
   }
+  .search {
+    border-left: 240px solid rgba(14,14,14, 0.75);
+    border-right: 240px solid rgba(14,14,14, 0.75);
+  }
 }
 @media only screen and (max-width: 960px) {
   .menu {
@@ -855,6 +879,10 @@
       }
     }
   }
+  .search {
+    border-left: 200px solid rgba(14,14,14, 0.75);
+    border-right: 200px solid rgba(14,14,14, 0.75);
+  }
 }
 @media only screen and (max-width: 850px) {
   .menu {
@@ -874,42 +902,50 @@
       }
     }
   }
+  .search {
+    border-left: 130px solid rgba(14,14,14, 0.75);
+    border-right: 130px solid rgba(14,14,14, 0.75);
+  }
 }
 @media only screen and (max-width: 640px) {
-.mobilemenu {
-  &--bottom {
-    #menumaterijali {
-      height: 65vh;
-    }
-    &-container {
-      padding: 10px 0px;
-      &--bottom {
-        // flex-direction: column;
-        height: 50vh;
-        &-wrapper {
-          min-height: 100%;
+  .mobilemenu {
+    &--bottom {
+      #menumaterijali {
+        height: 65vh;
+      }
+      &-container {
+        padding: 10px 0px;
+        &--bottom {
           // flex-direction: column;
-          -webkit-box-pack: center;
-              -ms-flex-pack: center;
-                  justify-content: center;
-          // -webkit-box-align: center;
-          //     -ms-flex-align: center;
-          //         align-items: center;
-          &-column {
-            // width: 280px;
-            p {
-              margin-top: 10px;
+          height: 50vh;
+          &-wrapper {
+            min-height: 100%;
+            // flex-direction: column;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            // -webkit-box-align: center;
+            //     -ms-flex-align: center;
+            //         align-items: center;
+            &-column {
+              // width: 280px;
+              p {
+                margin-top: 10px;
+              }
             }
           }
         }
       }
-    }
-    &-show {
-      height: 130vh;
-      padding: 10px 0px;
+      &-show {
+        height: 130vh;
+        padding: 10px 0px;
+      }
     }
   }
-}
+  .search {
+    border-left: 80px solid rgba(14,14,14, 0.75);
+    border-right: 800px solid rgba(14,14,14, 0.75);
+  }
 }
 @media only screen and (max-width: 540px) {
   .mobilemenu {
@@ -987,6 +1023,8 @@
 }
 @media only screen and (max-width: 420px) {
   .search {
+    border-left: none;
+    border-right: none;
     &--results {
       &-container {
         a {

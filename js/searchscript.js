@@ -73,6 +73,7 @@ async function toggleSearch() {
           document.getElementById('searchbox').classList.remove('search--collapsed');
           document.getElementById('searchbox').classList.add('search--expanded');
         }, time);
+        document.getElementsByName('search').focus();
         // stopScroller();
       })
       .catch((err)=>{
