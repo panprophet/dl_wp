@@ -154,6 +154,8 @@
 }
 .post-temp--left-info--id {
   width: 90%;
+  position: absolute;
+  bottom: 20px;
   font-size: 16px;
   line-height: 19px;
   color: #555F69;
@@ -518,7 +520,12 @@
   }
   .post-temp--left-info--id {
     width: 90%;
-    margin: 10% 0 0;
+    margin: 10% 0 5% 0;
+    position: relative;
+    bottom: 0px;
+  }
+  .post-temp--left-slide--gallery {
+    margin-bottom: 5%;
   }
 }
 @media screen and (max-width: 420px) {
@@ -541,7 +548,7 @@
   }
   .post-temp--left-info--id {
     width: 90%;
-    margin: 10% 0 0;
+    margin: 10% 0 5% 0;
   }
   .post-temp--right {
     height: auto;

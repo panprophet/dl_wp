@@ -44,8 +44,8 @@ async function toggleSearch() {
     document.getElementById('searchresults').innerHTML = '';
     // startScroller();
   } else {
-    get_data('http://localhost/drvolux/wp-json/wp/v2/materijali?per_page=100')
-    // get_data('http://drvolux.rs/wp-json/wp/v2/materijali?per_page=100')
+    // get_data('http://localhost/drvolux/wp-json/wp/v2/materijali?per_page=100')
+    get_data('http://drvolux.rs/wp-json/wp/v2/materijali?per_page=100')
       .then((res) => {
         var time;
 
