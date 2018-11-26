@@ -112,6 +112,59 @@ window.addEventListener('load', function(){
     },false);
   }
 }, false);
+window.addEventListener('load', function(){
+
+  if(document.getElementById('slidemini')) {
+    var imgsld = document.getElementById('slidemini'),
+    picno = document.getElementById('slidemini').childElementCount,
+    startx,
+    starty,
+    distX = 0,
+    distY = 0,
+    touchobj = null;
+
+    imgsld.addEventListener('touchstart', function(e) {
+        elem = e.target.closest('.post-temp--left-slide--gallery-picture');
+        elemId = elem.id;
+        touchobj = e.changedTouches[0];
+        startx = parseInt(touchobj.clientX);
+        starty = parseInt(touchobj.clientY);
+        go_to = elemId.substring(9);
+    }, false);
+
+    imgsld.addEventListener('touchmove', function(e) {
+        touchobj = e.changedTouches[0];
+        distX = parseInt(touchobj.clientX) - startx;
+        distY = parseInt(touchobj.clientY) - starty;
+        if(Math.abs(distX) > Math.abs(distY) == true) {
+            e.preventDefault();
+        }
+    }, false);
+    imgsld.addEventListener('touchend', function(e) {
+      if(Math.abs(distX) > Math.abs(distY) == true) {
+        setTimeout(() => {
+          var move = 0;
+          for(let i = 1; i <= picno; i++) {
+            if(distX < 0 && parseInt(go_to) < picno){
+              move = go_to;
+              document.getElementById('material_' + i).style.transform = "translateX("+ (-100 * (move)) +"%)";
+              pageto = parseInt(go_to) + 1;
+            } else if (distX > 0 && parseInt(go_to) > 1) {
+              move = go_to - 2;
+              document.getElementById('material_' + i).style.transform = "translateX("+ (-100 * (move)) +"%)";
+              pageto = parseInt(go_to) - 1;
+            }
+          }
+          if( pageto < 10 ) {
+            document.getElementById('pagefrom').innerHTML = "0" + pageto;
+          } else {
+            document.getElementById('pagefrom').innerHTML = pageto;
+          }
+        }, 100);
+      }
+    }, false);
+  }
+}, false);
 function slideImages(event) {
   event.preventDefault;
   let noPics;
@@ -158,7 +211,7 @@ function single_gallery(event) {
   let elemcount = document.getElementById('slide').childElementCount;
   let pagefrom = document.getElementById('pagefrom').innerHTML;
   let pageto;
-  if(pagefrom.substring(0,1)==0) {
+  if(pagefrom.substring(0,1) == 0) {
     pageto = parseInt(pagefrom.substring(1,2));
   } else {
     pageto = parseInt(pagefrom);
@@ -172,12 +225,11 @@ function single_gallery(event) {
     }
   }
   if(pageto-1 > 0){
-
     if(action === 'prev') {
-      for (let j = 1; j <= elemcount; j++){
-        document.getElementById("material_" + j).style.transform = "translateX(" + ( 100 * (elemcount-pageto-1) ) + "%)";
-      }
       pageto -= 1;
+      for (let j = 1; j <= elemcount; j++){
+        document.getElementById("material_" + j).style.transform = "translateX(" + ( -100 * (pageto-1) ) + "%)";
+      }
     }
   }
   if( pageto < 10 ) {

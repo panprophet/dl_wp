@@ -59,57 +59,6 @@ window.addEventListener('load', function(){
         }, 100);
       }
     },false);
-
-    mini.addEventListener('touchstart', function(e) {
-      touchobj = e.changedTouches[0];
-      elem = e.target.closest('.mobilemenu--bottom-container--bottom-wrapper');
-      elemId = elem.id;
-      startx = parseInt(touchobj.clientX);
-      starty = parseInt(touchobj.clientY);
-      go_to = elemId.substring(7);
-
-    }, false);
-    mini.addEventListener('touchmove', function(e) {
-      touchobj = e.changedTouches[0];
-      distX = parseInt(touchobj.clientX) - startx;
-      distY = parseInt(touchobj.clientY) - starty;
-      if(Math.abs(distX) > Math.abs(distY) == true) {
-          e.preventDefault();
-      }
-    }, false);
-    mini.addEventListener('touchend', function(e) {
-      if(Math.abs(distX) > Math.abs(distY) == true) {
-        setTimeout(() => {
-          var move = 0;
-          if((go_to == 1 && distX < 0) || (go_to == subNo && distX > 0)){
-            for(let i = 1; i <= subNoMin; i++) {
-              if(distX < 0){
-                document.getElementById('submob_' + i).style.transform = "translateX("+ (-100 * (go_to)) +"%)";
-                document.getElementById('submob_' + i).style.opacity = "0";
-                if(i == parseInt(go_to) + 1) {
-                  document.getElementById('submob_' + i).style.opacity = "1";
-                }
-              } else if (distX > 0) {
-                document.getElementById('submob_' + i).style.transform = "translateX("+ (-100 * (go_to-2)) +"%)";
-                document.getElementById('submob_' + i).style.opacity = "0";
-                if(i == parseInt(go_to)-1) {
-                  document.getElementById('submob_' + i).style.opacity = "1";
-                }
-              }
-              if(document.getElementById('matmob_' + i).classList.contains('mobilemenu--bottom-container--top-link--active')) {
-                setTimeout(() => {
-                  document.getElementById('matmob_' + i).classList.remove('mobilemenu--bottom-container--top-link--active');
-                }, 80);
-              } else {
-                setTimeout(() => {
-                  document.getElementById('matmob_' + i).classList.add('mobilemenu--bottom-container--top-link--active');
-                }, 80);
-              }
-            }
-        }
-        }, 100);
-      }
-    },false);
 }, false)
 
 window.addEventListener('load', function(){
