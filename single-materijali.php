@@ -19,7 +19,7 @@
       ?>
     </div>
     <div class="post-temp--left-slide">
-      <div class="post-temp--left-slide--gallery"  id="slide">
+      <div class="post-temp--left-slide--gallery"  id="slidemini">
       <?php
         $picNo = 0;
         if(have_rows('image_carousel')):
