@@ -1517,6 +1517,14 @@ textarea {
   text-align: right;
   margin-right: 30px;
 }
+.f_hidden {
+  opacity: 0;
+  transition: 0.8s ease-in-out;
+}
+.f_shown {
+  opacity: 1;
+  transition: 0.8s ease-in-out;
+}
 .landing {
   height: calc(100vh - 70px);
   background-color: #0E0E0E;

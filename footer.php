@@ -20,7 +20,8 @@
         <div class="info--top-right">
           <div class="info--top-right--contact info--top-right--contact-md">
             <div class="section">
-              <div class="section--title section--title-medium">Poslovna jedinica Ledine</div>
+              <div class="section--title section--title-medium f_shown" style="display: block;" id="expo_1">Poslovna jedinica Ledine</div>
+              <div class="section--title section--title-medium f_hidden" style="display: none;" id="expo_2">Poslovna jedinica Jajinci</div>
               <div class="section--info">
                 <span>
                   <p>Ponedeljak - Petak</p>
@@ -33,7 +34,8 @@
               </div>
             </div>
             <div class="section">
-              <div class="section--title">Vojvođanska 494C, Ledine</div>
+              <div class="section--title f_shown" style="display: block;" id="address_1">Vojvođanska 494C, Ledine</div>
+              <div class="section--title f_hidden" style="display: none;" id="address_2">Bul. Oslobođenja 8</div>
               <div class="section--info section--info-md">
                 <span>
                   <p>Telefoni:</p>
@@ -43,8 +45,11 @@
                 </span>
                 <span>
                   <p></p>
-                  <p>
+                  <p class="f_shown" style="display: block;" id="phone_1">
                     <a href="tel: +381113171550">011/3171-550</a>
+                  </p>
+                  <p class="f_hidden" style="display: none;" id="phone_2">
+                    <a href="tel: +381113940014">011/3940-014</a>
                   </p>
                 </span>
               </div>

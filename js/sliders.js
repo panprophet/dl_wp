@@ -189,12 +189,38 @@ function slideImages(event) {
 function changeMap(event) {
   let elemId = event.target.id;
   let noMaps = document.getElementById("maps").childElementCount;
-  // if(elemId === '2') {
   for(var i = 1; i <= noMaps; i++ ){
     document.getElementById("map_" + i).style.transform = "translateX(" + (-100 * (elemId-1)) + "%)";
     document.getElementById('map_' + i).style.opacity = "0";
     if(i == parseInt(elemId)) {
       document.getElementById('map_' + i).style.opacity = "1";
+    }
+    if(document.getElementById("expo_" + i).classList.contains('f_shown')) {
+      document.getElementById("expo_" + i).classList.remove("f_shown");
+      document.getElementById("expo_" + i).style.display = 'none';
+      document.getElementById("expo_" + i).classList.add("f_hidden");
+    } else {
+      document.getElementById("expo_" + i).classList.remove("f_hidden");
+      document.getElementById("expo_" + i).style.display = 'block';
+      document.getElementById("expo_" + i).classList.add("f_shown");
+    }
+    if(document.getElementById("address_" + i).classList.contains('f_shown')) {
+      document.getElementById("address_" + i).classList.remove("f_shown");
+      document.getElementById("address_" + i).style.display = 'none';
+      document.getElementById("address_" + i).classList.add("f_hidden");
+    } else {
+      document.getElementById("address_" + i).classList.remove("f_hidden");
+      document.getElementById("address_" + i).style.display = 'block';
+      document.getElementById("address_" + i).classList.add("f_shown");
+    }
+    if(document.getElementById("phone_" + i).classList.contains("f_shown")) {
+      document.getElementById("phone_" + i).classList.remove("f_shown");
+      document.getElementById("phone_" + i).style.display = 'none';
+      document.getElementById("phone_" + i).classList.add("f_hidden");
+    } else {
+      document.getElementById("phone_" + i).classList.remove("f_hidden");
+      document.getElementById("phone_" + i).style.display = 'block';
+      document.getElementById("phone_" + i).classList.add("f_shown");
     }
   }
   if(elemId === '2') {
