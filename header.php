@@ -314,7 +314,7 @@
     </div>
     <div class="mobilemenu--bottom mobilemenu--bottom-hide" id="dropdownmob">
       <div class="mobilemenu--bottom-container" id="materijalilinks2">
-        <div class="mobilemenu--bottom-container--top" id="subLink2">
+        <!-- <div class="mobilemenu--bottom-container--top" id="subLink2"> -->
         <?php
           $wp_my_query = new WP_Query();
           $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
@@ -326,9 +326,28 @@
           foreach (array_reverse($materijali_children) as $child) {
             $chil_child = get_pages(array('child_of' => $child->ID));
             if(count($chil_child) != 0) {
-              // if(get_the_id() == $child->ID){
           ?>
-            <div class="mobilemenu--bottom-container--top-link <?php if((!is_page('okovi') && $countMat == 1) || (is_page('okovi') && $countMat == 2)) { echo 'mobilemenu--bottom-container--top-link--active'; }?>" id="<?php echo "matmob_".$countMat; ?>" onmouseover="subMenu(<?php echo $countMat; ?>)"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+            <div class="mobilemenu--bottom-container--top-link" id="<?php echo "matmob_".$countMat; ?>"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
+            <div class="mobilemenu--bottom-container--top-subs" id="submob">
+            <?php
+              $wp_my_query = new WP_Query();
+              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
+              if($child->post_title == "Pločasti materijali") {
+                $slug_me = 'materijali/plocasti_materijali';
+              } else {
+                $slug_me = 'materijali/okovi';
+              }
+              $ploce = get_page_by_path($slug_me);
+              $terms = get_page_children($ploce->ID, $all_wp_pages);
+              ?>
+              <?php
+              foreach ( $terms as $key => $term ) {
+              ?>
+              <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
+              <?php
+              }
+            ?>
+            </div>
           <?php
             $countMat++;
             }
@@ -336,62 +355,6 @@
         <?php
           }
         ?>
-        </div>
-
-        <div class="mobilemenu--bottom-container--bottom" id="submob">
-               <?php
-              $wp_my_query = new WP_Query();
-              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
-
-              $ploce = get_page_by_path('materijali/plocasti_materijali');
-              $terms = get_page_children($ploce->ID, $all_wp_pages);
-              ?>
-            <div class="mobilemenu--bottom-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submob_1">
-              <div class="mobilemenu--bottom-container--bottom-wrapper-column">
-              <?php
-              foreach ( $terms as $key => $term ) {
-                if($key % 3 == 0 && $key != 0){
-                ?>
-                </div>
-                <div class="mobilemenu--bottom-container--bottom-wrapper-column">
-                <?php
-                }
-                ?>
-                <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
-                <?php
-              }
-              ?>
-              <?php
-            ?>
-              </div>
-            </div>
-            <?php
-              $wp_my_query = new WP_Query();
-              $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
-
-              $ploce = get_page_by_path('materijali/okovi');
-              $terms = get_page_children($ploce->ID, $all_wp_pages);
-              ?>
-            <div class="mobilemenu--bottom-container--bottom-wrapper" <?php if(is_page('okovi')) { echo 'style="transform:translateX(-100%);"';} ?> id="submob_2">
-              <div class="mobilemenu--bottom-container--bottom-wrapper-column">
-              <?php
-              foreach ( $terms as $key => $term ) {
-                if($key % 3 == 0 && $key != 0){
-                ?>
-                </div>
-                <div class="mobilemenu--bottom-container--bottom-wrapper-column">
-                <?php
-                }
-                ?>
-                <p><a href="<?php echo $term->guid; ?>"><?php echo $term->post_title; ?></a></p>
-                <?php
-              }
-              ?>
-              <?php
-            ?>
-              </div>
-            </div>
-        </div>
       </div>
       <div class="mobilemenu--bottom-container" id="menumain">
         <?php
@@ -420,7 +383,7 @@
       <div class="search--input-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#840505" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
       </div>
-      <div class="search--input-field"><input type="text" name="search" placeholder="Pretraga" onkeyup="getSearch(event);" /></div>
+      <div class="search--input-field"><input type="text" name="search" placeholder="Pretraga" onkeyup="getSearch(event);" id="searchfield" /></div>
     </div>
     <div class="search--results">
       <div class="search--results-container" id="searchresults">
