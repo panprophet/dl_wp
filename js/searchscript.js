@@ -39,7 +39,14 @@ async function toggleSearch() {
   if(document.getElementById('searchbox').classList.contains('search--expanded')) {
     document.getElementById('searchbox').classList.remove('search--expanded');
     document.getElementById('searchbox').classList.add('search--collapsed');
-
+    if(document.getElementById('lupa')) {
+      document.getElementById('lupa').classList.remove('lp1');
+      document.getElementById('lupa').classList.add('lp0');
+    }
+    if(document.getElementById('moblupa')) {
+      document.getElementById('moblupa').classList.remove('lp1');
+      document.getElementById('moblupa').classList.add('lp0');
+    }
     document.getElementsByName('search')[0].value = '';
     document.getElementById('searchresults').innerHTML = '';
     // startScroller();
@@ -73,6 +80,14 @@ async function toggleSearch() {
         setTimeout(() => {
           document.getElementById('searchbox').classList.remove('search--collapsed');
           document.getElementById('searchbox').classList.add('search--expanded');
+          if(document.getElementById('lupa')) {
+            document.getElementById('lupa').classList.remove('lp0');
+            document.getElementById('lupa').classList.add('lp1');
+          }
+          if(document.getElementById('moblupa')) {
+            document.getElementById('moblupa').classList.remove('lp0');
+            document.getElementById('moblupa').classList.add('lp1');
+          }
         }, time);
         document.getElementById('searchfield').focus();
         // stopScroller();
