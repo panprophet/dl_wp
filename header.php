@@ -126,11 +126,6 @@
               .st1 {
                 fill: #840505;
               }
-
-              /* <!--
-              svg:hover>.st0 {
-                fill: #D9BB82;
-              } --> */
             </style>
             <path class="st0"
                   id="ham"
@@ -282,13 +277,6 @@
           <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>">Kontakt</a>
         </div>
         <div class="mobilemenu--top-choice--search">
-          <!-- <img src="<?php
-          if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
-            else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
-            else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-            else if( is_page() ) { echo '../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-            else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-          ?>" onclick="toggleSearch();" /> -->
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onclick="toggleSearch();">
             <style>
               .lp0 {
@@ -303,7 +291,6 @@
         <div class="mobilemenu--top-choice--lang">ENG / SRB</div>
         <div class="mobilemenu--top-choice--ham"
               onclick="toggleMobileMenu();">
-          <!-- <img src="images/ham.svg">  -->
           <svg version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -330,7 +317,6 @@
     </div>
     <div class="mobilemenu--bottom mobilemenu--bottom-hide" id="dropdownmob">
       <div class="mobilemenu--bottom-container" id="materijalilinks2">
-        <!-- <div class="mobilemenu--bottom-container--top" id="subLink2"> -->
         <?php
           $wp_my_query = new WP_Query();
           $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
