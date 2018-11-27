@@ -100,15 +100,32 @@ if(document.getElementById('maps')) {
           for(let i = 1; i <= mapscount; i++) {
             if(distX < 0){
               document.getElementById('map_' + i).style.transform = "translateX("+ (-100 * (go_to)) +"%)";
+              document.getElementById('info_' + i).style.transform = "translateX("+ (-100 * (go_to)) +"%)";
               document.getElementById('map_' + i).style.opacity = "0";
               if(i == parseInt(go_to) + 1) {
                 document.getElementById('map_' + i).style.opacity = "1";
               }
+              if(i == parseInt(go_to)) {
+                document.getElementById('info_' + i).classList.remove('f_shown');
+                document.getElementById('info_' + i).classList.add('f_hidden');
+              } else {
+                document.getElementById('info_' + i).classList.remove('f_hidden');
+                document.getElementById('info_' + i).classList.add('f_shown');
+              }
             } else if (distX > 0) {
               document.getElementById('map_' + i).style.transform = "translateX("+ (-100 * (go_to-2)) +"%)";
+              document.getElementById('info_' + i).style.transform = "translateX("+ (-100 * (go_to-2)) +"%)";
               document.getElementById('map_' + i).style.opacity = "0";
               if(i == parseInt(go_to) - 1) {
                 document.getElementById('map_' + i).style.opacity = "1";
+              }
+
+              if(i == parseInt(go_to)) {
+                document.getElementById('info_' + i).classList.remove('f_shown');
+                document.getElementById('info_' + i).classList.add('f_hidden');
+              } else {
+                document.getElementById('info_' + i).classList.remove('f_hidden');
+                document.getElementById('info_' + i).classList.add('f_shown');
               }
             }
             if(document.getElementById('' + i).classList.contains('circle-active')) {
@@ -117,7 +134,7 @@ if(document.getElementById('maps')) {
               document.getElementById('' + i).classList.add('circle-active');
             }
           }
-      }
+        }
       }, 100);
     }
   },false);
