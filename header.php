@@ -328,7 +328,7 @@
             if(count($chil_child) != 0) {
           ?>
             <div class="mobilemenu--bottom-container--top-link" id="<?php echo "matmob_".$countMat; ?>"><a href="<?php echo $child->guid; ?>"><?php echo $child->post_title; ?></a></div>
-            <div class="mobilemenu--bottom-container--top-subs" id="submob">
+            <div class="mobilemenu--bottom-container--top-subs" id="<?php echo "submob_".$countMat;?>" >
             <?php
               $wp_my_query = new WP_Query();
               $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
