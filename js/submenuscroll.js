@@ -1,8 +1,6 @@
 window.addEventListener('load', function(){
     var mega = document.getElementById('submenu'),
-    mini = document.getElementById('submob'),
     subNo = document.getElementById('submenu').childElementCount,
-    subNoMin = document.getElementById('submob').childElementCount,
     startx,
     starty,
     distX = 0,

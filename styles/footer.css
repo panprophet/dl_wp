@@ -144,11 +144,7 @@
   align-items: center;
   overflow: hidden;
 }
-.info--midd a {
-  height: 100%;
-  width: 100%;
-}
-.info--midd a .map1 {
+.info--midd .map1 {
   min-height: 100%;
   min-width: 100%;
   background-repeat: no-repeat;
@@ -156,11 +152,7 @@
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
 }
-.info--midd a {
-  height: 100%;
-  min-width: 100%;
-}
-.info--midd a .map2 {
+.info--midd .map2 {
   min-height: 100%;
   min-width: 100%;
   background-repeat: no-repeat;

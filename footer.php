@@ -7,7 +7,6 @@
           <div class="info--top-left-badge">
             <div class="rotate">
               <span>
-                <!-- <img src="/images/Group 3.svg">  -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <circle cx="7" cy="7" r="6.5" stroke="#840505"/>
                   <circle cx="6.99999" cy="6.99999" r="4.2" fill="#840505"/>
@@ -22,7 +21,6 @@
           <div class="info--top-right--contact info--top-right--contact-md">
             <div class="section">
               <div class="section--title section--title-medium" id="expo_1">Poslovna jedinica Ledine</div>
-              <!-- <div class="section--title section--title-medium f_hidden" style="display: none;" id="expo_2">Poslovna jedinica Jajinci</div> -->
               <div class="section--info">
                 <span>
                   <p>Ponedeljak - Petak</p>
@@ -36,7 +34,6 @@
             </div>
             <div class="section">
               <div class="section--title" id="address_1">Vojvođanska 494C, Ledine</div>
-              <!-- <div class="section--title f_hidden" style="display: none;" id="address_2">Bul. Oslobođenja 8</div> -->
               <div class="section--info section--info-md">
                 <span>
                   <p>Telefoni:</p>
@@ -49,9 +46,6 @@
                   <p id="phone_1">
                     <a href="tel: +381113171550">011/3171-550</a>
                   </p>
-                  <!-- <p class="f_hidden" style="display: none;" id="phone_2"> -->
-                    <!-- <a href="tel: +381113940014">011/3940-014</a> -->
-                  <!-- </p> -->
                 </span>
               </div>
               <div class="section--info-mobile">
@@ -93,7 +87,6 @@
         <div class="info--top-right f_hidden" id="info_2">
           <div class="info--top-right--contact info--top-right--contact-md">
             <div class="section">
-              <!-- <div class="section--title section--title-medium f_shown" style="display: block;" id="expo_1">Poslovna jedinica Ledine</div> -->
               <div class="section--title section--title-medium" id="expo_2">Poslovna jedinica Jajinci</div>
               <div class="section--info">
                 <span>
@@ -107,7 +100,6 @@
               </div>
             </div>
             <div class="section">
-              <!-- <div class="section--title f_shown" style="display: block;" id="address_1">Vojvođanska 494C, Ledine</div> -->
               <div class="section--title" id="address_2">Bul. Oslobođenja 8</div>
               <div class="section--info section--info-md">
                 <span>
@@ -118,9 +110,6 @@
                 </span>
                 <span>
                   <p></p>
-                  <!-- <p class="f_shown" style="display: block;" id="phone_1">
-                    <a href="tel: +381113171550">011/3171-550</a>
-                  </p> -->
                   <p id="phone_2">
                     <a href="tel: +381113940014">011/3940-014</a>
                   </p>
@@ -165,23 +154,50 @@
       </div>
       <div class="info--midd"
            id="maps">
-        <a href="https://www.google.com/maps/place/DRVOLUX/@44.799082,20.2897741,13z/data=!4m8!1m2!2m1!1sdrvolux!3m4!1s0x475a68d245f130f1:0x1bc8a56bcc6a57e8!8m2!3d44.799082!4d20.324793" target="_blank">
-          <div class="map map1"
-            id="map_1" style="background-image: url(<?php if(is_home() || is_front_page()) { echo './wp-content/uploads/2018/10/Map_1-1.png'; }
-            else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/Map_1-1.png'; }
-            else if(is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Map_1-1.png'; }
-            else if(is_page()) { echo '../wp-content/uploads/2018/10/Map_1-1.png'; }
-            else if(is_single()) { echo '../../../wp-content/uploads/2018/10/Map_1-1.png'; } ?>); ">
-          </div>
-        </a>
-        <a href="#" target="_blank">
-          <div class="map map2" id="map_2" style="background-image: url(<?php if(is_home() || is_front_page()) { echo './wp-content/uploads/2018/10/Map_2.png'; }
-            else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/Map_2.png'; }
-            else if(is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/Map_2.png'; }
-            else if(is_page()) { echo '../wp-content/uploads/2018/10/Map_2.png'; }
-            else if(is_single()) { echo '../../../wp-content/uploads/2018/10/Map_2.png'; } ?>);">
-          </div>
-        </a>
+        <div class="map map1" id="map_1" >
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+
+          <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+          integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+          crossorigin=""></script>
+
+          <script>
+              var MapStr = '44.799082,20.3226043,17';
+              var lat  = Number( MapStr.split(',')[0] );
+              var lng  = Number( MapStr.split(',')[1] );
+              var map =  L.map('map_1').setView([lat, lng ], 16);
+
+              L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              }).addTo(map);
+
+              var marker = new L.marker([lat, lng]).addTo(map);
+          </script>
+        </div>
+        <div class="map map2" id="map_2" >
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+
+          <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+          integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+          crossorigin=""></script>
+
+          <script>
+              var MapStr = '44.726442,20.4882643,17';
+              var lat  = Number( MapStr.split(',')[0] );
+              var lng  = Number( MapStr.split(',')[1] );
+              var map =  L.map('map_2').setView([lat, lng ], 16);
+
+              L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+                  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              }).addTo(map);
+
+              var marker = new L.marker([lat, lng]).addTo(map);
+          </script>
+        </div>
       </div>
       <div class="info--bottom">
         <div class="info--bottom-left">copyright 2018</div>
