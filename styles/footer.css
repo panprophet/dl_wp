@@ -20,10 +20,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 .info--top-left {
-  width: 10%;
+  min-width: 10%;
   height: 100%;
+  position: relative;
+  background: #000000;
+  z-index: 7;
 }
 .info--top-left-badge {
   display: -webkit-box;
@@ -53,11 +57,13 @@
   color: #666B70;
 }
 .info--top-right {
-  width: 90%;
+  min-width: 90%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  overflow: hidden;
 }
 .info--top-right--contact {
   width: 50%;
@@ -109,7 +115,7 @@
 }
 .info--top-right--contact .section-link {
   width: 50%;
-  margin-top: 40px;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,4 +231,13 @@
   line-height: 22px;
   text-align: right;
   margin-right: 30px;
+}
+.f_hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+.f_shown {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
