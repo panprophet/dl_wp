@@ -49,7 +49,6 @@
   color: #FFFFFF;
   font-size: 35px;
   margin-left: 3%;
-  margin-bottom: 3%;
 }
 .ploce--top-hero--text {
   width: 740px;
@@ -669,6 +668,7 @@
   }
   .ploce--top-hero--title {
     font-size: 30px;
+    margin-bottom: 8%;
   }
   .ploce--top-hero--text {
     display: none;
@@ -828,6 +828,9 @@
     height: 350px;
     margin-left: 0;
   }
+  .ploce--top-hero--title {
+    margin-bottom: 12%;
+  }
   .ploce--midd-title--link a {
     font-size: 26px;
   }
@@ -910,6 +913,9 @@
   }
   .materijali-readmore--info {
     height: 130px;
+  }
+  .materijali-readmore--info-link {
+    padding-right: 25px;
   }
 }
 @media screen and (max-width: 360px) {
