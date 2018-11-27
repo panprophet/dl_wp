@@ -695,7 +695,7 @@
   z-index: 5555555;
   border-left: 440px solid rgba(14, 14, 14, 0.75);
   border-right: 440px solid rgba(14, 14, 14, 0.75);
-  /* border-bottom: 340px solid rgba(14,14,14, 0.75); */
+  border-bottom: 400px solid rgba(14, 14, 14, 0.75);
   background-clip: padding-box;
   background-origin: padding-box;
 }
@@ -730,7 +730,7 @@
 }
 .search--results {
   width: 90%;
-  height: 81vh;
+  height: 52vh;
   overflow: hidden;
   position: relative;
 }
@@ -797,6 +797,9 @@
   .menu--wrap-bottom-container .elements {
     width: 49%;
   }
+  .search {
+    border-bottom: 240px solid rgba(14, 14, 14, 0.75);
+  }
 }
 @media only screen and (max-width: 1280px) {
   .menu--wrap-bottom-container .elements-container {
@@ -805,6 +808,10 @@
   .search {
     border-left: 340px solid rgba(14, 14, 14, 0.75);
     border-right: 340px solid rgba(14, 14, 14, 0.75);
+    border-bottom: 200px solid rgba(14, 14, 14, 0.75);
+  }
+  .search--results {
+    height: 61vh;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -850,6 +857,10 @@
   .search {
     border-left: 240px solid rgba(14, 14, 14, 0.75);
     border-right: 240px solid rgba(14, 14, 14, 0.75);
+    border-bottom: 180px solid rgba(14, 14, 14, 0.75);
+  }
+  .search--results {
+    height: 58vh;
   }
 }
 @media only screen and (max-width: 960px) {
@@ -874,6 +885,10 @@
   .search {
     border-left: 200px solid rgba(14, 14, 14, 0.75);
     border-right: 200px solid rgba(14, 14, 14, 0.75);
+    border-bottom: none;
+  }
+  .search--results {
+    height: 70vh;
   }
 }
 @media only screen and (max-width: 850px) {
@@ -1049,6 +1064,16 @@
     margin-right: 20px;
   }
 }
+@media only screen and (max-width: 1366px) and (min-height: 1024px) and (orientation: landscape) {
+  .search--results {
+    height: 70vh;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-height: 768px) and (orientation: landscape) {
+  .search--results {
+    height: 68vh;
+  }
+}
 @media only screen and (max-width: 840px) and (orientation: landscape) {
   .mobilemenu--bottom-show {
     padding: 15px 0px;
@@ -1087,6 +1112,9 @@
   }
   .mobilemenu--bottom-container--bottom {
     height: 40vh;
+  }
+  .serach--results {
+    height: 59vh;
   }
 }
 @media only screen and (max-width: 420px) and (orientation: landscape) {
