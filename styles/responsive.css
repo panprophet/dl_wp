@@ -147,25 +147,19 @@
   .kontakt--inner-button {
     width: 90%;
   }
-  .info--top {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
   .info--top-left {
     display: none;
   }
   .info--top-right {
-    width: 94%;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    min-width: 100%;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
   }
   .info--top-right--contact {
-    width: 39%;
+    width: 35%;
   }
   .info--top-right--contact-md {
-    width: 55%;
+    width: 50%;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -179,6 +173,7 @@
   }
   .info--top-right--contact .section-link {
     width: auto;
+    margin-top: 50px;
   }
 }
 @media only screen and (max-width: 960px) {
@@ -436,6 +431,15 @@
   .usluge--right-bottom .galleryservice .wrap--picture {
     height: 35%;
   }
+  .info--top-right--contact {
+    margin-right: 30px;
+  }
+  .info--top-right--contact-md {
+    margin-left: 30px;
+  }
+  .info--top-right--contact .section-link {
+    margin-top: 40px;
+  }
 }
 @media screen and (max-width: 780px) {
   .kontakt--inner-title {
@@ -499,9 +503,11 @@
   }
   .info--top-right--contact {
     width: 15%;
+    margin-right: 30px;
   }
   .info--top-right--contact-md {
     width: 80%;
+    margin-left: 30px;
   }
   .info--top-right--contact .section-link {
     -webkit-box-orient: vertical;
@@ -632,13 +638,15 @@
 }
 @media screen and (max-width: 640px) {
   .info--top-right--contact {
-    width: 0;
+    min-width: 0px;
+    margin-right: 0px;
   }
   .info--top-right--contact .section {
     padding-left: 3%;
   }
   .info--top-right--contact-md {
-    width: 100%;
+    min-width: 100%;
+    margin-left: 0px;
   }
   .info--top-right--contact .section-link {
     display: none;

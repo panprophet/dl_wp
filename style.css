@@ -1128,6 +1128,9 @@ textarea {
     height: 130vh;
     padding: 10px 0px;
   }
+  .mobilemenu--bottom-hide {
+    padding: 0px 0px;
+  }
   .search {
     border-left: 80px solid rgba(14, 14, 14, 0.75);
     border-right: 80px solid rgba(14, 14, 14, 0.75);
@@ -1202,10 +1205,16 @@ textarea {
   .mobilemenu--bottom-show {
     padding: 5px 0px;
   }
+  .mobilemenu--bottom-hide {
+    padding: 0px 0px;
+  }
 }
 @media only screen and (max-width: 420px) {
-  .mobilemenu--bottom {
+  .mobilemenu--bottom-show {
     padding: 30px 0px;
+  }
+  .mobilemenu--bottom-hide {
+    padding: 0px 0px;
   }
   .mobilemenu--bottom-container--top-subs {
     display: none;
@@ -1253,7 +1262,7 @@ textarea {
     height: 100vh;
   }
   .mobilemenu--bottom-hide {
-    padding: 15px 0px;
+    padding: 0px 0px;
   }
   .mobilemenu--bottom-container--top-subs {
     display: none;
@@ -1265,6 +1274,9 @@ textarea {
 @media only screen and (max-width: 640px) and (orientation: landscape) {
   .mobilemenu--bottom-show {
     padding: 5px 0px;
+  }
+  .mobilemenu--bottom-hide {
+    padding: 0px 0px;
   }
   .mobilemenu--bottom-container--bottom {
     height: 36vh;
@@ -1282,8 +1294,11 @@ textarea {
   }
 }
 @media only screen and (max-width: 420px) and (orientation: landscape) {
-  .mobilemenu--bottom {
+  .mobilemenu--bottom-show {
     padding: 20px 0px;
+  }
+  .mobilemenu--bottom-hide {
+    padding: 0px 0px;
   }
   .mobilemenu--bottom-container {
     padding: 8px 0px;
@@ -1311,10 +1326,14 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 .info--top-left {
-  width: 10%;
+  min-width: 10%;
   height: 100%;
+  position: relative;
+  background: #000000;
+  z-index: 7;
 }
 .info--top-left-badge {
   display: -webkit-box;
@@ -1344,11 +1363,13 @@ textarea {
   color: #666B70;
 }
 .info--top-right {
-  width: 90%;
+  min-width: 90%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  overflow: hidden;
 }
 .info--top-right--contact {
   width: 50%;
@@ -1400,7 +1421,7 @@ textarea {
 }
 .info--top-right--contact .section-link {
   width: 50%;
-  margin-top: 40px;
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1519,11 +1540,12 @@ textarea {
 }
 .f_hidden {
   opacity: 0;
-  transition: 0.8s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
 }
 .f_shown {
   opacity: 1;
-  transition: 0.8s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 .landing {
   height: calc(100vh - 70px);
@@ -6498,25 +6520,19 @@ textarea {
   .kontakt--inner-button {
     width: 90%;
   }
-  .info--top {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
   .info--top-left {
     display: none;
   }
   .info--top-right {
-    width: 94%;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    min-width: 100%;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
   }
   .info--top-right--contact {
-    width: 39%;
+    width: 35%;
   }
   .info--top-right--contact-md {
-    width: 55%;
+    width: 50%;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -6530,6 +6546,7 @@ textarea {
   }
   .info--top-right--contact .section-link {
     width: auto;
+    margin-top: 50px;
   }
 }
 @media only screen and (max-width: 960px) {
@@ -6787,6 +6804,15 @@ textarea {
   .usluge--right-bottom .galleryservice .wrap--picture {
     height: 35%;
   }
+  .info--top-right--contact {
+    margin-right: 30px;
+  }
+  .info--top-right--contact-md {
+    margin-left: 30px;
+  }
+  .info--top-right--contact .section-link {
+    margin-top: 40px;
+  }
 }
 @media screen and (max-width: 780px) {
   .kontakt--inner-title {
@@ -6850,9 +6876,11 @@ textarea {
   }
   .info--top-right--contact {
     width: 15%;
+    margin-right: 30px;
   }
   .info--top-right--contact-md {
     width: 80%;
+    margin-left: 30px;
   }
   .info--top-right--contact .section-link {
     -webkit-box-orient: vertical;
@@ -6983,13 +7011,15 @@ textarea {
 }
 @media screen and (max-width: 640px) {
   .info--top-right--contact {
-    width: 0;
+    min-width: 0px;
+    margin-right: 0px;
   }
   .info--top-right--contact .section {
     padding-left: 3%;
   }
   .info--top-right--contact-md {
-    width: 100%;
+    min-width: 100%;
+    margin-left: 0px;
   }
   .info--top-right--contact .section-link {
     display: none;
