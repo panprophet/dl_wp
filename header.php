@@ -54,7 +54,6 @@
             echo get_permalink(get_page_by_path($fullpath));
             // proveriti da li dobro radi ukoliko categorija nema parenta, nemam za sada takav slucaj
          ?>">
-         <!-- <div><?php echo $link.$path. '/' .$term->slug; ?></div> -->
          <?php
           $posttype = get_the_terms($post->ID, 'kuhinje_categories');
           $kategorija = 'kuhinje_categories';
@@ -96,13 +95,18 @@
           <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>"><p>Kontakt</p></a>
         </div>
         <div class="menu--top-choice--lang">ENG / SRB</div>
-        <div class="menu--top-choice--search"><img src="<?php
-        if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
-          else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
-          else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-          else if( is_page() ) { echo '../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-          else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-         ?>" onclick="toggleSearch();" /></div>
+        <div class="menu--top-choice--search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onclick="toggleSearch();">
+            <style>
+              .lp0 {
+                  fill: #ffffff;
+              }
+              .lp1 {
+                fill: #840505;
+              }
+            </style>
+          <path class="lp0" id="lupa" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+        </div>
         <div class="menu--top-choice--ham"
               onclick="toggleMenu();">
           <svg version="1.1"
@@ -122,11 +126,6 @@
               .st1 {
                 fill: #840505;
               }
-
-              /* <!--
-              svg:hover>.st0 {
-                fill: #D9BB82;
-              } --> */
             </style>
             <path class="st0"
                   id="ham"
@@ -277,17 +276,21 @@
         <div class="mobilemenu--top-choice--contact mobilemenu--top-choice--contact-hide" id="contact">
           <a href="<?php echo get_permalink(get_page_by_title('Kontakt')); ?>">Kontakt</a>
         </div>
-        <div class="mobilemenu--top-choice--search"><img src="<?php
-          if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
-            else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png'; }
-            else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-            else if( is_page() ) { echo '../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-            else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/baseline_search_white_18dp.png';}
-          ?>" onclick="toggleSearch();" /></div>
+        <div class="mobilemenu--top-choice--search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onclick="toggleSearch();">
+            <style>
+              .lp0 {
+                  fill: #ffffff;
+              }
+              .lp1 {
+                fill: #840505;
+              }
+            </style>
+          <path class="lp0" id="moblupa" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+          </div>
         <div class="mobilemenu--top-choice--lang">ENG / SRB</div>
         <div class="mobilemenu--top-choice--ham"
               onclick="toggleMobileMenu();">
-          <!-- <img src="images/ham.svg">  -->
           <svg version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -314,7 +317,6 @@
     </div>
     <div class="mobilemenu--bottom mobilemenu--bottom-hide" id="dropdownmob">
       <div class="mobilemenu--bottom-container" id="materijalilinks2">
-        <!-- <div class="mobilemenu--bottom-container--top" id="subLink2"> -->
         <?php
           $wp_my_query = new WP_Query();
           $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1', ));
