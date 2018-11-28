@@ -78,11 +78,6 @@ function toggleMobileMenu() {
     document.getElementById("hammobile").classList.add("st0");
     document.getElementById("contact").classList.remove("mobilemenu--top-choice--contact-show");
     document.getElementById("contact").classList.add("mobilemenu--top-choice--contact-hide");
-    // setTimeout(function(){
-    //   document.getElementById("singlelinks").classList.remove("mobilemenu--top-links-single--close");
-    //   document.getElementById("singlelinks").classList.add("mobilemenu--top-links-single--open");
-    // }, 850);
-
   }
 }
 // change tab in submenu
@@ -93,11 +88,9 @@ function changeTab(event) {
     document.getElementById("tab2").classList.remove("tab-red");
     document.getElementById("tab1").classList.add("tab-red");
     document.getElementById("galleryFizicka").classList.remove("gallery-hide");
-    // setTimeout(function() {
     document.getElementById("galleryProf").classList.add("gallery-hide");
     document.getElementById("markerfiz").classList.remove("dots--none");
     document.getElementById("markerprof").classList.add("dots--none");
-    // }, 1600);
   } else if(tab_id === 'tab2' && document.getElementById("tab1").classList.contains("tab-red")) {
     document.getElementById("tab1").classList.remove("tab-red");
     document.getElementById("tab2").classList.add("tab-red");
@@ -111,11 +104,8 @@ function changeTab(event) {
 function subMenu(section) {
   var section = section;
   var noSubMenus = document.getElementById('submenu').childElementCount;
-  var noSubMenus2 = document.getElementById('submob').childElementCount;
-
   for(var i = 1; i <= noSubMenus; i++ ){
     document.getElementById('submenu_' + i).style.transform = "translateX(" + (-100 * (section-1))  + "%)";
-    document.getElementById('submob_' + i).style.transform = "translateX(" + (-100 * (section-1))  + "%)";
     document.getElementById('submenu_' + i).style.opacity = "0";
 
     if(i == parseInt(section)) {
@@ -126,15 +116,12 @@ function subMenu(section) {
 }
 function subLinkActive(section) {
   var noSubLinks = document.getElementById('subLink').childElementCount;
-  var noSubLinks2 = document.getElementById('subLink2').childElementCount;
   for(var i = 1; i <= noSubLinks; i++) {
    if(document.getElementById('mat_' + i).classList.contains('menu--wrap-midd-container--top-link--active')){
      document.getElementById('mat_' + i).classList.remove('menu--wrap-midd-container--top-link--active');
-     document.getElementById('matmob_' + i).classList.remove('mobilemenu--bottom-container--top-link--active');
    }
   }
   document.getElementById('mat_' + section).classList.add('menu--wrap-midd-container--top-link--active');
-  document.getElementById('matmob_' + section).classList.add('mobilemenu--bottom-container--top-link--active');
 }
 function expand_decription(idelem) {
   var noElem = document.getElementsByClassName('elements-description--element').length;
