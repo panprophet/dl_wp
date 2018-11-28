@@ -140,9 +140,9 @@
 }
 .post-temp--left-info--title {
   width: 90%;
-  font-size: 48px;
+  font-size: 38px;
   color: #FFFFFF;
-  line-height: 58px;
+  line-height: 57px;
   margin: 10px 0px;
 }
 .post-temp--left-info--subtitle {
@@ -150,7 +150,6 @@
   font-size: 24px;
   color: #FFFFFF;
   line-height: 29px;
-  margin-bottom: 80px;
 }
 .post-temp--left-info--id {
   width: 90%;
@@ -529,6 +528,9 @@
   }
 }
 @media screen and (max-width: 420px) {
+  .post-temp--left-slide {
+    height: 50%;
+  }
   #product_3 {
     display: none;
   }

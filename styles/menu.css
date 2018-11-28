@@ -695,7 +695,7 @@
   z-index: 5555555;
   border-left: 440px solid rgba(14, 14, 14, 0.75);
   border-right: 440px solid rgba(14, 14, 14, 0.75);
-  border-bottom: 400px solid rgba(14, 14, 14, 0.75);
+  border-bottom: 0px solid rgba(14, 14, 14, 0.75);
   background-clip: padding-box;
   background-origin: padding-box;
 }
@@ -783,21 +783,23 @@
   max-height: 100vh;
   min-height: 100vh;
   overflow: auto;
-  -webkit-transition: min-height 0.5s ease-in-out, opacity 0.3s ease-in-out, max-height 0.6s ease-in-out;
-  transition: min-height 0.5s ease-in-out, opacity 0.3s ease-in-out, max-height 0.6s ease-in-out;
+  border-bottom: 400px solid rgba(14, 14, 14, 0.75);
+  -webkit-transition: min-height 0.5s ease-in-out, opacity 0.3s ease-in-out, max-height 0.6s ease-in-out, border-bottom 0.5s ease-in-out;
+  transition: min-height 0.5s ease-in-out, opacity 0.3s ease-in-out, max-height 0.6s ease-in-out, border-bottom 0.5s ease-in-out;
 }
 .search--collapsed {
   max-height: 0vh;
   opacity: 0;
-  -webkit-transition: min-height 0.5s ease-in-out, opacity 0.4s ease-in-out, max-height 0.6s ease-in-out;
-  transition: min-height 0.5s ease-in-out, opacity 0.4s ease-in-out, max-height 0.6s ease-in-out;
+  border-bottom: 0px solid rgba(14, 14, 14, 0.75);
+  -webkit-transition: min-height 0.5s ease-in-out, opacity 0.4s ease-in-out, max-height 0.6s ease-in-out, border-bottom 0.5s ease-in-out 1s;
+  transition: min-height 0.5s ease-in-out, opacity 0.4s ease-in-out, max-height 0.6s ease-in-out, border-bottom 0.5s ease-in-out 1s;
   overflow: hidden;
 }
 @media only screen and (max-width: 1366px) {
   .menu--wrap-bottom-container .elements {
     width: 49%;
   }
-  .search {
+  .search--expanded {
     border-bottom: 240px solid rgba(14, 14, 14, 0.75);
   }
 }
@@ -808,6 +810,8 @@
   .search {
     border-left: 340px solid rgba(14, 14, 14, 0.75);
     border-right: 340px solid rgba(14, 14, 14, 0.75);
+  }
+  .search--expanded {
     border-bottom: 200px solid rgba(14, 14, 14, 0.75);
   }
   .search--results {
@@ -857,6 +861,8 @@
   .search {
     border-left: 240px solid rgba(14, 14, 14, 0.75);
     border-right: 240px solid rgba(14, 14, 14, 0.75);
+  }
+  .search--expanded {
     border-bottom: 180px solid rgba(14, 14, 14, 0.75);
   }
   .search--results {
@@ -885,6 +891,8 @@
   .search {
     border-left: 200px solid rgba(14, 14, 14, 0.75);
     border-right: 200px solid rgba(14, 14, 14, 0.75);
+  }
+  .search--expanded {
     border-bottom: none;
   }
   .search--results {
