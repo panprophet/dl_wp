@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-<?php wp_head(); ?>
+  <meta charset="<?php bloginfo( 'charset' ); ?>" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src=“https://www.googletagmanager.com/gtag/js?id=UA-101010634-1“></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag(‘js’, new Date());
+
+    gtag(‘config’, ‘UA-101010634-1’);
+  </script>
+  <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
   <!-- menu -->
