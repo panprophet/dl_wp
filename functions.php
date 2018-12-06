@@ -112,6 +112,9 @@ function kitchen_post_types() {
   register_post_type('kuhinje', array(
     'public' => true,
     'has_archive' => false,
+    'show_in_rest' => true,
+    'rest_base' => 'kuhinje',
+    'rest_controller_class' => 'WP_REST_Posts_Controller',
     'labels' => array(
       'name' => 'Kuhinje',
       'add_new_item' => 'Dodaj novi kuhinjski element',
@@ -120,7 +123,7 @@ function kitchen_post_types() {
       'singular_name' => 'kuhinja',
     ),
     'menu_icon' => 'dashicons-store',
-    'rewrite' => array( 'slug' => '/kuhinja/element'),
+    // 'rewrite' => array( 'slug' => '/kuhinja'),
 
   ));
 }
@@ -235,6 +238,14 @@ function register_custom_fields() {
   register_rest_field(
     'materijali',
     'materijali_element',
+    array(
+      'get_callback' => 'show_fields',
+      'schema' => null,
+    )
+  );
+  register_rest_field(
+    'kuhinje',
+    'kuhinja_element',
     array(
       'get_callback' => 'show_fields',
       'schema' => null,

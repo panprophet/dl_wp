@@ -23,9 +23,11 @@
         <a href="<?php echo home_url('/') ?>"><img src="<?php
          if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
           else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png'; }
-          else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
+          else if( (is_page() && $post->post_parent) || (is_single() && $post->post_parent == 0) ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_page() ) { echo '../wp-content/uploads/2018/10/drvo_lux_logo.png';}
-          else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
+          // else if( is_page_template('single-kuhinje.php') ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
+          else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
+           ?>" />
         </a>
       </div>
 
@@ -239,12 +241,12 @@
         <div class="menu--wrap-bottom-container">
         <?php ?>
           <div class="elements">
-            <div class="elements-title"><?php $fijoke = get_page_by_title('Fijoke'); ?>Kuhinje</div>
+            <div class="elements-title"><a href="<?php echo get_permalink(get_page_by_title('Kuhinje'));  ?>">Kuhinje</a></div>
             <div class="elements-container">
               <div class="elements-container--pic" style="background-image: url(<?php
                 if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
-                else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
+                else if( (is_page() && $post->post_parent) || (is_single() && $post->post_parent == 0) ) { echo '../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if( is_page() ) { echo '../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/kuhinja-mala.jpg';}
                 ?>); background-repeat: no-repeat;"></div>
@@ -257,7 +259,7 @@
               <div class="elements-container--pic"  style="background-image: url(<?php
                 if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
-                else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
+                else if( (is_page() && $post->post_parent) || (is_single() && $post->post_parent == 0) ) { echo '../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if( is_page() ) { echo '../wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/plakari-mala.jpg';}
                 ?>); background-repeat: no-repeat;"></div>

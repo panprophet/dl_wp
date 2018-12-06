@@ -1,5 +1,6 @@
 var datamat;
 var data;
+var datakitch;
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
@@ -77,6 +78,14 @@ async function toggleSearch() {
         .catch((err)=>{
           console.log(err);
         });
+        // get_data('http://drvolux.rs/wp-json/wp/v2/kuhinje?per_page=100')
+        get_data('http://localhost/drvolux/wp-json/wp/v2/kuhinje?per_page=100')
+          .then((res) => {
+            datakitch = JSON.parse(res.responseText);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
         setTimeout(() => {
           document.getElementById('searchbox').classList.remove('search--collapsed');
           document.getElementById('searchbox').classList.add('search--expanded');
@@ -137,13 +146,40 @@ async function searchbox(term) {
         container.innerHTML = '';
     }
     Object.keys(elem).forEach(function(key) {
-      if(key == 'materijali_element'){
+      if(key == 'materijali_element') {
         var obj =  elem[key];
         Object.keys(obj).forEach(function(key) {
           if((key == 'materijali_element_0_id_elementa' || key == 'materijali_element_0_debljina_materijala' || key == 'materijali_element_0_proizvodjac') && (term != '' && term != ' ') ) {
-            if(obj[key][0].toLowerCase().indexOf(term) >= 0){
+            if(obj[key][0].toLowerCase().indexOf(term) >= 0) {
               setTimeout(() => {
                 container.innerHTML += '<div class="search--results-container--row"><a href="' + elem.guid.rendered +  '"><div class="search--results-container--row-title">' + elem.title.rendered + '</div></a><div class="search--results-container--row-sifra">' + elem.materijali_element.materijali_element_0_id_elementa + '</div></div>';
+              }, 500);
+            } else {
+              container.innerHTML = '';
+            }
+          }
+        });
+      }
+    });
+  });
+  datakitch.forEach((elem, index) => {
+    if(term != '' && term != ' ' && term.length > 1) {
+      if(elem.title.rendered.toLowerCase().indexOf(term) >= 0) {
+        setTimeout(() => {
+          container.innerHTML += '<div class="search--results-container--row"><a href="' + elem.guid.rendered +  '"><div class="search--results-container--row-title">' + elem.title.rendered + '</div></a><div class="search--results-container--row-sifra">' + elem.kuhinja_element.kuhinja_element_0_id_elementa + '</div></div>';
+        }, 500);
+      }
+    } else {
+        container.innerHTML = '';
+    }
+    Object.keys(elem).forEach(function(key) {
+      if(key == 'kuhinja_element') {
+        var obj = elem[key];
+        Object.keys(obj).forEach(function(key) {
+          if((key == 'kuhinja_element_0_id_elementa' || key == 'kuhinja_element_0_proizvodjac') && (term != '' && term != ' ') ) {
+            if(obj[key][0].toLowerCase().indexOf(term) >= 0) {
+              setTimeout(() => {
+                container.innerHTML += '<div class="search--results-container--row"><a href="' + elem.guid.rendered +  '"><div class="search--results-container--row-title">' + elem.title.rendered + '</div></a><div class="search--results-container--row-sifra">' + elem.kuhinja_element.kuhinja_element_0_id_elementa + '</div></div>';
               }, 500);
             } else {
               container.innerHTML = '';
