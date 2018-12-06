@@ -870,8 +870,170 @@
   .materijali{
     &-wrapper{
       &-1{
+        grid-template-rows: 300px 300px 300px;
+        height: 960px;
+        .pic{
+          &-1{
+            grid-column: ~"1 / 3";
+            grid-row: 1;
+          }
+          &-2{
+            grid-column: ~"1 / 3";
+            grid-row: 2;
+            .pic--inner-top{
+              height: 80%;
+            }
+          }
+          &-3{
+            grid-column: ~"1 / 3";
+            grid-row: 3;
+          }
+          &--inner{
+            &-bottom{
+              &--right{
+                &--more{
+                  text-align: end;
+                }
+              }
+            }
+          }
+        }
+      }
+      &-2{
+        grid-template-rows: 300px 300px 300px;
+        height: 960px;
+        .pic{
+          &-4{
+            grid-column: ~"1 / 3";
+            grid-row: 1;
+          }
+          &-5{
+            grid-column: ~"1 / 3";
+            grid-row: 2;
+            .pic--inner-top{
+              height: 80%;
+            }
+          }
+          &-6{
+            grid-column: ~"1 / 3";
+            grid-row: 3;
+          }
+          &--inner{
+            &-bottom{
+              &--right{
+                &--more{
+                  text-align: end;
+                }
+              }
+            }
+          }
+        }
+      }
+      &-3{
+        grid-template-rows: 300px 300px 300px;
+        height: 960px;
+        .pic{
+          &-7{
+            grid-column: ~"1 / 3";
+            grid-row: 1;
+          }
+          &-8{
+            grid-column: ~"1 / 3";
+            grid-row: 2;
+            .pic--inner-top{
+              height: 80%;
+            }
+          }
+          &-9{
+            grid-column: ~"1 / 3";
+            grid-row: 3;
+          }
+          &--inner{
+            &-bottom{
+              &--right{
+                &--more{
+                  text-align: end;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px){
+  .ploce{
+    &--top{
+      height: 350px;
+      margin-left: 0;
+      &-hero {
+        &--title {
+          margin-left: 0px;
+          margin-bottom: 12%;
+          text-align: center;
+        }
+      }
+    }
+    &--midd{
+      &-title{
+        &--link{
+          a{
+            font-size: 26px;
+          }
+        }
+      }
+    }
+    &--bottom{
+      min-height: 250px;
+      height: auto;
+      padding: 20px;
+      &-text{
+        :nth-child(1) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .materijali{
+    &-readmore{
+      height: auto;
+      &--info{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        height: auto;
+        &-text{
+          padding-left: 0px;
+          text-align: center;
+        }
+        &-link{
+          height: 100px;
+          padding-right: 0px;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+        }
+      }
+      &--title{
+        padding-left: 0px;
+        height: 90px;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+      }
+    }
+    &-term{
+      font-size: 28px;
+    }
+    &-wrapper{
+      &-1{
         grid-template-columns: 95%;
-        grid-template-rows: 200px 200px 200px;
+        grid-template-rows: 250px 250px 250px;
         height: 810px;
         .pic{
           &-1{
@@ -902,7 +1064,7 @@
       }
       &-2{
         grid-template-columns: 95%;
-        grid-template-rows: 200px 200px 200px;
+        grid-template-rows: 250px 250px 250px;
         height: 810px;
         .pic{
           &-4{
@@ -930,7 +1092,7 @@
       }
       &-3{
         grid-template-columns: 95%;
-        grid-template-rows: 200px 200px 200px;
+        grid-template-rows: 250px 250px 250px;
         height: 810px;
         .pic{
           &-7{
@@ -959,54 +1121,6 @@
     }
   }
 }
-@media screen and (max-width: 480px){
-  .ploce{
-    &--top{
-      height: 350px;
-      margin-left: 0;
-      &-hero {
-        &--title {
-          margin-bottom: 12%;
-        }
-      }
-    }
-    &--midd{
-      &-title{
-        &--link{
-          a{
-            font-size: 26px;
-          }
-        }
-      }
-    }
-    &--bottom{
-      min-height: 250px;
-      height: auto;
-      padding: 20px;
-      &-text{
-        :nth-child(1) {
-          margin-top: 10px;
-        }
-      }
-    }
-  }
-  .materijali {
-    &-term{
-      font-size: 28px;
-    }
-    &-readmore{
-      &--title{
-        height: 70px;
-      }
-      &--info{
-        height: 130px;
-        &-link {
-          padding-right: 25px;
-        }
-      }
-    }
-  }
-}
 @media screen and (max-width: 360px){
   .ploce{
     &--top{
@@ -1024,37 +1138,37 @@
       }
     }
   }
-  .materijali{
-    &-readmore{
-      height: auto;
-      &--info{
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        height: auto;
-        &-text{
-          padding-left: 0;
-          text-align: center;
-        }
-        &-link{
-          height: 100px;
-          padding-right: 0;
-          -webkit-box-pack: center;
-              -ms-flex-pack: center;
-                  justify-content: center;
-          -webkit-box-align: center;
-              -ms-flex-align: center;
-                  align-items: center;
-        }
-      }
-      &--title{
-        padding-left: 0;
-        height: 90px;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-      }
-    }
-  }
+  // .materijali{
+  //   &-readmore{
+  //     height: auto;
+  //     &--info{
+  //       -webkit-box-orient: vertical;
+  //       -webkit-box-direction: normal;
+  //           -ms-flex-direction: column;
+  //               flex-direction: column;
+  //       height: auto;
+  //       &-text{
+  //         padding-left: 0;
+  //         text-align: center;
+  //       }
+  //       &-link{
+  //         height: 100px;
+  //         padding-right: 0;
+  //         -webkit-box-pack: center;
+  //             -ms-flex-pack: center;
+  //                 justify-content: center;
+  //         -webkit-box-align: center;
+  //             -ms-flex-align: center;
+  //                 align-items: center;
+  //       }
+  //     }
+  //     &--title{
+  //       padding-left: 0;
+  //       height: 90px;
+  //       -webkit-box-pack: center;
+  //           -ms-flex-pack: center;
+  //               justify-content: center;
+  //     }
+  //   }
+  // }
 }
