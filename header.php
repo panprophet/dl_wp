@@ -23,7 +23,7 @@
         <a href="<?php echo home_url('/') ?>"><img src="<?php
          if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
           else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png'; }
-          else if( (is_page() && $post->post_parent) || (is_single() && $post->post_parent == 0) ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
+          else if( (is_page() && $post->post_parent) || ('kuhinje' === get_post_type() || 'plakari' === get_post_type()) ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_page() ) { echo '../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           // else if( is_page_template('single-kuhinje.php') ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_single() ) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
@@ -38,50 +38,62 @@
         <div class="menu--top-links-single menu--top-links-single--open" id="singlelinks">
 
          <span class="menu--top-links-single--back"><a href="<?php
+            if( 'kuhinje' === get_post_type() ) {
+              echo get_permalink(get_page_by_title('Kuhinje'));
+            } else
+            if( 'plakari' === get_post_type() ) {
+              echo get_permalink(get_page_by_title('Plakari'));
+            } else {
+              $posttypelink = get_the_terms($post->ID, 'kuhinje_categories');
+              $kategorija = 'kuhinje_categories';
+              $link = 'kuhinje/';
+              if(!$posttypelink ) {
+                $posttypelink  = get_the_terms($post->ID, 'materijali_categories');
+                $kategorija = 'materijali_categories';
+                $link = 'materijali/';
+              }
+              foreach($posttypelink as $term) {
+                  $parent =  $term->parent;
+                  if($parent) {
+                    $name = get_term($parent, $kategorija);
+                    $path = $name->slug;
+                  }
+                  else {
+                    $path = $term->slug;
+                  }
+                  if($parent) {
+                    $fullpath = $link.$path. '/' .$term->slug;
+                  } else {
+                    $fullpath = $link.$path;
+                  }
+              }
+              echo get_permalink(get_page_by_path($fullpath));
 
-            $posttypelink = get_the_terms($post->ID, 'kuhinje_categories');
-            $kategorija = 'kuhinje_categories';
-            $link = 'kuhinje/';
-            if(!$posttypelink ) {
-              $posttypelink  = get_the_terms($post->ID, 'materijali_categories');
-              $kategorija = 'materijali_categories';
-              $link = 'materijali/';
             }
-            foreach($posttypelink as $term) {
-                $parent =  $term->parent;
-                if($parent) {
-                  $name = get_term($parent, $kategorija);
-                  $path = $name->slug;
-                }
-                else {
-                  $path = $term->slug;
-                }
-                if($parent) {
-                  $fullpath = $link.$path. '/' .$term->slug;
-                } else {
-                  $fullpath = $link.$path;
-                }
-            }
-            echo get_permalink(get_page_by_path($fullpath));
-            // proveriti da li dobro radi ukoliko categorija nema parenta, nemam za sada takav slucaj
          ?>">
          <?php
-          $posttype = get_the_terms($post->ID, 'kuhinje_categories');
-          $kategorija = 'kuhinje_categories';
-          if(!$posttype) {
-              $posttype = get_the_terms($post->ID, 'materijali_categories');
-              $kategorija = 'materijali_categories';
-          }
-          foreach($posttype as $term) {
+          if( 'kuhinje' === get_post_type() ) {
+            $postName = get_post_type();
+            echo ucfirst($postName);
+          } else if( 'plakari' === get_post_type() ) {
+            $postName = get_post_type();
+            echo ucfirst($postName);
+          } else {
+            $posttype = get_the_terms($post->ID, 'materijali_categories');
+            $kategorija = 'materijali_categories';
+
+            foreach($posttype as $term) {
               $parent =  $term->parent;
-              // if($parent) {
-              //   $name = get_term($parent, $kategorija);
-              //   echo $name->name;
-              // } else {
-                echo $term->name;
-              // }
+                if($parent) {
+                  $name = get_term($parent, $kategorija);
+                  // print_r('ako ima parenta');
+                  echo $name->name;
+                } else {
+                  // print_r('ako nema parenta');
+                  echo $term->name;
+                }
             }
-            // echo $posttype;
+          }
          ?>
          </a></span>
          <span>/</span>
@@ -246,7 +258,7 @@
               <div class="elements-container--pic" style="background-image: url(<?php
                 if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
-                else if( (is_page() && $post->post_parent) || (is_single() && $post->post_parent == 0) ) { echo '../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
+                else if( (is_page() && $post->post_parent) || ('kuhinje' === get_post_type() || 'plakari' === get_post_type()) ) { echo '../../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if( is_page() ) { echo '../wp-content/uploads/2018/11/kuhinja-mala.jpg'; }
                 else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/kuhinja-mala.jpg';}
                 ?>); background-repeat: no-repeat;"></div>
@@ -254,12 +266,12 @@
             </div>
           </div>
           <div class="elements">
-            <div class="elements-title">Plakari</div>
+            <div class="elements-title"><a href="<?php echo get_permalink(get_page_by_title('Plakari'));  ?>">Plakari</a></div>
             <div class="elements-container">
               <div class="elements-container--pic"  style="background-image: url(<?php
                 if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
-                else if( (is_page() && $post->post_parent) || (is_single() && $post->post_parent == 0) ) { echo '../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
+                else if( (is_page() && $post->post_parent) || ('kuhinje' === get_post_type() || 'plakari' === get_post_type()) ) { echo '../../wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if( is_page() ) { echo '../wp-content/uploads/2018/11/plakari-mala.jpg'; }
                 else if( is_single() ) { echo '../../../wp-content/uploads/2018/11/plakari-mala.jpg';}
                 ?>); background-repeat: no-repeat;"></div>
@@ -278,7 +290,7 @@
         <a href="<?php echo home_url('/') ?>"><img src="<?php
          if( is_home() || is_front_page() ) { echo './wp-content/uploads/2018/10/drvo_lux_logo.png'; }
           else if(is_page_template('page-templates/page-plocasti-group.php')){ echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png'; }
-          else if( is_page() && $post->post_parent ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
+          else if( (is_page() && $post->post_parent) || ('kuhinje' === get_post_type() || 'plakari' === get_post_type()) ) { echo '../../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_page() ) { echo '../wp-content/uploads/2018/10/drvo_lux_logo.png';}
           else if( is_single() || (is_page() && $post->post_parent)) { echo '../../../wp-content/uploads/2018/10/drvo_lux_logo.png';} ?>" />
         </a>
@@ -383,8 +395,8 @@
       </diV>
       <div class="mobilemenu--bottom-container" id="menuostali">
         <div class="mobilemenu--bottom-container--top">
-          <div class="mobilemenu--bottom-container--link">Kuhinje</div>
-          <div class="mobilemenu--bottom-container--link">Plakari</div>
+          <div class="mobilemenu--bottom-container--link"><a href="<?php echo get_permalink(get_page_by_title('Kuhinje'));  ?>">Kuhinje</a></div>
+          <div class="mobilemenu--bottom-container--link"><a href="<?php echo get_permalink(get_page_by_title('Plakari'));  ?>">Plakari</a></div>
         </div>
       </div>
     </div>
