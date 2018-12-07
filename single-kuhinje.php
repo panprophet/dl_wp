@@ -54,10 +54,12 @@
       <div class="post-temp--right-info--title">Informacije</div>
       <div class="post-temp--right-info--deskitchen"><?php the_sub_field('informacije'); ?></div>
       <div class="post-temp--right-info--speckitchen">
+      <?php if( get_sub_field('proizvodjac') ) { ?>
         <div class="tab">
           <div class="tab--title"><span class="tab--title-text">Proizvođač</span><span class="tab--title-icon"><?php the_sub_field('proizvodjac'); ?></span>
           </div>
         </div>
+      <?php } ?>
       </div>
     </div>
 <?php
