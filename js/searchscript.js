@@ -78,8 +78,8 @@ async function toggleSearch() {
         .catch((err)=>{
           console.log(err);
         });
-        // get_data('http://drvolux.rs/wp-json/wp/v2/kuhinje?per_page=100')
-        get_data('http://localhost/drvolux/wp-json/wp/v2/kuhinje?per_page=100')
+        get_data('http://drvolux.rs/wp-json/wp/v2/kuhinje?per_page=100')
+        // get_data('http://localhost/drvolux/wp-json/wp/v2/kuhinje?per_page=100')
           .then((res) => {
             datakitch = JSON.parse(res.responseText);
         })
