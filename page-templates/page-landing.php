@@ -144,7 +144,7 @@
                 style="background-image: url(<?php the_sub_field('serviceimage') ?>); background-size: cover; background-repeat: no-repeat;">
             <div class="title">
               <p><img src="<?php the_sub_field('serviceicon') ?>"> </p>
-              <p><a href=""><?php the_sub_field('servicelabel') ?></a></p>
+              <p><a href="<?php echo get_permalink(get_page_by_title(''.get_sub_field('servicelabel').''));  ?>"><?php the_sub_field('servicelabel') ?></a></p>
             </div>
           </div>
           <div class="wrap--text"><?php the_sub_field('servicetext') ?></div>
@@ -184,7 +184,7 @@
                 style="background-image: url(<?php the_sub_field('serviceimage') ?>); background-size: cover; background-repeat: no-repeat;">
             <div class="title">
               <p><img src="<?php the_sub_field('serviceicon') ?>"> </p>
-              <p><?php the_sub_field('servicelabel') ?></p>
+              <p><a href="<?php echo get_permalink(get_page_by_title(''.get_sub_field('servicelabel').''));  ?>"><?php the_sub_field('servicelabel') ?></a></p>
             </div>
           </div>
           <div class="wrap--text"><?php the_sub_field('servicetext') ?></div>

@@ -129,26 +129,28 @@ function kitchen_post_types() {
 }
 add_action('init', 'kitchen_post_types');
 
-function fijoke_post_type() {
-  register_post_type('fijoke', array(
+function plakari_post_type() {
+  register_post_type('plakari', array(
     'public' => true,
     'has_archive' => false,
+    'show_in_rest' => true,
+    'rest_base' => 'plakari',
+    'rest_controller_class' => 'WP_REST_Posts_Controller',
     'labels' => array(
-      'name' => 'Fijoke',
-      'add_new_item' => 'Dodaj novi element fijoke',
-      'edit_item' => 'Element fijoke',
-      'all_items' => 'Svi fijoka elementi',
-      'singular_name' => 'fijoka',
+      'name' => 'Plakari',
+      'add_new_item' => 'Dodaj novi plakar',
+      'edit_item' => 'Element plakar',
+      'all_items' => 'Svi plakari elementi',
+      'singular_name' => 'plakar',
     ),
     'menu_icon' => 'dashicons-archive',
-    // 'rewrite' => array('slug' => 'kuhinje/fijoke'),
-    'rewrite' => array('slug' => '/kuhinje/fijoke'),
+    // 'rewrite' => array('slug' => '/kuhinje/fijoke'),
 
   ));
 
 }
 
-add_action('init', 'fijoke_post_type');
+add_action('init', 'plakari_post_type');
 
 function materijali_post_type() {
   register_post_type('materijali', array(
@@ -246,6 +248,14 @@ function register_custom_fields() {
   register_rest_field(
     'kuhinje',
     'kuhinja_element',
+    array(
+      'get_callback' => 'show_fields',
+      'schema' => null,
+    )
+  );
+  register_rest_field(
+    'plakari',
+    'plakari_element',
     array(
       'get_callback' => 'show_fields',
       'schema' => null,
