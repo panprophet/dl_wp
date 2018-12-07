@@ -1,44 +1,99 @@
 <?php /* Template Name: Kuhinje Page */ ?>
 
-<?php get_header(); ?>
-
-<div class="kuhinja">
-  <div class="kuhinja--top">
-      <div class="kuhinja--top--left">
-        <div class="kuhinja--top--left--title">Kuhinje</div>
-        <div class="kuhinja--top--left--menu">
-        <?php
-          $wp_my_query = new WP_Query();
-          $all_wp_pages = $wp_my_query->query(array('post_type' => 'page', 'posts_per_page' => '-1'));
-
-          $kuhinje = get_page_by_title('Kuhinje');
-          $kuhinje_children = get_page_children($kuhinje->ID, $all_wp_pages);
-          foreach ($kuhinje_children as $child) {
-        ?>
-          <a href="<?php echo $child->guid ?>"><?php echo $child->post_title ?></a>
-        <?php
-          }
-        ?>
-        </div>
-        <div class="kuhinja--top--left--back"><a href="#">
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M16 7L3.83 7L9.42 1.41L8 0L0 8L8 16L9.41 14.59L3.83 9L16 9L16 7Z" fill="white"/>
-          </svg>
-        </span>
-        <span>Back</span>
-        </a>
-        </div>
+<div class="ploce">
+  <div class="ploce--top">
+    <div class="ploce--top-hero" style="background-image: url(<?php the_field('hero_image'); ?>);">
+      <div class="gradient">
+          <div class="ploce--top-hero--title"><?php $title = the_title(); echo strtoupper($title); ?></div>
+          <div class="ploce--top-hero--text">
+          <?php the_field('unutrasnji_text') ?>
+          </div>
       </div>
-      <div class="kuhinja--top--right">
-
-      </div>
+    </div>
   </div>
 </div>
-<div>
-<?php get_template_part('/page-templates/page', 'fijoke-sredina'); ?>
+<div class="materijali">
+ <?php
+    $allPosts = new WP_Query(
+      array(
+        'post_type' => 'kuhinje',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+      )
+    );
 
+  ?>
+  <?php
+    $countDivs = 1;
+
+      while ($allPosts->have_posts() ) : $allPosts->the_post();
+        if(have_rows('kuhinja_element')):
+          while(have_rows('kuhinja_element')): the_row();
+    ?>
+    <?php if($countDivs == 1) { ?>
+    <div class="materijali-wrapper-<?php echo $countDivs ?>">
+    <?php }
+    if($countDivs == 4) { ?>
+    </div>
+    <div class="materijali-wrapper-<?php echo $countDivs/2 ?>">
+      <?php }
+      if($countDivs == 7) { ?>
+    </div>
+    <div class="materijali-wrapper-<?php echo intval($countDivs/2) ?>">
+      <?php
+      }
+    ?>
+      <div class="pic pic-<?php echo $countDivs ?>">
+        <div class="pic--inner">
+        <?php
+          $carNo = 1;
+          if(have_rows('image_carousel')){
+            while(have_rows('image_carousel')){
+            the_row();
+            if($carNo == 1){
+          ?>
+            <a href="<?php the_permalink() ?>" class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;"></a>
+            <?php
+            $carNo++;
+            }
+            ?>
+
+          <?php
+            }
+          }
+        ?>
+            <div class="pic--inner-midd">
+              <div class="pic--inner-midd--naslov2"><?php the_sub_field('naziv'); ?></div>
+              <div class="pic--inner-midd--more"><a href="<?php the_permalink() ?>">Vidi više</a></div>
+            </div>
+
+            <div class="pic--inner-bottom">
+              <div class="pic--inner-bottom--left">
+                <div class="pic--inner-bottom--left--opis"><?php the_sub_field('opis'); ?></div>
+                <div class="pic--inner-bottom--left--redline"></div>
+              </div>
+              <div class="pic--inner-bottom--right">
+                <div class="pic--inner-bottom--right--more"><a href="<?php the_permalink() ?>">Vidi više</a></div>
+                <div class="pic--inner-bottom--right--cena"><?php the_sub_field('cena'); ?></div>
+              </div>
+            </div>
+        </div>
+      </div>
+    <?php
+        $countDivs++;
+
+      if($countDivs == 10 || ($wp_query->current_post +1) == ($wp_query->post_count)) {
+      ?>
+      </div>
+      <?php
+        $countDivs = 1;
+      }
+        endwhile;
+      endif;
+    endwhile;
+    wp_reset_postdata();
+    ?>
+    </div>
 </div>
-
 <?php get_template_part('/page-templates/page', 'kontakt'); ?>
-<?php get_footer(); ?>
+<?php get_footer() ?>

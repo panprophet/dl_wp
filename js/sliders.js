@@ -214,7 +214,7 @@ function changeMap(event) {
 // single page mini gallery
 function single_gallery(event) {
   let action = event;
-  let elemcount = document.getElementById('slide').childElementCount;
+  let elemcount = document.getElementById('slidemini').childElementCount;
   let pagefrom = document.getElementById('pagefrom').innerHTML;
   let pageto;
   if(pagefrom.substring(0,1) == 0) {

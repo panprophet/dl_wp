@@ -226,6 +226,67 @@
         color: #4C4C4C;
         margin: 0px 5%;
       }
+      &--deskitchen {
+        height: 70%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        font-size: @font-small;
+        line-height: 24px;
+        color: #4C4C4C;
+        margin: 0px 5%;
+      }
+      &--speckitchen {
+        height: 10%;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        .tab {
+          height: 100%;
+          border-bottom: 1px solid #E3E3E3;
+          &--title {
+            height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            margin: 0px 5%;
+            &-text {
+              font-size: @font-small;
+              line-height: 24px;
+              color: #4C4C4C;
+            }
+            &-icon {
+              width: 20%;
+              height: 20px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              -webkit-box-pack: end;
+                  -ms-flex-pack: end;
+                      justify-content: flex-end;
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
       &--spec {
         height: 45%;
         width: 100%;
@@ -420,7 +481,10 @@
           height: 40%;
           &--list {
             &-item {
-              height: 45%;
+              height: 50%;
+              .pic {
+                height: 100%;
+              }
             }
           }
         }
