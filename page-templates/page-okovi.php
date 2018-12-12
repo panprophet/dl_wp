@@ -78,7 +78,7 @@
       <div class="materijali-readmore--title">
       <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
       </div>
-      <div class="materijali-readmore--info">
+      <div class="materijali-readmore--info" style="display: none;">
         <div class="materijali-readmore--info-text">
           <?php
           $page_q = new WP_Query(array(
