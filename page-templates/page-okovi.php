@@ -94,16 +94,17 @@
           wp_reset_postdata();
           ?>
         </div>
-        <div class="materijali-readmore--info-link"><a href="<?php
-          $page = new WP_Query(array(
-            'post_type' => 'page',
-            'name' => $term->slug,
-          ));
-        foreach($page as $p) {
-          echo $p->guid;
-        }
-        wp_reset_postdata();
-        ?>">Vidi više</a></div>
+        <!-- <div class="materijali-readmore--info-link"><a href="<?php
+        //  $page = new WP_Query(array(
+        //    'post_type' => 'page',
+        //    'name' => $term->slug,
+        //  ));
+        //foreach($page as $p) {
+        //  echo $p->guid;
+        //}
+        //wp_reset_postdata();
+        ?>
+        ">Vidi više</a></div> -->
       </div>
     </div>
     <?php
