@@ -78,7 +78,7 @@
       <div class="materijali-readmore--title">
       <?php if($children) { echo $term->name; } else { echo the_title(); } ?>
       </div>
-      <div class="materijali-readmore--info">
+      <div class="materijali-readmore--info" style="display: none;">
         <div class="materijali-readmore--info-text">
           <?php
           $page_q = new WP_Query(array(
@@ -136,7 +136,7 @@
             the_row();
               if($carNo == 1){
           ?>
-            <a href="<?php the_permalink() ?>" class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat;">
+            <a href="<?php the_permalink() ?>" class="pic--inner-top" style="background-image: url(<?php the_sub_field('galerry_image'); ?>); background-size: cover; background-repeat: no-repeat; pointer-events: none;">
           <?php
               }
             $carNo++;

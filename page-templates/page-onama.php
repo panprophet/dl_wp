@@ -35,6 +35,57 @@
     </div>
   </div>
 </div>
+<div class="renderi">
+  <div class="renderi--top">
+    <div class="renderi--top-wrapper">
+      <div class="renderi--top-wrapper--title"><?php the_field('renderovanje_naslov'); ?></div>
+      <div class="renderi--top-wrapper--text"><?php the_field('renderovanje_text'); ?></div>
+    </div>
+  </div>
+  <div class="renderi--bottom">
+    <?php
+    $photoclass = 1;
+    $counter = 1;
+    $totalFields = count(the_sub_field('render_image'));
+    if(have_rows('renderi_images')) :
+      while(have_rows('renderi_images')) :
+      the_row();
+      if($counter == 4) {
+    ?>
+       </div>
+    <?php
+      $counter = 1;
+      }
 
+      if($counter == 1){
+    ?>
+      <div class="renderi--bottom-wrapper">
+    <?php
+      }
+    ?>
+      <div class="renderi--bottom-wrapper--pic renderi--bottom-wrapper--pic-<?php echo $counter; ?>" id="render_<?php echo $counter; ?>">
+        <div class="renderi--bottom-wrapper--pic-top" style="background-image: url(<?php the_sub_field('render_image'); ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+        <div class="renderi--bottom-wrapper--pic-bottom">
+          <div class="renderi--bottom-wrapper--pic-bottom--top"><?php the_sub_field('opis'); ?></div>
+          <div class="renderi--bottom-wrapper--pic-bottom--bottom">
+            <div class="renderi--bottom-wrapper--pic-bottom--bottom-title"><?php the_sub_field('naziv'); ?></div>
+            <div class="renderi--bottom-wrapper--pic-bottom--bottom-redline"></div>
+            <!-- <div class="renderi--bottom-wrapper--pic-bottom--bottom-readmore" onclick="go_to_slide( 0 , <?php echo $photoclass; ?>)">Read more</div> -->
+          </div>
+        </div>
+      </div>
+    <?php
+    if(get_row_index() == $totalFields) {
+    ?>
+      </div>
+    <?php
+    }
+    $counter++;
+    $photoclass++;
+      endwhile;
+    endif;
+    ?>
+  </div>
+</div>
 <?php get_template_part('/page-templates/page', 'kontakt'); ?>
 <?php get_footer(); ?>
