@@ -50,7 +50,7 @@
     <div class="post-temp--left-info">
       <div class="post-temp--left-info--title"><?php the_sub_field('naziv'); ?></div>
       <div class="post-temp--left-info--subtitle"><?php the_sub_field('debljina_materijala'); ?></div>
-      <div class="post-temp--left-info--id"><?php the_sub_field('id_elementa'); ?></div>
+      <div class="post-temp--left-info--id">Šifra: <?php the_sub_field('id_elementa'); ?></div>
     </div>
   </div>
   <div class="post-temp--midd" style="background-image: url(<?php the_sub_field('main_image') ?>">
